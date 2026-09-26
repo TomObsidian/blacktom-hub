@@ -57,7 +57,7 @@ function partnerCardHTML(p, sourcePage) {
     : '<div class="letter-mark">' + p.name.charAt(0) + '</div>';
   var desc = p.description ? '<p class="desc">' + p.description + '</p>' : '';
   var usage = p.usage ? '<div class="code-row"><span class="k">Ce que j’utilise</span></div><p style="margin:-8px 0 12px;font-size:13px;color:var(--dim);">' + p.usage + '</p>' : '';
-  var offerRow = '<div class="code-row"><span class="k">Mon avantage</span><span class="v">' + (p.offer || 'À venir') + '</span></div>';
+  var offerRow = p.offer ? '<div class="code-row"><span class="k">Mon avantage</span><span class="v">' + p.offer + '</span></div>' : '';
   var codeRow = p.code ? '<div class="code-row"><span class="k">Code promo</span><span class="v">' + p.code + '</span></div>' : '';
   var url = buildPartnerUrl(p, sourcePage, 'partenaires_page');
   var copyBtn = p.code
