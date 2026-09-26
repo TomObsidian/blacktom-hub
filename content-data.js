@@ -44,6 +44,7 @@ window.BLACKTOM_CONTENT = [
   { title: 'Programme développé couché', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
   { title: 'BLACKTOM Bench Lab (calculateur 1RM)', type: 'outil', category: 'developpe-couche', status: 'published', url: '/outils/calculateur-1rm-developpe-couche' },
   { title: 'Ratio développé couché / poids du corps', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
+  { title: 'Mes compléments', type: 'page', category: 'nutrition', status: 'published', url: 'complements.html' },
   { title: 'Créatine après 40 ans', type: 'article', category: 'nutrition', status: 'planned', url: null },
   { title: 'Combien de protéines après 40 ans', type: 'article', category: 'nutrition', status: 'planned', url: null },
   { title: 'Quelle whey choisir', type: 'article', category: 'nutrition', status: 'planned', url: null },
