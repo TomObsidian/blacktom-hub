@@ -25,9 +25,9 @@ window.BLACKTOM_PARTNERS = [
     active: true,
     description: null,
     usage: 'Vêtements et accessoires d’entraînement.',
-    offer: null,
-    code: '1SSIS',
-    url: 'https://www.prozis.com/fr/fr',
+    offer: '-10%',
+    code: 'BLACKTOM',
+    url: 'https://www.prozis.com/1SSIS',
     utm: true,
     expires: null,
     legal: null
@@ -36,10 +36,10 @@ window.BLACKTOM_PARTNERS = [
     slug: 'ragna',
     name: 'Ragna',
     logo: 'assets/partenaire-ragna-fe63d166.png',
-    active: false, // en attente du lien affilié et du code réels
+    active: false, // en attente du code promo et du lien affilié réels (offre -20% déjà confirmée)
     description: null,
     usage: null,
-    offer: null,
+    offer: '-20%',
     code: null,
     url: null,
     utm: true,
@@ -47,16 +47,13 @@ window.BLACKTOM_PARTNERS = [
     legal: null
   },
   {
-    // Désactivé (Étape pré-lancement) : il manque l'avantage réel du code
-    // et ce que vous utilisez précisément chez Zumub. Réactivez en repassant
-    // active à true une fois ces deux infos fournies.
     slug: 'zumub',
     name: 'Zumub',
     logo: 'assets/partenaire-zumub.webp',
-    active: false,
+    active: true,
     description: null,
     usage: null,
-    offer: null,
+    offer: '-10%',
     code: 'BLACKTOM',
     url: 'https://www.zumub.com/FR/',
     utm: true,
@@ -64,15 +61,13 @@ window.BLACKTOM_PARTNERS = [
     legal: null
   },
   {
-    // Désactivé (Étape pré-lancement) : même raison que Zumub — avantage
-    // réel du code et usage précis manquants.
     slug: 'vitastrong',
     name: 'VitaStrong',
     logo: 'assets/partenaire-vitastrong.png',
-    active: false,
+    active: true,
     description: null,
     usage: null,
-    offer: null,
+    offer: '-10%',
     code: 'BLACKTOM',
     url: 'https://vitastrong.fr/fr/',
     utm: true,
