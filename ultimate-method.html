@@ -13,6 +13,8 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -32,11 +34,11 @@
     <a href="black-boar.html">Black Boar</a>
     <a href="ultimate-method.html" aria-current="page">The Ultimate Method</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </nav>
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
   <a href="index.html">Accueil</a>
   <a href="a-propos.html">À propos</a>
   <a href="contenus.html">Contenus</a>
@@ -50,6 +52,7 @@
   <p class="eyebrow">Application d'entraînement</p>
   <h1 style="font-size:clamp(40px,8vw,68px);">THE ULTIMATE METHOD</h1>
   <p class="lede" style="max-width:560px;">L'app d'entraînement, de progression et de nutrition qui s'adapte à ta journée.</p>
+  <p style="margin-top:12px;font-size:14px;color:var(--dim);max-width:560px;">Pour toi si tu veux structurer tes séances et suivre ta progression sans dépendre d'un coach au quotidien.</p>
 </section>
 
 <div class="btn-row" style="justify-content:flex-start;">
@@ -60,6 +63,13 @@
   <div class="f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e02020" stroke-width="2"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>Entraînement</div>
   <div class="f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e02020" stroke-width="2"><path d="M5 12a7 7 0 0 0 14 0z"/></svg>Nutrition</div>
   <div class="f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e02020" stroke-width="2"><path d="M4 19V9M12 19V5M20 19v-7"/></svg>Progression</div>
+</div>
+<div class="bio-block" style="padding-top:24px;">
+  <ul style="font-size:14px;line-height:1.8;color:var(--dim);padding-left:20px;margin:0;">
+    <li><strong style="color:var(--wht);">Entraînement</strong> : tes séances et tes programmes, structurés et suivis dans l'app.</li>
+    <li><strong style="color:var(--wht);">Nutrition</strong> : une alimentation qui s'adapte à ta journée plutôt qu'un plan figé.</li>
+    <li><strong style="color:var(--wht);">Progression</strong> : suivi de ton évolution dans le temps, séance après séance.</li>
+  </ul>
 </div>
 
 <!-- Captures d'écran de l'app : masquées tant qu'aucune image réelle n'est disponible.

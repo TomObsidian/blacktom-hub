@@ -13,6 +13,8 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
@@ -42,11 +44,11 @@
     <a href="black-boar.html">Black Boar</a>
     <a href="ultimate-method.html">The Ultimate Method</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </nav>
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
   <a href="index.html">Accueil</a>
   <a href="a-propos.html">À propos</a>
   <a href="contenus.html" aria-current="page">Contenus</a>
@@ -62,7 +64,28 @@
   <p class="lede" style="max-width:600px;">Ce que j'apprends et ce qui fonctionne pour moi, classé par thème. Les contenus arrivent progressivement — chaque catégorie ci-dessous sera complétée au fil du temps, sans rien publier pour combler du vide.</p>
 </section>
 
-<div class="partners" id="category-grid" style="padding-top:44px;"></div>
+<div class="partners" style="padding-top:44px;">
+  <a class="pcard" href="developpe-couche.html">
+    <div class="pcard-head"><div class="letter-mark">D</div><div><div class="name">Développé couché</div><div class="tag">Catégorie</div></div></div>
+    <p class="desc">Progresser au bench, franchir les plateaux, préparer une compétition.</p>
+  </a>
+  <a class="pcard" href="entrainement.html">
+    <div class="pcard-head"><div class="letter-mark">E</div><div><div class="name">Entraînement</div><div class="tag">Catégorie</div></div></div>
+    <p class="desc">Force, hypertrophie et organisation des séances après 40 ans.</p>
+  </a>
+  <a class="pcard" href="nutrition.html">
+    <div class="pcard-head"><div class="letter-mark">N</div><div><div class="name">Nutrition</div><div class="tag">Catégorie</div></div></div>
+    <p class="desc">Protéines, compléments et alimentation autour de l'entraînement.</p>
+  </a>
+  <a class="pcard" href="recuperation.html">
+    <div class="pcard-head"><div class="letter-mark">R</div><div><div class="name">Récupération</div><div class="tag">Catégorie</div></div></div>
+    <p class="desc">Sommeil, gestion de la fatigue et prévention des blessures.</p>
+  </a>
+  <a class="pcard" href="equipement.html">
+    <div class="pcard-head"><div class="letter-mark">É</div><div><div class="name">Équipement</div><div class="tag">Catégorie</div></div></div>
+    <p class="desc">Ce que j'utilise vraiment à la salle et à la maison.</p>
+  </a>
+</div>
 
 <footer>
   <div class="foot-grid">
@@ -114,8 +137,6 @@
   <p class="foot-legal">© BLACKTOM. Certains liens vers des partenaires sont des liens affiliés.</p>
 </footer>
 
-<script src="content-data.js"></script>
-<script src="content.js"></script>
 <script src="app.js"></script>
 <script src="newsletter.js"></script>
 </body>

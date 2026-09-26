@@ -13,6 +13,8 @@
 <meta property="og:image" content="https://blacktom.fr/assets/avatar-black-tom-de3dd432.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
@@ -45,11 +47,11 @@
     <a href="black-boar.html">Black Boar</a>
     <a href="ultimate-method.html">The Ultimate Method</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </nav>
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
   <a href="index.html">Accueil</a>
   <a href="a-propos.html" aria-current="page">À propos</a>
   <a href="contenus.html">Contenus</a>
@@ -114,15 +116,20 @@
   <div class="photo-tile"><img src="assets/blacktom-training-01.jpg" alt="Séance à la salle, sur machine de tirage." loading="lazy" decoding="async"><span>Entraînement</span></div>
   <div class="photo-tile"><img src="assets/blacktom-physique-01.jpg" alt="Physique, pose double biceps." loading="lazy" decoding="async"><span>Physique</span></div>
   <div class="photo-tile"><img src="assets/blacktom-fullblack-01.jpg" alt="Tatouages Full Black, torse et bras." loading="lazy" decoding="async"><span>Full Black</span></div>
+  <!-- Cases masquées tant qu'aucune vraie photo n'est disponible (jamais de tuile vide publique) :
+  PHOTO À FOURNIR : développé couché (en séance, prise de face ou de profil)
   <div class="placeholder-tile">Développé couché</div>
+  PHOTO À FOURNIR : compétition (une fois la première compétition passée)
   <div class="placeholder-tile">Compétition (à venir)</div>
+  PHOTO À FOURNIR : évolution dans le temps (avant/après ou montage chronologique)
   <div class="placeholder-tile">Évolution dans le temps</div>
+  -->
 </div>
 
 <div class="bio-block" style="padding-bottom:8px;">
   <h2>Ce que tu trouveras ici</h2>
-  <p>BLACKTOM.fr va progressivement regrouper mes contenus d'entraînement, mes expériences, mes méthodes, mes outils et mes projets — dont <a href="black-boar.html" style="color:var(--red);">Black Boar</a>, ma marque de vêtements, et <a href="ultimate-method.html" style="color:var(--red);">The Ultimate Method</a>, l'application que j'utilise pour structurer mes séances.</p>
-  <p>Tu y trouveras aussi mes <a href="partenaires.html" style="color:var(--red);">partenaires et recommandations</a>.</p>
+  <p>BLACKTOM.fr va progressivement regrouper mes contenus d'entraînement, mes expériences, mes méthodes, mes outils et mes projets — dont <a href="black-boar.html" style="color:var(--red-text);">Black Boar</a>, ma marque de vêtements, et <a href="ultimate-method.html" style="color:var(--red-text);">The Ultimate Method</a>, l'application que j'utilise pour structurer mes séances.</p>
+  <p>Tu y trouveras aussi mes <a href="partenaires.html" style="color:var(--red-text);">partenaires et recommandations</a>.</p>
 </div>
 
 <footer>

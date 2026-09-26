@@ -47,10 +47,13 @@ window.BLACKTOM_PARTNERS = [
     legal: null
   },
   {
+    // Désactivé (Étape pré-lancement) : il manque l'avantage réel du code
+    // et ce que vous utilisez précisément chez Zumub. Réactivez en repassant
+    // active à true une fois ces deux infos fournies.
     slug: 'zumub',
     name: 'Zumub',
     logo: 'assets/partenaire-zumub.webp',
-    active: true,
+    active: false,
     description: null,
     usage: null,
     offer: null,
@@ -61,10 +64,12 @@ window.BLACKTOM_PARTNERS = [
     legal: null
   },
   {
+    // Désactivé (Étape pré-lancement) : même raison que Zumub — avantage
+    // réel du code et usage précis manquants.
     slug: 'vitastrong',
     name: 'VitaStrong',
     logo: 'assets/partenaire-vitastrong.png',
-    active: true,
+    active: false,
     description: null,
     usage: null,
     offer: null,

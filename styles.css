@@ -1,8 +1,8 @@
 :root{
   --bg:#0a0a0a;--panel:#151515;--panel2:#1c1c1c;
   --line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.20);
-  --txt:#f5f3f0;--dim:#9a9a94;--dim2:#68675f;--wht:#fff;
-  --red:#e02020;--redd:#8b0d0d;
+  --txt:#f5f3f0;--dim:#9a9a94;--dim2:#87857b;--wht:#fff;
+  --red:#e02020;--redd:#8b0d0d;--red-text:#f03030;
   --ph:'Barlow Condensed',sans-serif;--pb:'Inter',sans-serif;
   --maxw:1180px;
 }
@@ -39,7 +39,7 @@ img{max-width:100%;display:block;}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;}
 .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.5) 0%,rgba(10,10,10,.8) 60%,var(--bg) 100%);}
 .hero-inner{position:relative;z-index:1;padding:64px 20px 56px;max-width:640px;}
-.eyebrow{color:var(--red);font-family:var(--ph);font-weight:700;font-size:12px;letter-spacing:.16em;margin:0 0 14px;text-transform:uppercase;}
+.eyebrow{color:var(--red-text);font-family:var(--ph);font-weight:700;font-size:12px;letter-spacing:.16em;margin:0 0 14px;text-transform:uppercase;}
 .eyebrow.dim{color:var(--dim2);}
 h1{margin:0 0 10px;font-family:var(--ph);font-weight:900;line-height:.95;color:var(--wht);font-size:clamp(44px,10vw,104px);}
 .tagline{margin:0 0 18px;font-family:var(--ph);font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--red);font-size:clamp(18px,3.2vw,28px);}
@@ -131,7 +131,7 @@ section{padding:56px 20px 0;}
 .card-icons{display:flex;gap:8px;margin-bottom:18px;}
 .card h3{font-family:var(--ph);font-weight:800;font-size:21px;color:var(--wht);margin:0 0 8px;}
 .card p{margin:0 0 14px;font-size:13.5px;line-height:1.55;color:var(--dim);}
-.card .link{font-size:12px;font-weight:700;color:var(--red);}
+.card .link{font-size:12px;font-weight:700;color:var(--red-text);}
 
 /* PARTNER / PLACEHOLDER CARDS */
 .partners{display:grid;grid-template-columns:1fr;gap:16px;padding:44px 20px 0;}
@@ -157,7 +157,7 @@ a.pcard:hover{border-color:var(--line2);}
 /* CONTENUS — liste de sujets par catégorie (publiés ou à venir) */
 .content-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--txt);text-decoration:none;font-size:15px;}
 .content-row:last-child{border-bottom:none;}
-a.content-row:hover{color:var(--red);}
+a.content-row:hover{color:var(--red-text);}
 .content-row-pending{color:var(--dim);}
 .content-pending{font-size:11px;color:var(--dim2);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line2);border-radius:999px;padding:3px 10px;flex-shrink:0;}
 
@@ -208,7 +208,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:40px 20px 0;}
 .calc-field label{display:block;font-size:13px;font-weight:600;color:var(--dim);margin-bottom:8px;}
 .calc-field input[type="text"], .calc-field select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line2);background:var(--bg);color:var(--txt);font-size:16px;font-family:var(--pb);}
 .calc-field input[aria-invalid="true"]{border-color:var(--red);}
-.calc-err{display:block;color:var(--red);font-size:12.5px;margin-top:6px;min-height:16px;}
+.calc-err{display:block;color:var(--red-text);font-size:12.5px;margin-top:6px;min-height:16px;}
 .calc-radio-row{display:flex;gap:20px;flex-wrap:wrap;}
 .calc-radio-row label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--txt);}
 .calc-radio-row input{width:16px;height:16px;}
@@ -220,7 +220,7 @@ fieldset.calc-field legend{font-size:13px;font-weight:600;color:var(--dim);margi
 .calc-result-hero .k{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px;}
 .calc-result-hero .v{display:block;font-family:var(--ph);font-weight:900;font-size:clamp(40px,10vw,64px);color:var(--wht);line-height:1;}
 .calc-result-hero .raw{display:block;font-size:12.5px;color:var(--dim2);margin-top:10px;}
-.calc-ratio-row{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:17px;font-weight:700;color:var(--red);}
+.calc-ratio-row{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:17px;font-weight:700;color:var(--red-text);}
 .calc-reliability{margin-top:16px;font-size:12.5px;color:var(--dim2);background:var(--panel2);border-radius:10px;padding:10px 14px;}
 
 .calc-table-wrap{margin-top:24px;overflow-x:auto;}
@@ -239,7 +239,7 @@ fieldset.calc-field legend{font-size:13px;font-weight:600;color:var(--dim);margi
 .calc-share-card .sub-line{font-family:var(--ph);font-weight:700;font-size:14px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
 .calc-share-card .card-1rm-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-top:24px;}
 .calc-share-card .card-1rm-value{font-family:var(--ph);font-weight:900;font-size:clamp(36px,10vw,56px);color:var(--wht);}
-.calc-share-card .card-ratio-value{color:var(--red);font-weight:700;font-size:18px;margin-top:6px;}
+.calc-share-card .card-ratio-value{color:var(--red-text);font-weight:700;font-size:18px;margin-top:6px;}
 .calc-share-card .card-meta{color:var(--dim);font-size:13px;margin-top:16px;line-height:1.6;}
 .calc-share-card .card-domain{margin-top:20px;font-weight:700;color:var(--wht);font-size:14px;}
 

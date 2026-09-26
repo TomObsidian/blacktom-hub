@@ -13,6 +13,8 @@
 <meta property="og:image" content="https://blacktom.fr/assets/blacktom-hero-01.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
@@ -45,11 +47,11 @@
     <a href="black-boar.html">Black Boar</a>
     <a href="ultimate-method.html">The Ultimate Method</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </nav>
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
   <a href="index.html" aria-current="page">Accueil</a>
   <a href="a-propos.html">À propos</a>
   <a href="contenus.html">Contenus</a>
@@ -77,7 +79,11 @@
   <a href="partenaires.html" class="btn-subtle" data-track="cta_hero_partenaires">Mes partenaires &amp; codes →</a>
 </div>
 
-<!-- 2. EN CE MOMENT — config dans status.js -->
+<!-- 2. EN CE MOMENT — masqué (pré-lancement) tant qu'aucune vraie valeur n'est
+     fournie : 5 tirets sans donnée réelle comptent comme un placeholder public.
+     Pour réactiver : renseigner poids/developpe_couche/objectif/
+     prochaine_competition/projet_actuel dans status.js, puis retirer ce
+     commentaire.
 <section class="hub-section" id="en-ce-moment">
   <p class="section-eyebrow">En ce moment</p>
   <p class="section-title">Ce qui structure mon entraînement actuellement.</p>
@@ -89,6 +95,7 @@
     <div class="stat-row"><span class="k">Projet actuel</span><span class="v" id="status-projet">—</span></div>
   </div>
 </section>
+-->
 
 <!-- 3. CONTENUS — structure de catégories, aucun article inventé -->
 <section class="hub-section" id="contenus">
