@@ -53,7 +53,7 @@ function fallbackCopy(text) {
 
 function partnerCardHTML(p, sourcePage) {
   var logo = p.logo
-    ? '<img src="' + p.logo + '" alt="' + p.name + '" style="width:48px;height:48px;border-radius:12px;object-fit:cover;">'
+    ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:48px;height:48px;border-radius:12px;object-fit:cover;">'
     : '<div class="letter-mark">' + p.name.charAt(0) + '</div>';
   var desc = p.description ? '<p class="desc">' + p.description + '</p>' : '';
   var usage = p.usage ? '<div class="code-row"><span class="k">Ce que j’utilise</span></div><p style="margin:-8px 0 12px;font-size:13px;color:var(--dim);">' + p.usage + '</p>' : '';
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (logos) {
     logos.innerHTML = active.map(function (p) {
       return p.logo
-        ? '<img src="' + p.logo + '" alt="' + p.name + '" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">'
+        ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">'
         : '<div class="letter-mark" style="width:40px;height:40px;font-size:16px;">' + p.name.charAt(0) + '</div>';
     }).join('');
   }
