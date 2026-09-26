@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculateur 1RM développé couché — Estime ton max | BLACKTOM</title>
+<meta name="description" content="Entre ta charge et ton nombre de répétitions pour obtenir une estimation de ton 1RM au développé couché, ton ratio force/poids de corps et tes charges d'entraînement.">
+<link rel="canonical" href="https://blacktom.fr/outils/calculateur-1rm-developpe-couche">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blacktom.fr/outils/calculateur-1rm-developpe-couche">
+<meta property="og:title" content="Calculateur 1RM développé couché — Estime ton max | BLACKTOM">
+<meta property="og:description" content="Entre ta charge et ton nombre de répétitions pour obtenir une estimation de ton 1RM au développé couché, ton ratio force/poids de corps et tes charges d'entraînement.">
+<meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://blacktom.fr/"},
+    {"@type": "ListItem", "position": 2, "name": "Outils", "item": "https://blacktom.fr/outils"},
+    {"@type": "ListItem", "position": 3, "name": "Calculateur 1RM développé couché", "item": "https://blacktom.fr/outils/calculateur-1rm-developpe-couche"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Comment calculer son 1RM au développé couché ?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Soit en le testant réellement en salle avec un échauffement progressif et idéalement un spotter, soit en l'estimant à partir d'une série sous-maximale (une charge et un nombre de répétitions) via une formule comme celle utilisée par ce calculateur."}},
+    {"@type": "Question", "name": "Quelle formule utilise le calculateur ?",
+     "acceptedAnswer": {"@type": "Answer", "text": "La formule d'Epley : 1RM = charge x (1 + répétitions / 30). Le choix de cette formule est expliqué plus haut sur cette page."}},
+    {"@type": "Question", "name": "Un 1RM estimé est-il fiable ?",
+     "acceptedAnswer": {"@type": "Answer", "text": "C'est une estimation, pas une performance réellement réalisée. Elle reste généralement assez proche de la réalité jusqu'à 8-10 répétitions, puis devient de moins en moins fiable au-delà."}},
+    {"@type": "Question", "name": "Pourquoi mon 1RM réel peut-il être différent de l'estimation ?",
+     "acceptedAnswer": {"@type": "Answer", "text": "La technique, la vitesse d'exécution, la fatigue du jour et ton profil individuel (endurance musculaire à la répétition) font varier le résultat réel par rapport à une formule générale."}},
+    {"@type": "Question", "name": "Comment calculer son ratio au poids de corps ?",
+     "acceptedAnswer": {"@type": "Answer", "text": "En divisant le 1RM (estimé ou réellement testé) par ton poids de corps. Exemple : 140 kg / 78 kg = 1,79."}},
+    {"@type": "Question", "name": "Faut-il tester son vrai 1RM ?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Ce n'est pas obligatoire pour progresser, et un vrai test comporte un risque technique et de blessure sans encadrement adapté. L'estimation suffit pour la plupart des besoins d'entraînement au quotidien."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/index.html" class="brand">
+    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
+    BLACKTOM
+  </a>
+  <div class="nav-links">
+    <a href="/index.html">Accueil</a>
+    <a href="/a-propos.html">À propos</a>
+    <a href="/contenus.html">Contenus</a>
+    <a href="/outils" aria-current="page">Outils</a>
+    <a href="/partenaires.html">Partenaires</a>
+    <a href="/black-boar.html">Black Boar</a>
+    <a href="/ultimate-method.html">The Ultimate Method</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="/index.html">Accueil</a>
+  <a href="/a-propos.html">À propos</a>
+  <a href="/contenus.html">Contenus</a>
+  <a href="/outils" aria-current="page">Outils</a>
+  <a href="/partenaires.html">Partenaires</a>
+  <a href="/black-boar.html">Black Boar</a>
+  <a href="/ultimate-method.html">The Ultimate Method</a>
+</div>
+
+<section style="padding-top:56px;">
+  <p style="font-size:12px;color:var(--dim2);"><a href="/index.html" style="color:var(--dim2);">Accueil</a> → <a href="/outils" style="color:var(--dim2);">Outils</a> → Calculateur 1RM</p>
+  <p class="eyebrow" style="margin-top:20px;">Outil gratuit</p>
+  <h1 style="font-size:clamp(32px,7vw,52px);">Calculateur 1RM développé couché</h1>
+  <p class="lede" style="max-width:620px;">Entre ta charge et ton nombre de répétitions pour obtenir une estimation de ton 1RM, ton ratio force/poids de corps et tes charges d'entraînement.</p>
+</section>
+
+<section style="padding-top:16px;">
+  <form id="calc-form" class="calc-card" novalidate>
+    <div class="calc-field">
+      <label for="calc-bodyweight">Poids de corps (kg)</label>
+      <input type="text" inputmode="decimal" id="calc-bodyweight" name="bodyweight" placeholder="78" aria-describedby="calc-err-bodyweight" required>
+      <span class="calc-err" id="calc-err-bodyweight" role="alert"></span>
+    </div>
+    <div class="calc-field">
+      <label for="calc-load">Charge utilisée (kg)</label>
+      <input type="text" inputmode="decimal" id="calc-load" name="load" placeholder="100" aria-describedby="calc-err-load" required>
+      <span class="calc-err" id="calc-err-load" role="alert"></span>
+    </div>
+    <div class="calc-field">
+      <label for="calc-reps">Nombre de répétitions</label>
+      <select id="calc-reps" name="reps">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+    <fieldset class="calc-field">
+      <legend>Type de répétition</legend>
+      <div class="calc-radio-row">
+        <label><input type="radio" name="calc-rep-type" value="touch-and-go" checked> Touch &amp; Go</label>
+        <label><input type="radio" name="calc-rep-type" value="pause"> Pause compétition</label>
+      </div>
+    </fieldset>
+    <div class="calc-field">
+      <label for="calc-step">Arrondi pratique</label>
+      <select id="calc-step" name="step">
+        <option value="2.5" selected>2,5 kg (standard)</option>
+        <option value="1">1 kg</option>
+        <option value="0.5">0,5 kg (micro-charges)</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Calculer</button>
+  </form>
+
+  <div id="calc-results" class="calc-results" hidden aria-live="polite">
+    <div class="calc-result-hero">
+      <span class="k">1RM estimé</span>
+      <span class="v" id="calc-1rm-main">—</span>
+      <span class="raw" id="calc-1rm-raw"></span>
+      <div class="calc-ratio-row" id="calc-ratio">—</div>
+    </div>
+    <p class="calc-reliability" id="calc-reliability-note" hidden>Au-delà de 10 répétitions, l'estimation devient moins fiable : plus la série est longue, plus l'écart avec ta vraie performance maximale peut être important.</p>
+
+    <div class="calc-table-wrap">
+      <table class="calc-table">
+        <thead><tr><th>% du 1RM</th><th>Charge exacte</th><th>Charge arrondie</th></tr></thead>
+        <tbody id="calc-table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="calc-cta-band">
+      <p><strong>Force</strong> : charges relativement élevées (proches du 1RM) · <strong>Travail principal</strong> : charges intermédiaires · <strong>Volume / technique</strong> : charges plus légères. Reste général — ce n'est pas une prescription personnalisée.</p>
+    </div>
+
+    <div class="calc-share-card" id="calc-share-card">
+      <div class="brand-line">BLACKTOM</div>
+      <div class="sub-line">Bench Calculator</div>
+      <div class="card-1rm-label">1RM estimé</div>
+      <div class="card-1rm-value" id="card-1rm">—</div>
+      <div class="card-ratio-value" id="card-ratio">—</div>
+      <div class="card-meta">
+        Poids : <span id="card-weight">—</span> · Performance : <span id="card-perf">—</span><br>
+        <span id="card-rep-type">—</span>
+      </div>
+      <div class="card-domain">blacktom.fr</div>
+    </div>
+    <canvas id="calc-canvas" width="1080" height="1080" style="display:none;"></canvas>
+
+    <div class="calc-actions">
+      <button type="button" id="calc-download" class="btn btn-ghost">Télécharger l'image</button>
+      <button type="button" id="calc-share" class="btn btn-ghost" hidden>Partager mon résultat</button>
+      <button type="button" id="calc-reset" class="btn btn-subtle">Nouveau calcul</button>
+    </div>
+
+    <div class="calc-cta-band" style="margin-top:24px;">
+      <p>Tu veux progresser au développé couché ?</p>
+      <a href="/developpe-couche.html" class="btn btn-ghost">Voir les contenus développé couché →</a>
+    </div>
+
+    <div class="calc-card" style="margin-top:24px;">
+      <p style="margin:0 0 14px;font-size:14px;color:var(--dim);">Recevoir les prochains outils et contenus BLACKTOM (facultatif, 100% gratuit).</p>
+      <form id="calc-email-form" name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="/merci-blacktom.html">
+        <input type="hidden" name="form-name" value="blacktom-liste">
+        <input type="hidden" name="source_page" value="calculateur-1rm">
+        <input type="hidden" name="source_component" value="outil_resultat">
+        <p class="signup-hp"><label>Ne pas remplir : <input name="bb-hp"></label></p>
+        <div class="signup-row">
+          <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+          <label class="signup-consent">
+            <input type="checkbox" name="consent" required>
+            <span>J'accepte de recevoir les emails de BLACKTOM. <a href="https://black-tom.netlify.app/legal/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a></span>
+          </label>
+          <button type="submit" class="btn btn-ghost btn-block">Recevoir les prochains outils</button>
+        </div>
+        <p id="calc-email-msg" style="font-size:13px;color:var(--dim);margin:10px 0 0;" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="hub-section">
+  <div class="bio-block">
+    <h2>Qu'est-ce que le 1RM ?</h2>
+    <p>Le 1RM (one-rep max) est la charge maximale que tu peux soulever une seule fois, avec une technique correcte. C'est la référence la plus utilisée pour situer ton niveau de force et calculer tes charges d'entraînement.</p>
+
+    <h2>Comment fonctionne l'estimation</h2>
+    <p>Tu n'as pas besoin de tester ton vrai maximum pour l'estimer : à partir d'une série sous-maximale (une charge que tu maîtrises, sur plusieurs répétitions), une formule permet d'approcher ton 1RM. Si tu entres 1 répétition, il n'y a pas d'estimation à faire : la charge saisie est directement ton 1RM déclaré.</p>
+
+    <h2>Formules 1RM : pourquoi Epley</h2>
+    <p>Trois formules sont couramment utilisées en musculation et préparation physique :</p>
+    <ul>
+      <li><strong>Epley</strong> : 1RM = charge × (1 + répétitions ÷ 30). La plus largement utilisée pour les mouvements poly-articulaires comme le développé couché, simple à calculer, et qui reste stable sur une plage de répétitions assez large.</li>
+      <li><strong>Brzycki</strong> : 1RM = charge × 36 ÷ (37 − répétitions). Généralement considérée fiable jusqu'à environ 10 répétitions, mais devient mathématiquement instable à l'approche de 37 répétitions (le dénominateur tend vers zéro).</li>
+      <li><strong>Lombardi</strong> : 1RM = charge × répétitions<sup>0,10</sup>. Moins documentée et moins utilisée en pratique que les deux précédentes.</li>
+    </ul>
+    <p>Ce calculateur utilise <strong>Epley</strong> comme formule principale, car c'est la plus répandue dans les outils de préparation physique pour les mouvements comme le développé couché, et elle ne présente pas d'instabilité mathématique sur la plage de répétitions proposée ici (1 à 15).</p>
+
+    <h2>Limites</h2>
+    <p>Toute formule 1RM reste une <strong>estimation</strong>, jamais une performance réellement réalisée. Elle est généralement assez proche de la réalité jusqu'à 8-10 répétitions ; au-delà, l'écart avec ta vraie performance maximale peut devenir important, car la fatigue et l'endurance musculaire à la répétition varient beaucoup d'une personne à l'autre.</p>
+  </div>
+</section>
+
+<section class="hub-section" id="faq">
+  <p class="section-eyebrow">Questions fréquentes</p>
+  <div class="bio-block">
+    <h3>Comment calculer son 1RM au développé couché ?</h3>
+    <p>Soit en le testant réellement en salle avec un échauffement progressif et idéalement un spotter, soit en l'estimant à partir d'une série sous-maximale via une formule comme celle utilisée ici.</p>
+    <h3>Quelle formule utilise le calculateur ?</h3>
+    <p>La formule d'Epley : 1RM = charge × (1 + répétitions ÷ 30). Voir la section formules ci-dessus pour le détail du choix.</p>
+    <h3>Un 1RM estimé est-il fiable ?</h3>
+    <p>C'est une estimation, pas une performance réellement réalisée. Elle reste généralement assez proche de la réalité jusqu'à 8-10 répétitions, puis devient de moins en moins fiable.</p>
+    <h3>Pourquoi mon 1RM réel peut-il être différent ?</h3>
+    <p>Technique, vitesse d'exécution, fatigue du jour et profil individuel (endurance musculaire) font varier le résultat par rapport à une formule générale.</p>
+    <h3>Comment calculer son ratio au poids de corps ?</h3>
+    <p>En divisant le 1RM (estimé ou réel) par ton poids de corps. Exemple : 140 kg ÷ 78 kg = 1,79.</p>
+    <h3>Faut-il tester son vrai 1RM ?</h3>
+    <p>Ce n'est pas obligatoire pour progresser, et cela comporte un risque technique et de blessure sans encadrement adapté. L'estimation suffit pour la plupart des besoins d'entraînement.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">BLACKTOM</div>
+      <p class="foot-tag">Force &amp; physique après 40 ans.</p>
+      <div class="signup-compact">
+        <div class="signup-compact-title">BLACKTOM — La liste</div>
+        <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="/merci-blacktom.html" data-newsletter data-source-page="calculateur-1rm" data-source-component="footer">
+          <input type="hidden" name="form-name" value="blacktom-liste">
+          <input type="hidden" name="source_page" value="calculateur-1rm">
+          <input type="hidden" name="source_component" value="footer">
+          <p class="signup-hp"><label>Ne pas remplir : <input name="bb-hp"></label></p>
+          <div class="signup-compact-row">
+            <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+            <button type="submit">OK</button>
+          </div>
+          <label class="signup-compact-legal" style="display:flex;gap:6px;align-items:flex-start;cursor:pointer;">
+            <input type="checkbox" name="consent" required style="margin-top:2px;flex-shrink:0;">
+            <span>J'accepte de recevoir les emails de BLACKTOM. <a href="https://black-tom.netlify.app/legal/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a></span>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div>
+      <div class="foot-h">Navigation</div>
+      <a href="/index.html">Accueil</a>
+      <a href="/a-propos.html">À propos</a>
+      <a href="/contenus.html">Contenus</a>
+      <a href="/outils">Outils</a>
+      <a href="/partenaires.html">Partenaires</a>
+      <a href="/black-boar.html">Black Boar</a>
+      <a href="/ultimate-method.html">The Ultimate Method</a>
+    </div>
+    <div>
+      <div class="foot-h">Réseaux</div>
+      <a class="item" href="https://www.instagram.com/xblacktomx/" target="_blank" rel="noopener me">Instagram</a>
+      <a class="item" href="https://www.tiktok.com/@tomobsidian" target="_blank" rel="noopener me">TikTok</a>
+    </div>
+    <div>
+      <div class="foot-h">Contact &amp; légal</div>
+      <a class="item" href="mailto:thomas.obsidian@gmail.com">thomas.obsidian@gmail.com</a>
+      <div class="item" style="font-size:12px;">
+        <a href="https://black-tom.netlify.app/legal/mentions-legales.html" target="_blank" rel="noopener" style="color:var(--dim2);">Mentions légales</a>
+        · <a href="https://black-tom.netlify.app/legal/cgu.html" target="_blank" rel="noopener" style="color:var(--dim2);">CGU</a>
+      </div>
+    </div>
+  </div>
+  <p class="foot-legal">© BLACKTOM. Certains liens vers des partenaires sont des liens affiliés.</p>
+</footer>
+
+<script src="/app.js"></script>
+<script src="/newsletter.js"></script>
+<script src="bench-calculator.js"></script>
+</body>
+</html>

@@ -200,3 +200,48 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:40px 20px 0;}
 .foot-h{color:var(--dim2);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
 .foot-grid a, .foot-grid div.item{display:block;color:var(--dim);font-size:13px;margin-bottom:8px;}
 .foot-legal{color:var(--dim2);font-size:12px;margin:28px 0 0;padding:18px 0;border-top:1px solid var(--line);}
+
+/* CALCULATEUR — Étape 7 (BLACKTOM Bench Calculator) */
+.calc-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;max-width:520px;margin-top:28px;}
+.calc-field{margin-bottom:20px;}
+.calc-field:last-child{margin-bottom:0;}
+.calc-field label{display:block;font-size:13px;font-weight:600;color:var(--dim);margin-bottom:8px;}
+.calc-field input[type="text"], .calc-field select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line2);background:var(--bg);color:var(--txt);font-size:16px;font-family:var(--pb);}
+.calc-field input[aria-invalid="true"]{border-color:var(--red);}
+.calc-err{display:block;color:var(--red);font-size:12.5px;margin-top:6px;min-height:16px;}
+.calc-radio-row{display:flex;gap:20px;flex-wrap:wrap;}
+.calc-radio-row label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--txt);}
+.calc-radio-row input{width:16px;height:16px;}
+fieldset.calc-field{border:0;padding:0;margin:0 0 20px;}
+fieldset.calc-field legend{font-size:13px;font-weight:600;color:var(--dim);margin-bottom:8px;padding:0;}
+
+.calc-results{margin-top:32px;}
+.calc-result-hero{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px 28px;text-align:center;}
+.calc-result-hero .k{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px;}
+.calc-result-hero .v{display:block;font-family:var(--ph);font-weight:900;font-size:clamp(40px,10vw,64px);color:var(--wht);line-height:1;}
+.calc-result-hero .raw{display:block;font-size:12.5px;color:var(--dim2);margin-top:10px;}
+.calc-ratio-row{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:17px;font-weight:700;color:var(--red);}
+.calc-reliability{margin-top:16px;font-size:12.5px;color:var(--dim2);background:var(--panel2);border-radius:10px;padding:10px 14px;}
+
+.calc-table-wrap{margin-top:24px;overflow-x:auto;}
+.calc-table{width:100%;border-collapse:collapse;font-size:14px;}
+.calc-table th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim2);padding:0 12px 10px;border-bottom:1px solid var(--line);}
+.calc-table td{padding:12px;border-bottom:1px solid var(--line);color:var(--dim);}
+.calc-table td strong{color:var(--wht);}
+.calc-table tr:last-child td{border-bottom:none;}
+
+.calc-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+
+/* Carte partageable — visible à l'écran, capturée en canvas pour l'export */
+.calc-share-card{margin-top:28px;background:#0b0b0c;border:1px solid var(--line);border-radius:20px;padding:32px 20px;text-align:center;position:relative;overflow:hidden;}
+.calc-share-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--red);}
+.calc-share-card .brand-line{font-family:var(--ph);font-weight:900;font-size:26px;color:var(--wht);letter-spacing:.02em;}
+.calc-share-card .sub-line{font-family:var(--ph);font-weight:700;font-size:14px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+.calc-share-card .card-1rm-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-top:24px;}
+.calc-share-card .card-1rm-value{font-family:var(--ph);font-weight:900;font-size:clamp(36px,10vw,56px);color:var(--wht);}
+.calc-share-card .card-ratio-value{color:var(--red);font-weight:700;font-size:18px;margin-top:6px;}
+.calc-share-card .card-meta{color:var(--dim);font-size:13px;margin-top:16px;line-height:1.6;}
+.calc-share-card .card-domain{margin-top:20px;font-weight:700;color:var(--wht);font-size:14px;}
+
+.calc-cta-band{margin-top:28px;padding:20px;border:1px dashed var(--line2);border-radius:16px;}
+.calc-cta-band p{margin:0 0 12px;font-size:14px;color:var(--dim);}
