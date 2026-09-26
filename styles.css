@@ -245,3 +245,14 @@ fieldset.calc-field legend{font-size:13px;font-weight:600;color:var(--dim);margi
 
 .calc-cta-band{margin-top:28px;padding:20px;border:1px dashed var(--line2);border-radius:16px;}
 .calc-cta-band p{margin:0 0 12px;font-size:14px;color:var(--dim);}
+
+/* BENCH LAB — objectif, échauffement, chargement de barre */
+.calc-goal-result{margin-top:20px;}
+.plates-checks{display:flex;flex-wrap:wrap;gap:8px;}
+.plates-checks label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--txt);background:var(--panel2);border:1px solid var(--line2);border-radius:10px;padding:8px 12px;cursor:pointer;}
+.plates-checks input{width:15px;height:15px;flex-shrink:0;}
+.plates-side{display:flex;flex-wrap:wrap;gap:8px;}
+.warmup-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--dim);}
+.warmup-row:last-child{border-bottom:none;}
+.warmup-target-row{font-weight:800;color:var(--wht);font-size:17px;}
+.warmup-row .r{color:var(--dim2);font-size:13px;}

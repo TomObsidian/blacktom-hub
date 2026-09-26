@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Calculateur 1RM développé couché — Estime ton max | BLACKTOM</title>
-<meta name="description" content="Entre ta charge et ton nombre de répétitions pour obtenir une estimation de ton 1RM au développé couché, ton ratio force/poids de corps et tes charges d'entraînement.">
+<title>Calculateur 1RM développé couché & Bench Lab | BLACKTOM</title>
+<meta name="description" content="Calcule ton 1RM développé couché, ton ratio force/poids de corps, tes charges d'entraînement, un échauffement progressif et le chargement de barre. Gratuit, sans compte.">
 <link rel="canonical" href="https://blacktom.fr/outils/calculateur-1rm-developpe-couche">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://blacktom.fr/outils/calculateur-1rm-developpe-couche">
-<meta property="og:title" content="Calculateur 1RM développé couché — Estime ton max | BLACKTOM">
-<meta property="og:description" content="Entre ta charge et ton nombre de répétitions pour obtenir une estimation de ton 1RM au développé couché, ton ratio force/poids de corps et tes charges d'entraînement.">
+<meta property="og:title" content="Calculateur 1RM développé couché & Bench Lab | BLACKTOM">
+<meta property="og:description" content="Calcule ton 1RM développé couché, ton ratio force/poids de corps, tes charges d'entraînement, un échauffement progressif et le chargement de barre. Gratuit, sans compte.">
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
@@ -24,7 +24,7 @@
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://blacktom.fr/"},
     {"@type": "ListItem", "position": 2, "name": "Outils", "item": "https://blacktom.fr/outils"},
-    {"@type": "ListItem", "position": 3, "name": "Calculateur 1RM développé couché", "item": "https://blacktom.fr/outils/calculateur-1rm-developpe-couche"}
+    {"@type": "ListItem", "position": 3, "name": "Bench Lab", "item": "https://blacktom.fr/outils/calculateur-1rm-developpe-couche"}
   ]
 }
 </script>
@@ -80,10 +80,11 @@
 </div>
 
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/index.html" style="color:var(--dim2);">Accueil</a> → <a href="/outils" style="color:var(--dim2);">Outils</a> → Calculateur 1RM</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/index.html" style="color:var(--dim2);">Accueil</a> → <a href="/outils" style="color:var(--dim2);">Outils</a> → Bench Lab</p>
   <p class="eyebrow" style="margin-top:20px;">Outil gratuit</p>
-  <h1 style="font-size:clamp(32px,7vw,52px);">Calculateur 1RM développé couché</h1>
-  <p class="lede" style="max-width:620px;">Entre ta charge et ton nombre de répétitions pour obtenir une estimation de ton 1RM, ton ratio force/poids de corps et tes charges d'entraînement.</p>
+  <h1 style="font-size:clamp(32px,7vw,52px);">BLACKTOM Bench Lab</h1>
+  <p class="lede" style="max-width:620px;">Analyse ton bench. Estime ton max. Prépare tes charges.</p>
+  <p style="margin-top:10px;font-size:14px;color:var(--dim);max-width:620px;">1RM estimé, ratio force/poids de corps, objectif, pourcentages d'entraînement, échauffement et chargement de barre — pour le développé couché, gratuit et sans compte.</p>
 </section>
 
 <section style="padding-top:16px;">
@@ -126,6 +127,11 @@
       </div>
     </fieldset>
     <div class="calc-field">
+      <label for="calc-goal">Mon objectif au développé couché (kg) — optionnel</label>
+      <input type="text" inputmode="decimal" id="calc-goal" name="goal" placeholder="140">
+      <span class="calc-err" id="calc-err-goal" role="alert"></span>
+    </div>
+    <div class="calc-field">
       <label for="calc-step">Arrondi pratique</label>
       <select id="calc-step" name="step">
         <option value="2.5" selected>2,5 kg (standard)</option>
@@ -133,7 +139,7 @@
         <option value="0.5">0,5 kg (micro-charges)</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Calculer</button>
+    <button type="submit" class="btn btn-primary btn-block">Analyser mon bench</button>
   </form>
 
   <div id="calc-results" class="calc-results" hidden aria-live="polite">
@@ -143,7 +149,14 @@
       <span class="raw" id="calc-1rm-raw"></span>
       <div class="calc-ratio-row" id="calc-ratio">—</div>
     </div>
-    <p class="calc-reliability" id="calc-reliability-note" hidden>Au-delà de 10 répétitions, l'estimation devient moins fiable : plus la série est longue, plus l'écart avec ta vraie performance maximale peut être important.</p>
+    <p class="calc-reliability" id="calc-reliability-note" hidden>Plus la série est longue, plus l'estimation devient approximative : au-delà de 10 répétitions, l'écart avec ta vraie performance maximale peut être important.</p>
+
+    <div class="status-card calc-goal-result" id="calc-goal-result" hidden>
+      <div class="stat-row"><span class="k">Ton objectif</span><span class="v" id="goal-target">—</span></div>
+      <div class="stat-row"><span class="k">1RM estimé actuel</span><span class="v" id="goal-current">—</span></div>
+      <div class="stat-row"><span class="k">Écart</span><span class="v" id="goal-gap">—</span></div>
+      <div class="stat-row" id="goal-ratio-row"><span class="k">Objectif / poids de corps</span><span class="v" id="goal-ratio">—</span></div>
+    </div>
 
     <div class="calc-table-wrap">
       <table class="calc-table">
@@ -158,7 +171,7 @@
 
     <div class="calc-share-card" id="calc-share-card">
       <div class="brand-line">BLACKTOM</div>
-      <div class="sub-line">Bench Calculator</div>
+      <div class="sub-line">Bench Lab</div>
       <div class="card-1rm-label">1RM estimé</div>
       <div class="card-1rm-value" id="card-1rm">—</div>
       <div class="card-ratio-value" id="card-ratio">—</div>
@@ -175,30 +188,84 @@
       <button type="button" id="calc-share" class="btn btn-ghost" hidden>Partager mon résultat</button>
       <button type="button" id="calc-reset" class="btn btn-subtle">Nouveau calcul</button>
     </div>
+  </div>
+</section>
 
-    <div class="calc-cta-band" style="margin-top:24px;">
-      <p>Tu veux progresser au développé couché ?</p>
-      <a href="/developpe-couche.html" class="btn btn-ghost">Voir les contenus développé couché →</a>
+<section style="padding-top:40px;">
+  <div class="calc-card">
+    <h2 style="margin:0 0 16px;">Préparer une barre</h2>
+    <p style="font-size:14px;color:var(--dim);margin:0 0 20px;">Génère un échauffement progressif jusqu'à une charge cible (ton objectif ou ton 1RM estimé, pré-remplis automatiquement après un calcul ci-dessus).</p>
+    <form id="warmup-form" novalidate>
+      <div class="calc-field">
+        <label for="warmup-target">Charge cible (kg)</label>
+        <input type="text" inputmode="decimal" id="warmup-target" placeholder="130" aria-describedby="warmup-err">
+        <span class="calc-err" id="warmup-err" role="alert"></span>
+      </div>
+      <button type="submit" class="btn btn-ghost btn-block">Générer l'échauffement</button>
+    </form>
+    <div id="warmup-result" hidden style="margin-top:20px;">
+      <div id="warmup-steps"></div>
+      <p class="calc-reliability" style="margin-top:16px;">Proposition indicative à adapter à ton niveau et à tes habitudes d'échauffement.</p>
     </div>
+  </div>
+</section>
 
-    <div class="calc-card" style="margin-top:24px;">
-      <p style="margin:0 0 14px;font-size:14px;color:var(--dim);">Recevoir les prochains outils et contenus BLACKTOM (facultatif, 100% gratuit).</p>
-      <form id="calc-email-form" name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="/merci-blacktom.html">
-        <input type="hidden" name="form-name" value="blacktom-liste">
-        <input type="hidden" name="source_page" value="calculateur-1rm">
-        <input type="hidden" name="source_component" value="outil_resultat">
-        <p class="signup-hp" aria-hidden="true"><label>Ne pas remplir : <input name="bb-hp" tabindex="-1" autocomplete="off"></label></p>
-        <div class="signup-row">
-          <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
-          <label class="signup-consent">
-            <input type="checkbox" name="consent" required>
-            <span>J'accepte de recevoir les emails de BLACKTOM. <a href="/confidentialite.html">Politique de confidentialité</a></span>
-          </label>
-          <button type="submit" class="btn btn-ghost btn-block">Recevoir les prochains outils</button>
+<section style="padding-top:24px;padding-bottom:8px;">
+  <div class="calc-card">
+    <h2 style="margin:0 0 16px;">Comment charger la barre ?</h2>
+    <form id="plates-form" novalidate>
+      <div class="calc-field">
+        <label for="plates-bar">Poids de la barre (kg)</label>
+        <input type="text" inputmode="decimal" id="plates-bar" value="20">
+      </div>
+      <div class="calc-field">
+        <label for="plates-total">Charge totale souhaitée (kg)</label>
+        <input type="text" inputmode="decimal" id="plates-total" placeholder="127.5" aria-describedby="plates-err">
+        <span class="calc-err" id="plates-err" role="alert"></span>
+      </div>
+      <fieldset class="calc-field">
+        <legend>Disques disponibles (par disque)</legend>
+        <div class="plates-checks">
+          <label><input type="checkbox" value="25" checked> 25 kg</label>
+          <label><input type="checkbox" value="20" checked> 20 kg</label>
+          <label><input type="checkbox" value="15" checked> 15 kg</label>
+          <label><input type="checkbox" value="10" checked> 10 kg</label>
+          <label><input type="checkbox" value="5" checked> 5 kg</label>
+          <label><input type="checkbox" value="2.5" checked> 2,5 kg</label>
+          <label><input type="checkbox" value="1.25" checked> 1,25 kg</label>
+          <label><input type="checkbox" value="0.5"> 0,5 kg</label>
+          <label><input type="checkbox" value="0.25"> 0,25 kg</label>
         </div>
-        <p id="calc-email-msg" style="font-size:13px;color:var(--dim);margin:10px 0 0;" role="status"></p>
-      </form>
-    </div>
+      </fieldset>
+      <button type="submit" class="btn btn-ghost btn-block">Calculer le chargement</button>
+    </form>
+    <div id="plates-result" hidden style="margin-top:20px;"></div>
+  </div>
+</section>
+
+<section class="hub-section" style="margin-top:24px;">
+  <div class="calc-cta-band">
+    <p>Tu veux progresser au développé couché ?</p>
+    <a href="/developpe-couche.html" class="btn btn-ghost">Voir les contenus développé couché →</a>
+  </div>
+
+  <div class="calc-card" style="margin-top:24px;">
+    <p style="margin:0 0 14px;font-size:14px;color:var(--dim);">Recevoir les prochains outils et contenus BLACKTOM (facultatif, 100% gratuit).</p>
+    <form id="calc-email-form" name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="/merci-blacktom.html">
+      <input type="hidden" name="form-name" value="blacktom-liste">
+      <input type="hidden" name="source_page" value="calculateur-1rm">
+      <input type="hidden" name="source_component" value="outil_resultat">
+      <p class="signup-hp" aria-hidden="true"><label>Ne pas remplir : <input name="bb-hp" tabindex="-1" autocomplete="off"></label></p>
+      <div class="signup-row">
+        <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+        <label class="signup-consent">
+          <input type="checkbox" name="consent" required>
+          <span>J'accepte de recevoir les emails de BLACKTOM. <a href="/confidentialite.html">Politique de confidentialité</a></span>
+        </label>
+        <button type="submit" class="btn btn-ghost btn-block">Recevoir les prochains outils</button>
+      </div>
+      <p id="calc-email-msg" style="font-size:13px;color:var(--dim);margin:10px 0 0;" role="status"></p>
+    </form>
   </div>
 </section>
 
@@ -218,6 +285,15 @@
       <li><strong>Lombardi</strong> : 1RM = charge × répétitions<sup>0,10</sup>. Moins documentée et moins utilisée en pratique que les deux précédentes.</li>
     </ul>
     <p>Ce calculateur utilise <strong>Epley</strong> comme formule principale, car c'est la plus répandue dans les outils de préparation physique pour les mouvements comme le développé couché, et elle ne présente pas d'instabilité mathématique sur la plage de répétitions proposée ici (1 à 15).</p>
+
+    <h2>Pourquoi comparer son bench à son poids de corps</h2>
+    <p>La charge brute ne dit pas tout : un bench de 100 kg n'a pas le même sens à 60 kg ou à 100 kg de poids de corps. Le ratio (1RM ÷ poids de corps) donne un repère objectif de force relative, comparable dans le temps pour une même personne, sans avoir besoin d'un classement générique débutant/intermédiaire/avancé.</p>
+
+    <h2>Comment utiliser les pourcentages</h2>
+    <p>Le tableau de charges permet de structurer une séance sans redevoir tout recalculer : des pourcentages élevés pour le travail de force, intermédiaires pour le travail principal, plus légers pour le volume ou la technique. Reste un repère général, pas une prescription individualisée.</p>
+
+    <h2>Comment préparer une tentative lourde</h2>
+    <p>Un échauffement progressif (barre à vide, puis charges croissantes avec des répétitions décroissantes) permet d'arriver à une charge proche du maximum sans accumuler de fatigue inutile. C'est ce que génère le module "Préparer une barre" ci-dessus, à ajuster selon ton ressenti du jour.</p>
 
     <h2>Limites</h2>
     <p>Toute formule 1RM reste une <strong>estimation</strong>, jamais une performance réellement réalisée. Elle est généralement assez proche de la réalité jusqu'à 8-10 répétitions ; au-delà, l'écart avec ta vraie performance maximale peut devenir important, car la fatigue et l'endurance musculaire à la répétition varient beaucoup d'une personne à l'autre.</p>

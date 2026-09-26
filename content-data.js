@@ -42,7 +42,7 @@ window.BLACKTOM_CONTENT = [
   { title: 'Développé couché après 40 ans', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
   { title: 'Comment progresser au développé couché', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
   { title: 'Programme développé couché', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
-  { title: 'Calculateur 1RM développé couché', type: 'outil', category: 'developpe-couche', status: 'published', url: '/outils/calculateur-1rm-developpe-couche' },
+  { title: 'BLACKTOM Bench Lab (calculateur 1RM)', type: 'outil', category: 'developpe-couche', status: 'published', url: '/outils/calculateur-1rm-developpe-couche' },
   { title: 'Ratio développé couché / poids du corps', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
   { title: 'Créatine après 40 ans', type: 'article', category: 'nutrition', status: 'planned', url: null },
   { title: 'Combien de protéines après 40 ans', type: 'article', category: 'nutrition', status: 'planned', url: null },
