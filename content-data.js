@@ -40,7 +40,7 @@ window.BLACKTOM_CATEGORIES = [
 window.BLACKTOM_CONTENT = [
   { title: 'Musculation après 40 ans', type: 'pilier', category: null, status: 'planned', url: null },
   { title: 'Développé couché après 40 ans', type: 'article', category: 'developpe-couche', status: 'published', url: '/developpe-couche/apres-40-ans' },
-  { title: 'Comment progresser au développé couché', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
+  { title: 'Comment progresser au développé couché', type: 'article', category: 'developpe-couche', status: 'published', url: '/developpe-couche/progresser' },
   { title: 'Programme développé couché', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
   { title: 'BLACKTOM Bench Lab (calculateur 1RM)', type: 'outil', category: 'developpe-couche', status: 'published', url: '/outils/calculateur-1rm-developpe-couche' },
   { title: 'Ratio développé couché / poids du corps', type: 'article', category: 'developpe-couche', status: 'planned', url: null },
