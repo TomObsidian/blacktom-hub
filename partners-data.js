@@ -36,12 +36,12 @@ window.BLACKTOM_PARTNERS = [
     slug: 'ragna',
     name: 'Ragna',
     logo: 'assets/partenaire-ragna-fe63d166.png',
-    active: false, // en attente du code promo et du lien affilié réels (offre -20% déjà confirmée)
+    active: true,
     description: null,
     usage: null,
     offer: '-20%',
-    code: null,
-    url: null,
+    code: 'BLACKTOM',
+    url: 'https://ragna.fr/',
     utm: true,
     expires: null,
     legal: null
