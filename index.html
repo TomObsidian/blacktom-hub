@@ -142,6 +142,28 @@
   </div>
 </section>
 
+<!-- 8. NEWSLETTER — "BLACKTOM — La liste" -->
+<section class="hub-section">
+  <p class="section-eyebrow">BLACKTOM — La liste</p>
+  <p class="section-title">Je t'envoie mes nouveaux contenus, mes outils, mes programmes et quelques bons plans que je trouve vraiment utiles. Pas un email tous les jours.</p>
+  <div class="signup-card">
+    <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="home" data-source-component="inline">
+      <input type="hidden" name="form-name" value="blacktom-liste">
+      <input type="hidden" name="source_page" value="home">
+      <input type="hidden" name="source_component" value="inline">
+      <p class="signup-hp"><label>Ne pas remplir : <input name="bb-hp"></label></p>
+      <div class="signup-row">
+        <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+        <label class="signup-consent">
+          <input type="checkbox" name="consent" required>
+          <span>J'accepte de recevoir les emails de BLACKTOM. Désinscription possible à tout moment. <a href="https://black-tom.netlify.app/legal/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a></span>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Rejoindre la liste</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 <footer>
   <div class="foot-grid">
     <div>
@@ -178,5 +200,6 @@
 <script src="partners-data.js"></script>
 <script src="partners.js"></script>
 <script src="app.js"></script>
+<script src="newsletter.js"></script>
 </body>
 </html>

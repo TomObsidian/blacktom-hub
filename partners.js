@@ -1,12 +1,6 @@
 // Rendu des cartes partenaires + tracking des clics/copies, à partir de la
 // source unique définie dans partners-data.js.
-
-function trackEvent(name, params) {
-  // Stub prêt pour un vrai outil d'analytics (aucun n'est branché pour
-  // l'instant). Ne collecte que ce qui est nécessaire pour comprendre quel
-  // partenaire/placement génère des clics — rien de personnel.
-  console.debug('[track]', name, params || {});
-}
+// trackEvent() est défini globalement dans app.js (chargé sur toutes les pages).
 
 function getPartner(slug) {
   return (window.BLACKTOM_PARTNERS || []).find(function (p) { return p.slug === slug; });

@@ -1,3 +1,10 @@
+// Stub d'analytics partagé — aucun outil n'est branché pour l'instant,
+// on journalise localement. Remplacer le corps de cette fonction suffira
+// pour brancher un vrai outil plus tard (tout le reste du site l'appelle déjà).
+function trackEvent(name, params) {
+  console.debug('[track]', name, params || {});
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.mobile-menu');
@@ -8,11 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Mesure des clics — stub prêt pour un outil d'analytics futur (aucun outil
-  // n'est branché pour l'instant : on se contente de journaliser localement).
   document.querySelectorAll('[data-track]').forEach(function (el) {
     el.addEventListener('click', function () {
-      console.debug('[track]', el.getAttribute('data-track'));
+      trackEvent(el.getAttribute('data-track'));
     });
   });
 });
