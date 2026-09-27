@@ -7,6 +7,6 @@
 </section>
 {% if block.ctaText %}
 <div class="btn-row" style="justify-content:flex-start;">
-  <a href="{{ block.ctaUrl }}" class="btn btn-primary">{{ block.ctaText }}</a>
+  <a href="{{ block.ctaUrl }}" class="btn btn-primary"{% if block.ctaTrackEvent %} data-track="{{ block.ctaTrackEvent }}"{% endif %}>{{ block.ctaText }}</a>
 </div>
 {% endif %}

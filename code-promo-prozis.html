@@ -82,15 +82,17 @@
   <p class="lede" style="max-width:560px;">Le code que j'utilise et que je partage pour Prozis — la marque de compléments et de vêtements que je porte à l'entraînement.</p>
 </section>
 
-<div class="status-card" style="margin:28px 20px 0;max-width:420px;">
-  <div class="stat-row"><span class="k">Code</span><span class="v" id="prozis-code" style="font-size:20px;letter-spacing:.05em;">BLACKTOM</span></div>
-  <div class="stat-row"><span class="k">Avantage</span><span class="v" id="prozis-offer">-10%</span></div>
+<div id="prozis-offer-block">
+  <div class="status-card" style="margin:28px 20px 0;max-width:420px;">
+    <div class="stat-row"><span class="k">Code</span><span class="v" id="prozis-code" style="font-size:20px;letter-spacing:.05em;">BLACKTOM</span></div>
+    <div class="stat-row"><span class="k">Avantage</span><span class="v" id="prozis-offer">-10%</span></div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-start;">
+    <button type="button" id="prozis-copy" class="btn btn-ghost" onclick="copyPromoCode('prozis','BLACKTOM',this,'code-promo-prozis','hero')">Copier le code</button>
+    <a href="https://www.prozis.com/1SSIS" id="prozis-cta" class="btn btn-primary" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('prozis','code-promo-prozis','hero')">Voir chez Prozis →</a>
+  </div>
+  <p style="padding:0 20px;font-size:12px;color:var(--dim2);max-width:560px;">Lien affilié : je peux toucher une commission sur les achats réalisés via ce lien, sans coût supplémentaire pour vous.</p>
 </div>
-<div class="btn-row" style="justify-content:flex-start;">
-  <button type="button" id="prozis-copy" class="btn btn-ghost" onclick="copyPromoCode('prozis','BLACKTOM',this,'code-promo-prozis')">Copier le code</button>
-  <a href="https://www.prozis.com/1SSIS" id="prozis-cta" class="btn btn-primary" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('prozis','code-promo-prozis','hero')">Voir chez Prozis →</a>
-</div>
-<p style="padding:0 20px;font-size:12px;color:var(--dim2);max-width:560px;">Lien affilié : je peux toucher une commission sur les achats réalisés via ce lien, sans coût supplémentaire pour vous.</p>
 
 <div class="bio-block">
   <h2>Comment utiliser le code</h2>
@@ -207,7 +209,11 @@
   document.addEventListener('DOMContentLoaded', function () {
     window.BLACKTOM_PARTNERS_READY.then(function () {
       var p = getPartner('prozis');
-      if (!p) return;
+      var offerBlock = document.getElementById('prozis-offer-block');
+      if (!p || !isPartnerActive(p)) {
+        if (offerBlock) offerBlock.innerHTML = '<p style="margin:28px 20px 0;color:var(--dim);">Ce partenariat n’est plus actif pour le moment.</p>';
+        return;
+      }
       var cta = document.getElementById('prozis-cta');
       if (cta) cta.href = buildPartnerUrl(p, 'code-promo-prozis', 'hero');
       var codeEl = document.getElementById('prozis-code');
@@ -215,7 +221,7 @@
       var offerEl = document.getElementById('prozis-offer');
       if (offerEl && p.offer) offerEl.textContent = p.offer;
       var copyBtn = document.getElementById('prozis-copy');
-      if (copyBtn && p.code) copyBtn.setAttribute('onclick', "copyPromoCode('prozis','" + p.code + "',this,'code-promo-prozis')");
+      if (copyBtn && p.code) copyBtn.setAttribute('onclick', "copyPromoCode('prozis','" + p.code + "',this,'code-promo-prozis','hero')");
     });
   });
 </script>

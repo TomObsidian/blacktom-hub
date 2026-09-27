@@ -3,5 +3,5 @@
     <h2>{{ block.title }}</h2>
     <p>{{ block.text }}</p>
   </div>
-  <a href="{{ block.ctaUrl }}" class="btn btn-primary">{{ block.ctaText }}</a>
+  <a href="{{ block.ctaUrl }}" class="btn btn-primary"{% if block.ctaTrackEvent %} data-track="{{ block.ctaTrackEvent }}"{% endif %}>{{ block.ctaText }}</a>
 </div>

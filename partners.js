@@ -13,6 +13,19 @@ function getPartner(slug) {
   return (window.BLACKTOM_PARTNERS || []).find(function (p) { return p.slug === slug; });
 }
 
+// Un partenaire reste dans les données même arrêté (historique, SEO) mais ne
+// doit plus jamais afficher un code ou un CTA comme valides une fois désactivé
+// ou expiré : c'est cette fonction qui doit être utilisée partout, pas p.active
+// seul.
+function isPartnerActive(p) {
+  if (!p || p.active === false) return false;
+  if (p.expires) {
+    var expiry = new Date(p.expires);
+    if (!isNaN(expiry.getTime()) && expiry.getTime() < Date.now()) return false;
+  }
+  return true;
+}
+
 function buildPartnerUrl(partner, sourcePage, placement) {
   if (!partner.url) return '#';
   if (partner.utm === false) return partner.url; // lien affilié prioritaire, jamais modifié
@@ -27,13 +40,15 @@ function buildPartnerUrl(partner, sourcePage, placement) {
   }
 }
 
-function trackPartnerClick(slug, sourcePage, placement) {
-  trackEvent('partner_click', { partner: slug, source_page: sourcePage, placement: placement });
+function trackPartnerClick(slug, sourcePage, placement, extra) {
+  var params = { partner: slug, source_page: sourcePage, placement: placement, cta_type: 'affiliate_link' };
+  if (extra) { for (var k in extra) { if (extra[k] != null) params[k] = extra[k]; } }
+  trackEvent('partner_click', params);
 }
 
-function copyPromoCode(slug, code, btn, sourcePage) {
+function copyPromoCode(slug, code, btn, sourcePage, placement) {
   var done = function () {
-    trackEvent('promo_code_copy', { partner: slug, source_page: sourcePage });
+    trackEvent('promo_code_copy', { partner: slug, promo_code: code, source_page: sourcePage, placement: placement || 'unknown' });
     var original = btn.textContent;
     btn.textContent = 'Copié !';
     btn.disabled = true;
@@ -62,27 +77,28 @@ function partnerCardHTML(p, sourcePage) {
   var logo = p.logo
     ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:48px;height:48px;border-radius:12px;object-fit:cover;">'
     : '<div class="letter-mark">' + p.name.charAt(0) + '</div>';
+  var tag = p.category || 'Lien affilié';
   var desc = p.description ? '<p class="desc">' + p.description + '</p>' : '';
   var usage = p.usage ? '<div class="code-row"><span class="k">Ce que j’utilise</span></div><p style="margin:-8px 0 12px;font-size:13px;color:var(--dim);">' + p.usage + '</p>' : '';
   var offerRow = p.offer ? '<div class="code-row"><span class="k">Mon avantage</span><span class="v">' + p.offer + '</span></div>' : '';
   var codeRow = p.code ? '<div class="code-row"><span class="k">Code promo</span><span class="v">' + p.code + '</span></div>' : '';
   var url = buildPartnerUrl(p, sourcePage, 'partenaires_page');
   var copyBtn = p.code
-    ? '<button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" onclick="copyPromoCode(\'' + p.slug + '\',\'' + p.code + '\',this,\'' + sourcePage + '\')">Copier le code</button>'
+    ? '<button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" onclick="copyPromoCode(\'' + p.slug + '\',\'' + p.code + '\',this,\'' + sourcePage + '\',\'partenaires_page\')">Copier le code</button>'
     : '';
   var voirBtn = '<a href="' + url + '" class="btn btn-primary btn-block" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick(\'' + p.slug + '\',\'' + sourcePage + '\',\'partenaires_page\')">Voir chez ' + p.name + ' →</a>';
   var prozisLink = p.slug === 'prozis' ? '<div class="url-hint" style="margin-top:10px;"><a href="code-promo-prozis.html" style="color:var(--red);">Voir la page complète du code Prozis →</a></div>' : '';
 
   return '' +
     '<div class="pcard">' +
-      '<div class="pcard-head">' + logo + '<div><div class="name">' + p.name + '</div><div class="tag">Lien affilié</div></div></div>' +
+      '<div class="pcard-head">' + logo + '<div><div class="name">' + p.name + '</div><div class="tag">' + tag + '</div></div></div>' +
       desc + usage + offerRow + codeRow + copyBtn + voirBtn + prozisLink +
     '</div>';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   window.BLACKTOM_PARTNERS_READY.then(function () {
-    var active = (window.BLACKTOM_PARTNERS || []).filter(function (p) { return p.active !== false; });
+    var active = (window.BLACKTOM_PARTNERS || []).filter(isPartnerActive);
 
     var list = document.getElementById('partners-list');
     if (list) {
