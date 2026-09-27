@@ -24,7 +24,7 @@
       "type": "contenus-teaser",
       "visible": true,
       "eyebrow": "Contenus",
-      "title": "Ce que j'apprends",
+      "title": "Journal",
       "items": [
         { "title": "Développé couché après 40 ans", "category": "Développé couché", "url": "developpe-couche/apres-40-ans", "image": "assets/blacktom-training-01.jpg" },
         { "title": "Comment progresser au développé couché", "category": "Développé couché", "url": "developpe-couche/progresser", "image": "assets/uploads/dsc06198.jpg" }
@@ -36,18 +36,18 @@
       "type": "punch-cta",
       "visible": true,
       "title": "BENCH LAB",
-      "text": "Ton poids. Ta barre. Ton objectif.",
+      "text": "1RM · Ratio · Échauffement · Chargement.",
       "ctaText": "Analyser mon bench →",
       "ctaUrl": "outils/calculateur-1rm-developpe-couche"
     },
     {
       "type": "teaser",
       "visible": true,
-      "image": "assets/uploads/dsc06198.jpg",
+      "image": "assets/uploads/dsc06735.jpg",
       "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
-      "tags": ["Musculation", "Metal", "Tattoo"],
+      "tags": ["Musculation · Metal · Tattoo"],
       "title": "BLACK BOAR",
-      "text": "DROP 01.",
+      "text": "DROP 01",
       "ctaText": "Accès prioritaire →",
       "ctaUrl": "black-boar.html#drop-form",
       "trackId": "cta_blackboar"
@@ -70,7 +70,7 @@
       "imageAlt": "Portrait de Black Tom en salle de musculation.",
       "tags": [],
       "title": "TOM, 43 ANS.",
-      "text": "Force et physique, sans coach ni méthode miracle. Je documente ce que je fais vraiment.",
+      "text": "Musculation, développé couché, physique. Mon entraînement documenté au fil des semaines.",
       "ctaText": "Mon parcours →",
       "ctaUrl": "a-propos.html",
       "trackId": "cta_apropos"
