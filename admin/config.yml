@@ -172,6 +172,130 @@ collections:
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Texte", name: "description", widget: "text" }
 
+      - file: "data/pages/black-boar.json"
+        label: "Black Boar"
+        name: "black-boar"
+        fields:
+          - label: "Référencement (SEO)"
+            name: "seoTitle"
+            widget: "string"
+          - label: "Description (SEO)"
+            name: "seoDescription"
+            widget: "text"
+          - label: "Paramètres du drop"
+            name: "dropSettings"
+            widget: "object"
+            fields:
+              - { label: "Nom du drop", name: "name", widget: "string", hint: "Ex: DROP 01" }
+              - label: "Statut du drop"
+                name: "status"
+                widget: "select"
+                default: "waitlist"
+                options:
+                  - { label: "Brouillon (rien de visible)", value: "draft" }
+                  - { label: "Liste prioritaire (early access)", value: "waitlist" }
+                  - { label: "Précommande", value: "preorder" }
+                  - { label: "Disponible", value: "available" }
+                  - { label: "Épuisé", value: "sold_out" }
+                  - { label: "Archivé", value: "archived" }
+              - { label: "Afficher le formulaire de liste prioritaire", name: "waitlistEnabled", widget: "boolean", default: true }
+              - { label: "Activer les précommandes", name: "preorderEnabled", widget: "boolean", default: false, hint: "Ne pas activer sans avoir validé les infos produit, prix, stock et paiement." }
+              - { label: "Date d'accès prioritaire", name: "earlyAccessDate", widget: "datetime", required: false, hint: "Laisser vide tant que non décidée — n'affiche rien tant que vide." }
+              - { label: "Date d'ouverture publique", name: "publicLaunchDate", widget: "datetime", required: false }
+          - label: "Sections de la page"
+            name: "blocks"
+            widget: "list"
+            label_singular: "Section"
+            summary: "{{fields.title}}"
+            types:
+              - label: "Grand titre (Hero)"
+                name: "bb-hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Photo de fond", name: "image", widget: "image" }
+                  - label: "Cadrage de la photo"
+                    name: "imagePosition"
+                    widget: "select"
+                    default: "50% 50%"
+                    options:
+                      - { label: "Centre", value: "50% 50%" }
+                      - { label: "Haut", value: "50% 20%" }
+                      - { label: "Bas", value: "50% 80%" }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "lede", widget: "text" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", hint: "Ex: #drop-form pour aller directement au formulaire." }
+              - label: "Texte simple"
+                name: "bb-text"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre / texte", name: "title", widget: "text" }
+              - label: "Premier drop (avec formulaire)"
+                name: "bb-drop"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Photo d'ambiance (facultative)", name: "image", widget: "image", required: false }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+                  - { label: "Titre au-dessus du formulaire", name: "formTitle", widget: "string" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Texte de consentement (case à cocher)", name: "consentText", widget: "string", hint: "Ce texte doit rester spécifique au drop, ne pas le confondre avec la newsletter générale BLACKTOM." }
+
+  - name: "produits-black-boar"
+    label: "Produits Black Boar"
+    description: "Architecture prête pour le premier drop — aucun produit ici n'est affiché publiquement tant que les ventes ne sont pas activées."
+    folder: "data/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom", name: "name", widget: "string" }
+      - { label: "Identifiant (slug)", name: "slug", widget: "string" }
+      - label: "Type de produit"
+        name: "productType"
+        widget: "select"
+        options: ["T-shirt", "Hoodie", "Casquette", "Accessoire", "Autre"]
+      - { label: "Description courte", name: "shortDescription", widget: "string" }
+      - { label: "Description complète", name: "description", widget: "text", required: false }
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        required: false
+        field: { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Prix", name: "price", widget: "number", required: false, value_type: "float" }
+      - { label: "Prix précommande", name: "preorderPrice", widget: "number", required: false, value_type: "float" }
+      - label: "Tailles disponibles"
+        name: "sizes"
+        widget: "list"
+        required: false
+        field: { label: "Taille", name: "size", widget: "string" }
+      - { label: "Guide des tailles", name: "sizeGuide", widget: "text", required: false }
+      - { label: "Stock", name: "stock", widget: "number", required: false, value_type: "int" }
+      - label: "Statut"
+        name: "status"
+        widget: "select"
+        default: "draft"
+        options:
+          - { label: "Brouillon", value: "draft" }
+          - { label: "Teaser", value: "teaser" }
+          - { label: "Bientôt disponible", value: "coming_soon" }
+          - { label: "Accès prioritaire", value: "early_access" }
+          - { label: "Précommande", value: "preorder" }
+          - { label: "Disponible", value: "available" }
+          - { label: "Épuisé", value: "sold_out" }
+          - { label: "Archivé", value: "archived" }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1 }
+      - { label: "Drop", name: "drop", widget: "string", default: "drop-01" }
+      - { label: "Disponible à l'achat", name: "available", widget: "boolean", default: false }
+      - { label: "Précommande activée", name: "preorderActive", widget: "boolean", default: false }
+      - { label: "Date de sortie", name: "releaseDate", widget: "datetime", required: false }
+
   - name: "contenus"
     label: "Contenus (liste)"
     description: "La liste des articles/pages qui apparaît dans les hubs de contenu. Phase 1 : cette liste seulement — le texte complet d'un article se modifie encore dans le code pour l'instant."
