@@ -64,6 +64,22 @@ permalink: "contenus.html"
 {% endif %}
 {% endfor %}
 
+{% for c in contentData.content %}
+{% if c.type == "pilier" and c.status == "published" %}
+<section class="hub-section">
+  <div class="teaser">
+    <div class="teaser-media"><img src="assets/hero-training-indus-6eac1aa8.jpg" alt="Tom à l'entraînement, salle de musculation industrielle." loading="lazy" decoding="async"></div>
+    <div class="teaser-body">
+      <div class="tag-row"><span class="tag">Pilier</span></div>
+      <h2>{{ c.title }}</h2>
+      <p>Force, entraînement, récupération et nutrition : mon approche complète après 40 ans.</p>
+      <a href="{{ c.url }}" class="btn btn-primary" data-track="cta_pilier_musculation40">Lire →</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+
 <div class="partners" id="category-grid" style="padding-top:44px;">
   {% for cat in contentData.categories %}
   <a class="pcard" href="{{ cat.slug }}">
