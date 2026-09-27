@@ -1,6 +1,13 @@
 // Rendu des cartes partenaires + tracking des clics/copies, à partir de la
-// source unique définie dans partners-data.js.
+// source unique éditable dans BLACKTOM Admin : data/partners.json.
 // trackEvent() est défini globalement dans app.js (chargé sur toutes les pages).
+
+window.BLACKTOM_PARTNERS_READY = fetch('/data/partners.json')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    window.BLACKTOM_PARTNERS = data.partners || [];
+    return window.BLACKTOM_PARTNERS;
+  });
 
 function getPartner(slug) {
   return (window.BLACKTOM_PARTNERS || []).find(function (p) { return p.slug === slug; });
@@ -74,20 +81,22 @@ function partnerCardHTML(p, sourcePage) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var active = (window.BLACKTOM_PARTNERS || []).filter(function (p) { return p.active !== false; });
+  window.BLACKTOM_PARTNERS_READY.then(function () {
+    var active = (window.BLACKTOM_PARTNERS || []).filter(function (p) { return p.active !== false; });
 
-  var list = document.getElementById('partners-list');
-  if (list) {
-    var sourcePage = list.getAttribute('data-source-page') || 'partenaires';
-    list.innerHTML = active.map(function (p) { return partnerCardHTML(p, sourcePage); }).join('');
-  }
+    var list = document.getElementById('partners-list');
+    if (list) {
+      var sourcePage = list.getAttribute('data-source-page') || 'partenaires';
+      list.innerHTML = active.map(function (p) { return partnerCardHTML(p, sourcePage); }).join('');
+    }
 
-  var logos = document.getElementById('partners-logos');
-  if (logos) {
-    logos.innerHTML = active.map(function (p) {
-      return p.logo
-        ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">'
-        : '<div class="letter-mark" style="width:40px;height:40px;font-size:16px;">' + p.name.charAt(0) + '</div>';
-    }).join('');
-  }
+    var logos = document.getElementById('partners-logos');
+    if (logos) {
+      logos.innerHTML = active.map(function (p) {
+        return p.logo
+          ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">'
+          : '<div class="letter-mark" style="width:40px;height:40px;font-size:16px;">' + p.name.charAt(0) + '</div>';
+      }).join('');
+    }
+  });
 });

@@ -1,0 +1,128 @@
+# BLACKTOM Admin — configuration de l'interface de gestion du site.
+#
+# ⚠️ ÉTAPE EN ATTENTE : "repo" ci-dessous doit être remplacé par le vrai
+# dépôt GitHub (ex: "thomasgueguen/blacktom-hub") une fois qu'il existe.
+# Tant que ce n'est pas fait, /admin ne peut pas se connecter ni publier.
+backend:
+  name: github
+  repo: A-REMPLACER/blacktom-hub
+  branch: main
+
+# Où sont rangées les photos que tu ajoutes depuis l'admin.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Aperçu avant publication.
+publish_mode: editorial_workflow
+
+locale: "fr"
+
+collections:
+  - name: "partenaires"
+    label: "Partenaires"
+    description: "Les marques partenaires affichées sur /partenaires et la home."
+    files:
+      - file: "data/partners.json"
+        label: "Liste des partenaires"
+        name: "partners"
+        fields:
+          - label: "Partenaires"
+            name: "partners"
+            widget: "list"
+            summary: "{{name}} — {{offer}}"
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Afficher ce partenaire", name: "active", widget: "boolean", default: true }
+              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Format carré recommandé." }
+              - { label: "Description courte", name: "description", widget: "text", required: false }
+              - { label: "Ce que j'utilise chez eux", name: "usage", widget: "text", required: false }
+              - { label: "Mon avantage (ex: -10%)", name: "offer", widget: "string", required: false }
+              - { label: "Code promo", name: "code", widget: "string", required: false }
+              - { label: "Lien vers le partenaire", name: "url", widget: "string", required: false }
+              - { label: "Ajouter des paramètres de suivi au lien", name: "utm", widget: "boolean", default: true, hint: "Désactiver seulement si le lien affilié ne doit jamais être modifié." }
+              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string", hint: "Utilisé en interne — ne change rien à l'affichage si tu le modifies par erreur, mais évite de le toucher." }
+
+  - name: "complements"
+    label: "Compléments"
+    description: "La page /complements — un complément par ligne."
+    files:
+      - file: "data/supplements.json"
+        label: "Compléments"
+        name: "supplements"
+        fields:
+          - label: "Catégories"
+            name: "categories"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Nom de la catégorie", name: "name", widget: "string" }
+              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string" }
+          - label: "Compléments"
+            name: "supplements"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Afficher ce complément", name: "active", widget: "boolean", default: true }
+              - { label: "Catégorie", name: "category", widget: "string", hint: "Doit correspondre exactement à l'identifiant technique d'une catégorie ci-dessus." }
+              - { label: "Ordre dans la catégorie", name: "order", widget: "number", default: 1 }
+              - { label: "Explication générale", name: "general", widget: "text", required: false }
+              - { label: "Mon utilisation personnelle", name: "personal", widget: "text", required: false, hint: "Laisser vide plutôt qu'inventer une raison." }
+              - { label: "Moment de prise", name: "timing", widget: "string", required: false }
+              - { label: "Dose personnelle", name: "dose", widget: "string", required: false }
+              - { label: "Note courte", name: "note", widget: "string", required: false }
+              - { label: "Marque", name: "brand", widget: "string", required: false }
+              - { label: "Produit exact", name: "product", widget: "string", required: false }
+              - { label: "Partenaire lié (identifiant)", name: "partnerSlug", widget: "string", required: false }
+              - { label: "Code promo pour ce produit", name: "promoCode", widget: "string", required: false }
+              - { label: "Lien affilié vers ce produit", name: "affiliateUrl", widget: "string", required: false }
+              - { label: "Article BLACKTOM lié", name: "articleUrl", widget: "string", required: false }
+              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string" }
+
+  - name: "performances"
+    label: "Mes performances"
+    description: "Tes chiffres bench — modifiés ici une seule fois, répercutés partout sur le site."
+    files:
+      - file: "data/status.json"
+        label: "Mes performances"
+        name: "status"
+        fields:
+          - { label: "Poids de corps", name: "poids", widget: "string", required: false, hint: "Laisser vide tant que non renseigné — n'affiche jamais une fausse valeur." }
+          - { label: "Meilleur développé couché", name: "developpe_couche", widget: "string", required: false }
+          - { label: "Objectif actuel", name: "objectif", widget: "string", required: false }
+          - { label: "Objectif long terme", name: "objectif_long_terme", widget: "string", required: false }
+          - { label: "Prochaine compétition", name: "prochaine_competition", widget: "string", required: false }
+          - { label: "Projet actuel", name: "projet_actuel", widget: "string", required: false }
+
+  - name: "contenus"
+    label: "Contenus (liste)"
+    description: "La liste des articles/pages qui apparaît dans les hubs de contenu. Phase 1 : cette liste seulement — le texte complet d'un article se modifie encore dans le code pour l'instant."
+    files:
+      - file: "data/content.json"
+        label: "Contenus"
+        name: "content"
+        fields:
+          - label: "Catégories"
+            name: "categories"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string" }
+              - { label: "Phrase d'accroche", name: "tagline", widget: "string" }
+          - label: "Articles, outils et pages"
+            name: "content"
+            widget: "list"
+            summary: "{{title}} — {{status}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: [{ label: "Article", value: "article" }, { label: "Outil", value: "outil" }, { label: "Page", value: "page" }, { label: "Page commerciale", value: "commercial" }, { label: "Article pilier", value: "pilier" }]
+              - { label: "Catégorie (identifiant, vide si aucune)", name: "category", widget: "string", required: false }
+              - label: "État"
+                name: "status"
+                widget: "select"
+                options: [{ label: "Brouillon (masqué du site)", value: "planned" }, { label: "Publié", value: "published" }]
+              - { label: "Adresse (URL) de la page, vide si brouillon", name: "url", widget: "string", required: false }

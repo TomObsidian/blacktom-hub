@@ -1,8 +1,17 @@
 // Rendu de l'architecture de contenu (catégories + contenus publiés),
-// à partir de la source unique définie dans content-data.js.
+// à partir de la source unique éditable dans BLACKTOM Admin : data/content.json.
 // N'affiche que les contenus réellement publiés (jamais de liste "à venir" ni
 // de message d'excuse) : une catégorie sans article publié n'affiche
 // simplement rien ici, la section correspondante est masquée ci-dessous.
+
+window.BLACKTOM_CONTENT_READY = fetch('/data/content.json')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    window.BLACKTOM_CONTENT = data.content || [];
+    window.BLACKTOM_CATEGORIES = data.categories || [];
+    return data;
+  });
+
 function categoryContentHTML(slug) {
   var items = (window.BLACKTOM_CONTENT || []).filter(function (c) {
     return c.category === slug && c.status === 'published' && c.url;
@@ -42,22 +51,24 @@ function hideEmptyContentBlock(el, html) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('[data-content-category]').forEach(function (el) {
-    hideEmptyContentBlock(el, categoryContentHTML(el.getAttribute('data-content-category')));
-  });
+  window.BLACKTOM_CONTENT_READY.then(function () {
+    document.querySelectorAll('[data-content-category]').forEach(function (el) {
+      hideEmptyContentBlock(el, categoryContentHTML(el.getAttribute('data-content-category')));
+    });
 
-  document.querySelectorAll('[data-guides-category]').forEach(function (el) {
-    hideEmptyContentBlock(el, articleListHTML(el.getAttribute('data-guides-category')));
-  });
+    document.querySelectorAll('[data-guides-category]').forEach(function (el) {
+      hideEmptyContentBlock(el, articleListHTML(el.getAttribute('data-guides-category')));
+    });
 
-  var grid = document.getElementById('category-grid');
-  if (grid) {
-    grid.innerHTML = (window.BLACKTOM_CATEGORIES || []).map(function (c) {
-      return '' +
-        '<a class="pcard" href="' + c.slug + '.html">' +
-          '<div class="pcard-head"><div class="letter-mark">' + c.name.charAt(0) + '</div><div><div class="name">' + c.name + '</div><div class="tag">Catégorie</div></div></div>' +
-          '<p class="desc">' + c.tagline + '</p>' +
-        '</a>';
-    }).join('');
-  }
+    var grid = document.getElementById('category-grid');
+    if (grid) {
+      grid.innerHTML = (window.BLACKTOM_CATEGORIES || []).map(function (c) {
+        return '' +
+          '<a class="pcard" href="' + c.slug + '.html">' +
+            '<div class="pcard-head"><div class="letter-mark">' + c.name.charAt(0) + '</div><div><div class="name">' + c.name + '</div><div class="tag">Catégorie</div></div></div>' +
+            '<p class="desc">' + c.tagline + '</p>' +
+          '</a>';
+      }).join('');
+    }
+  });
 });

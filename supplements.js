@@ -1,6 +1,15 @@
-// Rendu de la page /complements à partir de la source unique définie dans
-// supplements-data.js. Compact par design : une ligne par complément, pas de
-// grosse carte — la page doit rester consultable rapidement sur mobile.
+// Rendu de la page /complements à partir de la source unique éditable dans
+// BLACKTOM Admin : data/supplements.json. Compact par design : une ligne par
+// complément, pas de grosse carte — la page doit rester consultable
+// rapidement sur mobile.
+
+window.BLACKTOM_SUPPLEMENTS_READY = fetch('/data/supplements.json')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    window.BLACKTOM_SUPPLEMENTS = data.supplements || [];
+    window.BLACKTOM_SUPPLEMENT_CATEGORIES = data.categories || [];
+    return data;
+  });
 
 function suppRowHTML(s) {
   var metaHTML = '';
@@ -41,17 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
   var container = document.getElementById('supp-list');
   if (!container) return;
 
-  var supplements = (window.BLACKTOM_SUPPLEMENTS || []).filter(function (s) { return s.active !== false; });
-  var categories = window.BLACKTOM_SUPPLEMENT_CATEGORIES || [];
+  window.BLACKTOM_SUPPLEMENTS_READY.then(function () {
+    var supplements = (window.BLACKTOM_SUPPLEMENTS || []).filter(function (s) { return s.active !== false; });
+    var categories = window.BLACKTOM_SUPPLEMENT_CATEGORIES || [];
 
-  container.innerHTML = categories.map(function (cat) {
-    var items = supplements
-      .filter(function (s) { return s.category === cat.slug; })
-      .sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
-    if (!items.length) return '';
-    return '<section class="hub-section" style="padding-top:40px;">' +
-      '<p class="section-eyebrow">' + cat.name + '</p>' +
-      items.map(suppRowHTML).join('') +
-      '</section>';
-  }).join('');
+    container.innerHTML = categories.map(function (cat) {
+      var items = supplements
+        .filter(function (s) { return s.category === cat.slug; })
+        .sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+      if (!items.length) return '';
+      return '<section class="hub-section" style="padding-top:40px;">' +
+        '<p class="section-eyebrow">' + cat.name + '</p>' +
+        items.map(suppRowHTML).join('') +
+        '</section>';
+    }).join('');
+  });
 });

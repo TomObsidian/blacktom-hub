@@ -1,0 +1,60 @@
+{
+  "partners": [
+    {
+      "slug": "prozis",
+      "name": "Prozis",
+      "logo": "assets/partenaire-prozis-16ed36ea.png",
+      "active": true,
+      "description": null,
+      "usage": "Vêtements et accessoires d’entraînement.",
+      "offer": "-10%",
+      "code": "BLACKTOM",
+      "url": "https://www.prozis.com/1SSIS",
+      "utm": true,
+      "expires": null,
+      "legal": null
+    },
+    {
+      "slug": "ragna",
+      "name": "Ragna",
+      "logo": "assets/partenaire-ragna-fe63d166.png",
+      "active": true,
+      "description": null,
+      "usage": null,
+      "offer": "-20%",
+      "code": "BLACKTOM",
+      "url": "https://ragna.fr/",
+      "utm": true,
+      "expires": null,
+      "legal": null
+    },
+    {
+      "slug": "zumub",
+      "name": "Zumub",
+      "logo": "assets/partenaire-zumub.webp",
+      "active": true,
+      "description": null,
+      "usage": null,
+      "offer": "-10%",
+      "code": "BLACKTOM",
+      "url": "https://www.zumub.com/FR/",
+      "utm": true,
+      "expires": null,
+      "legal": null
+    },
+    {
+      "slug": "vitastrong",
+      "name": "VitaStrong",
+      "logo": "assets/partenaire-vitastrong.png",
+      "active": true,
+      "description": null,
+      "usage": null,
+      "offer": "-10%",
+      "code": "BLACKTOM",
+      "url": "https://vitastrong.fr/fr/",
+      "utm": true,
+      "expires": null,
+      "legal": null
+    }
+  ]
+}
