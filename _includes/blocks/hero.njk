@@ -3,15 +3,12 @@
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <h1>{{ block.title }}</h1>
-    <p class="tagline">{{ block.tagline }}</p>
-    <p class="lede">{{ block.lede }}</p>
+    <p class="tagline">{% for line in block.tagline | splitLines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+    {% if block.lede %}<p class="lede">{{ block.lede }}</p>{% endif %}
   </div>
 </div>
+{% if block.primaryCtaText %}
 <div class="btn-row">
   <a href="{{ block.primaryCtaUrl }}" class="btn btn-primary" data-track="cta_hero_apropos">{{ block.primaryCtaText }}</a>
-</div>
-{% if block.secondaryCtaText %}
-<div class="hero-secondary">
-  <a href="{{ block.secondaryCtaUrl }}" class="btn-subtle" data-track="cta_hero_partenaires">{{ block.secondaryCtaText }}</a>
 </div>
 {% endif %}

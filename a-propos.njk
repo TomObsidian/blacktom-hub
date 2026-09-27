@@ -66,17 +66,12 @@ permalink: "a-propos.html"
 
 {% for block in aPropos.blocks %}
 {% if block.visible != false %}
+{% if block.type == "hero" %}{% include "blocks/hero.njk" %}{% endif %}
 {% if block.type == "simple-hero" %}{% include "blocks/simple-hero.njk" %}{% endif %}
 {% if block.type == "bio-text" %}{% include "blocks/bio-text.njk" %}{% endif %}
 {% if block.type == "photo-gallery" %}{% include "blocks/photo-gallery.njk" %}{% endif %}
 {% endif %}
 {% endfor %}
-
-<div class="bio-block" style="padding-bottom:8px;">
-  <h2>Ce que tu trouveras ici</h2>
-  <p>BLACKTOM.fr va progressivement regrouper mes contenus d'entraînement, mes expériences, mes méthodes, mes outils et mes projets — dont <a href="black-boar.html" style="color:var(--red-text);">Black Boar</a>, ma marque de vêtements, et <a href="ultimate-method.html" style="color:var(--red-text);">The Ultimate Method</a>, l'application que j'utilise pour structurer mes séances.</p>
-  <p>Tu y trouveras aussi mes <a href="partenaires.html" style="color:var(--red-text);">partenaires et recommandations</a>.</p>
-</div>
 
 <footer>
   <div class="foot-grid">

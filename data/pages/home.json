@@ -6,30 +6,39 @@
       "image": "assets/blacktom-hero-01.jpg",
       "imagePosition": "50% 15%",
       "title": "BLACKTOM",
-      "tagline": "Force & physique après 40 ans",
-      "lede": "43 ans. Je documente ma progression en force, mon physique et ma préparation pour ma première compétition de développé couché.",
-      "primaryCtaText": "Découvrir BLACKTOM →",
-      "primaryCtaUrl": "a-propos.html",
-      "secondaryCtaText": "Mes partenaires & codes →",
-      "secondaryCtaUrl": "partenaires.html"
+      "tagline": "Force.\nPhysique.\nAprès 40 ans.",
+      "lede": "43 ans · Développé couché · Première compétition en préparation",
+      "primaryCtaText": "Découvrir →",
+      "primaryCtaUrl": "a-propos.html"
+    },
+    {
+      "type": "stat-hero",
+      "visible": true,
+      "label": "Bench",
+      "statKey": "developpe_couche",
+      "goalKey": "objectif",
+      "ctaText": "Suivre la progression →",
+      "ctaUrl": "developpe-couche.html"
     },
     {
       "type": "contenus-teaser",
       "visible": true,
       "eyebrow": "Contenus",
-      "title": "Force & physique après 40 ans",
-      "description": "Ce que j'apprends et ce qui fonctionne pour moi, classé par thème.",
-      "chips": ["Développé couché", "Entraînement", "Nutrition", "Récupération", "Équipement"],
-      "ctaText": "Voir tous les contenus →",
+      "title": "Ce que j'apprends",
+      "items": [
+        { "title": "Développé couché après 40 ans", "category": "Développé couché", "url": "developpe-couche/apres-40-ans", "image": "assets/blacktom-training-01.jpg" },
+        { "title": "Comment progresser au développé couché", "category": "Développé couché", "url": "developpe-couche/progresser", "image": "assets/uploads/dsc06198.jpg" }
+      ],
+      "ctaText": "Tous les contenus →",
       "ctaUrl": "contenus.html"
     },
     {
-      "type": "partners-teaser",
+      "type": "punch-cta",
       "visible": true,
-      "eyebrow": "Ce que j'utilise",
-      "title": "Le matériel et les marques que j'utilise vraiment à l'entraînement.",
-      "ctaText": "Voir mes partenaires & codes →",
-      "ctaUrl": "partenaires.html"
+      "title": "BENCH LAB",
+      "text": "Ton poids. Ta barre. Ton objectif.",
+      "ctaText": "Analyser mon bench →",
+      "ctaUrl": "outils/calculateur-1rm-developpe-couche"
     },
     {
       "type": "teaser",
@@ -38,8 +47,8 @@
       "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
       "tags": ["Musculation", "Metal", "Tattoo"],
       "title": "BLACK BOAR",
-      "text": "Le premier drop arrive. Rejoins la liste prioritaire pour être prévenu en premier.",
-      "ctaText": "Rejoindre la liste →",
+      "text": "DROP 01.",
+      "ctaText": "Accès prioritaire →",
       "ctaUrl": "black-boar.html#drop-form",
       "trackId": "cta_blackboar"
     },
@@ -47,10 +56,10 @@
       "type": "teaser",
       "visible": true,
       "image": null,
-      "tags": ["Entraînement", "Nutrition", "Progression"],
+      "tags": [],
       "title": "THE ULTIMATE METHOD",
-      "text": "L'app que j'utilise pour structurer mes séances, suivre ma progression et adapter ma nutrition à ma journée — pas l'inverse. C'est un projet à part, pensé pour durer au-delà de BLACKTOM.",
-      "ctaText": "Découvrir The Ultimate Method →",
+      "text": "Entraînement. Nutrition. Progression.",
+      "ctaText": "Découvrir →",
       "ctaUrl": "ultimate-method.html",
       "trackId": "cta_ultimatemethod"
     },
@@ -60,8 +69,8 @@
       "image": "assets/blacktom-portrait-01.jpg",
       "imageAlt": "Portrait de Black Tom en salle de musculation.",
       "tags": [],
-      "title": "BLACKTOM, en quelques lignes",
-      "text": "43 ans, en recherche constante de progression physique. Pas un coach — quelqu'un qui documente ce qu'il fait vraiment : l'entraînement, le physique, et la vie autour.",
+      "title": "TOM, 43 ANS.",
+      "text": "Force et physique, sans coach ni méthode miracle. Je documente ce que je fais vraiment.",
       "ctaText": "Mon parcours →",
       "ctaUrl": "a-propos.html",
       "trackId": "cta_apropos"
@@ -70,7 +79,7 @@
       "type": "newsletter",
       "visible": true,
       "eyebrow": "BLACKTOM — La liste",
-      "description": "Je t'envoie mes nouveaux contenus, mes outils, mes programmes et quelques bons plans que je trouve vraiment utiles. Pas un email tous les jours."
+      "description": "Mes prochains contenus et outils, par email."
     }
   ]
 }

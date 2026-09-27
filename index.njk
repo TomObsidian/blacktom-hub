@@ -64,7 +64,9 @@
 {% for block in home.blocks %}
 {% if block.visible != false %}
 {% if block.type == "hero" %}{% include "blocks/hero.njk" %}{% endif %}
+{% if block.type == "stat-hero" %}{% include "blocks/stat-hero.njk" %}{% endif %}
 {% if block.type == "contenus-teaser" %}{% include "blocks/contenus-teaser.njk" %}{% endif %}
+{% if block.type == "punch-cta" %}{% include "blocks/punch-cta.njk" %}{% endif %}
 {% if block.type == "partners-teaser" %}{% include "blocks/partners-teaser.njk" %}{% endif %}
 {% if block.type == "teaser" %}{% include "blocks/teaser.njk" %}{% endif %}
 {% if block.type == "newsletter" %}{% include "blocks/newsletter.njk" %}{% endif %}
