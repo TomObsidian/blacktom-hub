@@ -1,0 +1,13 @@
+<div class="hero">
+  <img class="hero-bg" src="{{ block.image }}" alt="" style="object-position:{{ block.imagePosition | default('50% 50%') }};">
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <img src="assets/icone-512-8692beb4.png" alt="" style="width:72px;height:72px;border-radius:18px;margin-bottom:24px;">
+    <p class="eyebrow">{{ block.eyebrow }}</p>
+    <h1 style="font-size:clamp(40px,9vw,80px);">{{ block.title }}</h1>
+    <p class="lede">{{ block.lede }}</p>
+  </div>
+</div>
+<div class="btn-row">
+  <a href="{{ block.ctaUrl }}" class="btn btn-primary" data-track="cta_blackboar_hero">{{ block.ctaText }}</a>
+</div>

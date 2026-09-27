@@ -34,13 +34,13 @@
     {
       "type": "teaser",
       "visible": true,
-      "image": "assets/hub-shot-tattoo-1a288e43.jpg",
+      "image": "assets/uploads/dsc06198.jpg",
       "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
-      "tags": ["Musculation", "Metal", "Tatouage"],
+      "tags": ["Musculation", "Metal", "Tattoo"],
       "title": "BLACK BOAR",
-      "text": "Une identité qui vient de la salle, des tatouages et d'un univers plutôt sombre — pas d'une planche de tendances fitness.",
-      "ctaText": "Découvrir Black Boar →",
-      "ctaUrl": "black-boar.html",
+      "text": "Le premier drop arrive. Rejoins la liste prioritaire pour être prévenu en premier.",
+      "ctaText": "Rejoindre la liste →",
+      "ctaUrl": "black-boar.html#drop-form",
       "trackId": "cta_blackboar"
     },
     {

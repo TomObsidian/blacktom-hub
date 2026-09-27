@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Netlify traite la requête normalement ; on journalise juste l'intention
       // avant la redirection vers la page de confirmation.
       if (typeof trackEvent === 'function') {
-        trackEvent('newsletter_signup', {
+        var eventName = form.getAttribute('data-track-event') || 'newsletter_signup';
+        trackEvent(eventName, {
           source_page: form.getAttribute('data-source-page') || 'unknown',
           source_component: form.getAttribute('data-source-component') || 'unknown'
         });

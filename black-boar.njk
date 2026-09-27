@@ -1,16 +1,19 @@
+---
+permalink: "black-boar.html"
+---
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Black Boar — BLACKTOM</title>
-<meta name="description" content="Black Boar : musculation, tatouage et univers metal. La marque alternative de BLACKTOM.">
+<title>{{ blackBoar.seoTitle }}</title>
+<meta name="description" content="{{ blackBoar.seoDescription }}">
 <link rel="canonical" href="https://blacktom.fr/black-boar.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://blacktom.fr/black-boar.html">
-<meta property="og:title" content="Black Boar — BLACKTOM">
-<meta property="og:description" content="Black Boar : musculation, tatouage et univers metal. La marque alternative de BLACKTOM.">
-<meta property="og:image" content="https://blacktom.fr/assets/hub-shot-tattoo-1a288e43.jpg">
+<meta property="og:title" content="{{ blackBoar.seoTitle }}">
+<meta property="og:description" content="{{ blackBoar.seoDescription }}">
+<meta property="og:image" content="https://blacktom.fr/assets/uploads/dsc06198.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,44 +51,21 @@
   <a href="ultimate-method.html">The Ultimate Method</a>
 </div>
 
-<div class="hero">
-  <img class="hero-bg" src="assets/hub-shot-tattoo-1a288e43.jpg" alt="" style="object-position:50% 20%;">
-  <div class="hero-scrim"></div>
-  <div class="hero-inner">
-    <img src="assets/icone-512-8692beb4.png" alt="" style="width:72px;height:72px;border-radius:18px;margin-bottom:24px;">
-    <p class="eyebrow">Musculation · Metal · Tatouage</p>
-    <h1 style="font-size:clamp(40px,9vw,80px);">BLACK BOAR</h1>
-    <p class="lede">Une identité qui vient de la salle, des tatouages et d'un univers plutôt sombre — pas d'une marque fitness comme les autres.</p>
-  </div>
-</div>
-
-<section>
-  <p class="section-eyebrow">L'esprit de la marque</p>
-  <p class="section-title">BLACK BOAR prolonge la salle, le tatouage et l'univers metal en dehors de la salle — une identité alternative, pas un simple logo sur un t-shirt de sport.</p>
-</section>
-
-<!-- Visuels produits : masqués tant qu'aucune photo réelle n'est disponible (marque "Prochainement").
-<div class="placeholders">
-  <div class="placeholder-tile">Visuel produit à venir</div>
-  <div class="placeholder-tile">Visuel produit à venir</div>
-  <div class="placeholder-tile">Visuel produit à venir</div>
-</div>
--->
-
-<div class="cta-band">
-  <div>
-    <h2>Prêt à porter la marque ?</h2>
-    <p>La boutique BLACK BOAR arrive bientôt.</p>
-  </div>
-  <a href="#drop-alert" class="btn btn-ghost">Être prévenu du prochain drop →</a>
-</div>
+{% set dropSettings = blackBoar.dropSettings %}
+{% for block in blackBoar.blocks %}
+{% if block.visible != false %}
+{% if block.type == "bb-hero" %}{% include "blocks/bb-hero.njk" %}{% endif %}
+{% if block.type == "bb-text" %}{% include "blocks/bb-text.njk" %}{% endif %}
+{% if block.type == "bb-drop" %}{% include "blocks/bb-drop.njk" %}{% endif %}
+{% endif %}
+{% endfor %}
 
 <footer>
   <div class="foot-grid">
     <div>
       <div class="foot-brand">BLACKTOM</div>
-      <p class="foot-tag">Force & physique après 40 ans.</p>
-      <div class="signup-compact" id="drop-alert">
+      <p class="foot-tag">Force &amp; physique après 40 ans.</p>
+      <div class="signup-compact">
         <div class="signup-compact-title">BLACKTOM — La liste</div>
         <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="blackboar" data-source-component="footer">
           <input type="hidden" name="form-name" value="blacktom-liste">
