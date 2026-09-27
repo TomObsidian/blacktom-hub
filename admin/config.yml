@@ -119,24 +119,57 @@ collections:
                       - { label: "Haut", value: "50% 15%" }
                       - { label: "Bas", value: "50% 85%" }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Sous-titre", name: "tagline", widget: "string" }
-                  - { label: "Texte", name: "lede", widget: "text" }
-                  - { label: "Bouton principal — texte", name: "primaryCtaText", widget: "string" }
-                  - { label: "Bouton principal — lien", name: "primaryCtaUrl", widget: "string" }
-                  - { label: "Bouton secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
-                  - { label: "Bouton secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
-              - label: "Section Contenus"
+                  - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", hint: "Un saut de ligne = une nouvelle ligne affichée, pour un effet plus graphique." }
+                  - { label: "Texte", name: "lede", widget: "string", required: false }
+                  - { label: "Bouton — texte", name: "primaryCtaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string" }
+              - label: "Chiffre clé (ex: Bench)"
+                name: "stat-hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Label", name: "label", widget: "string", hint: "Ex: Bench" }
+                  - label: "Donnée à afficher"
+                    name: "statKey"
+                    widget: "select"
+                    options:
+                      - { label: "Poids de corps", value: "poids" }
+                      - { label: "Meilleur développé couché", value: "developpe_couche" }
+                    hint: "Vient de Mes performances. La section reste masquée tant que cette valeur est vide."
+                  - label: "Objectif associé (facultatif)"
+                    name: "goalKey"
+                    widget: "select"
+                    required: false
+                    options:
+                      - { label: "Objectif actuel", value: "objectif" }
+                      - { label: "Objectif long terme", value: "objectif_long_terme" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false }
+              - label: "Section Contenus (aperçus)"
                 name: "contenus-teaser"
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Texte", name: "description", widget: "text" }
-                  - label: "Étiquettes (catégories affichées)"
-                    name: "chips"
+                  - label: "Contenus mis en avant (3 maximum)"
+                    name: "items"
                     widget: "list"
-                    field: { label: "Étiquette", name: "chip", widget: "string" }
+                    summary: "{{title}}"
+                    fields:
+                      - { label: "Titre", name: "title", widget: "string" }
+                      - { label: "Catégorie", name: "category", widget: "string" }
+                      - { label: "Lien", name: "url", widget: "string" }
+                      - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+              - label: "Bench Lab (accroche)"
+                name: "punch-cta"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Accroche courte", name: "text", widget: "string" }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
               - label: "Section Partenaires"
@@ -241,10 +274,10 @@ collections:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Photo d'ambiance (facultative)", name: "image", widget: "image", required: false }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
-                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
-                  - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Texte", name: "text", widget: "text" }
-                  - { label: "Titre au-dessus du formulaire", name: "formTitle", widget: "string" }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string", required: false }
+                  - { label: "Titre", name: "title", widget: "string", required: false }
+                  - { label: "Texte", name: "text", widget: "text", required: false }
+                  - { label: "Titre au-dessus du formulaire", name: "formTitle", widget: "string", required: false }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Texte de consentement (case à cocher)", name: "consentText", widget: "string", hint: "Ce texte doit rester spécifique au drop, ne pas le confondre avec la newsletter générale BLACKTOM." }
 
@@ -260,6 +293,25 @@ collections:
             label_singular: "Section"
             summary: "{{fields.title}}"
             types:
+              - label: "Grand titre avec photo (Hero)"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Photo de fond", name: "image", widget: "image" }
+                  - label: "Cadrage de la photo"
+                    name: "imagePosition"
+                    widget: "select"
+                    default: "50% 50%"
+                    options:
+                      - { label: "Centre", value: "50% 50%" }
+                      - { label: "Haut", value: "50% 20%" }
+                      - { label: "Bas", value: "50% 80%" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", hint: "Un saut de ligne = une nouvelle ligne affichée." }
+                  - { label: "Texte", name: "lede", widget: "string", required: false }
+                  - { label: "Bouton — texte", name: "primaryCtaText", widget: "string", required: false }
+                  - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string", required: false }
               - label: "Grand titre (Hero simple)"
                 name: "simple-hero"
                 widget: "object"

@@ -1,9 +1,14 @@
 <section class="hub-section" id="contenus">
   <p class="section-eyebrow">{{ block.eyebrow }}</p>
   <p class="section-title">{{ block.title }}</p>
-  <p style="margin-top:14px;font-size:14px;color:var(--dim);max-width:560px;">{{ block.description }}</p>
-  <div class="chip-row">
-    {% for chip in block.chips %}<span class="chip">{{ chip }}</span>{% endfor %}
+  <div class="content-preview-grid">
+    {% for item in block.items %}
+    <a class="content-preview" href="{{ item.url }}">
+      <div class="content-preview-media"><img src="{{ item.image }}" alt="" loading="lazy" decoding="async"></div>
+      <span class="content-preview-cat">{{ item.category }}</span>
+      <span class="content-preview-title">{{ item.title }}</span>
+    </a>
+    {% endfor %}
   </div>
-  <a href="{{ block.ctaUrl }}" class="btn btn-ghost" style="margin-top:20px;" data-track="cta_contenus">{{ block.ctaText }}</a>
+  <a href="{{ block.ctaUrl }}" class="btn btn-ghost" style="margin-top:28px;" data-track="cta_contenus">{{ block.ctaText }}</a>
 </section>

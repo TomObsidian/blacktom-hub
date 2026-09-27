@@ -25,6 +25,11 @@ module.exports = function (eleventyConfig) {
     return (text || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
   });
 
+  // Découpe un texte libre en lignes simples (un saut de ligne = une ligne).
+  eleventyConfig.addFilter("splitLines", function (text) {
+    return (text || "").split(/\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+  });
+
   return {
     dir: {
       input: ".",

@@ -1,0 +1,15 @@
+{% set value = status[block.statKey] %}
+{% if value %}
+<section class="hub-section">
+  <div class="stat-hero">
+    <span class="k">{{ block.label }}</span>
+    <span class="v">{{ value }}</span>
+    {% if block.goalKey and status[block.goalKey] %}<span class="goal">Objectif : {{ status[block.goalKey] }}</span>{% endif %}
+  </div>
+  {% if block.ctaText %}
+  <div class="btn-row" style="justify-content:flex-start;padding:20px 0 0;">
+    <a href="{{ block.ctaUrl }}" class="btn btn-ghost">{{ block.ctaText }}</a>
+  </div>
+  {% endif %}
+</section>
+{% endif %}
