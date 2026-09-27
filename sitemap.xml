@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://blacktom.fr/</loc></url>
-  <url><loc>https://blacktom.fr/a-propos.html</loc></url>
-  <url><loc>https://blacktom.fr/contenus.html</loc></url>
-  <url><loc>https://blacktom.fr/outils</loc></url>
+  <url><loc>https://blacktom.fr/a-propos</loc></url>
+  <url><loc>https://blacktom.fr/contenus</loc></url>
+  <url><loc>https://blacktom.fr/outils/</loc></url>
   <url><loc>https://blacktom.fr/outils/calculateur-1rm-developpe-couche</loc></url>
-  <url><loc>https://blacktom.fr/developpe-couche.html</loc></url>
+  <url><loc>https://blacktom.fr/developpe-couche</loc></url>
   <url><loc>https://blacktom.fr/developpe-couche/apres-40-ans</loc></url>
   <url><loc>https://blacktom.fr/developpe-couche/progresser</loc></url>
-  <url><loc>https://blacktom.fr/entrainement.html</loc></url>
-  <url><loc>https://blacktom.fr/nutrition.html</loc></url>
-  <url><loc>https://blacktom.fr/complements.html</loc></url>
-  <url><loc>https://blacktom.fr/recuperation.html</loc></url>
-  <url><loc>https://blacktom.fr/equipement.html</loc></url>
-  <url><loc>https://blacktom.fr/partenaires.html</loc></url>
-  <url><loc>https://blacktom.fr/code-promo-prozis.html</loc></url>
-  <url><loc>https://blacktom.fr/black-boar.html</loc></url>
-  <url><loc>https://blacktom.fr/ultimate-method.html</loc></url>
-  <url><loc>https://blacktom.fr/mentions-legales.html</loc></url>
-  <url><loc>https://blacktom.fr/confidentialite.html</loc></url>
+  <url><loc>https://blacktom.fr/nutrition</loc></url>
+  <url><loc>https://blacktom.fr/complements</loc></url>
+  <url><loc>https://blacktom.fr/partenaires</loc></url>
+  <url><loc>https://blacktom.fr/code-promo-prozis</loc></url>
+  <url><loc>https://blacktom.fr/black-boar</loc></url>
+  <url><loc>https://blacktom.fr/ultimate-method</loc></url>
+  <url><loc>https://blacktom.fr/mentions-legales</loc></url>
+  <url><loc>https://blacktom.fr/confidentialite</loc></url>
 </urlset>
