@@ -1,11 +1,7 @@
 # BLACKTOM Admin — configuration de l'interface de gestion du site.
-#
-# ⚠️ ÉTAPE EN ATTENTE : "repo" ci-dessous doit être remplacé par le vrai
-# dépôt GitHub (ex: "thomasgueguen/blacktom-hub") une fois qu'il existe.
-# Tant que ce n'est pas fait, /admin ne peut pas se connecter ni publier.
 backend:
   name: github
-  repo: A-REMPLACER/blacktom-hub
+  repo: TomObsidian/blacktom-hub
   branch: main
 
 # Où sont rangées les photos que tu ajoutes depuis l'admin.
