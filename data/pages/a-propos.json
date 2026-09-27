@@ -1,0 +1,58 @@
+{
+  "seoTitle": "À propos de BLACKTOM — Force & physique après 40 ans",
+  "seoDescription": "43 ans, en recherche constante de progression physique. Qui je suis, pourquoi BLACKTOM existe, et ce que je documente au fil de l'entraînement.",
+  "blocks": [
+    {
+      "type": "simple-hero",
+      "visible": true,
+      "eyebrow": "À propos",
+      "title": "BLACKTOM",
+      "tagline": "Force & physique après 40 ans"
+    },
+    {
+      "type": "bio-text",
+      "visible": true,
+      "title": "Qui je suis",
+      "text": "BLACKTOM, c'est moi : 43 ans, toujours en recherche de progression physique et de performance.\n\nPas un coach qui vend une méthode miracle — quelqu'un qui s'entraîne, qui bosse, qui a une famille, et qui documente ce qu'il fait réellement."
+    },
+    {
+      "type": "bio-text",
+      "visible": true,
+      "title": "Pourquoi BLACKTOM existe",
+      "text": "Ce site est né d'une idée simple : montrer ce qu'il est encore possible de construire après 40 ans, quand la plupart des discours fitness s'adressent à des mecs de 20 ans.\n\nPas de posture, pas de théorie. Juste ce qui fonctionne pour moi, au fil de l'entraînement."
+    },
+    {
+      "type": "bio-text",
+      "visible": true,
+      "title": "Mon objectif actuel",
+      "text": "En ce moment, mon fil conducteur c'est le développé couché : progresser en force et me préparer pour ma première compétition.\n\nC'est concret, c'est mesurable, et ça structure une bonne partie de mon entraînement du moment."
+    },
+    {
+      "type": "bio-text",
+      "visible": true,
+      "title": "Mon univers",
+      "text": "BLACKTOM, ce n'est pas que de la musculation. C'est aussi les tatouages, le Full Black, un univers plutôt sombre, plutôt metal.\n\nCe mélange fait partie de qui je suis — pas un habillage marketing autour d'un contenu fitness générique."
+    },
+    {
+      "type": "bio-text",
+      "visible": true,
+      "title": "La vraie vie autour",
+      "text": "Je ne m'entraîne pas à plein temps. Je travaille, j'ai une vie de famille, et l'entraînement se construit autour de ça — pas l'inverse.\n\nBLACKTOM ne raconte pas une vie dédiée à 100 % à la salle, parce que ce n'est pas la mienne."
+    },
+    {
+      "type": "bio-text",
+      "visible": true,
+      "title": "Mon parcours en images",
+      "text": "Photos d'entraînement, physique, développé couché, évolution dans le temps — au fur et à mesure."
+    },
+    {
+      "type": "photo-gallery",
+      "visible": true,
+      "photos": [
+        { "image": "assets/blacktom-training-01.jpg", "alt": "Séance à la salle, sur machine de tirage.", "caption": "Entraînement" },
+        { "image": "assets/blacktom-physique-01.jpg", "alt": "Physique, pose double biceps.", "caption": "Physique" },
+        { "image": "assets/blacktom-fullblack-01.jpg", "alt": "Tatouages Full Black, torse et bras.", "caption": "Full Black" }
+      ]
+    }
+  ]
+}

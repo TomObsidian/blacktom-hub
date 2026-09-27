@@ -248,6 +248,118 @@ collections:
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Texte de consentement (case à cocher)", name: "consentText", widget: "string", hint: "Ce texte doit rester spécifique au drop, ne pas le confondre avec la newsletter générale BLACKTOM." }
 
+      - file: "data/pages/a-propos.json"
+        label: "À propos"
+        name: "a-propos"
+        fields:
+          - { label: "Référencement (SEO)", name: "seoTitle", widget: "string" }
+          - { label: "Description (SEO)", name: "seoDescription", widget: "text" }
+          - label: "Sections de la page"
+            name: "blocks"
+            widget: "list"
+            label_singular: "Section"
+            summary: "{{fields.title}}"
+            types:
+              - label: "Grand titre (Hero simple)"
+                name: "simple-hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Sous-titre court", name: "tagline", widget: "string", required: false }
+                  - { label: "Texte", name: "lede", widget: "text", required: false }
+                  - { label: "Texte secondaire (petit, discret)", name: "subtext", widget: "text", required: false }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false }
+              - label: "Texte (titre + paragraphes)"
+                name: "bio-text"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text", hint: "Laisse une ligne vide entre deux paragraphes." }
+              - label: "Galerie de photos"
+                name: "photo-gallery"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - label: "Photos"
+                    name: "photos"
+                    widget: "list"
+                    summary: "{{caption}}"
+                    fields:
+                      - { label: "Photo", name: "image", widget: "image" }
+                      - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+                      - { label: "Légende", name: "caption", widget: "string" }
+
+      - file: "data/pages/ultimate-method.json"
+        label: "The Ultimate Method"
+        name: "ultimate-method"
+        fields:
+          - { label: "Référencement (SEO)", name: "seoTitle", widget: "string" }
+          - { label: "Description (SEO)", name: "seoDescription", widget: "text" }
+          - label: "Sections de la page"
+            name: "blocks"
+            widget: "list"
+            label_singular: "Section"
+            summary: "{{fields.title}}"
+            types:
+              - label: "Grand titre (Hero simple)"
+                name: "simple-hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Sous-titre court", name: "tagline", widget: "string", required: false }
+                  - { label: "Texte", name: "lede", widget: "text", required: false }
+                  - { label: "Texte secondaire (petit, discret)", name: "subtext", widget: "text", required: false }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false, hint: "L'app est hébergée séparément (black-tom.netlify.app) — lien réel, ne pas remplacer par une URL blacktom.fr." }
+              - label: "Trois points forts"
+                name: "um-features"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - label: "Points forts (3 recommandés)"
+                    name: "items"
+                    widget: "list"
+                    summary: "{{label}}"
+                    fields:
+                      - { label: "Titre", name: "label", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+              - label: "Bandeau CTA"
+                name: "cta-band"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "string" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+
+      - file: "data/pages/contenus.json"
+        label: "Contenus (page d'accueil de la rubrique)"
+        name: "contenus-page"
+        fields:
+          - { label: "Référencement (SEO)", name: "seoTitle", widget: "string" }
+          - { label: "Description (SEO)", name: "seoDescription", widget: "text" }
+          - label: "Sections de la page"
+            name: "blocks"
+            widget: "list"
+            label_singular: "Section"
+            summary: "{{fields.title}}"
+            types:
+              - label: "Grand titre (Hero simple)"
+                name: "simple-hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "lede", widget: "text", required: false }
+
   - name: "produits-black-boar"
     label: "Produits Black Boar"
     description: "Architecture prête pour le premier drop — aucun produit ici n'est affiché publiquement tant que les ventes ne sont pas activées."

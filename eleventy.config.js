@@ -20,6 +20,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setTemplateFormats(["njk"]);
 
+  // Découpe un texte libre en paragraphes (une ligne vide = un nouveau <p>).
+  eleventyConfig.addFilter("splitParagraphs", function (text) {
+    return (text || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+  });
+
   return {
     dir: {
       input: ".",
