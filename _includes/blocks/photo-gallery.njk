@@ -1,0 +1,5 @@
+<div class="placeholders">
+  {% for photo in block.photos %}
+  <div class="photo-tile"><img src="{{ photo.image }}" alt="{{ photo.alt | default('') }}" loading="lazy" decoding="async"><span>{{ photo.caption }}</span></div>
+  {% endfor %}
+</div>

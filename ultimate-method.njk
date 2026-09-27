@@ -1,15 +1,18 @@
+---
+permalink: "ultimate-method.html"
+---
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contenus — Force & physique après 40 ans | BLACKTOM</title>
-<meta name="description" content="Développé couché, entraînement, nutrition, récupération et équipement : ce que j'apprends et ce qui fonctionne pour moi après 40 ans.">
-<link rel="canonical" href="https://blacktom.fr/contenus.html">
+<title>{{ ultimateMethod.seoTitle }}</title>
+<meta name="description" content="{{ ultimateMethod.seoDescription }}">
+<link rel="canonical" href="https://blacktom.fr/ultimate-method.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blacktom.fr/contenus.html">
-<meta property="og:title" content="Contenus — Force & physique après 40 ans | BLACKTOM">
-<meta property="og:description" content="Développé couché, entraînement, nutrition, récupération et équipement : ce que j'apprends et ce qui fonctionne pour moi après 40 ans.">
+<meta property="og:url" content="https://blacktom.fr/ultimate-method.html">
+<meta property="og:title" content="{{ ultimateMethod.seoTitle }}">
+<meta property="og:description" content="{{ ultimateMethod.seoDescription }}">
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
@@ -17,16 +20,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://blacktom.fr/"},
-    {"@type": "ListItem", "position": 2, "name": "Contenus", "item": "https://blacktom.fr/contenus.html"}
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -38,11 +31,11 @@
   <div class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="a-propos.html">À propos</a>
-    <a href="contenus.html" aria-current="page">Contenus</a>
+    <a href="contenus.html">Contenus</a>
     <a href="outils">Outils</a>
     <a href="partenaires.html">Partenaires</a>
     <a href="black-boar.html">Black Boar</a>
-    <a href="ultimate-method.html">The Ultimate Method</a>
+    <a href="ultimate-method.html" aria-current="page">The Ultimate Method</a>
   </div>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -51,52 +44,31 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html">Accueil</a>
   <a href="a-propos.html">À propos</a>
-  <a href="contenus.html" aria-current="page">Contenus</a>
+  <a href="contenus.html">Contenus</a>
   <a href="outils">Outils</a>
   <a href="partenaires.html">Partenaires</a>
   <a href="black-boar.html">Black Boar</a>
-  <a href="ultimate-method.html">The Ultimate Method</a>
+  <a href="ultimate-method.html" aria-current="page">The Ultimate Method</a>
 </div>
 
-<section style="padding-top:56px;">
-  <p class="eyebrow">Contenus</p>
-  <h1 style="font-size:clamp(38px,8vw,64px);">Force &amp; physique après 40 ans</h1>
-  <p class="lede" style="max-width:600px;">Ce que j'apprends et ce qui fonctionne pour moi, classé par thème : développé couché, entraînement, nutrition, récupération, équipement.</p>
-</section>
-
-<div class="partners" style="padding-top:44px;">
-  <a class="pcard" href="developpe-couche.html">
-    <div class="pcard-head"><div class="letter-mark">D</div><div><div class="name">Développé couché</div><div class="tag">Catégorie</div></div></div>
-    <p class="desc">Progresser au bench, franchir les plateaux, préparer une compétition.</p>
-  </a>
-  <a class="pcard" href="entrainement.html">
-    <div class="pcard-head"><div class="letter-mark">E</div><div><div class="name">Entraînement</div><div class="tag">Catégorie</div></div></div>
-    <p class="desc">Force, hypertrophie et organisation des séances après 40 ans.</p>
-  </a>
-  <a class="pcard" href="nutrition.html">
-    <div class="pcard-head"><div class="letter-mark">N</div><div><div class="name">Nutrition</div><div class="tag">Catégorie</div></div></div>
-    <p class="desc">Protéines, compléments et alimentation autour de l'entraînement.</p>
-  </a>
-  <a class="pcard" href="recuperation.html">
-    <div class="pcard-head"><div class="letter-mark">R</div><div><div class="name">Récupération</div><div class="tag">Catégorie</div></div></div>
-    <p class="desc">Sommeil, gestion de la fatigue et prévention des blessures.</p>
-  </a>
-  <a class="pcard" href="equipement.html">
-    <div class="pcard-head"><div class="letter-mark">É</div><div><div class="name">Équipement</div><div class="tag">Catégorie</div></div></div>
-    <p class="desc">Ce que j'utilise vraiment à la salle et à la maison.</p>
-  </a>
-</div>
+{% for block in ultimateMethod.blocks %}
+{% if block.visible != false %}
+{% if block.type == "simple-hero" %}{% include "blocks/simple-hero.njk" %}{% endif %}
+{% if block.type == "um-features" %}{% include "blocks/um-features.njk" %}{% endif %}
+{% if block.type == "cta-band" %}{% include "blocks/cta-band.njk" %}{% endif %}
+{% endif %}
+{% endfor %}
 
 <footer>
   <div class="foot-grid">
     <div>
       <div class="foot-brand">BLACKTOM</div>
-      <p class="foot-tag">Force &amp; physique après 40 ans.</p>
+      <p class="foot-tag">Force & physique après 40 ans.</p>
       <div class="signup-compact">
         <div class="signup-compact-title">BLACKTOM — La liste</div>
-        <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="contenus" data-source-component="footer">
+        <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="ultimate_method" data-source-component="footer">
           <input type="hidden" name="form-name" value="blacktom-liste">
-          <input type="hidden" name="source_page" value="contenus">
+          <input type="hidden" name="source_page" value="ultimate_method">
           <input type="hidden" name="source_component" value="footer">
           <p class="signup-hp" aria-hidden="true"><label>Ne pas remplir : <input name="bb-hp" tabindex="-1" autocomplete="off"></label></p>
           <div class="signup-compact-row">

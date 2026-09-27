@@ -1,0 +1,4 @@
+<div class="bio-block">
+  <h2>{{ block.title }}</h2>
+  {% for para in block.text | splitParagraphs %}<p>{{ para }}</p>{% endfor %}
+</div>

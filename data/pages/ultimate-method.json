@@ -1,0 +1,36 @@
+{
+  "seoTitle": "The Ultimate Method — BLACKTOM",
+  "seoDescription": "The Ultimate Method, l'app d'entraînement, de progression et de nutrition qui s'adapte à ta journée.",
+  "blocks": [
+    {
+      "type": "simple-hero",
+      "visible": true,
+      "eyebrow": "Application d'entraînement",
+      "title": "THE ULTIMATE METHOD",
+      "titleSizeMin": "40px",
+      "titleSizeMax": "68px",
+      "lede": "L'app d'entraînement, de progression et de nutrition qui s'adapte à ta journée.",
+      "ledeMaxWidth": "560px",
+      "subtext": "Pour toi si tu veux structurer tes séances et suivre ta progression sans dépendre d'un coach au quotidien.",
+      "ctaText": "Accéder à l'application →",
+      "ctaUrl": "https://black-tom.netlify.app"
+    },
+    {
+      "type": "um-features",
+      "visible": true,
+      "items": [
+        { "label": "Entraînement", "description": "tes séances et tes programmes, structurés et suivis dans l'app." },
+        { "label": "Nutrition", "description": "une alimentation qui s'adapte à ta journée plutôt qu'un plan figé." },
+        { "label": "Progression", "description": "suivi de ton évolution dans le temps, séance après séance." }
+      ]
+    },
+    {
+      "type": "cta-band",
+      "visible": true,
+      "title": "Prête quand tu l'es.",
+      "text": "Connexion ou création de compte directement depuis l'application.",
+      "ctaText": "Accéder à l'application →",
+      "ctaUrl": "https://black-tom.netlify.app"
+    }
+  ]
+}
