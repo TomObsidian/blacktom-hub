@@ -15,6 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("supplements.js");
   eleventyConfig.addPassthroughCopy("status.js");
   eleventyConfig.addPassthroughCopy("newsletter.js");
+  eleventyConfig.addPassthroughCopy("analytics.js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy("_redirects");

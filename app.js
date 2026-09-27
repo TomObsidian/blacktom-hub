@@ -1,8 +1,12 @@
-// Stub d'analytics partagé — aucun outil n'est branché pour l'instant,
-// on journalise localement. Remplacer le corps de cette fonction suffira
-// pour brancher un vrai outil plus tard (tout le reste du site l'appelle déjà).
+// Point d'entrée analytics unique, appelé par tout le site. Journalise
+// toujours en local ; transmet aussi à GA4 (analytics.js) une fois — et
+// seulement une fois — le consentement donné. Ne jamais passer de donnée
+// personnelle (email, nom, poids, performance...) dans params.
 function trackEvent(name, params) {
   console.debug('[track]', name, params || {});
+  if (window.BLACKTOM_ANALYTICS_CONSENTED && typeof gtag === 'function') {
+    gtag('event', name, params || {});
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {

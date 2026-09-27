@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="analytics.js" defer></script>
 </head>
 <body>
 
@@ -41,7 +42,7 @@
 <section style="padding-top:56px;">
   <p class="eyebrow">Légal</p>
   <h1 style="font-size:clamp(32px,7vw,48px);">Politique de confidentialité</h1>
-  <p class="lede" style="max-width:600px;">Version 1.0 — en vigueur au 26/09/2026.</p>
+  <p class="lede" style="max-width:600px;">Version 1.1 — en vigueur au 27/09/2026.</p>
 </section>
 
 <div class="bio-block">
@@ -51,18 +52,23 @@
 
 <div class="bio-block">
   <h2>2. Données collectées</h2>
-  <p>BLACKTOM.fr ne demande pas de compte et n'installe aucun cookie. La seule donnée collectée est celle que vous fournissez volontairement en vous inscrivant à "BLACKTOM — La liste" :</p>
+  <p>BLACKTOM.fr ne demande pas de compte. La donnée que vous fournissez volontairement en vous inscrivant à "BLACKTOM — La liste" :</p>
   <ul style="font-size:15px;line-height:1.65;color:#dcdad4;padding-left:20px;">
     <li><strong>Adresse email</strong> — pour vous envoyer les contenus et outils BLACKTOM. Base légale : consentement.</li>
     <li><strong>Case de consentement cochée, adresse IP et horodatage</strong> — conservés comme preuve du consentement donné. Base légale : obligation légale (preuve de consentement RGPD).</li>
     <li><strong>Page et emplacement d'inscription</strong> (ex. "home", "footer") — pour comprendre quelles pages génèrent des inscriptions. Base légale : intérêt légitime.</li>
   </ul>
   <p>Aucune autre donnée personnelle n'est demandée (pas de nom, pas de téléphone, pas de données physiques ou de santé).</p>
+  <p style="margin-top:12px;">Si vous acceptez les cookies de mesure d'audience (voir section suivante), Google Analytics reçoit les pages visitées, la provenance du trafic, le type d'appareil et une localisation approximative (pays/région) — jamais votre email ni une donnée qui vous identifie directement. Base légale : consentement. Rien n'est envoyé si vous refusez ou ne répondez pas au bandeau.</p>
 </div>
 
 <div class="bio-block">
   <h2>3. Cookies</h2>
-  <p>Ce site ne dépose aucun cookie. Les polices sont chargées depuis Google Fonts (fichiers statiques, sans dépôt de cookie ni suivi publicitaire).</p>
+  <p>Par défaut, ce site ne dépose aucun cookie. Un bandeau vous propose, à votre première visite, d'accepter ou de refuser les cookies de mesure d'audience (Google Analytics). Si vous acceptez, Google Analytics dépose ses cookies de mesure ; si vous refusez, rien n'est chargé ni déposé. Les polices sont chargées depuis Google Fonts (fichiers statiques, sans dépôt de cookie ni suivi publicitaire).</p>
+  <p style="margin-top:12px;">Vous pouvez changer d'avis à tout moment :</p>
+  <div class="btn-row" style="justify-content:flex-start;padding:8px 0 0;">
+    <button type="button" class="btn btn-ghost" onclick="window.blacktomOpenCookieBanner && window.blacktomOpenCookieBanner()">Gérer mes cookies</button>
+  </div>
 </div>
 
 <div class="bio-block">
@@ -71,6 +77,7 @@
     <thead><tr><th style="text-align:left;padding:8px 0;border-bottom:1px solid var(--line);color:var(--dim2);">Prestataire</th><th style="text-align:left;padding:8px 0;border-bottom:1px solid var(--line);color:var(--dim2);">Rôle</th></tr></thead>
     <tbody>
       <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">Netlify, Inc.</td><td style="padding:8px 0;border-bottom:1px solid var(--line);">Hébergement du site et collecte du formulaire d'inscription (Netlify Forms)</td></tr>
+      <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">Google LLC (Google Analytics)</td><td style="padding:8px 0;border-bottom:1px solid var(--line);">Mesure d'audience — uniquement si vous avez accepté les cookies</td></tr>
     </tbody>
   </table>
   <p style="margin-top:12px;">Netlify agit comme sous-traitant : il traite les données pour notre compte, selon nos instructions. Aucune autre donnée n'est partagée avec un tiers, et aucune n'est vendue.</p>
