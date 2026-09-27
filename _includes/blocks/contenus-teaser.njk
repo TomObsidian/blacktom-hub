@@ -1,0 +1,9 @@
+<section class="hub-section" id="contenus">
+  <p class="section-eyebrow">{{ block.eyebrow }}</p>
+  <p class="section-title">{{ block.title }}</p>
+  <p style="margin-top:14px;font-size:14px;color:var(--dim);max-width:560px;">{{ block.description }}</p>
+  <div class="chip-row">
+    {% for chip in block.chips %}<span class="chip">{{ chip }}</span>{% endfor %}
+  </div>
+  <a href="{{ block.ctaUrl }}" class="btn btn-ghost" style="margin-top:20px;" data-track="cta_contenus">{{ block.ctaText }}</a>
+</section>

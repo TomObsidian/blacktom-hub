@@ -1,0 +1,20 @@
+<section class="hub-section">
+  <p class="section-eyebrow">{{ block.eyebrow }}</p>
+  <p class="section-title">{{ block.description }}</p>
+  <div class="signup-card">
+    <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="home" data-source-component="inline">
+      <input type="hidden" name="form-name" value="blacktom-liste">
+      <input type="hidden" name="source_page" value="home">
+      <input type="hidden" name="source_component" value="inline">
+      <p class="signup-hp" aria-hidden="true"><label>Ne pas remplir : <input name="bb-hp" tabindex="-1" autocomplete="off"></label></p>
+      <div class="signup-row">
+        <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+        <label class="signup-consent">
+          <input type="checkbox" name="consent" required>
+          <span>J'accepte de recevoir les emails de BLACKTOM. Désinscription possible à tout moment. <a href="confidentialite.html">Politique de confidentialité</a></span>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Rejoindre la liste</button>
+      </div>
+    </form>
+  </div>
+</section>
