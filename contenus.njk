@@ -8,9 +8,9 @@ permalink: "contenus.html"
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ contenusPage.seoTitle }}</title>
 <meta name="description" content="{{ contenusPage.seoDescription }}">
-<link rel="canonical" href="https://blacktom.fr/contenus.html">
+<link rel="canonical" href="https://blacktom.fr/contenus">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blacktom.fr/contenus.html">
+<meta property="og:url" content="https://blacktom.fr/contenus">
 <meta property="og:title" content="{{ contenusPage.seoTitle }}">
 <meta property="og:description" content="{{ contenusPage.seoDescription }}">
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
@@ -26,7 +26,7 @@ permalink: "contenus.html"
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://blacktom.fr/"},
-    {"@type": "ListItem", "position": 2, "name": "Contenus", "item": "https://blacktom.fr/contenus.html"}
+    {"@type": "ListItem", "position": 2, "name": "Contenus", "item": "https://blacktom.fr/contenus"}
   ]
 }
 </script>
@@ -40,7 +40,7 @@ permalink: "contenus.html"
   </a>
   <div class="nav-links">
     <a href="contenus.html" aria-current="page">Journal</a>
-    <a href="outils">Bench Lab</a>
+    <a href="outils/">Bench Lab</a>
     <a href="black-boar.html">Black Boar</a>
     <a href="ultimate-method.html">Ultimate Method</a>
     <a href="a-propos.html">À propos</a>
@@ -51,7 +51,7 @@ permalink: "contenus.html"
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <a href="contenus.html" aria-current="page">Journal</a>
-  <a href="outils">Bench Lab</a>
+  <a href="outils/">Bench Lab</a>
   <a href="black-boar.html">Black Boar</a>
   <a href="ultimate-method.html">Ultimate Method</a>
   <a href="a-propos.html">À propos</a>
@@ -63,7 +63,14 @@ permalink: "contenus.html"
 {% endif %}
 {% endfor %}
 
-<div class="partners" id="category-grid" style="padding-top:44px;"></div>
+<div class="partners" id="category-grid" style="padding-top:44px;">
+  {% for cat in contentData.categories %}
+  <a class="pcard" href="{{ cat.slug }}">
+    <div class="pcard-head"><div class="letter-mark">{{ cat.name | first }}</div><div><div class="name">{{ cat.name }}</div><div class="tag">Catégorie</div></div></div>
+    <p class="desc">{{ cat.tagline }}</p>
+  </a>
+  {% endfor %}
+</div>
 
 <footer>
   <div class="foot-grid">
@@ -91,7 +98,7 @@ permalink: "contenus.html"
     <div>
       <div class="foot-h">Navigation</div>
       <a href="contenus.html">Journal</a>
-      <a href="outils">Bench Lab</a>
+      <a href="outils/">Bench Lab</a>
       <a href="black-boar.html">Black Boar</a>
       <a href="ultimate-method.html">Ultimate Method</a>
       <a href="a-propos.html">À propos</a>

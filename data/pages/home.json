@@ -26,8 +26,8 @@
       "eyebrow": "Contenus",
       "title": "Journal",
       "items": [
-        { "title": "Développé couché après 40 ans", "category": "Développé couché", "url": "developpe-couche/apres-40-ans", "image": "assets/blacktom-training-01.jpg" },
-        { "title": "Comment progresser au développé couché", "category": "Développé couché", "url": "developpe-couche/progresser", "image": "assets/uploads/dsc06198.jpg" }
+        { "title": "Développé couché après 40 ans", "category": "Développé couché", "url": "developpe-couche/apres-40-ans", "image": "assets/blacktom-training-01.jpg", "imageAlt": "Tom à l'entraînement, dos tourné, sur une machine de tirage." },
+        { "title": "Comment progresser au développé couché", "category": "Développé couché", "url": "developpe-couche/progresser", "image": "assets/uploads/dsc06198.jpg", "imageAlt": "Tom réalisant un développé couché en salle de musculation." }
       ],
       "ctaText": "Tous les contenus →",
       "ctaUrl": "contenus.html"

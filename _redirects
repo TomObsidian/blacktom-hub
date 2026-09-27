@@ -1,0 +1,28 @@
+# Domaine canonique unique : blacktom.fr
+# (http:// et www. sont déjà redirigés automatiquement par Netlify)
+https://blacktom-hub.netlify.app/*  https://blacktom.fr/:splat  301!
+
+# URLs .html dupliquées -> version canonique sans extension
+# Le "!" force la redirection même si un fichier .html existe à cet endroit
+# (ne concerne pas merci-blacktom.html / merci-blackboar.html : cibles de
+# soumission de formulaire, laissées telles quelles, déjà en noindex)
+/index.html                                          /                                          301!
+/a-propos.html                                        /a-propos                                  301!
+/contenus.html                                        /contenus                                  301!
+/black-boar.html                                      /black-boar                                301!
+/ultimate-method.html                                 /ultimate-method                           301!
+/developpe-couche.html                                /developpe-couche                          301!
+/entrainement.html                                    /entrainement                              301!
+/nutrition.html                                       /nutrition                                 301!
+/recuperation.html                                    /recuperation                              301!
+/equipement.html                                      /equipement                                301!
+/complements.html                                     /complements                               301!
+/partenaires.html                                     /partenaires                               301!
+/code-promo-prozis.html                               /code-promo-prozis                         301!
+/mentions-legales.html                                /mentions-legales                          301!
+/confidentialite.html                                 /confidentialite                           301!
+/outils/index.html                                    /outils/                                   301!
+/outils.html                                          /outils/                                   301!
+/outils/calculateur-1rm-developpe-couche.html         /outils/calculateur-1rm-developpe-couche   301!
+/developpe-couche/apres-40-ans.html                   /developpe-couche/apres-40-ans             301!
+/developpe-couche/progresser.html                     /developpe-couche/progresser               301!

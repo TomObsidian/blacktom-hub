@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (grid) {
       grid.innerHTML = (window.BLACKTOM_CATEGORIES || []).map(function (c) {
         return '' +
-          '<a class="pcard" href="' + c.slug + '.html">' +
+          '<a class="pcard" href="' + c.slug + '">' +
             '<div class="pcard-head"><div class="letter-mark">' + c.name.charAt(0) + '</div><div><div class="name">' + c.name + '</div><div class="tag">Catégorie</div></div></div>' +
             '<p class="desc">' + c.tagline + '</p>' +
           '</a>';

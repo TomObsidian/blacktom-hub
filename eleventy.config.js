@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("newsletter.js");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
+  eleventyConfig.addPassthroughCopy("_redirects");
 
   eleventyConfig.setTemplateFormats(["njk"]);
 
