@@ -179,6 +179,7 @@ a.pcard:hover{border-color:var(--line2);}
 .content-preview:hover .content-preview-media img{transform:scale(1.03);}
 .content-preview-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);}
 .content-preview-title{font-family:var(--ph);font-weight:700;font-size:19px;color:var(--wht);}
+.content-preview-desc{font-size:13px;line-height:1.5;color:var(--dim);margin-top:-4px;}
 @media (prefers-reduced-motion: reduce){ .content-preview:hover .content-preview-media img{transform:none;} }
 
 /* CONTENUS — liste de sujets par catégorie (publiés ou à venir) */

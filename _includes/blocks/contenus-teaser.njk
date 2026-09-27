@@ -7,6 +7,7 @@
       <div class="content-preview-media"><img src="{{ item.image }}" alt="{{ item.imageAlt | default('') }}" loading="lazy" decoding="async"></div>
       <span class="content-preview-cat">{{ item.category }}</span>
       <span class="content-preview-title">{{ item.title }}</span>
+      {% if item.description %}<span class="content-preview-desc">{{ item.description }}</span>{% endif %}
     </a>
     {% endfor %}
   </div>

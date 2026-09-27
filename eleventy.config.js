@@ -33,6 +33,34 @@ module.exports = function (eleventyConfig) {
     return (text || "").split(/\n/).map(function (p) { return p.trim(); }).filter(Boolean);
   });
 
+  // Miroir exact de isPartnerActive() dans partners.js — un partenaire
+  // désactivé ou dont la date de fin est passée ne doit jamais être rendu,
+  // y compris dans les pages où les partenaires sont affichés au build.
+  eleventyConfig.addFilter("isPartnerActive", function (p) {
+    if (!p || p.active === false) return false;
+    if (p.expires) {
+      var expiry = new Date(p.expires);
+      if (!isNaN(expiry.getTime()) && expiry.getTime() < Date.now()) return false;
+    }
+    return true;
+  });
+
+  // Miroir exact de buildPartnerUrl() dans partners.js (sans source_page/
+  // placement, qui ne concernent que le tracking, pas l'URL elle-même).
+  eleventyConfig.addFilter("partnerUrl", function (p) {
+    if (!p || !p.url) return "#";
+    if (p.utm === false) return p.url;
+    try {
+      var u = new URL(p.url);
+      u.searchParams.set("utm_source", "blacktom");
+      u.searchParams.set("utm_medium", "affiliate");
+      u.searchParams.set("utm_campaign", p.slug);
+      return u.toString();
+    } catch (e) {
+      return p.url;
+    }
+  });
+
   return {
     dir: {
       input: ".",
