@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("outils");
   eleventyConfig.addPassthroughCopy("developpe-couche");
+  eleventyConfig.addPassthroughCopy("nutrition");
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("app.js");
   eleventyConfig.addPassthroughCopy("content.js");
