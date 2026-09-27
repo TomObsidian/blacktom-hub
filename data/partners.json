@@ -1,60 +1,60 @@
 {
   "partners": [
     {
-      "slug": "prozis",
-      "name": "Prozis",
-      "logo": "assets/partenaire-prozis-16ed36ea.png",
-      "active": true,
-      "description": null,
       "usage": "Vêtements et accessoires d’entraînement.",
-      "offer": "-10%",
+      "active": true,
+      "logo": "/assets/uploads/prozis.png",
+      "name": "Prozis",
+      "slug": "prozis",
       "code": "BLACKTOM",
+      "utm": true,
       "url": "https://www.prozis.com/1SSIS",
-      "utm": true,
       "expires": null,
-      "legal": null
+      "legal": null,
+      "offer": "-10%",
+      "description": null
     },
     {
-      "slug": "ragna",
+      "usage": null,
+      "active": true,
+      "logo": "/assets/uploads/nouveau-viking-1-.png",
       "name": "Ragna",
-      "logo": "assets/partenaire-ragna-fe63d166.png",
-      "active": true,
-      "description": null,
-      "usage": null,
-      "offer": "-20%",
+      "slug": "ragna",
       "code": "BLACKTOM",
+      "utm": true,
       "url": "https://ragna.fr/",
-      "utm": true,
       "expires": null,
-      "legal": null
+      "legal": null,
+      "offer": "-20%",
+      "description": null
     },
     {
-      "slug": "zumub",
+      "usage": null,
+      "active": true,
+      "logo": "/assets/uploads/zumub.webp",
       "name": "Zumub",
-      "logo": "assets/partenaire-zumub.webp",
-      "active": true,
-      "description": null,
-      "usage": null,
-      "offer": "-10%",
+      "slug": "zumub",
       "code": "BLACKTOM",
-      "url": "https://www.zumub.com/FR/",
       "utm": true,
+      "url": "https://www.zumub.com/FR/",
       "expires": null,
-      "legal": null
+      "legal": null,
+      "offer": "-10%",
+      "description": null
     },
     {
-      "slug": "vitastrong",
-      "name": "VitaStrong",
-      "logo": "assets/partenaire-vitastrong.png",
-      "active": true,
-      "description": null,
       "usage": null,
-      "offer": "-10%",
+      "active": true,
+      "logo": "/assets/uploads/b76bd54a-f152-491a-8fb8-6a70be6b7424.png",
+      "name": "VitaStrong",
+      "slug": "vitastrong",
       "code": "BLACKTOM",
-      "url": "https://vitastrong.fr/fr/",
       "utm": true,
+      "url": "https://vitastrong.fr/fr/",
       "expires": null,
-      "legal": null
+      "legal": null,
+      "offer": "-10%",
+      "description": null
     }
   ]
 }
