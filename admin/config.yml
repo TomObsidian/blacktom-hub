@@ -28,7 +28,9 @@ collections:
             summary: "{{name}} — {{offer}}"
             fields:
               - { label: "Nom", name: "name", widget: "string" }
-              - { label: "Afficher ce partenaire", name: "active", widget: "boolean", default: true }
+              - { label: "Afficher ce partenaire", name: "active", widget: "boolean", default: true, hint: "Décoche pour retirer un partenaire sans supprimer ses données (historique, pages qui le référencent)." }
+              - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex: Nutrition · Compléments, Vêtements d'entraînement." }
+              - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Réservé à un usage futur (home, newsletter) — sans effet pour l'instant." }
               - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Format carré recommandé." }
               - { label: "Description courte", name: "description", widget: "text", required: false }
               - { label: "Ce que j'utilise chez eux", name: "usage", widget: "text", required: false }
@@ -36,6 +38,8 @@ collections:
               - { label: "Code promo", name: "code", widget: "string", required: false }
               - { label: "Lien vers le partenaire", name: "url", widget: "string", required: false }
               - { label: "Ajouter des paramètres de suivi au lien", name: "utm", widget: "boolean", default: true, hint: "Désactiver seulement si le lien affilié ne doit jamais être modifié." }
+              - { label: "Date de fin du partenariat", name: "expires", widget: "datetime", required: false, hint: "Laisser vide tant que le partenariat est actif. Une fois cette date passée, le code et le CTA disparaissent automatiquement — le partenaire reste dans l'historique." }
+              - { label: "Notes internes", name: "legal", widget: "text", required: false, hint: "Conditions particulières à te rappeler — non affiché publiquement." }
               - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string", hint: "Utilisé en interne — ne change rien à l'affichage si tu le modifies par erreur, mais évite de le toucher." }
 
   - name: "complements"
@@ -145,6 +149,7 @@ collections:
                       - { label: "Objectif long terme", value: "objectif_long_terme" }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false }
+                  - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Section Contenus (aperçus)"
                 name: "contenus-teaser"
                 widget: "object"
@@ -324,6 +329,7 @@ collections:
                   - { label: "Texte secondaire (petit, discret)", name: "subtext", widget: "text", required: false }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false }
+                  - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Texte (titre + paragraphes)"
                 name: "bio-text"
                 widget: "object"
@@ -369,6 +375,7 @@ collections:
                   - { label: "Texte secondaire (petit, discret)", name: "subtext", widget: "text", required: false }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false, hint: "L'app est hébergée séparément (black-tom.netlify.app) — lien réel, ne pas remplacer par une URL blacktom.fr." }
+                  - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Trois points forts"
                 name: "um-features"
                 widget: "object"
@@ -390,6 +397,7 @@ collections:
                   - { label: "Texte", name: "text", widget: "string" }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                  - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
 
       - file: "data/pages/contenus.json"
         label: "Contenus (page d'accueil de la rubrique)"
