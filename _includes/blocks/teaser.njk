@@ -1,0 +1,15 @@
+<section class="hub-section">
+  <div class="teaser">
+    {% if block.image %}<div class="teaser-media"><img src="{{ block.image }}" alt="{{ block.imageAlt | default('') }}" loading="lazy" decoding="async"></div>{% endif %}
+    <div class="teaser-body">
+      {% if block.tags and block.tags.length %}
+      <div class="tag-row">
+        {% for tag in block.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+      <h2>{{ block.title }}</h2>
+      <p>{{ block.text }}</p>
+      <a href="{{ block.ctaUrl }}" class="btn btn-ghost" data-track="{{ block.trackId | default('cta_teaser') }}">{{ block.ctaText }}</a>
+    </div>
+  </div>
+</section>

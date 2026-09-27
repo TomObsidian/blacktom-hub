@@ -90,6 +90,88 @@ collections:
           - { label: "Prochaine compétition", name: "prochaine_competition", widget: "string", required: false }
           - { label: "Projet actuel", name: "projet_actuel", widget: "string", required: false }
 
+  - name: "pages"
+    label: "Pages"
+    description: "La composition de chaque page : sections, ordre, visibilité. Utilise les flèches pour glisser une section, la corbeille pour la supprimer, l'icône de copie pour la dupliquer, et \"Ajouter\" pour choisir un nouveau type de section."
+    files:
+      - file: "data/pages/home.json"
+        label: "Accueil"
+        name: "home"
+        fields:
+          - label: "Sections de la page"
+            name: "blocks"
+            widget: "list"
+            label_singular: "Section"
+            summary: "{{fields.title}}"
+            types:
+              - label: "Grand titre (Hero)"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Photo de fond", name: "image", widget: "image" }
+                  - label: "Cadrage de la photo"
+                    name: "imagePosition"
+                    widget: "select"
+                    default: "50% 50%"
+                    options:
+                      - { label: "Centre", value: "50% 50%" }
+                      - { label: "Haut", value: "50% 15%" }
+                      - { label: "Bas", value: "50% 85%" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Sous-titre", name: "tagline", widget: "string" }
+                  - { label: "Texte", name: "lede", widget: "text" }
+                  - { label: "Bouton principal — texte", name: "primaryCtaText", widget: "string" }
+                  - { label: "Bouton principal — lien", name: "primaryCtaUrl", widget: "string" }
+                  - { label: "Bouton secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Bouton secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
+              - label: "Section Contenus"
+                name: "contenus-teaser"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "description", widget: "text" }
+                  - label: "Étiquettes (catégories affichées)"
+                    name: "chips"
+                    widget: "list"
+                    field: { label: "Étiquette", name: "chip", widget: "string" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+              - label: "Section Partenaires"
+                name: "partners-teaser"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+              - label: "Texte + image (bloc découverte)"
+                name: "teaser"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Photo (facultative)", name: "image", widget: "image", required: false }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                  - label: "Étiquettes"
+                    name: "tags"
+                    widget: "list"
+                    required: false
+                    field: { label: "Étiquette", name: "tag", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+              - label: "Newsletter"
+                name: "newsletter"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Texte", name: "description", widget: "text" }
+
   - name: "contenus"
     label: "Contenus (liste)"
     description: "La liste des articles/pages qui apparaît dans les hubs de contenu. Phase 1 : cette liste seulement — le texte complet d'un article se modifie encore dans le code pour l'instant."
