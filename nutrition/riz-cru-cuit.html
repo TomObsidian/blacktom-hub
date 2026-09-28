@@ -17,6 +17,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<style>
+/* Ajustements locaux, propres a cette page uniquement (ne touchent pas styles.css) */
+@media(min-width:820px){
+  .riz-tables-tight{padding-top:56px;}
+  .riz-table-wrap{width:min(760px, calc(100vw - 80px));max-width:none;}
+}
+</style>
 <script src="/analytics.js" defer></script>
 <script type="application/ld+json">
 {
@@ -90,11 +97,11 @@
   <p class="calc-reliability" style="max-width:560px;">Coefficient indicatif : ×2,5. Estimation — le poids après cuisson varie selon le riz et la cuisson.</p>
 </section>
 
-<section class="hub-section">
+<section class="hub-section riz-tables-tight">
   <p class="section-eyebrow">Tableau d'équivalences</p>
   <div class="bio-block" style="padding-top:20px;">
     <h2>Cru → Cuit</h2>
-    <div class="calc-table-wrap">
+    <div class="calc-table-wrap riz-table-wrap">
       <table class="calc-table">
         <thead><tr><th>Riz cru</th><th>Riz cuit (estimation)</th></tr></thead>
         <tbody>
@@ -111,7 +118,7 @@
     </div>
 
     <h2 style="margin-top:32px;">Cuit → Cru</h2>
-    <div class="calc-table-wrap">
+    <div class="calc-table-wrap riz-table-wrap">
       <table class="calc-table">
         <thead><tr><th>Riz cuit</th><th>Riz cru (estimation)</th></tr></thead>
         <tbody>
