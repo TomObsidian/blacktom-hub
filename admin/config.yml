@@ -80,6 +80,29 @@ collections:
               - { label: "Texte du lien vers l'article", name: "articleLinkText", widget: "string", required: false, hint: "Ex: En savoir plus sur la créatine →" }
               - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string" }
 
+  - name: "food-lab"
+    label: "Food Lab"
+    description: "La page /outils/convertisseur-cru-cuit — un aliment par ligne. Ratio = poids cuit / poids cru."
+    files:
+      - file: "data/food-lab.json"
+        label: "Aliments Food Lab"
+        name: "foodlab"
+        fields:
+          - label: "Aliments"
+            name: "foods"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Nom affiché", name: "name", widget: "string" }
+              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string" }
+              - { label: "Ratio moyen (cuit / cru)", name: "ratio", widget: "number", value_type: "float", hint: "Ex : 2.5 pour un aliment qui double et demi de poids à la cuisson." }
+              - { label: "Fourchette basse", name: "min", widget: "number", value_type: "float", required: false }
+              - { label: "Fourchette haute", name: "max", widget: "number", value_type: "float", required: false }
+              - { label: "Méthode de cuisson", name: "method", widget: "string", required: false }
+              - { label: "Source", name: "source", widget: "text", required: false, hint: "Ne jamais inventer une source. Écrire clairement si c'est une estimation." }
+              - { label: "Lien vers la source", name: "sourceUrl", widget: "string", required: false }
+              - { label: "Note", name: "note", widget: "text", required: false }
+
   - name: "performances"
     label: "Mes performances"
     description: "Tes chiffres bench — modifiés ici une seule fois, répercutés partout sur le site."

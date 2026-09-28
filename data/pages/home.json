@@ -54,6 +54,14 @@
       "ctaUrl": "outils/calculateur-1rm-developpe-couche"
     },
     {
+      "type": "punch-cta",
+      "visible": true,
+      "title": "FOOD LAB",
+      "text": "Cru ↔ Cuit. Riz, pâtes, semoule... Convertis tes portions en quelques secondes.",
+      "ctaText": "Tester l'outil →",
+      "ctaUrl": "outils/convertisseur-cru-cuit"
+    },
+    {
       "type": "partners-teaser",
       "visible": true,
       "eyebrow": "Partenaires",

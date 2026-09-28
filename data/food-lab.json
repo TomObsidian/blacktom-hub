@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "slug": "riz",
+      "name": "Riz",
+      "ratio": 2.5,
+      "source": "CHRU de Besançon — Tableau de correspondance poids cru / poids cuit (UTEP, mise à jour août 2013) : 50 g de riz cru donnent 125 g de riz cuit.",
+      "sourceUrl": "https://www.utep-besancon.fr/content/uploads/2021/12/Tableau-correspondance-Poids-cru-poids-cuit-1.pdf",
+      "note": "La source donne une seule valeur, sans méthode de cuisson précisée et sans fourchette. La variété (long, rond, basmati, complet) et la cuisson font varier le résultat réel, mais cette variation n'est pas quantifiée par la source : aucune fourchette n'est donc affichée pour cet aliment."
+    },
+    {
+      "slug": "pates",
+      "name": "Pâtes",
+      "ratio": 2.64,
+      "min": 2.2,
+      "max": 3.0,
+      "source": "CHRU de Besançon — Tableau de correspondance poids cru / poids cuit (UTEP, 2013) : moyenne des 5 formes mesurées (tagliatelles 2,2 ; torsades 2,5 ; nouilles 2,7 ; macaroni 2,8 ; coquillettes 3,0).",
+      "sourceUrl": "https://www.utep-besancon.fr/content/uploads/2021/12/Tableau-correspondance-Poids-cru-poids-cuit-1.pdf",
+      "note": "Le ratio moyen et la fourchette viennent directement des 5 valeurs mesurées par forme dans la source, pas d'une estimation arbitraire. La forme des pâtes est le principal facteur de variation."
+    },
+    {
+      "slug": "semoule-couscous",
+      "name": "Semoule",
+      "ratio": 2.0,
+      "source": "CHRU de Besançon — Tableau de correspondance poids cru / poids cuit (UTEP, 2013) : 50 g de semoule crue donnent 100 g de semoule cuite.",
+      "sourceUrl": "https://www.utep-besancon.fr/content/uploads/2021/12/Tableau-correspondance-Poids-cru-poids-cuit-1.pdf",
+      "note": "Cette valeur mesure la semoule, seule référencée par la source. Le couscous n'y figure pas et n'a pas de coefficient validé dans cette version : utilise « Mon Ratio » pour une estimation personnalisée sur du couscous."
+    },
+    {
+      "slug": "lentilles",
+      "name": "Lentilles",
+      "ratio": 2.73,
+      "min": 2.67,
+      "max": 2.79,
+      "source": "Bognár, A. (2002), Tables on weight yield of food and retention factors of food constituents, Table 20 : « Lentils, boiled/stewed », facteur de rendement pondéral = 2,73 ± 0,06 (n = 6). Recoupé avec le CHRU de Besançon (50 g crues → 135 g cuites, ratio 2,7).",
+      "sourceUrl": "https://www.fao.org/uploads/media/bognar_bfe-r-02-03.pdf",
+      "note": "Deux sources indépendantes convergent (2,70 et 2,73). Le ratio affiché et la fourchette (2,67–2,79) reprennent la variabilité ±0,06 rapportée par Bognár, pas une fourchette inventée."
+    },
+    {
+      "slug": "pommes-de-terre",
+      "name": "Pommes de terre",
+      "ratio": 1.0,
+      "method": "épluchées, bouillies",
+      "source": "Bognár, A. (2002), Tables on weight yield of food and retention factors of food constituents, Table 21 : « Potato, without peel, boiled », facteur de rendement pondéral = 1,00 ± 0,01 (n = 272).",
+      "sourceUrl": "https://www.fao.org/uploads/media/bognar_bfe-r-02-03.pdf",
+      "note": "Il s'agit bien d'un facteur de rendement pondéral (variation de poids liée à la cuisson), pas d'un facteur de rétention de nutriments — deux notions distinctes dans la source. Avec la peau, la même table donne un facteur différent : « Potato, with peel, boiled » = 0,80 ± 0,02 (n = 86), non utilisé ici car l'outil part d'une pomme de terre épluchée."
+    }
+  ]
+}
