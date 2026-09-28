@@ -1,6 +1,6 @@
 {
-  "seoTitle": "Black Boar — Musculation, Metal & Tattoo | BLACKTOM",
-  "seoDescription": "Black Boar : musculation, metal et tatouage. Le premier drop arrive — rejoins la liste prioritaire.",
+  "seoTitle": "Black Boar Athletics",
+  "seoDescription": "Black Boar : Le premier drop arrive — rejoins la liste prioritaire.",
   "dropSettings": {
     "name": "DROP 01",
     "status": "waitlist",
@@ -11,13 +11,13 @@
   },
   "blocks": [
     {
-      "type": "bb-hero",
-      "visible": true,
-      "image": "/assets/uploads/dsc06198.jpg",
       "imagePosition": "50% 20%",
-      "eyebrow": "Musculation · Metal · Tattoo",
+      "eyebrow": "Musculation & Tattoo",
+      "visible": true,
       "title": "BLACK BOAR",
+      "type": "bb-hero",
       "lede": "DROP 01.",
+      "image": "/assets/uploads/a7401760.jpg",
       "ctaText": "Accès prioritaire →",
       "ctaUrl": "#drop-form"
     },
@@ -25,19 +25,19 @@
       "type": "bb-text",
       "visible": true,
       "eyebrow": "Univers",
-      "title": "Black Boar Athletics, ma marque fitness alternative : musculation, tatouage, metal et culture underground."
+      "title": "Black Boar Athletics, ma marque fitness alternative et culture underground."
     },
     {
-      "type": "bb-drop",
-      "visible": true,
-      "image": "/assets/uploads/dsc06246.jpg",
-      "imageAlt": "Ambiance Black Boar en salle de musculation.",
+      "consentText": "J'accepte d'être averti(e) par email du lancement du premier drop Black Boar.",
       "eyebrow": "Accès prioritaire",
-      "title": "Sois averti en premier.",
       "text": "",
+      "imageAlt": "",
+      "visible": true,
       "formTitle": "",
-      "ctaText": "Me prévenir",
-      "consentText": "J'accepte d'être averti(e) par email du lancement du premier drop Black Boar."
+      "title": "Sois averti en premier.",
+      "type": "bb-drop",
+      "image": "/assets/uploads/a7401564.jpg",
+      "ctaText": "Me prévenir"
     }
   ]
 }
