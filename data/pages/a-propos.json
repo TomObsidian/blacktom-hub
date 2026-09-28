@@ -5,7 +5,7 @@
     {
       "type": "hero",
       "visible": true,
-      "image": "assets/blacktom-portrait-01.jpg",
+      "image": "/assets/blacktom-portrait-01.jpg",
       "imagePosition": "50% 32%",
       "title": "TOM.",
       "tagline": "43 ANS.",
@@ -47,9 +47,9 @@
       "type": "photo-gallery",
       "visible": true,
       "photos": [
-        { "image": "assets/blacktom-training-01.jpg", "alt": "Séance à la salle, sur machine de tirage.", "caption": "Entraînement" },
-        { "image": "assets/blacktom-physique-01.jpg", "alt": "Physique, pose double biceps.", "caption": "Physique" },
-        { "image": "assets/blacktom-fullblack-01.jpg", "alt": "Tatouages Full Black, torse et bras.", "caption": "Full Black" }
+        { "image": "/assets/blacktom-training-01.jpg", "alt": "Séance à la salle, sur machine de tirage.", "caption": "Entraînement" },
+        { "image": "/assets/blacktom-physique-01.jpg", "alt": "Physique, pose double biceps.", "caption": "Physique" },
+        { "image": "/assets/blacktom-fullblack-01.jpg", "alt": "Tatouages Full Black, torse et bras.", "caption": "Full Black" }
       ]
     }
   ]

@@ -27,7 +27,7 @@
     }
   ],
   "content": [
-    { "title": "Musculation après 40 ans", "type": "pilier", "category": null, "status": "published", "url": "/musculation-apres-40-ans" },
+    { "title": "Musculation après 40 ans", "type": "pilier", "category": null, "status": "published", "url": "/musculation-apres-40-ans", "image": "/assets/hero-training-indus-6eac1aa8.jpg", "imageAlt": "Tom à l'entraînement, salle de musculation industrielle." },
     { "title": "Développé couché après 40 ans", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/apres-40-ans" },
     { "title": "Comment progresser au développé couché", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/progresser" },
     { "title": "Programme développé couché", "type": "article", "category": "developpe-couche", "status": "planned", "url": null },

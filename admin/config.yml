@@ -5,7 +5,7 @@ backend:
   branch: main
 
 # Où sont rangées les photos que tu ajoutes depuis l'admin.
-media_folder: "assets/uploads"
+media_folder: "/assets/uploads"
 public_folder: "/assets/uploads"
 
 # Aperçu avant publication.
@@ -498,6 +498,8 @@ collections:
                 widget: "select"
                 options: [{ label: "Article", value: "article" }, { label: "Outil", value: "outil" }, { label: "Page", value: "page" }, { label: "Page commerciale", value: "commercial" }, { label: "Article pilier", value: "pilier" }]
               - { label: "Catégorie (identifiant, vide si aucune)", name: "category", widget: "string", required: false }
+              - { label: "Photo mise en avant", name: "image", widget: "image", required: false, hint: "Utilisée uniquement pour l'article pilier mis en avant sur la page Contenus. Laisser vide pour les autres." }
+              - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
               - label: "État"
                 name: "status"
                 widget: "select"

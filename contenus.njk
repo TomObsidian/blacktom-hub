@@ -36,7 +36,7 @@ permalink: "contenus.html"
 
 <nav class="nav">
   <a href="index.html" class="brand">
-    <img src="assets/avatar-black-tom-de3dd432.jpg" alt="">
+    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -68,7 +68,7 @@ permalink: "contenus.html"
 {% if c.type == "pilier" and c.status == "published" %}
 <section class="hub-section">
   <div class="teaser">
-    <div class="teaser-media"><img src="assets/hero-training-indus-6eac1aa8.jpg" alt="Tom à l'entraînement, salle de musculation industrielle." loading="lazy" decoding="async"></div>
+    <div class="teaser-media"><img src="{{ c.image }}" alt="{{ c.imageAlt | default('') }}" loading="lazy" decoding="async"></div>
     <div class="teaser-body">
       <div class="tag-row"><span class="tag">Pilier</span></div>
       <h2>{{ c.title }}</h2>
