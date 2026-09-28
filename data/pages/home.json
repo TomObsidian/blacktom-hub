@@ -1,15 +1,15 @@
 {
   "blocks": [
     {
-      "type": "hero",
-      "visible": true,
-      "image": "/assets/blacktom-hero-01.jpg",
+      "primaryCtaUrl": "a-propos.html",
       "imagePosition": "50% 15%",
-      "title": "BLACKTOM",
       "tagline": "Force.\nPhysique.\nAprès 40 ans.",
+      "visible": true,
+      "title": "BLACKTOM",
+      "type": "hero",
       "lede": "43 ans · Développé couché · Première compétition en préparation",
-      "primaryCtaText": "Découvrir →",
-      "primaryCtaUrl": "a-propos.html"
+      "image": "/assets/blacktom-hero-01.jpg",
+      "primaryCtaText": "Découvrir →"
     },
     {
       "type": "stat-hero",
@@ -21,16 +21,16 @@
       "ctaUrl": "developpe-couche.html"
     },
     {
-      "type": "teaser",
-      "visible": true,
-      "image": "/assets/hero-training-indus-6eac1aa8.jpg",
-      "imageAlt": "Tom à l'entraînement en salle de musculation.",
-      "tags": [],
-      "title": "MUSCULATION APRÈS 40 ANS",
+      "trackId": "cta_musculation40_home",
       "text": "Continuer à progresser en force et en physique.",
+      "imageAlt": "Tom à l'entraînement en salle de musculation.",
+      "visible": true,
+      "title": "MUSCULATION APRÈS 40 ANS",
+      "tags": [],
+      "type": "teaser",
+      "image": "/assets/hero-training-indus-6eac1aa8.jpg",
       "ctaText": "Mon approche →",
-      "ctaUrl": "musculation-apres-40-ans",
-      "trackId": "cta_musculation40_home"
+      "ctaUrl": "musculation-apres-40-ans"
     },
     {
       "type": "contenus-teaser",
@@ -38,9 +38,30 @@
       "eyebrow": "Contenus",
       "title": "Journal",
       "items": [
-        { "title": "Musculation après 40 ans", "category": "Pilier", "description": "Force, entraînement, récupération et nutrition : mon approche complète.", "url": "musculation-apres-40-ans", "image": "/assets/blacktom-physique-01.jpg", "imageAlt": "Physique, pose double biceps." },
-        { "title": "Développé couché après 40 ans", "category": "Développé couché", "description": "Ce qui change vraiment, et ce qui ne change pas, après 40 ans.", "url": "developpe-couche/apres-40-ans", "image": "/assets/blacktom-training-01.jpg", "imageAlt": "Tom à l'entraînement, dos tourné, sur une machine de tirage." },
-        { "title": "Créatine après 40 ans", "category": "Nutrition", "description": "Ce que montrent réellement les données, sans promesse.", "url": "nutrition/creatine-apres-40-ans", "image": "/assets/uploads/dsc06198.jpg", "imageAlt": "Tom réalisant un développé couché en salle de musculation." }
+        {
+          "title": "Musculation après 40 ans",
+          "category": "Pilier",
+          "description": "Force, entraînement, récupération et nutrition : mon approche complète.",
+          "url": "musculation-apres-40-ans",
+          "image": "/assets/blacktom-physique-01.jpg",
+          "imageAlt": "Physique, pose double biceps."
+        },
+        {
+          "title": "Développé couché après 40 ans",
+          "category": "Développé couché",
+          "description": "Ce qui change vraiment, et ce qui ne change pas, après 40 ans.",
+          "url": "developpe-couche/apres-40-ans",
+          "image": "/assets/blacktom-training-01.jpg",
+          "imageAlt": ""
+        },
+        {
+          "title": "Créatine après 40 ans",
+          "category": "Nutrition",
+          "description": "Ce que montrent réellement les données, sans promesse.",
+          "url": "nutrition/creatine-apres-40-ans",
+          "image": "/assets/uploads/a7401667.jpg",
+          "imageAlt": "Tom réalisant un développé couché en salle de musculation."
+        }
       ],
       "ctaText": "Tous les contenus →",
       "ctaUrl": "contenus.html"
@@ -63,52 +84,55 @@
       "ctaUrl": "partenaires.html"
     },
     {
-      "type": "teaser",
-      "visible": true,
-      "image": "/assets/blacktom-fullblack-01.jpg",
-      "imageAlt": "Tatouages Full Black, torse et bras.",
-      "tags": [],
-      "title": "FULL BLACK",
-      "text": "BLACKTOM, ce n'est pas seulement le bench. Je construis aussi, séance après séance, mon projet Full Black. J'en partage l'évolution sur Instagram.",
-      "ctaText": "Suivre le Full Black →",
-      "ctaUrl": "https://www.instagram.com/xblacktomx/",
+      "socialPlatform": "instagram",
       "trackId": "full_black",
-      "socialPlatform": "instagram"
+      "text": "BLACKTOM, ce n'est pas seulement le bench. Je construis aussi, séance après séance, mon projet Full Black. J'en partage l'évolution sur Instagram.",
+      "imageAlt": "Tatouages Full Black, torse et bras.",
+      "visible": true,
+      "title": "FULL BLACK",
+      "tags": [],
+      "type": "teaser",
+      "image": "/assets/blacktom-fullblack-01.jpg",
+      "ctaText": "Suivre le Full Black →",
+      "ctaUrl": "https://www.instagram.com/xblacktomx/"
     },
     {
-      "type": "teaser",
-      "visible": true,
-      "image": "/assets/uploads/dsc06735.jpg",
-      "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
-      "tags": ["Alternative Fitness Wear", "Musculation · Metal · Tattoo"],
-      "title": "BLACK BOAR",
+      "trackId": "cta_blackboar",
       "text": "Musculation, metal, tattoo. Le premier drop arrive.",
+      "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
+      "visible": true,
+      "title": "BLACK BOAR",
+      "tags": [
+        "Alternative Fitness Wear",
+        "Musculation · Metal · Tattoo"
+      ],
+      "type": "teaser",
+      "image": "/assets/uploads/dsc06735.jpg",
       "ctaText": "Accès prioritaire →",
-      "ctaUrl": "black-boar.html#drop-form",
-      "trackId": "cta_blackboar"
+      "ctaUrl": "black-boar.html#drop-form"
     },
     {
-      "type": "teaser",
-      "visible": true,
-      "image": null,
-      "tags": [],
-      "title": "THE ULTIMATE METHOD",
+      "trackId": "cta_ultimatemethod",
       "text": "Entraînement. Nutrition. Progression.",
+      "visible": true,
+      "title": "THE ULTIMATE METHOD",
+      "tags": [],
+      "type": "teaser",
+      "image": null,
       "ctaText": "Découvrir →",
-      "ctaUrl": "ultimate-method.html",
-      "trackId": "cta_ultimatemethod"
+      "ctaUrl": "ultimate-method.html"
     },
     {
-      "type": "teaser",
-      "visible": true,
-      "image": "/assets/blacktom-portrait-01.jpg",
-      "imageAlt": "Portrait de Black Tom en salle de musculation.",
-      "tags": [],
-      "title": "TOM.",
+      "trackId": "cta_apropos",
       "text": "Musculation, développé couché, physique, Full Black. Mon entraînement documenté au fil des semaines.",
+      "imageAlt": "",
+      "visible": true,
+      "title": "TOM.",
+      "tags": [],
+      "type": "teaser",
+      "image": "/assets/blacktom-portrait-01.jpg",
       "ctaText": "Mon parcours →",
-      "ctaUrl": "a-propos.html",
-      "trackId": "cta_apropos"
+      "ctaUrl": "a-propos.html"
     },
     {
       "type": "newsletter",
