@@ -31,7 +31,7 @@ collections:
               - { label: "Afficher ce partenaire", name: "active", widget: "boolean", default: true, hint: "Décoche pour retirer un partenaire sans supprimer ses données (historique, pages qui le référencent)." }
               - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex: Nutrition · Compléments, Vêtements d'entraînement." }
               - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Réservé à un usage futur (home, newsletter) — sans effet pour l'instant." }
-              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Format carré recommandé." }
+              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Format carré recommandé.", media_folder: "/assets", public_folder: "/assets" }
               - { label: "Description courte", name: "description", widget: "text", required: false }
               - { label: "Ce que j'utilise chez eux", name: "usage", widget: "text", required: false }
               - { label: "Mon avantage (ex: -10%)", name: "offer", widget: "string", required: false }
