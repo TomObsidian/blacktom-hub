@@ -9,7 +9,11 @@
       {% endif %}
       <h2>{{ block.title }}</h2>
       <p>{{ block.text }}</p>
+      {% if block.socialPlatform %}
+      <a href="{{ block.ctaUrl }}" class="btn btn-ghost" target="_blank" rel="noopener" onclick="trackEvent('social_click',{platform:'{{ block.socialPlatform }}',source_page:'/',placement:'{{ block.trackId | default('teaser') }}'})">{{ block.ctaText }}</a>
+      {% else %}
       <a href="{{ block.ctaUrl }}" class="btn btn-ghost" data-track="{{ block.trackId | default('cta_teaser') }}">{{ block.ctaText }}</a>
+      {% endif %}
     </div>
   </div>
 </section>

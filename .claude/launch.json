@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "blacktom-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "_site", "-p", "8934", "-c-1"],
+      "port": 8934
+    }
+  ]
+}

@@ -26,6 +26,7 @@ function suppRowHTML(s) {
   var desc = '';
   if (s.general) desc += '<p class="supp-desc">' + s.general + '</p>';
   if (s.personal) desc += '<p class="supp-desc supp-personal"><strong>Mon utilisation :</strong> ' + s.personal + '</p>';
+  if (s.articleUrl && s.articleLinkText) desc += '<p class="supp-desc"><a href="' + s.articleUrl + '" style="color:var(--red-text);">' + s.articleLinkText + '</a></p>';
 
   var productLine = '';
   if (s.brand || s.product) {

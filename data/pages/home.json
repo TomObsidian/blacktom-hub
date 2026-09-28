@@ -65,11 +65,24 @@
     {
       "type": "teaser",
       "visible": true,
+      "image": "/assets/blacktom-fullblack-01.jpg",
+      "imageAlt": "Tatouages Full Black, torse et bras.",
+      "tags": [],
+      "title": "FULL BLACK",
+      "text": "BLACKTOM, ce n'est pas seulement le bench. Je construis aussi, séance après séance, mon projet Full Black. J'en partage l'évolution sur Instagram.",
+      "ctaText": "Suivre le Full Black →",
+      "ctaUrl": "https://www.instagram.com/xblacktomx/",
+      "trackId": "full_black",
+      "socialPlatform": "instagram"
+    },
+    {
+      "type": "teaser",
+      "visible": true,
       "image": "/assets/uploads/dsc06735.jpg",
       "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
-      "tags": ["Musculation · Metal · Tattoo"],
+      "tags": ["Alternative Fitness Wear", "Musculation · Metal · Tattoo"],
       "title": "BLACK BOAR",
-      "text": "DROP 01",
+      "text": "Musculation, metal, tattoo. Le premier drop arrive.",
       "ctaText": "Accès prioritaire →",
       "ctaUrl": "black-boar.html#drop-form",
       "trackId": "cta_blackboar"
@@ -91,8 +104,8 @@
       "image": "/assets/blacktom-portrait-01.jpg",
       "imageAlt": "Portrait de Black Tom en salle de musculation.",
       "tags": [],
-      "title": "TOM, 43 ANS.",
-      "text": "Musculation, développé couché, physique. Mon entraînement documenté au fil des semaines.",
+      "title": "TOM.",
+      "text": "Musculation, développé couché, physique, Full Black. Mon entraînement documenté au fil des semaines.",
       "ctaText": "Mon parcours →",
       "ctaUrl": "a-propos.html",
       "trackId": "cta_apropos"
