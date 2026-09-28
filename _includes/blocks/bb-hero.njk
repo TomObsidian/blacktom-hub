@@ -1,8 +1,17 @@
-<div class="hero">
-  <img class="hero-bg" src="{{ block.image }}" alt="" style="object-position:{{ block.imagePosition | default('50% 50%') }};">
-  <div class="hero-scrim"></div>
+<style>
+/* Style local au hero Black Boar : fond sombre + halo rouge + mark, comme sur
+   black-boar-athletics.html. Classes prefixees bb- pour ne rien partager
+   avec le bloc hero.njk generique (.hero/.hero-bg/.hero-scrim/.hero-inner
+   restent inchangees et utilisees par d'autres pages). */
+.bb-hero{background:#0a0a0a;}
+.bb-hero-glow{position:absolute;inset:0;background:radial-gradient(68% 50% at 50% 30%,rgba(139,13,13,.42),transparent 76%);pointer-events:none;}
+.bb-hero-mark{width:min(52vw,240px);height:auto;filter:drop-shadow(0 22px 48px rgba(0,0,0,.7));margin-bottom:24px;}
+@media(min-width:820px){ .bb-hero-mark{width:min(26vw,300px);} }
+</style>
+<div class="hero bb-hero">
+  <div class="bb-hero-glow"></div>
   <div class="hero-inner">
-    <img src="/assets/icone-512-8692beb4.png" alt="" style="width:72px;height:72px;border-radius:18px;margin-bottom:24px;">
+    <img class="bb-hero-mark" src="/assets/logo-black-boar-mark.png" alt="Black Boar">
     <p class="eyebrow">{{ block.eyebrow }}</p>
     <h1 style="font-size:clamp(40px,9vw,80px);">{{ block.title }}</h1>
     <p class="lede">{{ block.lede }}</p>
