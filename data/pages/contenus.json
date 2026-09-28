@@ -1,12 +1,12 @@
 {
-  "seoTitle": "Contenus — Force & physique après 40 ans | BLACKTOM",
-  "seoDescription": "Mes guides et outils sur le développé couché, l'entraînement et la nutrition après 40 ans, classés par thème.",
+  "seoTitle": "Journal BLACKTOM — Force, physique et Full Black",
+  "seoDescription": "Articles et retours d'expérience BLACKTOM sur le développé couché, l'entraînement, le physique, la nutrition et le projet Full Black.",
   "blocks": [
     {
       "type": "simple-hero",
       "visible": true,
       "eyebrow": "Contenus",
-      "title": "Force & physique après 40 ans",
+      "title": "Journal BLACKTOM",
       "lede": "Développé couché, entraînement, nutrition, récupération, équipement."
     }
   ]
