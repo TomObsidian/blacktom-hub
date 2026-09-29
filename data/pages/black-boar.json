@@ -13,11 +13,11 @@
     {
       "type": "bb-hero",
       "visible": true,
-      "image": "/assets/uploads/dsc06198.jpg",
+      "image": "/assets/uploads/a7401704-web.jpg",
       "imagePosition": "50% 20%",
       "eyebrow": "Musculation · Metal · Tattoo",
-      "title": "BLACK BOAR",
-      "lede": "DROP 01.",
+      "title": "BLACK BOAR ATHLETICS",
+      "tagline": "Alternative Fitness Wear",
       "ctaText": "Accès prioritaire →",
       "ctaUrl": "#drop-form"
     },
@@ -30,7 +30,7 @@
     {
       "type": "bb-drop",
       "visible": true,
-      "image": "/assets/uploads/dsc06246.jpg",
+      "image": "/assets/uploads/a7401667-web.jpg",
       "imageAlt": "Ambiance Black Boar en salle de musculation.",
       "eyebrow": "Accès prioritaire",
       "title": "Sois averti en premier.",
