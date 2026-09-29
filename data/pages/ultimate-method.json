@@ -13,7 +13,7 @@
       "ledeMaxWidth": "560px",
       "subtext": "Structurer tes séances et suivre ta progression, sans dépendre d'un coach.",
       "ctaText": "Accéder à l'application →",
-      "ctaUrl": "https://black-tom.netlify.app",
+      "ctaUrl": "https://black-tom.netlify.app/?go=signup",
       "ctaTrackEvent": "ultimate_method_click"
     },
     {
@@ -31,7 +31,7 @@
       "title": "Prête quand tu l'es.",
       "text": "Connexion ou création de compte directement depuis l'application.",
       "ctaText": "Accéder à l'application →",
-      "ctaUrl": "https://black-tom.netlify.app",
+      "ctaUrl": "https://black-tom.netlify.app/?go=signup",
       "ctaTrackEvent": "ultimate_method_click"
     }
   ]
