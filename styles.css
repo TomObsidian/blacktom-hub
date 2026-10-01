@@ -318,3 +318,8 @@ fieldset.calc-field legend{font-size:13px;font-weight:600;color:var(--dim);margi
 .cookie-banner-actions .btn{flex:1;padding:11px 14px;font-size:13px;}
 @media(min-width:640px){ .cookie-banner{left:auto;right:24px;bottom:24px;max-width:420px;} }
 @media (prefers-reduced-motion: reduce){ .cookie-banner{transition:none;} }
+
+/* ACCESSIBILITÉ — labels associés visuellement masqués (le placeholder seul
+   n'est pas un label : il disparaît à la saisie et beaucoup de lecteurs
+   d'écran ne l'annoncent pas de façon fiable). */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}

@@ -151,6 +151,8 @@ collections:
                   - { label: "Texte", name: "lede", widget: "string", required: false }
                   - { label: "Bouton — texte", name: "primaryCtaText", widget: "string" }
                   - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string" }
+                  - { label: "Bouton secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Bouton secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
               - label: "Chiffre clé (ex: Bench)"
                 name: "stat-hero"
                 widget: "object"
@@ -344,6 +346,8 @@ collections:
                   - { label: "Texte", name: "lede", widget: "string", required: false }
                   - { label: "Bouton — texte", name: "primaryCtaText", widget: "string", required: false }
                   - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string", required: false }
+                  - { label: "Bouton secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Bouton secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
               - label: "Grand titre (Hero simple)"
                 name: "simple-hero"
                 widget: "object"

@@ -6,10 +6,12 @@
       "image": "/assets/blacktom-hero-01.jpg",
       "imagePosition": "50% 15%",
       "title": "BLACKTOM",
-      "tagline": "Force.\nPhysique.\nFull Black.",
-      "lede": "Développé couché · Physique · Première compétition en préparation",
-      "primaryCtaText": "Découvrir →",
-      "primaryCtaUrl": "a-propos.html"
+      "tagline": "Musculation après 40 ans.\nContinuer à progresser.",
+      "lede": "Mon entraînement, ma progression au développé couché et des outils gratuits pour préparer tes séances.",
+      "primaryCtaText": "Explorer mon approche →",
+      "primaryCtaUrl": "musculation-apres-40-ans",
+      "secondaryCtaText": "Calculer mon 1RM →",
+      "secondaryCtaUrl": "outils/calculateur-1rm-developpe-couche"
     },
     {
       "type": "stat-hero",
@@ -21,16 +23,20 @@
       "ctaUrl": "developpe-couche.html"
     },
     {
-      "type": "teaser",
+      "type": "punch-cta",
       "visible": true,
-      "image": "/assets/hero-training-indus-6eac1aa8.jpg",
-      "imageAlt": "Tom à l'entraînement en salle de musculation.",
-      "tags": [],
-      "title": "MUSCULATION APRÈS 40 ANS",
-      "text": "Continuer à progresser en force et en physique.",
-      "ctaText": "Mon approche →",
-      "ctaUrl": "musculation-apres-40-ans",
-      "trackId": "cta_musculation40_home"
+      "title": "BENCH LAB",
+      "text": "1RM · Ratio · Échauffement · Chargement.",
+      "ctaText": "Analyser mon bench →",
+      "ctaUrl": "outils/calculateur-1rm-developpe-couche"
+    },
+    {
+      "type": "punch-cta",
+      "visible": true,
+      "title": "FOOD LAB",
+      "text": "Cru ↔ Cuit. Riz, pâtes, semoule... Convertis tes portions en quelques secondes.",
+      "ctaText": "Tester l'outil →",
+      "ctaUrl": "outils/convertisseur-cru-cuit"
     },
     {
       "type": "contenus-teaser",
@@ -67,20 +73,10 @@
       "ctaUrl": "contenus.html"
     },
     {
-      "type": "punch-cta",
+      "type": "newsletter",
       "visible": true,
-      "title": "BENCH LAB",
-      "text": "1RM · Ratio · Échauffement · Chargement.",
-      "ctaText": "Analyser mon bench →",
-      "ctaUrl": "outils/calculateur-1rm-developpe-couche"
-    },
-    {
-      "type": "punch-cta",
-      "visible": true,
-      "title": "FOOD LAB",
-      "text": "Cru ↔ Cuit. Riz, pâtes, semoule... Convertis tes portions en quelques secondes.",
-      "ctaText": "Tester l'outil →",
-      "ctaUrl": "outils/convertisseur-cru-cuit"
+      "eyebrow": "BLACKTOM — La liste",
+      "description": "Ma progression documentée, mes nouveaux guides et les mises à jour de mes outils, par email."
     },
     {
       "type": "partners-teaser",
@@ -115,7 +111,7 @@
       ],
       "title": "BLACK BOAR",
       "text": "Musculation, metal, tattoo. Le premier drop arrive.",
-      "ctaText": "Accès prioritaire →",
+      "ctaText": "Être averti du lancement →",
       "ctaUrl": "black-boar.html#drop-form",
       "trackId": "cta_blackboar"
     },
@@ -141,12 +137,6 @@
       "ctaText": "Mon parcours →",
       "ctaUrl": "a-propos.html",
       "trackId": "cta_apropos"
-    },
-    {
-      "type": "newsletter",
-      "visible": true,
-      "eyebrow": "BLACKTOM — La liste",
-      "description": "Mes prochains contenus et outils, par email."
     }
   ]
 }
