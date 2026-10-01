@@ -256,7 +256,8 @@
       <input type="hidden" name="source_component" value="outil_resultat">
       <p class="signup-hp" aria-hidden="true"><input type="text" name="bb-hp" tabindex="-1" autocomplete="off" value=""></p>
       <div class="signup-row">
-        <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+        <label for="newsletter-email" class="sr-only">Adresse email</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="ton@email.com" required autocomplete="email">
         <label class="signup-consent">
           <input type="checkbox" name="consent" required>
           <span>J'accepte de recevoir les emails de BLACKTOM. <a href="/confidentialite.html">Politique de confidentialité</a></span>
@@ -330,7 +331,8 @@
           <input type="hidden" name="source_component" value="footer">
           <p class="signup-hp" aria-hidden="true"><input type="text" name="bb-hp" tabindex="-1" autocomplete="off" value=""></p>
           <div class="signup-compact-row">
-            <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+            <label for="newsletter-email-footer" class="sr-only">Adresse email</label>
+            <input type="email" id="newsletter-email-footer" name="email" placeholder="ton@email.com" required autocomplete="email">
             <button type="submit">OK</button>
           </div>
           <label class="signup-compact-legal" style="display:flex;gap:6px;align-items:flex-start;cursor:pointer;">

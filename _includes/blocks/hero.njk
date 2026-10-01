@@ -9,6 +9,7 @@
 </div>
 {% if block.primaryCtaText %}
 <div class="btn-row">
-  <a href="{{ block.primaryCtaUrl }}" class="btn btn-primary" data-track="cta_hero_apropos">{{ block.primaryCtaText }}</a>
+  <a href="{{ block.primaryCtaUrl }}" class="btn btn-primary" data-track="cta_hero_primary">{{ block.primaryCtaText }}</a>
+  {% if block.secondaryCtaText %}<a href="{{ block.secondaryCtaUrl }}" class="btn btn-ghost" data-track="cta_hero_secondary">{{ block.secondaryCtaText }}</a>{% endif %}
 </div>
 {% endif %}

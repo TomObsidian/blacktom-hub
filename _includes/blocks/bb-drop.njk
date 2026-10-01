@@ -19,7 +19,8 @@
       <input type="hidden" name="source_component" value="drop_section">
       <p class="signup-hp" aria-hidden="true"><input type="text" name="bb-hp" tabindex="-1" autocomplete="off" value=""></p>
       <div class="signup-row">
-        <input type="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+        <label for="newsletter-email" class="sr-only">Adresse email</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="ton@email.com" required autocomplete="email">
         <label class="signup-consent">
           <input type="checkbox" name="consent" required>
           <span>{{ block.consentText }} <a href="confidentialite.html">Politique de confidentialité</a></span>
