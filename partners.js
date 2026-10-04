@@ -75,24 +75,25 @@ function fallbackCopy(text) {
 
 function partnerCardHTML(p, sourcePage) {
   var logo = p.logo
-    ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:48px;height:48px;border-radius:12px;object-fit:cover;">'
+    ? '<img src="' + p.logo + '" alt="' + p.name + '" width="48" height="48" loading="lazy" decoding="async">'
     : '<div class="letter-mark">' + p.name.charAt(0) + '</div>';
   var tag = p.category || 'Lien affilié';
   var desc = p.description ? '<p class="desc">' + p.description + '</p>' : '';
-  var usage = p.usage ? '<div class="code-row"><span class="k">Ce que j’utilise</span></div><p style="margin:-8px 0 12px;font-size:13px;color:var(--dim);">' + p.usage + '</p>' : '';
+  var usage = p.usage ? '<p class="usage"><span class="k">Ce que j’utilise</span>' + p.usage + '</p>' : '';
   var offerRow = p.offer ? '<div class="code-row"><span class="k">Mon avantage</span><span class="v">' + p.offer + '</span></div>' : '';
   var codeRow = p.code ? '<div class="code-row"><span class="k">Code promo</span><span class="v">' + p.code + '</span></div>' : '';
   var url = buildPartnerUrl(p, sourcePage, 'partenaires_page');
   var copyBtn = p.code
-    ? '<button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" onclick="copyPromoCode(\'' + p.slug + '\',\'' + p.code + '\',this,\'' + sourcePage + '\',\'partenaires_page\')">Copier le code</button>'
+    ? '<button type="button" class="btn btn-ghost btn-block" onclick="copyPromoCode(\'' + p.slug + '\',\'' + p.code + '\',this,\'' + sourcePage + '\',\'partenaires_page\')">Copier le code</button>'
     : '';
   var voirBtn = '<a href="' + url + '" class="btn btn-primary btn-block" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick(\'' + p.slug + '\',\'' + sourcePage + '\',\'partenaires_page\')">Voir chez ' + p.name + ' →</a>';
-  var prozisLink = p.slug === 'prozis' ? '<div class="url-hint" style="margin-top:10px;"><a href="code-promo-prozis.html" style="color:var(--red);">Voir la page complète du code Prozis →</a></div>' : '';
+  var prozisLink = p.slug === 'prozis' ? '<a class="pc-more" href="code-promo-prozis.html">Voir la page complète du code Prozis →</a>' : '';
 
   return '' +
     '<div class="pcard">' +
       '<div class="pcard-head">' + logo + '<div><div class="name">' + p.name + '</div><div class="tag">' + tag + '</div></div></div>' +
-      desc + usage + offerRow + codeRow + copyBtn + voirBtn + prozisLink +
+      '<div class="pc-body">' + desc + usage + offerRow + codeRow + '</div>' +
+      '<div class="pc-actions">' + copyBtn + voirBtn + prozisLink + '</div>' +
     '</div>';
 }
 
@@ -110,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (logos) {
       logos.innerHTML = active.map(function (p) {
         return p.logo
-          ? '<img src="' + p.logo + '" alt="' + p.name + '" loading="lazy" decoding="async" style="width:40px;height:40px;border-radius:10px;object-fit:cover;">'
+          ? '<img src="' + p.logo + '" alt="' + p.name + '" width="40" height="40" loading="lazy" decoding="async" style="width:40px;height:40px;border-radius:2px;object-fit:cover;">'
           : '<div class="letter-mark" style="width:40px;height:40px;font-size:16px;">' + p.name.charAt(0) + '</div>';
       }).join('');
     }

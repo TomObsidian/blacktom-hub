@@ -1,0 +1,19 @@
+<section class="hub-section" id="outils">
+  <div class="sec-head">
+    <div>
+      <p class="sec-label">{{ block.eyebrow }}</p>
+      <h2 class="sec-title">{{ block.title }}</h2>
+    </div>
+  </div>
+  <div class="instruments">
+    {% for item in block.items %}
+    <article class="instrument">
+      <span class="kicker">{{ item.kicker }}</span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.text }}</p>
+      {% if item.example %}<div class="readout"><span>Exemple</span>{{ item.example }}</div>{% endif %}
+      <a href="{{ item.ctaUrl }}" class="btn btn-ghost" data-track="{{ item.trackId | default('cta_outil') }}">{{ item.ctaText }}</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>

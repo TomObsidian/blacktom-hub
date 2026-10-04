@@ -1,0 +1,11 @@
+<section class="hub-section" id="a-propos">
+  <div class="tom-strip">
+    <figure><img src="{{ block.image }}" alt="{{ block.imageAlt | default('') }}" width="800" height="1200" loading="lazy" decoding="async"></figure>
+    <div>
+      <p class="sec-label">{{ block.eyebrow | default('À propos') }}</p>
+      <h3>{{ block.title }}</h3>
+      <p>{{ block.text }}</p>
+      <a href="{{ block.ctaUrl }}" class="link-arrow" data-track="{{ block.trackId | default('cta_apropos') }}">{{ block.ctaText }}</a>
+    </div>
+  </div>
+</section>

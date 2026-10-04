@@ -33,6 +33,30 @@ module.exports = function (eleventyConfig) {
     return (text || "").split(/\n/).map(function (p) { return p.trim(); }).filter(Boolean);
   });
 
+  // Lecture des chiffres saisis dans "Mes performances" (ex: "140kg", "77 kg").
+  // Rien n'est inventé : si la valeur ne contient pas de nombre, le filtre
+  // renvoie la valeur brute et le rapport n'est pas calculé.
+  function parseStat(v) {
+    var m = String(v == null ? "" : v).match(/(\d+(?:[.,]\d+)?)\s*(.*)$/);
+    if (!m) return null;
+    return { raw: m[1], n: parseFloat(m[1].replace(",", ".")), unit: (m[2] || "").trim() };
+  }
+  eleventyConfig.addFilter("statNumber", function (v) {
+    var p = parseStat(v);
+    return p ? p.raw : (v || "");
+  });
+  eleventyConfig.addFilter("statUnit", function (v) {
+    var p = parseStat(v);
+    return p ? p.unit : "";
+  });
+  // Rapport entre deux valeurs saisies (ex: développé couché / poids de corps),
+  // arrondi à 0,1 — chaîne vide si l'une des deux données manque.
+  eleventyConfig.addFilter("statRatio", function (value, ref) {
+    var a = parseStat(value), b = parseStat(ref);
+    if (!a || !b || !(b.n > 0)) return "";
+    return (a.n / b.n).toFixed(1).replace(".", ",");
+  });
+
   // Miroir exact de isPartnerActive() dans partners.js — un partenaire
   // désactivé ou dont la date de fin est passée ne doit jamais être rendu,
   // y compris dans les pages où les partenaires sont affichés au build.

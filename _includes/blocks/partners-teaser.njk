@@ -1,33 +1,28 @@
-<section class="hub-section">
-  <p class="section-eyebrow">{{ block.eyebrow }}</p>
-  <p class="section-title">{{ block.title }}</p>
-  {% if block.subtitle %}<p class="lede" style="margin-top:10px;max-width:600px;">{{ block.subtitle }}</p>{% endif %}
+<section class="hub-section" id="partenaires">
+  <div class="sec-head">
+    <div>
+      <p class="sec-label">{{ block.eyebrow }}</p>
+      <h2 class="sec-title">{{ block.title }}</h2>
+      {% if block.subtitle %}<p class="lede" style="margin-top:14px;">{{ block.subtitle }}</p>{% endif %}
+    </div>
+    {% if block.ctaText %}<a href="{{ block.ctaUrl }}" class="link-arrow" data-track="cta_partenaires_home">{{ block.ctaText }}</a>{% endif %}
+  </div>
 
-  <div class="partners" style="padding-top:32px;">
+  <div class="partner-list">
     {% for p in partnersData.partners %}
     {% if p | isPartnerActive %}
-    <div class="pcard">
-      <div class="pcard-head">
-        {% if p.logo %}<img src="{{ p.logo }}" alt="{{ p.name }}" loading="lazy" decoding="async" style="width:48px;height:48px;border-radius:12px;object-fit:cover;">{% else %}<div class="letter-mark">{{ p.name | first }}</div>{% endif %}
-        <div><div class="name">{{ p.name }}</div><div class="tag">{{ p.category | default("Partenaire") }}</div></div>
-      </div>
-      {% if p.offer %}<div class="code-row"><span class="k">Offre</span><span class="v">{{ p.offer }}</span></div>{% endif %}
+    <div class="partner-row">
+      {% if p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="44" height="44" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name | first }}</div>{% endif %}
+      <div class="p-id"><span class="p-name">{{ p.name }}</span><span class="p-cat">{{ p.category | default("Partenaire") }}</span></div>
+      {% if p.offer %}<div class="p-offer"><span class="k">Offre</span><span class="v">{{ p.offer }}</span></div>{% endif %}
       {% if p.code %}
-      <div class="code-row"><span class="k">Code</span><span class="v">{{ p.code }}</span></div>
-      <button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" onclick="copyPromoCode('{{ p.slug }}','{{ p.code }}',this,'home','homepage_partners')">Copier le code</button>
+      <div class="p-code"><span class="k">Code</span><span class="v">{{ p.code }}</span><button type="button" class="p-copy" aria-label="Copier le code {{ p.code }} ({{ p.name }})" onclick="copyPromoCode('{{ p.slug }}','{{ p.code }}',this,'home','homepage_partners')">Copier</button></div>
       {% endif %}
-      <a href="{{ p | partnerUrl }}" class="btn btn-primary btn-block" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('{{ p.slug }}','/','homepage_partners',{content_type:'homepage',cta_type:'partner'})">Découvrir →</a>
+      <a href="{{ p | partnerUrl }}" class="p-cta" target="_blank" rel="noopener nofollow sponsored" aria-label="Voir l'offre {{ p.name }} (lien affilié, nouvel onglet)" onclick="trackPartnerClick('{{ p.slug }}','/','homepage_partners',{content_type:'homepage',cta_type:'partner'})">Voir l'offre →</a>
     </div>
     {% endif %}
     {% endfor %}
   </div>
 
-  <p style="margin-top:20px;font-size:12px;color:var(--dim2);max-width:600px;">Certains liens sont affiliés. Si tu passes par eux, BLACKTOM peut recevoir une commission, sans surcoût pour toi.</p>
-  <p style="margin-top:8px;font-size:13px;"><a href="complements.html" style="color:var(--red-text);">Voir aussi mes compléments →</a></p>
-
-  {% if block.ctaText %}
-  <div class="btn-row" style="justify-content:flex-start;padding-top:8px;">
-    <a href="{{ block.ctaUrl }}" class="btn btn-ghost" data-track="cta_partenaires_home">{{ block.ctaText }}</a>
-  </div>
-  {% endif %}
+  <p class="partner-note">Certains liens sont affiliés. Si tu passes par eux, BLACKTOM peut recevoir une commission, sans surcoût pour toi. <a href="complements.html" class="link-arrow" style="margin-left:6px;">Voir aussi mes compléments</a></p>
 </section>

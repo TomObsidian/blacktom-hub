@@ -53,6 +53,7 @@ permalink: "black-boar.html"
 {% if block.visible != false %}
 {% if block.type == "bb-hero" %}{% include "blocks/bb-hero.njk" %}{% endif %}
 {% if block.type == "bb-text" %}{% include "blocks/bb-text.njk" %}{% endif %}
+{% if block.type == "bb-gallery" %}{% include "blocks/bb-gallery.njk" %}{% endif %}
 {% if block.type == "bb-drop" %}{% include "blocks/bb-drop.njk" %}{% endif %}
 {% endif %}
 {% endfor %}

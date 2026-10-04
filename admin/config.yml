@@ -137,28 +137,25 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Photo de fond", name: "image", widget: "image" }
-                  - label: "Cadrage de la photo"
-                    name: "imagePosition"
-                    widget: "select"
-                    default: "50% 50%"
-                    options:
-                      - { label: "Centre", value: "50% 50%" }
-                      - { label: "Haut", value: "50% 15%" }
-                      - { label: "Bas", value: "50% 85%" }
+                  - { label: "Photo", name: "image", widget: "image", hint: "Photo verticale de préférence (2:3). Le visage et les tatouages doivent rester visibles." }
+                  - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false, hint: "Facultatif : version plus légère de la même photo." }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                  - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30% (horizontal puis vertical). Plus le 2e chiffre est petit, plus on voit le haut de la photo."] }
+                  - { label: "Petit titre (ligne au-dessus)", name: "kicker", widget: "string", required: false }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", hint: "Un saut de ligne = une nouvelle ligne affichée, pour un effet plus graphique." }
+                  - { label: "Phrase d'accroche", name: "claim", widget: "string", required: false }
+                  - { label: "Sous-titre multiligne (ancien format)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée. Laisser vide si la phrase d'accroche suffit." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }
                   - { label: "Bouton — texte", name: "primaryCtaText", widget: "string" }
                   - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string" }
-                  - { label: "Bouton secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
-                  - { label: "Bouton secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
+                  - { label: "Lien secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Lien secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
               - label: "Chiffre clé (ex: Bench)"
                 name: "stat-hero"
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Label", name: "label", widget: "string", hint: "Ex: Bench" }
+                  - { label: "Label", name: "label", widget: "string", hint: "Ex: Développé couché · meilleur résultat renseigné" }
                   - label: "Donnée à afficher"
                     name: "statKey"
                     widget: "select"
@@ -173,17 +170,18 @@ collections:
                     options:
                       - { label: "Objectif actuel", value: "objectif" }
                       - { label: "Objectif long terme", value: "objectif_long_terme" }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false }
-                  - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
-              - label: "Section Contenus (aperçus)"
+                  - { label: "Note de contexte (source du chiffre)", name: "note", widget: "text", required: false, hint: "Dis d'où vient le chiffre. Le rapport au poids de corps est calculé automatiquement." }
+                  - { label: "Lien — texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string", required: false }
+                  - { label: "Événement de suivi du lien (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
+              - label: "Journal (contenus mis en avant)"
                 name: "contenus-teaser"
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - label: "Contenus mis en avant (3 maximum)"
+                  - label: "Contenus mis en avant (le premier est affiché en grand)"
                     name: "items"
                     widget: "list"
                     summary: "{{title}}"
@@ -193,10 +191,31 @@ collections:
                       - { label: "Micro-description", name: "description", widget: "string", required: false }
                       - { label: "Lien", name: "url", widget: "string" }
                       - { label: "Photo", name: "image", widget: "image" }
+                      - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                      - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                       - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
-              - label: "Bench Lab (accroche)"
+                  - { label: "Lien — texte", name: "ctaText", widget: "string" }
+                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string" }
+              - label: "Outils (Bench Lab, Food Lab)"
+                name: "tools-teaser"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - label: "Outils"
+                    name: "items"
+                    widget: "list"
+                    summary: "{{title}}"
+                    fields:
+                      - { label: "Petit titre de l'outil", name: "kicker", widget: "string", required: false }
+                      - { label: "Nom", name: "title", widget: "string" }
+                      - { label: "Texte", name: "text", widget: "text" }
+                      - { label: "Exemple de résultat (facultatif)", name: "example", widget: "string", required: false, hint: "Doit correspondre à ce que l'outil calcule réellement." }
+                      - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                      - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                      - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
+              - label: "Bench Lab (accroche, ancien format)"
                 name: "punch-cta"
                 widget: "object"
                 fields:
@@ -205,6 +224,45 @@ collections:
                   - { label: "Accroche courte", name: "text", widget: "string" }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+              - label: "Newsletter"
+                name: "newsletter"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string", required: false }
+                  - { label: "Texte", name: "description", widget: "text" }
+              - label: "Projets associés (Full Black, Black Boar, Ultimate Method)"
+                name: "projects"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - label: "Projets"
+                    name: "items"
+                    widget: "list"
+                    summary: "{{title}}"
+                    fields:
+                      - label: "Présentation"
+                        name: "layout"
+                        widget: "select"
+                        default: "card"
+                        options:
+                          - { label: "Grand (photo + texte)", value: "feature" }
+                          - { label: "Compact (carte)", value: "card" }
+                      - { label: "Petit titre", name: "kicker", widget: "string", required: false }
+                      - { label: "Titre", name: "title", widget: "string" }
+                      - { label: "Texte", name: "text", widget: "text" }
+                      - { label: "Photo (facultative)", name: "image", widget: "image", required: false, hint: "Une photo d'ambiance ne doit jamais être présentée comme un article disponible." }
+                      - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                      - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
+                      - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                      - { label: "Afficher le logo Black Boar", name: "showMark", widget: "boolean", default: false, required: false }
+                      - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                      - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                      - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
+                      - { label: "Réseau social (technique)", name: "socialPlatform", widget: "string", required: false, hint: "Ex: instagram. Renseigné seulement si le lien mène à un réseau social." }
               - label: "Section Partenaires"
                 name: "partners-teaser"
                 widget: "object"
@@ -213,9 +271,22 @@ collections:
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Sous-titre", name: "subtitle", widget: "text", required: false, hint: "Les partenaires affichés viennent automatiquement de la collection Partenaires — rien à configurer ici." }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
-              - label: "Texte + image (bloc découverte)"
+                  - { label: "Lien — texte", name: "ctaText", widget: "string" }
+                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string" }
+              - label: "Bandeau À propos (Tom)"
+                name: "about-strip"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string", required: false }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
+                  - { label: "Photo", name: "image", widget: "image", required: false }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                  - { label: "Lien — texte", name: "ctaText", widget: "string" }
+                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string" }
+                  - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
+              - label: "Texte + image (bloc découverte, ancien format)"
                 name: "teaser"
                 widget: "object"
                 fields:
@@ -231,13 +302,6 @@ collections:
                   - { label: "Texte", name: "text", widget: "text" }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
-              - label: "Newsletter"
-                name: "newsletter"
-                widget: "object"
-                fields:
-                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Petit titre", name: "eyebrow", widget: "string" }
-                  - { label: "Texte", name: "description", widget: "text" }
 
       - file: "data/pages/black-boar.json"
         label: "Black Boar"
@@ -280,33 +344,47 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Photo de fond", name: "image", widget: "image" }
-                  - label: "Cadrage de la photo"
-                    name: "imagePosition"
-                    widget: "select"
-                    default: "50% 50%"
-                    options:
-                      - { label: "Centre", value: "50% 50%" }
-                      - { label: "Haut", value: "50% 20%" }
-                      - { label: "Bas", value: "50% 80%" }
+                  - { label: "Photo", name: "image", widget: "image", hint: "Photo d'ambiance : elle ne doit pas laisser croire à un article disponible." }
+                  - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                  - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30% (horizontal puis vertical). Plus le 2e chiffre est petit, plus on voit le haut de la photo."] }
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Texte", name: "lede", widget: "text" }
+                  - { label: "Sous-titre (une ligne)", name: "tagline", widget: "string", required: false }
+                  - { label: "Texte", name: "lede", widget: "text", required: false }
+                  - { label: "Statut du projet (ex: pré-lancement)", name: "status", widget: "string", required: false, hint: "Dis honnêtement où en est la marque. N'annonce ni date, ni prix, ni stock sans les avoir validés." }
                   - { label: "Bouton — texte", name: "ctaText", widget: "string" }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string", hint: "Ex: #drop-form pour aller directement au formulaire." }
-              - label: "Texte simple"
+              - label: "Texte (univers de la marque)"
                 name: "bb-text"
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
-                  - { label: "Titre / texte", name: "title", widget: "text" }
+                  - { label: "Titre", name: "title", widget: "text" }
+                  - { label: "Texte (paragraphes)", name: "text", widget: "text", required: false, hint: "Laisse une ligne vide entre deux paragraphes. Si ce champ est vide, le titre est affiché seul, en grand." }
+              - label: "Galerie de photos d'ambiance"
+                name: "bb-gallery"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - label: "Photos"
+                    name: "photos"
+                    widget: "list"
+                    summary: "{{alt}}"
+                    fields:
+                      - { label: "Photo", name: "image", widget: "image" }
+                      - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                      - { label: "Cadrage de la photo", name: "position", widget: "string", required: false, default: "50% 35%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
+                      - { label: "Texte alternatif", name: "alt", widget: "string" }
+                  - { label: "Mention sous la galerie", name: "note", widget: "string", required: false, hint: "Précise que ce sont des photos d'ambiance, pas des articles." }
               - label: "Premier drop (avec formulaire)"
                 name: "bb-drop"
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Photo d'ambiance (facultative)", name: "image", widget: "image", required: false }
+                  - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                   - { label: "Petit titre", name: "eyebrow", widget: "string", required: false }
                   - { label: "Titre", name: "title", widget: "string", required: false }
@@ -332,22 +410,18 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Photo de fond", name: "image", widget: "image" }
-                  - label: "Cadrage de la photo"
-                    name: "imagePosition"
-                    widget: "select"
-                    default: "50% 50%"
-                    options:
-                      - { label: "Centre", value: "50% 50%" }
-                      - { label: "Haut", value: "50% 20%" }
-                      - { label: "Bas", value: "50% 80%" }
+                  - { label: "Photo", name: "image", widget: "image", hint: "Photo verticale de préférence (2:3). Le visage et les tatouages doivent rester visibles." }
+                  - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
+                  - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30% (horizontal puis vertical). Plus le 2e chiffre est petit, plus on voit le haut de la photo."] }
+                  - { label: "Petit titre (ligne au-dessus)", name: "kicker", widget: "string", required: false }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", hint: "Un saut de ligne = une nouvelle ligne affichée." }
+                  - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }
                   - { label: "Bouton — texte", name: "primaryCtaText", widget: "string", required: false }
                   - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string", required: false }
-                  - { label: "Bouton secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
-                  - { label: "Bouton secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
+                  - { label: "Lien secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Lien secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
               - label: "Grand titre (Hero simple)"
                 name: "simple-hero"
                 widget: "object"
@@ -407,6 +481,7 @@ collections:
                   - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
                   - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false, hint: "L'app est hébergée séparément (black-tom.netlify.app) — lien réel, ne pas remplacer par une URL blacktom.fr." }
                   - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
+                  - { label: "Note sous le bouton", name: "note", widget: "text", required: false, hint: "Explique ce qui se passe au clic (ex: ouverture de l'application sur son propre site)." }
               - label: "Trois points forts"
                 name: "um-features"
                 widget: "object"
@@ -527,6 +602,8 @@ collections:
                 options: [{ label: "Article", value: "article" }, { label: "Outil", value: "outil" }, { label: "Page", value: "page" }, { label: "Page commerciale", value: "commercial" }, { label: "Article pilier", value: "pilier" }]
               - { label: "Catégorie (identifiant, vide si aucune)", name: "category", widget: "string", required: false }
               - { label: "Photo mise en avant", name: "image", widget: "image", required: false, hint: "Utilisée uniquement pour l'article pilier mis en avant sur la page Contenus. Laisser vide pour les autres." }
+              - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+              - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 35%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 35%"] }
               - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
               - label: "État"
                 name: "status"

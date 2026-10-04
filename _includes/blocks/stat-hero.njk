@@ -1,15 +1,21 @@
 {% set value = status[block.statKey] %}
 {% if value %}
-<section class="hub-section">
-  <div class="stat-hero">
-    <span class="k">{{ block.label }}</span>
-    <span class="v">{{ value }}</span>
-    {% if block.goalKey and status[block.goalKey] %}<span class="goal">Objectif : {{ status[block.goalKey] }}</span>{% endif %}
+{% set ratio = value | statRatio(status.poids) %}
+<div class="ledger">
+  <div class="ledger-inner">
+    <div>
+      <p class="ledger-label">{{ block.label }}</p>
+      <p class="ledger-figure"><span class="n">{{ value | statNumber }}</span><span class="u">{{ value | statUnit }}</span></p>
+    </div>
+    <div>
+      <dl class="ledger-rows">
+        {% if status.poids %}<div><dt>Poids de corps</dt><dd>{{ status.poids | statNumber }} {{ status.poids | statUnit }}</dd></div>{% endif %}
+        {% if ratio %}<div><dt>Rapport au poids de corps</dt><dd>{{ ratio }} ×</dd></div>{% endif %}
+        {% if block.goalKey and status[block.goalKey] %}<div><dt>Objectif</dt><dd>{{ status[block.goalKey] }}</dd></div>{% endif %}
+      </dl>
+      {% if block.note %}<p class="ledger-note">{{ block.note }}</p>{% endif %}
+      {% if block.ctaText %}<p style="margin:22px 0 0;"><a href="{{ block.ctaUrl }}" class="link-arrow">{{ block.ctaText }}</a></p>{% endif %}
+    </div>
   </div>
-  {% if block.ctaText %}
-  <div class="btn-row" style="justify-content:flex-start;padding:20px 0 0;">
-    <a href="{{ block.ctaUrl }}" class="btn btn-ghost">{{ block.ctaText }}</a>
-  </div>
-  {% endif %}
-</section>
+</div>
 {% endif %}

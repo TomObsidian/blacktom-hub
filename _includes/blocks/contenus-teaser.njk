@@ -1,15 +1,34 @@
 <section class="hub-section" id="contenus">
-  <p class="section-eyebrow">{{ block.eyebrow }}</p>
-  <p class="section-title">{{ block.title }}</p>
-  <div class="content-preview-grid">
+  <div class="sec-head">
+    <div>
+      <p class="sec-label">{{ block.eyebrow }}</p>
+      <h2 class="sec-title">{{ block.title }}</h2>
+    </div>
+    {% if block.ctaText %}<a href="{{ block.ctaUrl }}" class="link-arrow" data-track="cta_contenus">{{ block.ctaText }}</a>{% endif %}
+  </div>
+  <div class="journal-grid">
     {% for item in block.items %}
-    <a class="content-preview" href="{{ item.url }}">
-      <div class="content-preview-media"><img src="{{ item.image }}" alt="{{ item.imageAlt | default('') }}" loading="lazy" decoding="async"></div>
-      <span class="content-preview-cat">{{ item.category }}</span>
-      <span class="content-preview-title">{{ item.title }}</span>
-      {% if item.description %}<span class="content-preview-desc">{{ item.description }}</span>{% endif %}
+    {% if loop.first %}
+    <a class="journal-feature" href="{{ item.url }}">
+      <figure><img src="{{ item.image }}"{% if item.imageSmall %} srcset="{{ item.imageSmall }} 800w, {{ item.image }} 1400w" sizes="(min-width:900px) 56vw, 100vw"{% endif %} alt="{{ item.imageAlt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ item.imagePosition | default('50% 35%') }};"></figure>
+      <span class="kicker">{{ item.category }}</span>
+      <h3>{{ item.title }}</h3>
+      {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+      <span class="link-arrow">Lire l'article</span>
     </a>
+    <div class="journal-side">
+    {% else %}
+      <a class="journal-item" href="{{ item.url }}">
+        <figure><img src="{{ item.image }}"{% if item.imageSmall %} srcset="{{ item.imageSmall }} 800w, {{ item.image }} 1400w" sizes="(min-width:900px) 36vw, 104px"{% endif %} alt="{{ item.imageAlt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ item.imagePosition | default('50% 30%') }};"></figure>
+        <div>
+          <span class="kicker">{{ item.category }}</span>
+          <h3>{{ item.title }}</h3>
+          {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+          <span class="link-arrow">Lire l'article</span>
+        </div>
+      </a>
+    {% endif %}
+    {% if loop.last %}</div>{% endif %}
     {% endfor %}
   </div>
-  <a href="{{ block.ctaUrl }}" class="btn btn-ghost" style="margin-top:28px;" data-track="cta_contenus">{{ block.ctaText }}</a>
 </section>

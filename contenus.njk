@@ -69,27 +69,36 @@ permalink: "contenus.html"
 {% for c in contentData.content %}
 {% if c.type == "pilier" and c.status == "published" %}
 <section class="hub-section">
-  <div class="teaser">
-    <div class="teaser-media"><img src="{{ c.image }}" alt="{{ c.imageAlt | default('') }}" loading="lazy" decoding="async"></div>
-    <div class="teaser-body">
-      <div class="tag-row"><span class="tag">Pilier</span></div>
+  <a class="journal-lead" href="{{ c.url }}" data-track="cta_pilier_musculation40">
+    <figure><img src="{{ c.image }}"{% if c.imageSmall %} srcset="{{ c.imageSmall }} 800w, {{ c.image }} 1400w" sizes="(min-width:900px) 56vw, 100vw"{% endif %} alt="{{ c.imageAlt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ c.imagePosition | default('50% 35%') }};"></figure>
+    <div>
+      <span class="kicker">Pilier</span>
       <h2>{{ c.title }}</h2>
       <p>Force, entraînement, récupération et nutrition : mon approche complète.</p>
-      <a href="{{ c.url }}" class="btn btn-primary" data-track="cta_pilier_musculation40">Lire →</a>
+      <span class="link-arrow">Lire l'article</span>
     </div>
-  </div>
+  </a>
 </section>
 {% endif %}
 {% endfor %}
 
-<div class="partners" id="category-grid" style="padding-top:44px;">
-  {% for cat in contentData.categories %}
-  <a class="pcard" href="{{ cat.slug }}">
-    <div class="pcard-head"><div class="letter-mark">{{ cat.name | first }}</div><div><div class="name">{{ cat.name }}</div><div class="tag">Catégorie</div></div></div>
-    <p class="desc">{{ cat.tagline }}</p>
-  </a>
-  {% endfor %}
-</div>
+<section class="hub-section" id="rubriques">
+  <div class="sec-head">
+    <div>
+      <p class="sec-label">Rubriques</p>
+      <h2 class="sec-title">Par thème</h2>
+    </div>
+  </div>
+  <ul class="cat-list">
+    {% for cat in contentData.categories %}
+    <li><a class="cat-row" href="{{ cat.slug }}">
+      <h3>{{ cat.name }}</h3>
+      <p>{{ cat.tagline }}</p>
+      <span class="cat-go" aria-hidden="true">→</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>
 
 <footer>
   <div class="foot-grid">

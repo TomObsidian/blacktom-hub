@@ -3,62 +3,52 @@
     {
       "type": "hero",
       "visible": true,
-      "image": "/assets/blacktom-hero-01.jpg",
-      "imagePosition": "50% 15%",
+      "image": "/assets/uploads/a7401674-web.jpg",
+      "imageSmall": "/assets/uploads/a7401674-sm.jpg",
+      "imageAlt": "Tom en débardeur blanc, regard vers l'objectif, épaule recouverte de tatouages Full Black, dans une salle de musculation.",
+      "imagePosition": "50% 24%",
+      "kicker": "Journal d'entraînement",
       "title": "BLACKTOM",
-      "tagline": "Musculation après 40 ans.\nContinuer à progresser.",
-      "lede": "Mon entraînement, ma progression au développé couché et des outils gratuits pour préparer tes séances.",
-      "primaryCtaText": "Explorer mon approche →",
-      "primaryCtaUrl": "musculation-apres-40-ans",
+      "claim": "Le développé couché comme fil conducteur.",
+      "lede": "Je documente mon entraînement, ma progression et mon univers Full Black.",
+      "primaryCtaText": "Ma progression au bench →",
+      "primaryCtaUrl": "developpe-couche.html",
       "secondaryCtaText": "Calculer mon 1RM →",
       "secondaryCtaUrl": "outils/calculateur-1rm-developpe-couche"
     },
     {
       "type": "stat-hero",
       "visible": true,
-      "label": "Bench",
+      "label": "Développé couché · meilleur résultat renseigné",
       "statKey": "developpe_couche",
       "goalKey": "objectif",
-      "ctaText": "Suivre la progression →",
-      "ctaUrl": "developpe-couche.html"
-    },
-    {
-      "type": "punch-cta",
-      "visible": true,
-      "title": "BENCH LAB",
-      "text": "1RM · Ratio · Échauffement · Chargement.",
-      "ctaText": "Analyser mon bench →",
-      "ctaUrl": "outils/calculateur-1rm-developpe-couche"
-    },
-    {
-      "type": "punch-cta",
-      "visible": true,
-      "title": "FOOD LAB",
-      "text": "Cru ↔ Cuit. Riz, pâtes, semoule... Convertis tes portions en quelques secondes.",
-      "ctaText": "Tester l'outil →",
-      "ctaUrl": "outils/convertisseur-cru-cuit"
+      "note": "Résultat renseigné par moi. Le rapport est ce résultat divisé par mon poids de corps."
     },
     {
       "type": "contenus-teaser",
       "visible": true,
-      "eyebrow": "Contenus",
-      "title": "Journal",
+      "eyebrow": "Journal",
+      "title": "Ce que je documente",
       "items": [
         {
           "title": "Musculation après 40 ans",
           "category": "Pilier",
           "description": "Force, entraînement, récupération et nutrition : mon approche complète.",
           "url": "musculation-apres-40-ans",
-          "image": "/assets/blacktom-physique-01.jpg",
-          "imageAlt": "Physique, pose double biceps."
+          "image": "/assets/uploads/a7401726-web.jpg",
+          "imageSmall": "/assets/uploads/a7401726-sm.jpg",
+          "imagePosition": "50% 40%",
+          "imageAlt": "Tom de dos à la poulie haute, mains sur la barre, dans une salle de musculation."
         },
         {
           "title": "Développé couché après 40 ans",
           "category": "Développé couché",
           "description": "Ce qui change vraiment, et ce qui ne change pas, après 40 ans.",
           "url": "developpe-couche/apres-40-ans",
-          "image": "/assets/blacktom-training-01.jpg",
-          "imageAlt": "Tom à l'entraînement, dos tourné, sur une machine de tirage."
+          "image": "/assets/uploads/a7401572-web.jpg",
+          "imageSmall": "/assets/uploads/a7401572-sm.jpg",
+          "imagePosition": "50% 24%",
+          "imageAlt": "Gros plan sur Tom, regard baissé, épaule et cou tatoués."
         },
         {
           "title": "Créatine après 40 ans",
@@ -66,17 +56,90 @@
           "description": "Ce que montrent réellement les données, sans promesse.",
           "url": "nutrition/creatine-apres-40-ans",
           "image": "/assets/uploads/a7401533.jpg",
-          "imageAlt": "Tom en séance de musculation, salle de sport."
+          "imagePosition": "50% 30%",
+          "imageAlt": "Tom en séance, un haltère à la main, regard vers l'objectif."
         }
       ],
       "ctaText": "Tous les contenus →",
       "ctaUrl": "contenus.html"
     },
     {
+      "type": "tools-teaser",
+      "visible": true,
+      "eyebrow": "Outils gratuits",
+      "title": "Deux outils tirés de ma pratique.",
+      "items": [
+        {
+          "kicker": "Développé couché",
+          "title": "Bench Lab",
+          "text": "Estime ton 1RM, compare-le à ton poids de corps et prépare tes charges : pourcentages, échauffement et chargement de la barre.",
+          "example": "100 kg × 5 répétitions → 116,7 kg estimés",
+          "ctaText": "Ouvrir Bench Lab →",
+          "ctaUrl": "outils/calculateur-1rm-developpe-couche",
+          "trackId": "cta_benchlab_home"
+        },
+        {
+          "kicker": "Nutrition",
+          "title": "Food Lab",
+          "text": "Convertis tes portions entre poids cru et poids cuit : riz, pâtes, semoule, lentilles, pommes de terre.",
+          "example": "100 g de riz cru → ≈ 250 g cuits (estimation)",
+          "ctaText": "Ouvrir Food Lab →",
+          "ctaUrl": "outils/convertisseur-cru-cuit",
+          "trackId": "cta_foodlab_home"
+        }
+      ]
+    },
+    {
       "type": "newsletter",
       "visible": true,
       "eyebrow": "BLACKTOM — La liste",
-      "description": "Ma progression documentée, mes nouveaux guides et les mises à jour de mes outils, par email."
+      "title": "Suivre BLACKTOM",
+      "description": "Je t'envoie ma progression documentée, mes nouveaux guides et les mises à jour de mes outils."
+    },
+    {
+      "type": "projects",
+      "visible": true,
+      "eyebrow": "Mon univers",
+      "title": "Les projets associés",
+      "items": [
+        {
+          "layout": "feature",
+          "kicker": "Projet personnel",
+          "title": "FULL BLACK",
+          "text": "Je construis aussi, séance après séance, mon projet Full Black. J'en partage l'évolution sur Instagram.",
+          "image": "/assets/uploads/a7401713-web.jpg",
+          "imageSmall": "/assets/uploads/a7401713-sm.jpg",
+          "imagePosition": "50% 40%",
+          "imageAlt": "Tom de dos, épaule et bras recouverts de tatouages Full Black, mains jointes dans le dos.",
+          "ctaText": "Suivre sur Instagram →",
+          "ctaUrl": "https://www.instagram.com/xblacktomx/",
+          "trackId": "full_black",
+          "socialPlatform": "instagram"
+        },
+        {
+          "layout": "card",
+          "kicker": "Alternative fitness wear",
+          "title": "BLACK BOAR ATHLETICS",
+          "text": "Ma marque de vêtements : musculation, metal, tattoo. Le premier drop arrive, aucun article n'est encore en vente.",
+          "image": "/assets/uploads/a7401760-web.jpg",
+          "imageSmall": "/assets/uploads/a7401760-sm.jpg",
+          "imagePosition": "50% 38%",
+          "imageAlt": "Photo d'ambiance : gros plan sur le torse et le cou tatoués de Tom.",
+          "showMark": true,
+          "ctaText": "Être averti du lancement →",
+          "ctaUrl": "black-boar.html#drop-form",
+          "trackId": "cta_blackboar"
+        },
+        {
+          "layout": "card",
+          "kicker": "Application",
+          "title": "THE ULTIMATE METHOD",
+          "text": "L'application d'entraînement, de progression et de nutrition qui s'adapte à ta journée. Connexion ou création de compte directement dans l'app.",
+          "ctaText": "Voir The Ultimate Method →",
+          "ctaUrl": "ultimate-method.html",
+          "trackId": "cta_ultimatemethod"
+        }
+      ]
     },
     {
       "type": "partners-teaser",
@@ -88,52 +151,13 @@
       "ctaUrl": "partenaires.html"
     },
     {
-      "type": "teaser",
+      "type": "about-strip",
       "visible": true,
-      "image": "/assets/blacktom-fullblack-01.jpg",
-      "imageAlt": "Tatouages Full Black, torse et bras.",
-      "tags": [],
-      "title": "FULL BLACK",
-      "text": "BLACKTOM, ce n'est pas seulement le bench. Je construis aussi, séance après séance, mon projet Full Black. J'en partage l'évolution sur Instagram.",
-      "ctaText": "Suivre le Full Black →",
-      "ctaUrl": "https://www.instagram.com/xblacktomx/",
-      "trackId": "full_black",
-      "socialPlatform": "instagram"
-    },
-    {
-      "type": "teaser",
-      "visible": true,
-      "image": "/assets/uploads/a7401760-web.jpg",
-      "imageAlt": "Ambiance Black Boar : musculation et tatouages.",
-      "tags": [
-        "Alternative Fitness Wear",
-        "Musculation · Metal · Tattoo"
-      ],
-      "title": "BLACK BOAR",
-      "text": "Musculation, metal, tattoo. Le premier drop arrive.",
-      "ctaText": "Être averti du lancement →",
-      "ctaUrl": "black-boar.html#drop-form",
-      "trackId": "cta_blackboar"
-    },
-    {
-      "type": "teaser",
-      "visible": true,
-      "image": null,
-      "tags": [],
-      "title": "THE ULTIMATE METHOD",
-      "text": "Entraînement. Nutrition. Progression.",
-      "ctaText": "Découvrir →",
-      "ctaUrl": "ultimate-method.html",
-      "trackId": "cta_ultimatemethod"
-    },
-    {
-      "type": "teaser",
-      "visible": true,
-      "image": "/assets/blacktom-portrait-01.jpg",
-      "imageAlt": "Portrait de Black Tom en salle de musculation.",
-      "tags": [],
+      "eyebrow": "À propos",
       "title": "TOM.",
       "text": "Musculation, développé couché, physique, Full Black. Mon entraînement documenté au fil des semaines.",
+      "image": "/assets/uploads/a7401676-sm.jpg",
+      "imageAlt": "Tom de face, bras fléchis, tatouages Full Black sur les épaules et le cou.",
       "ctaText": "Mon parcours →",
       "ctaUrl": "a-propos.html",
       "trackId": "cta_apropos"

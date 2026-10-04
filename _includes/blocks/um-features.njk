@@ -1,13 +1,10 @@
-{% set icons = [
-  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e02020" stroke-width="2"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>',
-  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e02020" stroke-width="2"><path d="M5 12a7 7 0 0 0 14 0z"/></svg>',
-  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e02020" stroke-width="2"><path d="M4 19V9M12 19V5M20 19v-7"/></svg>'
-] %}
-<div class="feature-row">
-  {% for item in block.items %}<div class="f">{{ icons[loop.index0 % 3] | safe }}{{ item.label }}</div>{% endfor %}
-</div>
-<div class="bio-block" style="padding-top:24px;">
-  <ul style="font-size:14px;line-height:1.8;color:var(--dim);padding-left:20px;margin:0;">
-    {% for item in block.items %}<li><strong style="color:var(--wht);">{{ item.label }}</strong> : {{ item.description }}</li>{% endfor %}
-  </ul>
-</div>
+<section class="hub-section">
+  <div class="um-uses">
+    {% for item in block.items %}
+    <div class="um-use">
+      <h2>{{ item.label }}</h2>
+      <p>{{ item.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>

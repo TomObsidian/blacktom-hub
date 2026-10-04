@@ -4,9 +4,10 @@
   {% if block.tagline %}<p class="tagline" style="margin-bottom:0;">{{ block.tagline }}</p>{% endif %}
   {% if block.lede %}<p class="lede" style="max-width:{{ block.ledeMaxWidth | default('600px') }};">{{ block.lede }}</p>{% endif %}
   {% if block.subtext %}<p style="margin-top:12px;font-size:14px;color:var(--dim);max-width:560px;">{{ block.subtext }}</p>{% endif %}
+  {% if block.ctaText %}
+  <div class="btn-row" style="justify-content:flex-start;padding-top:28px;">
+    <a href="{{ block.ctaUrl }}" class="btn btn-primary"{% if block.ctaTrackEvent %} data-track="{{ block.ctaTrackEvent }}"{% endif %}>{{ block.ctaText }}</a>
+  </div>
+  {% endif %}
+  {% if block.note %}<p class="ext-note">{{ block.note }}</p>{% endif %}
 </section>
-{% if block.ctaText %}
-<div class="btn-row" style="justify-content:flex-start;">
-  <a href="{{ block.ctaUrl }}" class="btn btn-primary"{% if block.ctaTrackEvent %} data-track="{{ block.ctaTrackEvent }}"{% endif %}>{{ block.ctaText }}</a>
-</div>
-{% endif %}

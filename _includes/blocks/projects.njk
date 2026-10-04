@@ -1,0 +1,39 @@
+<section class="hub-section" id="projets">
+  <div class="sec-head">
+    <div>
+      <p class="sec-label">{{ block.eyebrow }}</p>
+      <h2 class="sec-title">{{ block.title }}</h2>
+    </div>
+  </div>
+  {% for item in block.items %}
+  {% if item.layout == 'feature' %}
+  <article class="project-feature">
+    <figure><img src="{{ item.image }}"{% if item.imageSmall %} srcset="{{ item.imageSmall }} 800w, {{ item.image }} 1400w" sizes="(min-width:900px) 40vw, 100vw"{% endif %} alt="{{ item.imageAlt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ item.imagePosition | default('50% 35%') }};"></figure>
+    <div>
+      {% if item.kicker %}<span class="kicker">{{ item.kicker }}</span>{% endif %}
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.text }}</p>
+      {% if item.socialPlatform %}
+      <a href="{{ item.ctaUrl }}" class="btn btn-ghost" target="_blank" rel="noopener me" onclick="trackEvent('social_click',{platform:'{{ item.socialPlatform }}',source_page:'/',placement:'{{ item.trackId | default('project') }}'})">{{ item.ctaText }}</a>
+      {% else %}
+      <a href="{{ item.ctaUrl }}" class="btn btn-ghost" data-track="{{ item.trackId | default('cta_project') }}">{{ item.ctaText }}</a>
+      {% endif %}
+    </div>
+  </article>
+  {% endif %}
+  {% endfor %}
+  <div class="project-pair">
+    {% for item in block.items %}
+    {% if item.layout != 'feature' %}
+    <article class="project-card{% if not item.image %} plain{% endif %}">
+      {% if item.image %}<figure><img src="{{ item.image }}"{% if item.imageSmall %} srcset="{{ item.imageSmall }} 800w, {{ item.image }} 1400w" sizes="(min-width:900px) 45vw, 100vw"{% endif %} alt="{{ item.imageAlt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ item.imagePosition | default('50% 35%') }};"></figure>{% endif %}
+      {% if item.kicker %}<span class="kicker">{{ item.kicker }}</span>{% endif %}
+      {% if item.showMark %}<img class="project-mark" src="/assets/logo-black-boar-mark.svg" alt="Black Boar" width="64" height="53" loading="lazy" decoding="async">{% endif %}
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.text }}</p>
+      <a href="{{ item.ctaUrl }}" class="link-arrow" data-track="{{ item.trackId | default('cta_project') }}">{{ item.ctaText }}</a>
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>

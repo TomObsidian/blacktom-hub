@@ -1,4 +1,14 @@
-<section>
-  <p class="section-eyebrow">{{ block.eyebrow }}</p>
+<section class="hub-section">
+  {% if block.text %}
+  <div class="bb-univers">
+    <div>
+      <p class="sec-label">{{ block.eyebrow }}</p>
+      <h2>{{ block.title }}</h2>
+    </div>
+    <div class="bb-copy">{% for para in block.text | splitParagraphs %}<p>{{ para }}</p>{% endfor %}</div>
+  </div>
+  {% else %}
+  <p class="sec-label">{{ block.eyebrow }}</p>
   <p class="section-title">{{ block.title }}</p>
+  {% endif %}
 </section>

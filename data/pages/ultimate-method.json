@@ -14,21 +14,31 @@
       "subtext": "Structurer tes séances et suivre ta progression, sans dépendre d'un coach.",
       "ctaText": "Accéder à l'application →",
       "ctaUrl": "https://black-tom.netlify.app/?go=signup",
-      "ctaTrackEvent": "ultimate_method_click"
+      "ctaTrackEvent": "ultimate_method_click",
+      "note": "Le bouton ouvre l'application, sur son propre site (black-tom.netlify.app), distinct de blacktom.fr. Tu y crées ton compte ou tu te connectes."
     },
     {
       "type": "um-features",
       "visible": true,
       "items": [
-        { "label": "Entraînement", "description": "tes séances et tes programmes, structurés et suivis dans l'app." },
-        { "label": "Nutrition", "description": "une alimentation qui s'adapte à ta journée plutôt qu'un plan figé." },
-        { "label": "Progression", "description": "suivi de ton évolution dans le temps, séance après séance." }
+        {
+          "label": "Entraînement",
+          "description": "tes séances et tes programmes, structurés et suivis dans l'app."
+        },
+        {
+          "label": "Nutrition",
+          "description": "une alimentation qui s'adapte à ta journée plutôt qu'un plan figé."
+        },
+        {
+          "label": "Progression",
+          "description": "suivi de ton évolution dans le temps, séance après séance."
+        }
       ]
     },
     {
       "type": "cta-band",
       "visible": true,
-      "title": "Prête quand tu l'es.",
+      "title": "Ouvrir l'application.",
       "text": "Connexion ou création de compte directement depuis l'application.",
       "ctaText": "Accéder à l'application →",
       "ctaUrl": "https://black-tom.netlify.app/?go=signup",

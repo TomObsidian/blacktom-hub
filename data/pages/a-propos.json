@@ -5,8 +5,10 @@
     {
       "type": "hero",
       "visible": true,
-      "image": "/assets/blacktom-portrait-01.jpg",
-      "imagePosition": "50% 32%",
+      "image": "/assets/uploads/a7401679-web.jpg",
+      "imageSmall": "/assets/uploads/a7401679-sm.jpg",
+      "imageAlt": "Tom en débardeur blanc, regard baissé vers ses mains, bras recouverts de tatouages, dans une salle de musculation.",
+      "imagePosition": "50% 26%",
       "title": "TOM.",
       "tagline": "FORCE. PHYSIQUE. FULL BLACK.",
       "lede": "",

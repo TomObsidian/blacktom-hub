@@ -1,0 +1,8 @@
+<section class="hub-section">
+  <div class="bb-mosaic">
+    {% for photo in block.photos %}
+    <figure><img src="{{ photo.image }}"{% if photo.imageSmall %} srcset="{{ photo.imageSmall }} 800w, {{ photo.image }} 1400w" sizes="(min-width:900px) 33vw, 50vw"{% endif %} alt="{{ photo.alt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ photo.position | default('50% 35%') }};"></figure>
+    {% endfor %}
+  </div>
+  {% if block.note %}<p class="bb-note">{{ block.note }}</p>{% endif %}
+</section>
