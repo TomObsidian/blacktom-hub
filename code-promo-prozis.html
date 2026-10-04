@@ -86,15 +86,15 @@
 </section>
 
 <div id="prozis-offer-block">
-  <div class="status-card" style="margin:28px 20px 0;max-width:420px;">
+  <div class="status-card" style="margin:28px var(--pad) 0;max-width:420px;">
     <div class="stat-row"><span class="k">Code</span><span class="v" id="prozis-code" style="font-size:20px;letter-spacing:.05em;">BLACKTOM</span></div>
     <div class="stat-row"><span class="k">Avantage</span><span class="v" id="prozis-offer">-10%</span></div>
   </div>
   <div class="btn-row" style="justify-content:flex-start;">
     <button type="button" id="prozis-copy" class="btn btn-ghost" onclick="copyPromoCode('prozis','BLACKTOM',this,'code-promo-prozis','hero')">Copier le code</button>
-    <a href="https://www.prozis.com/1SSIS" id="prozis-cta" class="btn btn-primary" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('prozis','code-promo-prozis','hero')">Voir chez Prozis →</a>
+    <a href="https://prozis.com/1SSlS" id="prozis-cta" class="btn btn-primary" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('prozis','code-promo-prozis','hero')">Voir chez Prozis →</a>
   </div>
-  <p style="padding:0 20px;font-size:12px;color:var(--dim2);max-width:560px;">Lien affilié : je peux toucher une commission sur les achats réalisés via ce lien, sans coût supplémentaire pour vous.</p>
+  <p style="padding:0 var(--pad);font-size:12px;color:var(--dim2);max-width:560px;">Lien affilié : je peux toucher une commission sur les achats réalisés via ce lien, sans coût supplémentaire pour vous.</p>
 </div>
 
 <div class="bio-block">
@@ -150,7 +150,7 @@
   </div>
 </div>
 
-<div class="cta-band" style="margin:56px 20px 0;">
+<div class="cta-band" style="margin:56px var(--pad) 0;">
   <div>
     <h3>Envie de voir d'autres partenaires ?</h3>
     <p>Retrouvez tout ce que j'utilise et recommande réellement.</p>
@@ -215,7 +215,7 @@
       var p = getPartner('prozis');
       var offerBlock = document.getElementById('prozis-offer-block');
       if (!p || !isPartnerActive(p)) {
-        if (offerBlock) offerBlock.innerHTML = '<p style="margin:28px 20px 0;color:var(--dim);">Ce partenariat n’est plus actif pour le moment.</p>';
+        if (offerBlock) offerBlock.innerHTML = '<p style="margin:28px var(--pad) 0;color:var(--dim);">Ce partenariat n’est plus actif pour le moment.</p>';
         return;
       }
       var cta = document.getElementById('prozis-cta');
