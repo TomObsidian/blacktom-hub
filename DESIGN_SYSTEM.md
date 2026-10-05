@@ -1,14 +1,14 @@
 # BLACKTOM, le Registre
 
-La monographie d'un homme de 43 ans qui soulève lourd, mise en page comme un magazine et tenue comme une feuille de pesée. Ce document est la référence pour toute nouvelle page ou nouveau bloc.
+La monographie d'un homme qui soulève lourd, mise en page comme un magazine et tenue comme une feuille de pesée. Ce document est la référence pour toute nouvelle page ou nouveau bloc.
 
 Tout vit dans `styles.css`. Les valeurs sont des variables CSS en tête de fichier : changer l'accent ou une police ne demande de toucher qu'à `:root`.
 
 ## Trois idées
 
-1. **Le chiffre est l'architecture.** Un nombre monumental, rogné par le bord de page, est la signature (l'âge sur la couverture, le relevé, le résultat des outils).
-2. **Le noir est une matière.** Trois noirs, deux blancs cassés. Les sections alternent entre fonte (noir) et papier (clair), jamais plus de deux de suite de la même matière.
-3. **La photo est un document.** Noir et blanc, grain cuit dans le fichier, légende factuelle (fichier, matériel, date). La couleur est l'exception.
+1. **Le chiffre est l'architecture.** Un nombre monumental, rogné par le bord de page, est la signature (le relevé, le résultat des outils, le mot BLACKTOM de la couverture et du pied de page).
+2. **Le noir et le rouge sont des matières.** Trois noirs, deux blancs cassés, trois rouges. Les sections alternent entre fonte (noir), papier (clair) et sang (rouge profond), jamais plus de deux de suite de la même matière.
+3. **La photo est un document.** En couleur, noirs calés sur la fonte, grain cuit dans le fichier, légende factuelle (fichier, matériel, date).
 
 ## Matières et couleurs
 
@@ -21,12 +21,15 @@ Tout vit dans `styles.css`. Les valeurs sont des variables CSS en tête de fichi
 | `--papier` | `#E4DFD3` | sections claires |
 | `--cendre` | `#A39F95` | texte secondaire sur noir (7,3:1) |
 | `--acier` | `#57544E` | texte secondaire sur papier (5,8:1) |
-| `--rouge` | `#C8141C` | l'accent : fonds et grands chiffres (3,3:1 sur fonte) |
-| `--rouge-clair` | `#EE3B34` | rouge en texte sur noir (4,9:1), erreurs |
+| `--rouge` | `#C8141C` | l'accent vif : mot géant, grands chiffres, filets (3,3:1 sur fonte, 4,8:1 sur papier) |
+| `--rouge-clair` | `#EE3B34` | rouge en texte sur noir (4,9:1), erreurs, page courante |
+| `--sang` | `#6E0E14` | rouge profond : aplats de section, texte craie dessus (10,5:1) |
+| `--sang-haut` | `#8F161D` | rouge foncé : détails sur noir |
+| `--bordeaux` | `#4A0A0E` | rouge très sombre : surfaces sur rouge profond |
 
-Une classe de matière (`.fonte`, `.presse`, `.paper`) redéfinit `--bg`, `--fg`, `--fg2`, `--rule`, `--rule2`. Les composants ne lisent que ces variables, jamais une couleur en dur : ils fonctionnent donc sur toutes les matières. Les anciens noms (`--txt`, `--wht`, `--dim`, `--dim2`, `--line`, `--red-text`, `--ph`, `--pb`) restent définis pour les styles inline des pages statiques.
+Une classe de matière (`.fonte`, `.presse`, `.paper`, `.sang`) redéfinit `--bg`, `--fg`, `--fg2`, `--rule`, `--rule2`. Les composants ne lisent que ces variables, jamais une couleur en dur : ils fonctionnent donc sur toutes les matières. Les anciens noms (`--txt`, `--wht`, `--dim`, `--dim2`, `--line`, `--red-text`, `--ph`, `--pb`) restent définis pour les styles inline des pages statiques.
 
-**Règle du rouge : un seul par écran, et il a un sens.** C'est l'action qui engage (rejoindre la liste, être prévenu du drop) et le disque de 25 kg dans le dessin de la barre. Jamais en texte courant, jamais en lien, jamais en décor.
+**Le rouge est la couleur de la marque.** Aplats profonds (`.sang`) pour les sections d'inscription, Food Lab et les rangées d'À propos ; filets de 4 px (`--bar`) ; le mot BLACKTOM géant ; le rapport au poids de corps. Jamais en texte courant : les liens de texte sont soulignés en rouge, pas colorés. Sur `.sang`, les boutons passent en craie.
 
 ## Typographie
 
@@ -65,12 +68,13 @@ Marges de page : 16 px sur mobile, 56 px dès 820 px (`--pad`), largeur maximale
 4. Pas plus de deux sections consécutives de la même matière.
 5. Filets de 4 px en tête de bloc, 1 px en séparation. Des filets, pas des boîtes.
 6. Rayon 0. Aucune ombre, aucun dégradé, aucun flou.
+6 bis. Un grand chiffre garde de la place sous lui (virgules et jambages) : `padding-bottom` de .2em.
 7. Les images sont bord à bord ou alignées sur la grille, légende dessous, jamais dans une carte.
 8. Un seul élément encadré par page : le formulaire (champ souligné, case carrée).
 9. Les verbes concrets remplacent les « Découvrir » et les « → » en suffixe.
 10. Aucune donnée inventée : les chiffres viennent de `data/status.json`, les légendes de photos viennent des métadonnées.
 
-Test de contrôle avant chaque page : y a-t-il un élément 8 fois plus grand que le texte ? un seul rouge ? une photo non voilée ? aucun bloc encadré inutile ?
+Test de contrôle avant chaque page : y a-t-il un élément 8 fois plus grand que le texte ? du rouge foncé quelque part ? une photo non voilée ? aucun bloc encadré inutile ? aucun texte qui en touche un autre (virgules, accents, jambages) ?
 
 ## Composants
 
@@ -78,7 +82,7 @@ Test de contrôle avant chaque page : y a-t-il un élément 8 fois plus grand qu
 |---|---|---|
 | Mast | `.nav`, `.brand`, `.nav-links`, `.nav-toggle` | toutes les pages, collant, noir presse |
 | Sommaire | `.mobile-menu` | plein écran sur mobile, Échap ferme, focus piégé |
-| Couverture | `.cover`, `.cover-num`, `.cover-photo`, `.cover-quote`, `.cover-mark` | accueil, À propos, Black Boar (`.cover--bb`) |
+| Couverture | `.cover`, `.cover-photo`, `.cover-quote`, `.cover-mark` | accueil, À propos, Black Boar (`.cover--bb`) |
 | Relevé | `.releve`, `.fig` (`.n` `.u` `.d` `.s`) | accueil, sur papier |
 | Dossier et entrées | `.dossier`, `.entries`, `.entry` | journal de l'accueil |
 | Instruments | `.instruments`, `.instrument`, `.bar-fig` | accueil et page Outils |
@@ -99,7 +103,7 @@ Mécanique, rare, jamais décorative. Les images apparaissent par un balayage ne
 
 ## Photos
 
-`scripts/registre-photos.py` produit tous les visuels : recadrage dur, niveaux calés (noir sur `#0E0E0D`, blanc sur `#F2EFE8`), courbe en S, grain gaussien monochrome appliqué après le redimensionnement, JPEG progressif. Sorties dans `assets/registre/` (`nom.jpg` et `nom-sm.jpg`).
+`scripts/registre-photos.py` produit tous les visuels : recadrage dur, niveaux calés (noir sur `#0E0E0D`), courbe en S douce appliquée à tous les canaux (la teinte est conservée), grain gaussien appliqué après le redimensionnement, JPEG progressif. L'option `--bw` produit la version noir et blanc. Sorties dans `assets/registre/` (`nom.jpg` et `nom-sm.jpg`).
 
 ```bash
 python3 scripts/registre-photos.py            # tout
@@ -108,8 +112,8 @@ python3 scripts/registre-photos.py cover about  # certains visuels
 
 Pour ajouter une photo, ajouter une ligne au tableau `ASSETS` (source, recadrage en fractions, largeur principale, largeur mobile), puis lancer le script. Légendes : nom de fichier, matériel et date lus dans les métadonnées de la photo, rien d'autre.
 
-Formats : couverture et portraits 2:3, détails 1:1, planche contact 4:5, bandes 21:9. Une photo couleur au maximum par page, et seulement comme rupture voulue.
+Formats : couverture et portraits 2:3, détails 1:1, planche contact 4:5, bandes 21:9.
 
 ## Administration (Decap)
 
-Chaque nouveau bloc ou champ doit être reflété dans `admin/config.yml` (`contact-sheet` et `age` l'ont été avec cette refonte). L'âge affiché sur la couverture est le champ « Âge » de Mes performances.
+Chaque nouveau bloc ou champ doit être reflété dans `admin/config.yml` (`contact-sheet` l'a été avec cette refonte).

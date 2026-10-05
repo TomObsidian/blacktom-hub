@@ -32,7 +32,7 @@
       "title": "Au sommaire",
       "items": [
         {
-          "title": "Musculation après 40 ans",
+          "title": "Musculation",
           "category": "Pilier",
           "description": "Force, entraînement, récupération et nutrition : mon approche complète.",
           "url": "/musculation-apres-40-ans",
@@ -43,9 +43,9 @@
           "imageAlt": "Tom de dos, les deux mains sur la barre de traction, tatouages sur la nuque et sur les mains."
         },
         {
-          "title": "Développé couché après 40 ans",
+          "title": "Développé couché",
           "category": "Développé couché",
-          "description": "Ce qui change vraiment, et ce qui ne change pas, après 40 ans.",
+          "description": "Ce qui change vraiment, et ce qui reste identique.",
           "url": "/developpe-couche/apres-40-ans",
           "image": "/assets/registre/j-bench.jpg",
           "imageSmall": "/assets/registre/j-bench-sm.jpg",
@@ -53,7 +53,7 @@
           "imageAlt": "Gros plan sur Tom, le regard baissé, épaule et cou tatoués, dans la pénombre d'une salle."
         },
         {
-          "title": "Récupération après 40 ans",
+          "title": "Récupération",
           "category": "Récupération",
           "description": "Sommeil, fatigue et blessures : ce que disent les données, et leurs limites.",
           "url": "/recuperation/apres-40-ans",
@@ -63,7 +63,7 @@
           "imageAlt": "Tom de profil, la tête baissée, dans une salle de musculation."
         },
         {
-          "title": "Créatine après 40 ans",
+          "title": "Créatine",
           "category": "Nutrition",
           "description": "Ce que montrent réellement les données, sans promesse.",
           "url": "/nutrition/creatine-apres-40-ans",
@@ -113,7 +113,7 @@
       "visible": true,
       "eyebrow": "Rennes, 14 septembre 2026",
       "title": "Planche contact",
-      "text": "Huit images d'une même soirée, développées en noir et blanc. Un 85 mm ouvert à f/1.8, rien d'autre.",
+      "text": "Huit images d'une même soirée. Un 85 mm ouvert à f/1.8, rien d'autre.",
       "ctaText": "Mon parcours",
       "ctaUrl": "/a-propos",
       "trackId": "cta_apropos",

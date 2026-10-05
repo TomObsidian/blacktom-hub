@@ -111,7 +111,6 @@ collections:
         label: "Mes performances"
         name: "status"
         fields:
-          - { label: "Âge", name: "age", widget: "string", required: false, hint: "Ex : 43. C'est le grand chiffre de la couverture (accueil et À propos). À mettre à jour à chaque anniversaire (le 23 juillet). Laisser vide pour ne rien afficher." }
           - { label: "Poids de corps", name: "poids", widget: "string", required: false, hint: "Laisser vide tant que non renseigné : n'affiche jamais une fausse valeur." }
           - { label: "Meilleur développé couché", name: "developpe_couche", widget: "string", required: false }
           - { label: "Objectif actuel", name: "objectif", widget: "string", required: false }
@@ -138,12 +137,12 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Photo", name: "image", widget: "image", hint: "Photo verticale (2:3), noir et blanc de préférence : noirs calés sur #0E0E0D, blancs sur #F2EFE8, grain dans le fichier. Le visage doit rester visible. Voir scripts/registre-photos.py." }
+                  - { label: "Photo", name: "image", widget: "image", hint: "Photo verticale (2:3), en couleur, noirs calés sur #0E0E0D, grain dans le fichier. Le visage doit rester visible. Voir scripts/registre-photos.py." }
                   - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false, hint: "Facultatif : version plus légère de la même photo." }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                   - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30% (horizontal puis vertical). Plus le 2e chiffre est petit, plus on voit le haut de la photo."] }
                   - { label: "Titre (le mot géant, rogné en bas de la couverture)", name: "title", widget: "string" }
-                  - { label: "Phrase d'accroche", name: "claim", widget: "string", required: false, hint: "Affichée en grand, en italique, sous le chiffre de l'âge." }
+                  - { label: "Phrase d'accroche", name: "claim", widget: "string", required: false, hint: "Affichée en grand, en italique, à côté du portrait." }
                   - { label: "Sous-titre multiligne (ancien format)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée. Laisser vide si la phrase d'accroche suffit." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }
                   - { label: "Bouton : texte", name: "primaryCtaText", widget: "string" }
@@ -261,7 +260,7 @@ collections:
                       - { label: "Petit titre", name: "kicker", widget: "string", required: false }
                       - { label: "Titre", name: "title", widget: "string" }
                       - { label: "Texte", name: "text", widget: "text" }
-                      - { label: "Photo carrée (facultative)", name: "image", widget: "image", required: false, hint: "Carré 1000 px, noir et blanc. Une photo d'ambiance ne doit jamais être présentée comme un article disponible." }
+                      - { label: "Photo carrée (facultative)", name: "image", widget: "image", required: false, hint: "Carré 1000 px. Une photo d'ambiance ne doit jamais être présentée comme un article disponible." }
                       - { label: "Photo version mobile (560 px)", name: "imageSmall", widget: "image", required: false }
                       - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                       - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
@@ -286,7 +285,7 @@ collections:
                     widget: "list"
                     summary: "{{caption}}"
                     fields:
-                      - { label: "Photo", name: "image", widget: "image", hint: "Format 4:5, 640 px de large, noir et blanc." }
+                      - { label: "Photo", name: "image", widget: "image", hint: "Format 4:5, 640 px de large." }
                       - { label: "Photo version mobile (400 px)", name: "imageSmall", widget: "image", required: false }
                       - { label: "Texte alternatif", name: "alt", widget: "string" }
                       - { label: "Légende", name: "caption", widget: "string", required: false, hint: "Réelle : nom du fichier, matériel, date. Rien d'inventé." }

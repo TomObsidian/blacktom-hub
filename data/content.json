@@ -8,7 +8,7 @@
     {
       "slug": "entrainement",
       "name": "Entraînement",
-      "tagline": "Force, hypertrophie et organisation des séances après 40 ans."
+      "tagline": "Force, hypertrophie et organisation des séances."
     },
     {
       "slug": "nutrition",
@@ -28,17 +28,17 @@
   ],
   "content": [
     { "title": "Musculation après 40 ans", "type": "pilier", "category": null, "status": "published", "url": "/musculation-apres-40-ans", "image": "/assets/registre/j-pilier.jpg", "imageSmall": "/assets/registre/j-pilier-sm.jpg", "imagePosition": "50% 32%", "imageAlt": "Tom de dos à la poulie haute, mains sur la barre, dans une salle de musculation." },
-    { "title": "Développé couché après 40 ans", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/apres-40-ans" },
+    { "title": "Développé couché : ce qui change vraiment", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/apres-40-ans" },
     { "title": "Comment progresser au développé couché", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/progresser" },
     { "title": "Programme développé couché", "type": "article", "category": "developpe-couche", "status": "planned", "url": null },
     { "title": "BLACKTOM Bench Lab (calculateur 1RM)", "type": "outil", "category": "developpe-couche", "status": "published", "url": "/outils/calculateur-1rm-developpe-couche" },
     { "title": "Ratio développé couché / poids du corps", "type": "article", "category": "developpe-couche", "status": "planned", "url": null },
     { "title": "Mes compléments", "type": "page", "category": "nutrition", "status": "published", "url": "/complements" },
-    { "title": "Créatine après 40 ans", "type": "article", "category": "nutrition", "status": "published", "url": "/nutrition/creatine-apres-40-ans" },
+    { "title": "Créatine : ce que disent les données", "type": "article", "category": "nutrition", "status": "published", "url": "/nutrition/creatine-apres-40-ans" },
     { "title": "Riz cru / cuit : équivalences et convertisseur", "type": "article", "category": "nutrition", "status": "published", "url": "/nutrition/riz-cru-cuit" },
-    { "title": "Combien de protéines après 40 ans", "type": "article", "category": "nutrition", "status": "planned", "url": null },
+    { "title": "Combien de protéines par jour", "type": "article", "category": "nutrition", "status": "planned", "url": null },
     { "title": "Quelle whey choisir", "type": "article", "category": "nutrition", "status": "planned", "url": null },
     { "title": "Code promo Prozis BLACKTOM", "type": "commercial", "category": "nutrition", "status": "published", "url": "/code-promo-prozis" },
-    { "title": "Récupération en musculation après 40 ans", "type": "article", "category": "recuperation", "status": "published", "url": "/recuperation/apres-40-ans" }
+    { "title": "Récupération : sommeil, fatigue, blessures", "type": "article", "category": "recuperation", "status": "published", "url": "/recuperation/apres-40-ans" }
   ]
 }

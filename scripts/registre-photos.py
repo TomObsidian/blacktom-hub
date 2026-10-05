@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Développe les photos du site « Registre » : noir et blanc, noir calé sur
-Fonte (#0E0E0D), blanc calé sur Craie (#F2EFE8), grain cuit dans le fichier.
+Développe les photos du site « Registre » : couleur (par défaut) ou noir et
+blanc (--bw). Noir calé sur Fonte (#0E0E0D), courbe en S, grain cuit dans le
+fichier.
 
-Usage :  python3 scripts/registre-photos.py [nom ...]   (sans argument : tout)
+Usage :  python3 scripts/registre-photos.py [--bw] [nom ...]   (sans nom : tout)
 
 Sources : les originaux JPEG de Tom (assets/uploads/aNNNNNNN.jpg, 4672 x 7008,
 et les dossiers « Shooting On Air » / « Shooting photo » à côté du dépôt).
@@ -12,7 +13,7 @@ Les recadrages sont exprimés en fractions de l'image source (x0, y0, x1, y1).
 Rien n'est inventé : aucune retouche de contenu, seulement cadrage, courbe et grain.
 """
 import os, sys, random
-from PIL import Image, ImageOps, ImageChops, ImageFilter
+from PIL import Image, ImageOps, ImageChops, ImageFilter, ImageEnhance
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -60,15 +61,15 @@ ASSETS = {
 }
 
 
-def build_lut(black, white):
+def build_lut(black, white, mix=0.45, gamma=0.96):
     """Niveaux (black..white -> 0..255) puis courbe en S douce."""
     lut = []
     span = max(white - black, 1)
     for i in range(256):
         t = min(max((i - black) / span, 0.0), 1.0)
         s = t * t * (3 - 2 * t)                   # smoothstep
-        t = 0.55 * t + 0.45 * s                   # S-curve partielle
-        t = t ** 0.96
+        t = (1 - mix) * t + mix * s               # S-curve partielle
+        t = t ** gamma
         lut.append(int(round(t * 255)))
     return lut
 
@@ -82,7 +83,7 @@ def percentile(hist, total, p):
     return 255
 
 
-def develop(name, spec):
+def develop(name, spec, bw=False):
     src, (x0, y0, x1, y1), w_main, w_sm = spec
     if not os.path.exists(src):
         print("MANQUE", name, src)
@@ -96,31 +97,40 @@ def develop(name, spec):
     W, H = im.size
     box = (round(x0 * W), round(y0 * H), round(x1 * W), round(y1 * H))
     im = im.crop(box)
-    # mélange des canaux : un peu plus de rouge pour garder la peau lumineuse
-    r, g, b = im.split()
-    lum = Image.merge("RGB", (r, g, b)).convert("L", matrix=(0.40, 0.50, 0.10, 0))
     for w, suffix in ((w_main, ""), (w_sm, "-sm")):
-        h = round(lum.height * w / lum.width)
-        L = lum.resize((w, h), Image.LANCZOS)
+        h = round(im.height * w / im.width)
+        C = im.resize((w, h), Image.LANCZOS)
+        # niveaux et courbe calculés sur la luminance, appliqués à tous les canaux
+        # (la teinte est conservée)
+        L = C.convert("L", matrix=(0.40, 0.50, 0.10, 0)) if bw else C.convert("L")
         hist = L.histogram()
         n = L.width * L.height
         black = percentile(hist, n, 0.004)
         white = percentile(hist, n, 0.9985)
         white = max(white, black + 60)
-        L = L.point(build_lut(black, white))
-        # grain monochrome cuit après le redimensionnement
+        lut = build_lut(black, white) if bw else build_lut(black, white, 0.3, 0.88)
         random.seed(hash(name) & 0xFFFF)
         noise = Image.effect_noise((w, h), 7.0)    # gaussien centré sur 128
-        L = ImageChops.add(L, noise, scale=1.0, offset=-128)
-        L = ImageOps.colorize(L, black=FONTE, white=CRAIE)
+        if bw:
+            out = ImageOps.colorize(ImageChops.add(L.point(lut), noise, scale=1.0, offset=-128), black=FONTE, white=CRAIE)
+        else:
+            C = C.point(lut * 3)
+            C = ImageEnhance.Color(C).enhance(0.95)
+            bands = [ImageChops.add(b, noise, scale=1.0, offset=-128) for b in C.split()]
+            out = Image.merge("RGB", bands)
+            # noir calé sur Fonte : le fond de la photo se fond dans celui de la page
+            lift = [int(round(FONTE[i] + (255 - FONTE[i]) * v / 255)) for i, v in enumerate((0, 0, 0))]
+            out = out.point([int(round(14 + (255 - 14) * v / 255)) for v in range(256)] * 3)
         os.makedirs(OUT, exist_ok=True)
         path = os.path.join(OUT, name + suffix + ".jpg")
-        L.save(path, "JPEG", quality=80, optimize=True, progressive=True, subsampling="4:2:0")
+        out.save(path, "JPEG", quality=82, optimize=True, progressive=True, subsampling="4:2:0")
         print(f"{name}{suffix}: {w}x{h} {os.path.getsize(path)//1024} Ko")
 
 
 if __name__ == "__main__":
-    only = set(sys.argv[1:])
+    args = sys.argv[1:]
+    bw = "--bw" in args
+    only = set(a for a in args if not a.startswith("--"))
     for k, v in ASSETS.items():
         if not only or k in only:
-            develop(k, v)
+            develop(k, v, bw)

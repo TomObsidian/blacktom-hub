@@ -1,7 +1,7 @@
 {# Instruments : deux outils, deux matières. Bench Lab sur papier avec la barre chargée, Food Lab sur fonte. #}
 <section class="instruments" id="outils" aria-label="{{ block.title }}">
   {% for item in block.items %}
-  <article class="instrument {{ 'paper' if loop.first else 'fonte' }}">
+  <article class="instrument {{ 'paper' if loop.first else 'sang' }}">
     <span class="kicker">{{ item.kicker }}</span>
     <h3>{{ item.title }}</h3>
     <p>{{ item.text }}</p>

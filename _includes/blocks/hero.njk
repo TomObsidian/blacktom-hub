@@ -1,6 +1,5 @@
-{# Couverture : le numéral (âge, lu dans status.json), le portrait, la phrase, le mot. #}
+{# Couverture : la phrase, le portrait, le mot. #}
 <div class="cover presse">
-  {% if status.age %}<p class="cover-num"><span class="sr-only">{{ status.age }} ans. </span><span aria-hidden="true">{{ status.age }}<small>ans</small></span></p>{% endif %}
   <figure class="cover-photo">
     <img src="{{ block.image }}"{% if block.imageSmall %} srcset="{{ block.imageSmall }} 800w, {{ block.image }} 1500w" sizes="(min-width:900px) 44vw, 100vw"{% endif %} alt="{{ block.imageAlt | default('') }}" width="1500" height="2250" fetchpriority="high" decoding="async" style="--pos:{{ block.imagePosition | default('50% 22%') }};">
   </figure>
