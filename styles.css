@@ -1,7 +1,7 @@
 /* BLACKTOM, « Le registre ».
    La monographie d'un homme qui soulève lourd, mise en page comme un magazine
    et tenue comme une feuille de pesée.
-   Trois noirs, deux blancs cassés, une famille de bordeaux (aplats profonds,
+   Trois noirs, deux blancs cassés, une famille de rouge sang séché (aplats profonds,
    filets, mot géant). Rayon 0, aucune ombre, aucun dégradé. Numéraux
    monumentaux rognés, photos en couleur, filets plutôt que boîtes.
    Polices auto-hébergées : Big Shoulders Display (numéraux, titres),
@@ -24,13 +24,13 @@
   --papier:#E4DFD3;     /* sections claires */
   --cendre:#A39F95;     /* texte secondaire sur noir (7,3:1) */
   --acier:#57544E;      /* texte secondaire sur papier */
-  --rouge:#8F1A2E;      /* bordeaux : accent sur papier, boutons, détails (6,8:1 sur papier) */
-  --rouge-vif:#B52A40;  /* bordeaux clair : filets et chiffres sur noir (3,2:1) */
-  --rouge-mot:#A51C33;  /* bordeaux du mot géant de la couverture (2,7:1 sur presse, très grand format décoratif) */
-  --rouge-clair:#E8566B;/* bordeaux très clair : texte sur noir (5,5:1), erreurs, page courante */
-  --sang:#4F0B19;       /* bordeaux profond : aplats de section, texte craie dessus (13:1) */
-  --sang-haut:#7A1226;  /* bordeaux moyen : détails */
-  --bordeaux:#32060F;   /* bordeaux presque noir : surfaces sur aplat */
+  --rouge:#6B0F14;      /* sang séché : accent sur papier, boutons, détails (9,3:1 sur papier) */
+  --rouge-vif:#8A141A;  /* sang séché clair : filets et chiffres sur noir */
+  --rouge-mot:#8A141A;  /* sang séché du mot géant de la couverture (très grand format décoratif) */
+  --rouge-clair:#E4707B;/* sang très clair : texte sur noir (6:1), erreurs, page courante */
+  --sang:#3A0709;       /* sang séché profond : aplats de section, texte craie dessus (16:1) */
+  --sang-haut:#5A0E14;  /* détails */
+  --bordeaux:#260405;   /* presque noir : surfaces sur aplat */
   /* familles */
   --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Impact,sans-serif;
   --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
