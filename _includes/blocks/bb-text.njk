@@ -1,14 +1,26 @@
-<section class="hub-section">
+{# Univers : en deux moitiés (photo, texte) quand une photo est renseignée. #}
+{% if block.image %}
+<section class="paper half bb-text">
+  <figure class="half-photo rv"><img src="{{ block.image }}"{% if block.imageSmall %} srcset="{{ block.imageSmall }} 700w, {{ block.image }} 1100w" sizes="(min-width:900px) 50vw, 100vw"{% endif %} alt="{{ block.imageAlt | default('') }}" width="1100" height="1650" loading="lazy" decoding="async" style="--pos:{{ block.imagePosition | default('50% 30%') }};"></figure>
+  <div class="half-body">
+    {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
+    <h2>{{ block.title }}</h2>
+    {% if block.text %}<div class="bb-copy">{% for para in block.text | splitParagraphs %}<p>{{ para }}</p>{% endfor %}</div>{% endif %}
+  </div>
+</section>
+{% else %}
+<section class="hub-section paper bb-text">
   {% if block.text %}
   <div class="bb-univers">
     <div>
-      <p class="sec-label">{{ block.eyebrow }}</p>
+      {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
       <h2>{{ block.title }}</h2>
     </div>
     <div class="bb-copy">{% for para in block.text | splitParagraphs %}<p>{{ para }}</p>{% endfor %}</div>
   </div>
   {% else %}
-  <p class="sec-label">{{ block.eyebrow }}</p>
+  {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
   <p class="section-title">{{ block.title }}</p>
   {% endif %}
 </section>
+{% endif %}

@@ -17,7 +17,7 @@ function categoryContentHTML(slug) {
     return c.category === slug && c.status === 'published' && c.url;
   });
   return items.map(function (c) {
-    return '<a class="content-row" href="' + c.url + '">' + c.title + ' <span>→</span></a>';
+    return '<a class="content-row" href="' + c.url + '">' + c.title + '</a>';
   }).join('');
 }
 
@@ -30,7 +30,7 @@ function articleListHTML(slug) {
     return c.category === slug && c.type === 'article' && c.status === 'published' && c.url;
   });
   return items.map(function (c) {
-    return '<a class="content-row" href="' + c.url + '">' + c.title + ' <span>→</span></a>';
+    return '<a class="content-row" href="' + c.url + '">' + c.title + '</a>';
   }).join('');
 }
 

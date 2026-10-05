@@ -13,15 +13,16 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="/styles.css">
 <style>
 /* Ajustements locaux, propres a cette page uniquement (ne touchent pas styles.css) */
 @media(min-width:820px){
   .riz-tables-tight{padding-top:56px;}
-  .riz-table-wrap{width:min(760px, calc(100vw - 80px));max-width:none;}
+  .riz-table-wrap{width:auto;max-width:100%;}
 }
 </style>
 <script src="/analytics.js" defer></script>
@@ -56,11 +57,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-article">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -84,8 +85,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/contenus" style="color:var(--dim2);">Contenus</a> → <a href="/nutrition" style="color:var(--dim2);">Nutrition</a> → Riz cru / cuit</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/contenus" style="color:var(--dim2);">Contenus</a> / <a href="/nutrition" style="color:var(--dim2);">Nutrition</a> / Riz cru / cuit</p>
   <p class="eyebrow" style="margin-top:20px;">Food Lab</p>
   <h1 style="font-size:clamp(30px,6vw,50px);">Riz cru / cuit : convertisseur et équivalences</h1>
   <p class="lede" style="max-width:600px;">Tu pèses ton riz cuit mais ton plan alimentaire indique un poids cru ? Ou l'inverse ? Voici l'équivalence estimée, et le convertisseur Food Lab pour n'importe quelle quantité.</p>
@@ -138,7 +141,7 @@
 <section class="hub-section">
   <div class="calc-cta-band">
     <p><strong>Besoin d'une autre quantité ?</strong><br>Utilise BLACKTOM Food Lab pour convertir directement ton poids cru ou cuit.</p>
-    <a href="/outils/convertisseur-cru-cuit" class="btn btn-primary" onclick="trackEvent('food_lab_cta_click',{source_page:'/nutrition/riz-cru-cuit',placement:'main_cta',destination:'food_lab'})">OUVRIR FOOD LAB →</a>
+    <a href="/outils/convertisseur-cru-cuit" class="btn btn-primary" onclick="trackEvent('food_lab_cta_click',{source_page:'/nutrition/riz-cru-cuit',placement:'main_cta',destination:'food_lab'})">Ouvrir Food Lab</a>
   </div>
 </section>
 
@@ -153,7 +156,7 @@
   <div class="bio-block">
     <h2>Ta cuisson, ton ratio</h2>
     <p>Deux personnes peuvent obtenir un poids cuit différent à partir du même poids cru : la cuisson, l'égouttage et la variété de riz changent le résultat. BLACKTOM Food Lab propose <strong>Mon Ratio</strong> : tu pèses ton riz avant et après ta cuisson habituelle, et tu enregistres ton propre coefficient sur ton appareil.</p>
-    <a href="/outils/convertisseur-cru-cuit" class="btn btn-ghost" style="margin-top:12px;" onclick="trackEvent('food_lab_cta_click',{source_page:'/nutrition/riz-cru-cuit',placement:'personal_ratio',destination:'food_lab'})">CALCULER MON RATIO →</a>
+    <a href="/outils/convertisseur-cru-cuit" class="btn btn-ghost" style="margin-top:12px;" onclick="trackEvent('food_lab_cta_click',{source_page:'/nutrition/riz-cru-cuit',placement:'personal_ratio',destination:'food_lab'})">CALCULER MON RATIO</a>
   </div>
 </section>
 
@@ -180,6 +183,8 @@
     <p style="font-size:13px;color:var(--dim);">Cette page reprend la même donnée que le convertisseur : aucun autre coefficient n'est utilisé ici.</p>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

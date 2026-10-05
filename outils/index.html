@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="/styles.css">
 <script src="/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -29,11 +30,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-hub">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -57,27 +58,30 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
   <p class="eyebrow">Outils</p>
   <h1 style="font-size:clamp(36px,7vw,56px);">Les outils BLACKTOM</h1>
   <p class="lede" style="max-width:600px;">Des outils gratuits, sans compte, pour l'entraînement et l'alimentation.</p>
 </section>
 
-<section class="hub-section" style="padding-top:32px;">
-  <div class="calc-card">
-    <p class="section-eyebrow" style="margin:0 0 6px;">Performance</p>
-    <h2 style="margin:0 0 10px;">Bench Lab</h2>
-    <p style="font-size:14px;color:var(--dim);margin:0 0 18px;">1RM · Ratio · Pourcentages · Échauffement · Chargement.</p>
-    <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-primary" data-track="cta_outils_benchlab">Ouvrir Bench Lab →</a>
-  </div>
-
-  <div class="calc-card" style="margin-top:20px;">
-    <p class="section-eyebrow" style="margin:0 0 6px;">Nutrition pratique</p>
-    <h2 style="margin:0 0 10px;">Food Lab</h2>
-    <p style="font-size:14px;color:var(--dim);margin:0 0 18px;">Cru ↔ Cuit : convertis le poids de tes aliments avant ou après cuisson.</p>
-    <a href="/outils/convertisseur-cru-cuit" class="btn btn-primary" data-track="cta_outils_foodlab">Ouvrir Cru ↔ Cuit →</a>
-  </div>
+<section class="instruments" aria-label="Les outils">
+  <article class="instrument paper">
+    <span class="kicker">Performance</span>
+    <h2>Bench Lab</h2>
+    <p>1RM, ratio, pourcentages, échauffement et chargement de la barre, pour le développé couché.</p>
+    <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-primary" data-track="cta_outils_benchlab">Ouvrir Bench Lab</a>
+  </article>
+  <article class="instrument fonte">
+    <span class="kicker">Nutrition pratique</span>
+    <h2>Food Lab</h2>
+    <p>Cru / cuit : convertis le poids de tes aliments avant ou après cuisson.</p>
+    <a href="/outils/convertisseur-cru-cuit" class="btn btn-primary" data-track="cta_outils_foodlab">Ouvrir le convertisseur</a>
+  </article>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

@@ -3,78 +3,94 @@
     {
       "type": "hero",
       "visible": true,
-      "image": "/assets/uploads/a7401674-web.jpg",
-      "imageSmall": "/assets/uploads/a7401674-sm.jpg",
-      "imageAlt": "Tom en débardeur blanc, regard vers l'objectif, épaule recouverte de tatouages Full Black, dans une salle de musculation.",
-      "imagePosition": "50% 24%",
-      "kicker": "Journal d'entraînement",
+      "image": "/assets/registre/cover.jpg",
+      "imageSmall": "/assets/registre/cover-sm.jpg",
+      "imageAlt": "Tom en débardeur blanc, le regard par-dessus l'épaule vers l'objectif, dans une salle de musculation.",
+      "imagePosition": "50% 22%",
       "title": "BLACKTOM",
       "claim": "Le développé couché comme fil conducteur.",
       "lede": "Je documente mon entraînement, ma progression et mon univers Full Black.",
-      "primaryCtaText": "Ma progression au bench →",
+      "primaryCtaText": "Ma progression au bench",
       "primaryCtaUrl": "/developpe-couche",
-      "secondaryCtaText": "Calculer mon 1RM →",
+      "secondaryCtaText": "Calculer mon 1RM",
       "secondaryCtaUrl": "/outils/calculateur-1rm-developpe-couche"
     },
     {
       "type": "stat-hero",
       "visible": true,
-      "label": "Développé couché · meilleur résultat renseigné",
+      "eyebrow": "Le relevé",
+      "title": "Développé couché",
+      "label": "Meilleur résultat renseigné",
       "statKey": "developpe_couche",
       "goalKey": "objectif",
-      "note": "Résultat renseigné par moi. Le rapport est ce résultat divisé par mon poids de corps."
+      "note": "Chiffres renseignés par moi. Le rapport est arrondi à 0,1."
     },
     {
       "type": "contenus-teaser",
       "visible": true,
       "eyebrow": "Journal",
-      "title": "Ce que je documente",
+      "title": "Au sommaire",
       "items": [
         {
-          "title": "Musculation après 40 ans",
+          "title": "Musculation",
           "category": "Pilier",
           "description": "Force, entraînement, récupération et nutrition : mon approche complète.",
           "url": "/musculation-apres-40-ans",
-          "image": "/assets/uploads/a7401726-web.jpg",
-          "imageSmall": "/assets/uploads/a7401726-sm.jpg",
+          "linkText": "Lire le dossier",
+          "image": "/assets/registre/band-barre.jpg",
+          "imageSmall": "/assets/registre/band-barre-sm.jpg",
           "imagePosition": "50% 40%",
-          "imageAlt": "Tom de dos à la poulie haute, mains sur la barre, dans une salle de musculation."
+          "imageAlt": "Tom de dos, les deux mains sur la barre de traction, tatouages sur la nuque et sur les mains."
         },
         {
-          "title": "Développé couché après 40 ans",
+          "title": "Développé couché",
           "category": "Développé couché",
-          "description": "Ce qui change vraiment, et ce qui ne change pas, après 40 ans.",
+          "description": "Ce qui change vraiment, et ce qui reste identique.",
           "url": "/developpe-couche/apres-40-ans",
-          "image": "/assets/uploads/a7401572-web.jpg",
-          "imageSmall": "/assets/uploads/a7401572-sm.jpg",
-          "imagePosition": "50% 24%",
-          "imageAlt": "Gros plan sur Tom, regard baissé, épaule et cou tatoués."
+          "image": "/assets/registre/j-bench.jpg",
+          "imageSmall": "/assets/registre/j-bench-sm.jpg",
+          "imagePosition": "50% 35%",
+          "imageAlt": "Gros plan sur Tom, le regard baissé, épaule et cou tatoués, dans la pénombre d'une salle."
         },
         {
-          "title": "Créatine après 40 ans",
+          "title": "Récupération",
+          "category": "Récupération",
+          "description": "Sommeil, fatigue et blessures : ce que disent les données, et leurs limites.",
+          "url": "/recuperation/apres-40-ans",
+          "image": "/assets/registre/j-recup.jpg",
+          "imageSmall": "/assets/registre/j-recup-sm.jpg",
+          "imagePosition": "50% 35%",
+          "imageAlt": "Tom de profil, la tête baissée, dans une salle de musculation."
+        },
+        {
+          "title": "Créatine",
           "category": "Nutrition",
           "description": "Ce que montrent réellement les données, sans promesse.",
           "url": "/nutrition/creatine-apres-40-ans",
-          "image": "/assets/uploads/a7401533.jpg",
-          "imagePosition": "50% 30%",
-          "imageAlt": "Tom en séance, un haltère à la main, regard vers l'objectif."
+          "image": "/assets/registre/j-creatine.jpg",
+          "imageSmall": "/assets/registre/j-creatine-sm.jpg",
+          "imagePosition": "50% 35%",
+          "imageAlt": "Tom en séance, un haltère à la main, le regard vers l'objectif."
         }
       ],
-      "ctaText": "Tous les contenus →",
+      "ctaText": "Tous les contenus",
       "ctaUrl": "/contenus"
     },
     {
       "type": "tools-teaser",
       "visible": true,
       "eyebrow": "Outils gratuits",
-      "title": "Deux outils tirés de ma pratique.",
+      "title": "Deux outils tirés de ma pratique",
       "items": [
         {
           "kicker": "Développé couché",
           "title": "Bench Lab",
           "text": "Estime ton 1RM, compare-le à ton poids de corps et prépare tes charges : pourcentages, échauffement et chargement de la barre.",
-          "example": "100 kg × 5 répétitions → 116,7 kg estimés",
-          "ctaText": "Ouvrir Bench Lab →",
+          "bigValue": "116,7",
+          "bigUnit": "kg",
+          "visual": "barbell",
+          "example": "100 kg × 5 répétitions : 1RM estimé à 116,7 kg.",
+          "ctaText": "Calculer mon 1RM",
           "ctaUrl": "/outils/calculateur-1rm-developpe-couche",
           "trackId": "cta_benchlab_home"
         },
@@ -82,36 +98,92 @@
           "kicker": "Nutrition",
           "title": "Food Lab",
           "text": "Convertis tes portions entre poids cru et poids cuit : riz, pâtes, semoule, lentilles, pommes de terre.",
-          "example": "100 g de riz cru → ≈ 250 g cuits (estimation)",
-          "ctaText": "Ouvrir Food Lab →",
+          "bigValue": "250",
+          "bigUnit": "g",
+          "visual": "",
+          "example": "100 g de riz cru : environ 250 g cuits (estimation).",
+          "ctaText": "Convertir mes portions",
           "ctaUrl": "/outils/convertisseur-cru-cuit",
           "trackId": "cta_foodlab_home"
         }
       ]
     },
     {
-      "type": "newsletter",
+      "type": "contact-sheet",
       "visible": true,
-      "eyebrow": "La liste BLACKTOM",
-      "title": "Suivre BLACKTOM",
-      "description": "Je t'envoie ma progression documentée, mes nouveaux guides et les mises à jour de mes outils."
+      "eyebrow": "Rennes, 14 septembre 2026",
+      "title": "Planche contact",
+      "text": "Huit images d'une même soirée. Un 85 mm ouvert à f/1.8, rien d'autre.",
+      "ctaText": "Mon parcours",
+      "ctaUrl": "/a-propos",
+      "trackId": "cta_apropos",
+      "photos": [
+        {
+          "image": "/assets/registre/pc-01.jpg",
+          "imageSmall": "/assets/registre/pc-01-sm.jpg",
+          "alt": "Tom de profil, la tête baissée, l'épaule éclairée sur fond noir.",
+          "caption": "A741564 · 85 mm, f/1.8, 1/125 s, ISO 250 · 14.09.2026, 20:07"
+        },
+        {
+          "image": "/assets/registre/pc-07.jpg",
+          "imageSmall": "/assets/registre/pc-07-sm.jpg",
+          "alt": "Tom de dos, les mains sur la barre fixée au mur.",
+          "caption": "A741667 · 85 mm, f/1.8, 1/125 s, ISO 250 · 14.09.2026, 20:18"
+        },
+        {
+          "image": "/assets/registre/pc-08.jpg",
+          "imageSmall": "/assets/registre/pc-08-sm.jpg",
+          "alt": "Tom de face, les bras fléchis, tatouages sur les épaules et le cou.",
+          "caption": "A741676 · 85 mm, f/1.8, 1/125 s, ISO 250 · 14.09.2026, 20:19"
+        },
+        {
+          "image": "/assets/registre/pc-02.jpg",
+          "imageSmall": "/assets/registre/pc-02-sm.jpg",
+          "alt": "Tom debout, regard baissé, bras le long du corps, devant un ventilateur et des affiches.",
+          "caption": "A741679 · 85 mm, f/1.8, 1/125 s, ISO 250 · 14.09.2026, 20:19"
+        },
+        {
+          "image": "/assets/registre/pc-03.jpg",
+          "imageSmall": "/assets/registre/pc-03-sm.jpg",
+          "alt": "Tom de face, les deux bras fléchis en pose de biceps, la tête inclinée.",
+          "caption": "A741684 · 85 mm, f/1.8, 1/125 s, ISO 250 · 14.09.2026, 20:19"
+        },
+        {
+          "image": "/assets/registre/pc-04.jpg",
+          "imageSmall": "/assets/registre/pc-04-sm.jpg",
+          "alt": "Tom de trois quarts, une main sur la hanche, l'autre bras fléchi, sous des néons.",
+          "caption": "A741704 · 85 mm, f/1.8, 1/125 s, ISO 250 · 14.09.2026, 20:23"
+        },
+        {
+          "image": "/assets/registre/pc-05.jpg",
+          "imageSmall": "/assets/registre/pc-05-sm.jpg",
+          "alt": "Gros plan sur le dos et l'épaule de Tom, la tête penchée, tatouages sur le torse.",
+          "caption": "A741760 · 85 mm, f/1.8, 1/125 s, ISO 160 · 14.09.2026, 20:32"
+        },
+        {
+          "image": "/assets/registre/pc-06.jpg",
+          "imageSmall": "/assets/registre/pc-06-sm.jpg",
+          "alt": "Tom de dos, les bras fléchis, la nuque tatouée, sous un néon.",
+          "caption": "A741763 · 85 mm, f/1.8, 1/125 s, ISO 160 · 14.09.2026, 20:32"
+        }
+      ]
     },
     {
       "type": "projects",
       "visible": true,
       "eyebrow": "Mon univers",
-      "title": "Les projets associés",
+      "title": "Trois projets",
       "items": [
         {
           "layout": "feature",
           "kicker": "Projet personnel",
           "title": "FULL BLACK",
           "text": "Je construis aussi, séance après séance, mon projet Full Black. J'en partage l'évolution sur Instagram.",
-          "image": "/assets/uploads/a7401713-web.jpg",
-          "imageSmall": "/assets/uploads/a7401713-sm.jpg",
+          "image": "/assets/registre/u-fullblack.jpg",
+          "imageSmall": "/assets/registre/u-fullblack-sm.jpg",
           "imagePosition": "50% 40%",
-          "imageAlt": "Tom de dos, épaule et bras recouverts de tatouages Full Black, mains jointes dans le dos.",
-          "ctaText": "Suivre sur Instagram →",
+          "imageAlt": "Tom de profil, le torse penché, le bras et l'épaule tatoués, dans une salle de musculation.",
+          "ctaText": "Suivre sur Instagram",
           "ctaUrl": "https://www.instagram.com/xblacktomx/",
           "trackId": "full_black",
           "socialPlatform": "instagram"
@@ -121,12 +193,12 @@
           "kicker": "Alternative fitness wear",
           "title": "BLACK BOAR ATHLETICS",
           "text": "Ma marque de streetwear alternatif et underground, née de la musculation et du tatouage. Le premier drop arrive, aucun article n'est encore en vente.",
-          "image": "/assets/uploads/a7401760-web.jpg",
-          "imageSmall": "/assets/uploads/a7401760-sm.jpg",
-          "imagePosition": "50% 38%",
-          "imageAlt": "Photo d'ambiance : gros plan sur le torse et le cou tatoués de Tom.",
+          "image": "/assets/registre/u-blackboar.jpg",
+          "imageSmall": "/assets/registre/u-blackboar-sm.jpg",
+          "imagePosition": "50% 45%",
+          "imageAlt": "La nuque de Tom, rasée, recouverte d'un tatouage de tête de mort.",
           "showMark": true,
-          "ctaText": "Être averti du lancement →",
+          "ctaText": "Être averti du lancement",
           "ctaUrl": "/black-boar#drop-form",
           "trackId": "cta_blackboar"
         },
@@ -135,7 +207,7 @@
           "kicker": "Application",
           "title": "THE ULTIMATE METHOD",
           "text": "L'application d'entraînement, de progression et de nutrition qui s'adapte à ta journée. Connexion ou création de compte directement dans l'app.",
-          "ctaText": "Voir The Ultimate Method →",
+          "ctaText": "Voir The Ultimate Method",
           "ctaUrl": "/ultimate-method",
           "trackId": "cta_ultimatemethod"
         }
@@ -147,20 +219,15 @@
       "eyebrow": "Partenaires",
       "title": "Les marques que j'utilise",
       "subtitle": "Les marques avec lesquelles je travaille, et les offres disponibles pour la communauté BLACKTOM.",
-      "ctaText": "Voir tous mes partenaires →",
+      "ctaText": "Voir tous mes partenaires",
       "ctaUrl": "/partenaires"
     },
     {
-      "type": "about-strip",
+      "type": "newsletter",
       "visible": true,
-      "eyebrow": "À propos",
-      "title": "TOM.",
-      "text": "Musculation, développé couché, physique, Full Black. Mon entraînement documenté au fil des semaines.",
-      "image": "/assets/uploads/a7401676-sm.jpg",
-      "imageAlt": "Tom de face, bras fléchis, tatouages Full Black sur les épaules et le cou.",
-      "ctaText": "Mon parcours →",
-      "ctaUrl": "/a-propos",
-      "trackId": "cta_apropos"
+      "eyebrow": "La liste BLACKTOM",
+      "title": "Mes nouveaux guides, ma progression et les mises à jour de mes outils, par email.",
+      "description": ""
     }
   ]
 }

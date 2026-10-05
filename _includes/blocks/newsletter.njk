@@ -1,9 +1,10 @@
-<section class="hub-section band" id="liste">
-  <div class="band-inner">
+{# La liste : une phrase, un champ souligné, une case carrée, le bouton rouge. #}
+<section class="liste sang" id="liste">
+  <div class="liste-inner">
     <div>
-      <p class="sec-label">{{ block.eyebrow }}</p>
+      {% if block.eyebrow %}<p class="liste-title">{{ block.eyebrow }}</p>{% endif %}
       <h2>{{ block.title | default('Suivre BLACKTOM') }}</h2>
-      <p>{{ block.description }}</p>
+      {% if block.description %}<p class="d">{{ block.description }}</p>{% endif %}
     </div>
     <div class="signup-card">
       <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="home" data-source-component="inline">

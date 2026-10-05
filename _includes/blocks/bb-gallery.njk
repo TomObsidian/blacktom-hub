@@ -1,7 +1,7 @@
-<section class="hub-section">
+<section class="presse bb-gallery">
   <div class="bb-mosaic">
     {% for photo in block.photos %}
-    <figure><img src="{{ photo.image }}"{% if photo.imageSmall %} srcset="{{ photo.imageSmall }} 800w, {{ photo.image }} 1400w" sizes="(min-width:900px) 33vw, 50vw"{% endif %} alt="{{ photo.alt | default('') }}" width="1400" height="2100" loading="lazy" decoding="async" style="--pos:{{ photo.position | default('50% 35%') }};"></figure>
+    <figure class="rv"><img src="{{ photo.image }}"{% if photo.imageSmall %} srcset="{{ photo.imageSmall }} 400w, {{ photo.image }} 640w" sizes="(min-width:900px) 25vw, 50vw"{% endif %} alt="{{ photo.alt | default('') }}" width="640" height="797" loading="lazy" decoding="async" style="object-position:{{ photo.position | default('50% 35%') }};"></figure>
     {% endfor %}
   </div>
   {% if block.note %}<p class="bb-note">{{ block.note }}</p>{% endif %}

@@ -36,7 +36,7 @@ function suppRowHTML(s) {
   var cta = '';
   if (s.affiliateUrl) {
     cta = '<div class="supp-cta">' +
-      '<a href="' + s.affiliateUrl + '" target="_blank" rel="noopener nofollow sponsored" class="btn btn-ghost" onclick="trackEvent(\'partner_click\',{partner:\'' + (s.partnerSlug || s.slug) + '\',source_page:\'complements\',placement:\'supplement_row\'})">Voir le produit →</a>' +
+      '<a href="' + s.affiliateUrl + '" target="_blank" rel="noopener nofollow sponsored" class="btn btn-ghost" onclick="trackEvent(\'partner_click\',{partner:\'' + (s.partnerSlug || s.slug) + '\',source_page:\'complements\',placement:\'supplement_row\'})">Voir le produit</a>' +
       (s.promoCode ? '<span class="supp-code">Code : ' + s.promoCode + '</span>' : '') +
       '</div>';
   }

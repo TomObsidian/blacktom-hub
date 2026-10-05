@@ -1,21 +1,32 @@
+{# Relevé : un chiffre, une unité, un sens. Rien n'est affiché sans donnée saisie. #}
 {% set value = status[block.statKey] %}
 {% if value %}
 {% set ratio = value | statRatio(status.poids) %}
-<div class="ledger">
-  <div class="ledger-inner">
-    <div>
-      <p class="ledger-label">{{ block.label }}</p>
-      <p class="ledger-figure"><span class="n">{{ value | statNumber }}</span><span class="u">{{ value | statUnit }}</span></p>
+<section class="releve paper" id="releve">
+  <p class="rail">{{ block.eyebrow | default('Le relevé') }}</p>
+  <div class="releve-grid">
+    <div class="fig">
+      <p class="n"><span>{{ value | statNumber }}</span><span class="u">{{ value | statUnit }}</span></p>
+      <p class="d">{{ block.title | default('Développé couché') }}</p>
+      <p class="s">{{ block.label }}</p>
     </div>
-    <div>
-      <dl class="ledger-rows">
-        {% if status.poids %}<div><dt>Poids de corps</dt><dd>{{ status.poids | statNumber }} {{ status.poids | statUnit }}</dd></div>{% endif %}
-        {% if ratio %}<div><dt>Rapport au poids de corps</dt><dd>{{ ratio }} ×</dd></div>{% endif %}
-        {% if block.goalKey and status[block.goalKey] %}<div><dt>Objectif</dt><dd>{{ status[block.goalKey] }}</dd></div>{% endif %}
-      </dl>
-      {% if block.note %}<p class="ledger-note">{{ block.note }}</p>{% endif %}
-      {% if block.ctaText %}<p style="margin:22px 0 0;"><a href="{{ block.ctaUrl }}" class="link-arrow">{{ block.ctaText }}</a></p>{% endif %}
+    {% if status.poids %}
+    <div class="fig">
+      <p class="n"><span>{{ status.poids | statNumber }}</span><span class="u">{{ status.poids | statUnit }}</span></p>
+      <p class="d">Poids de corps</p>
+      <p class="s">Tel que je l'ai renseigné.</p>
     </div>
+    {% endif %}
+    {% if ratio %}
+    <div class="fig fig--ratio">
+      <p class="n"><span>×{{ ratio }}</span></p>
+      <p class="d">Rapport au poids de corps</p>
+      <p class="s">Le développé couché divisé par le poids de corps.</p>
+    </div>
+    {% endif %}
   </div>
-</div>
+  {% if block.goalKey and status[block.goalKey] %}<p class="releve-note">Objectif : {{ status[block.goalKey] }}</p>{% endif %}
+  {% if block.note %}<p class="releve-note">{{ block.note }}</p>{% endif %}
+  {% if block.ctaText %}<p style="margin:24px 0 0;"><a href="{{ block.ctaUrl }}" class="link-line">{{ block.ctaText }}</a></p>{% endif %}
+</section>
 {% endif %}

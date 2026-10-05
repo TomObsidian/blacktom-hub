@@ -1,19 +1,29 @@
-<section class="hub-section" id="outils">
-  <div class="sec-head">
-    <div>
-      <p class="sec-label">{{ block.eyebrow }}</p>
-      <h2 class="sec-title">{{ block.title }}</h2>
-    </div>
-  </div>
-  <div class="instruments">
-    {% for item in block.items %}
-    <article class="instrument">
-      <span class="kicker">{{ item.kicker }}</span>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.text }}</p>
-      {% if item.example %}<div class="readout"><span>Exemple</span>{{ item.example }}</div>{% endif %}
-      <a href="{{ item.ctaUrl }}" class="btn btn-ghost" data-track="{{ item.trackId | default('cta_outil') }}">{{ item.ctaText }}</a>
-    </article>
-    {% endfor %}
-  </div>
+{# Instruments : deux outils, deux matières. Bench Lab sur papier avec la barre chargée, Food Lab sur fonte. #}
+<section class="instruments" id="outils" aria-label="{{ block.title }}">
+  {% for item in block.items %}
+  <article class="instrument {{ 'paper' if loop.first else 'sang' }}">
+    <span class="kicker">{{ item.kicker }}</span>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.text }}</p>
+    {% if item.bigValue %}<p class="big" aria-label="{{ item.bigValue }} {{ item.bigUnit }}"><span aria-hidden="true">{{ item.bigValue }}</span>{% if item.bigUnit %}<span class="u" aria-hidden="true">{{ item.bigUnit }}</span>{% endif %}</p>{% endif %}
+    {% if item.example %}<p class="example">{{ item.example }}</p>{% endif %}
+    {% if item.visual == "barbell" %}
+    <figure class="bar-fig">
+      <svg viewBox="0 0 560 150" role="img" aria-label="Barre olympique chargée de 25 kg et 15 kg de chaque côté, soit 100 kg">
+        <rect x="0" y="69" width="560" height="12" fill="currentColor"/>
+        <rect x="154" y="53" width="6" height="44" fill="currentColor"/>
+        <rect class="pl-red" x="130" y="14" width="22" height="122"/>
+        <rect x="110" y="34" width="16" height="82" fill="currentColor"/>
+        <rect x="96" y="58" width="10" height="34" fill="currentColor"/>
+        <rect x="400" y="53" width="6" height="44" fill="currentColor"/>
+        <rect class="pl-red" x="408" y="14" width="22" height="122"/>
+        <rect x="434" y="34" width="16" height="82" fill="currentColor"/>
+        <rect x="454" y="58" width="10" height="34" fill="currentColor"/>
+      </svg>
+      <figcaption>Barre à 100 kg : 20 kg de barre et 2 × (25 + 15 kg) de disques.</figcaption>
+    </figure>
+    {% endif %}
+    <a href="{{ item.ctaUrl }}" class="btn btn-primary" data-track="{{ item.trackId | default('cta_outil') }}">{{ item.ctaText }}</a>
+  </article>
+  {% endfor %}
 </section>

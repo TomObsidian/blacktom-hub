@@ -1,5 +1,7 @@
-<div class="placeholders">
-  {% for photo in block.photos %}
-  <div class="photo-tile"><img src="{{ photo.image }}" alt="{{ photo.alt | default('') }}" loading="lazy" decoding="async"><span>{{ photo.caption }}</span></div>
-  {% endfor %}
-</div>
+<section class="presse gallery">
+  <div class="placeholders">
+    {% for photo in block.photos %}
+    <figure class="photo-tile"><img src="{{ photo.image }}" alt="{{ photo.alt | default('') }}" width="900" height="900" loading="lazy" decoding="async">{% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}</figure>
+    {% endfor %}
+  </div>
+</section>

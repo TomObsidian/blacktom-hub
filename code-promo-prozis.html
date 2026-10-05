@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/partenaire-prozis-16ed36ea.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="styles.css">
 <script src="analytics.js" defer></script>
 <script type="application/ld+json">
@@ -50,11 +51,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-article">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -78,8 +79,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:40px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/partenaires" style="color:var(--dim2);">Partenaires</a> → Prozis</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/partenaires" style="color:var(--dim2);">Partenaires</a> / Prozis</p>
   <p class="eyebrow" style="margin-top:20px;">Code promo</p>
   <h1 style="font-size:clamp(34px,7vw,56px);">Code promo Prozis BLACKTOM</h1>
   <p class="lede" style="max-width:560px;">Le code que j'utilise et que je partage pour Prozis, la marque de compléments et de vêtements que je porte à l'entraînement.</p>
@@ -92,7 +95,7 @@
   </div>
   <div class="btn-row" style="justify-content:flex-start;">
     <button type="button" id="prozis-copy" class="btn btn-ghost" onclick="copyPromoCode('prozis','BLACKTOM',this,'code-promo-prozis','hero')">Copier le code</button>
-    <a href="https://prozis.com/1SSlS" id="prozis-cta" class="btn btn-primary" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('prozis','code-promo-prozis','hero')">Voir chez Prozis →</a>
+    <a href="https://prozis.com/1SSlS" id="prozis-cta" class="btn btn-primary" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick('prozis','code-promo-prozis','hero')">Voir chez Prozis</a>
   </div>
   <p style="padding:0 var(--pad);font-size:12px;color:var(--dim2);max-width:560px;">Lien affilié : je peux toucher une commission sur les achats réalisés via ce lien, sans coût supplémentaire pour vous.</p>
 </div>
@@ -157,6 +160,8 @@
   </div>
   <a href="/partenaires" class="btn btn-ghost">← Voir mes partenaires &amp; codes</a>
 </div>
+
+</main>
 
 <footer>
   <div class="foot-grid">

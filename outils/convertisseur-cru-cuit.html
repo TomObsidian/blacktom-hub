@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Convertisseur Cru ↔ Cuit : riz, pâtes, lentilles... | BLACKTOM Food Lab</title>
+<title>Convertisseur cru / cuit : riz, pâtes, lentilles | BLACKTOM</title>
 <meta name="description" content="Convertis le poids de tes aliments crus en cuits, et inversement : riz, pâtes, semoule, lentilles, pommes de terre. Estimation rapide, gratuite, sans compte.">
 <link rel="canonical" href="https://blacktom.fr/outils/convertisseur-cru-cuit">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://blacktom.fr/outils/convertisseur-cru-cuit">
-<meta property="og:title" content="Convertisseur Cru ↔ Cuit | BLACKTOM Food Lab">
+<meta property="og:title" content="Convertisseur cru / cuit | BLACKTOM Food Lab">
 <meta property="og:description" content="Convertis le poids de tes aliments crus en cuits, et inversement : riz, pâtes, semoule, lentilles, pommes de terre. Estimation rapide, gratuite, sans compte.">
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="/styles.css">
 <script src="/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -49,24 +50,12 @@
   ]
 }
 </script>
-<style>
-/* Food Lab — mise en page compacte du convertisseur (scope #fl-tool uniquement, n'affecte pas Bench Lab) */
-#fl-tool .calc-card{padding:20px;margin-top:20px;}
-#fl-tool .calc-field{margin-bottom:14px;}
-#fl-tool .calc-field label{margin-bottom:6px;}
-#fl-tool #fl-results{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
-#fl-tool .calc-result-hero{padding:18px 16px;border-radius:16px;}
-#fl-tool .calc-result-hero .v{font-size:clamp(34px,9vw,52px);}
-#fl-tool .calc-ratio-row{margin-top:10px;padding-top:10px;}
-#fl-tool .calc-reliability{margin-top:8px;padding:8px 12px;}
-#fl-tool .fl-note{margin:8px 0 0;font-size:12px;color:var(--dim2);}
-</style>
 </head>
-<body>
+<body class="p-tool">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -90,10 +79,12 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/outils/" style="color:var(--dim2);">Outils</a> → Cru ↔ Cuit</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/outils/" style="color:var(--dim2);">Outils</a> / Cru ↔ Cuit</p>
   <p class="eyebrow" style="margin-top:20px;">BLACKTOM Food Lab</p>
-  <h1 style="font-size:clamp(32px,7vw,52px);">Convertisseur Cru ↔ Cuit</h1>
+  <h1 style="font-size:clamp(32px,7vw,52px);">Convertisseur cru / cuit</h1>
   <p class="lede" style="max-width:620px;">Convertis rapidement le poids de tes aliments avant ou après cuisson.</p>
   <p style="margin-top:10px;font-size:14px;color:var(--dim);max-width:620px;">Estimation : le résultat varie selon la cuisson, la variété et l'égouttage. Gratuit, sans compte.</p>
 </section>
@@ -130,7 +121,7 @@
       </div>
       <p class="calc-reliability" id="fl-reliability">Le résultat peut varier selon la cuisson, la variété et l'égouttage.</p>
 
-      <details class="calc-card" id="fl-own-ratio" style="margin-top:14px;padding:18px;">
+      <details class="calc-card" id="fl-own-ratio" style="margin-top:24px;">
         <summary style="cursor:pointer;font-weight:700;">Utiliser mon propre ratio</summary>
         <div style="margin-top:16px;">
           <p style="font-size:13px;color:var(--dim);margin:0 0 16px;">Calibre <strong id="fl-own-food-name">cet aliment</strong> en pesant toi-même une quantité avant et après ta cuisson habituelle.</p>
@@ -161,7 +152,7 @@
 <section class="hub-section" style="margin-top:24px;">
   <div class="calc-cta-band">
     <p>Tu veux aussi suivre tes compléments du quotidien ?</p>
-    <a href="/complements" class="btn btn-ghost">Voir mes compléments →</a>
+    <a href="/complements" class="btn btn-ghost">Voir mes compléments</a>
   </div>
 </section>
 
@@ -212,6 +203,8 @@
     <p style="font-size:13px;color:var(--dim);">Cet outil ne remplace pas un avis médical ou diététique personnalisé. Il concerne uniquement le poids alimentaire et sa conversion cru/cuit, pas un conseil nutritionnel individualisé.</p>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

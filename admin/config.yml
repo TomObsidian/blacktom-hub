@@ -137,13 +137,12 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Photo", name: "image", widget: "image", hint: "Photo verticale de préférence (2:3). Le visage et les tatouages doivent rester visibles." }
+                  - { label: "Photo", name: "image", widget: "image", hint: "Photo verticale (2:3), en couleur, noirs calés sur #0E0E0D, grain dans le fichier. Le visage doit rester visible. Voir scripts/registre-photos.py." }
                   - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false, hint: "Facultatif : version plus légère de la même photo." }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                   - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30% (horizontal puis vertical). Plus le 2e chiffre est petit, plus on voit le haut de la photo."] }
-                  - { label: "Petit titre (ligne au-dessus)", name: "kicker", widget: "string", required: false }
-                  - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Phrase d'accroche", name: "claim", widget: "string", required: false }
+                  - { label: "Titre (le mot géant, rogné en bas de la couverture)", name: "title", widget: "string" }
+                  - { label: "Phrase d'accroche", name: "claim", widget: "string", required: false, hint: "Affichée en grand, en italique, à côté du portrait." }
                   - { label: "Sous-titre multiligne (ancien format)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée. Laisser vide si la phrase d'accroche suffit." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }
                   - { label: "Bouton : texte", name: "primaryCtaText", widget: "string" }
@@ -155,7 +154,9 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Label", name: "label", widget: "string", hint: "Ex: Développé couché · meilleur résultat renseigné" }
+                  - { label: "Petit titre de la section", name: "eyebrow", widget: "string", required: false, hint: "Ex : Le relevé" }
+                  - { label: "Nom du premier chiffre", name: "title", widget: "string", required: false, hint: "Ex : Développé couché" }
+                  - { label: "Légende du premier chiffre", name: "label", widget: "string", hint: "Ex : Meilleur résultat renseigné" }
                   - label: "Donnée à afficher"
                     name: "statKey"
                     widget: "select"
@@ -170,7 +171,7 @@ collections:
                     options:
                       - { label: "Objectif actuel", value: "objectif" }
                       - { label: "Objectif long terme", value: "objectif_long_terme" }
-                  - { label: "Note de contexte (source du chiffre)", name: "note", widget: "text", required: false, hint: "Dis d'où vient le chiffre. Le rapport au poids de corps est calculé automatiquement." }
+                  - { label: "Note de contexte (source du chiffre)", name: "note", widget: "text", required: false, hint: "Dis d'où vient le chiffre. Le poids de corps et le rapport (×1,8) sont calculés et affichés automatiquement à côté." }
                   - { label: "Lien : texte", name: "ctaText", widget: "string", required: false }
                   - { label: "Lien : adresse", name: "ctaUrl", widget: "string", required: false }
                   - { label: "Événement de suivi du lien (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
@@ -190,8 +191,9 @@ collections:
                       - { label: "Catégorie", name: "category", widget: "string" }
                       - { label: "Micro-description", name: "description", widget: "string", required: false }
                       - { label: "Lien", name: "url", widget: "string" }
-                      - { label: "Photo", name: "image", widget: "image" }
-                      - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                      - { label: "Texte du lien (premier élément seulement)", name: "linkText", widget: "string", required: false, hint: "Ex : Lire le dossier" }
+                      - { label: "Photo", name: "image", widget: "image", hint: "Premier élément : bande 21:9 (2200 px de large). Les autres : carré (900 px). Voir scripts/registre-photos.py." }
+                      - { label: "Photo version mobile", name: "imageSmall", widget: "image", required: false, hint: "Bande : 1000 px de large. Carré : 480 px." }
                       - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                       - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                   - { label: "Lien : texte", name: "ctaText", widget: "string" }
@@ -211,7 +213,17 @@ collections:
                       - { label: "Petit titre de l'outil", name: "kicker", widget: "string", required: false }
                       - { label: "Nom", name: "title", widget: "string" }
                       - { label: "Texte", name: "text", widget: "text" }
+                      - { label: "Grand chiffre (facultatif)", name: "bigValue", widget: "string", required: false, hint: "Ex : 116,7. Doit correspondre à ce que l'outil calcule réellement pour l'exemple ci-dessous." }
+                      - { label: "Unité du grand chiffre", name: "bigUnit", widget: "string", required: false, hint: "Ex : kg ou g" }
                       - { label: "Exemple de résultat (facultatif)", name: "example", widget: "string", required: false, hint: "Doit correspondre à ce que l'outil calcule réellement." }
+                      - label: "Illustration"
+                        name: "visual"
+                        widget: "select"
+                        required: false
+                        default: ""
+                        options:
+                          - { label: "Aucune", value: "" }
+                          - { label: "Barre chargée (100 kg)", value: "barbell" }
                       - { label: "Bouton : texte", name: "ctaText", widget: "string" }
                       - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
                       - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
@@ -244,18 +256,12 @@ collections:
                     widget: "list"
                     summary: "{{title}}"
                     fields:
-                      - label: "Présentation"
-                        name: "layout"
-                        widget: "select"
-                        default: "card"
-                        options:
-                          - { label: "Grand (photo + texte)", value: "feature" }
-                          - { label: "Compact (carte)", value: "card" }
+                      - { name: "layout", widget: "hidden", default: "card", required: false }
                       - { label: "Petit titre", name: "kicker", widget: "string", required: false }
                       - { label: "Titre", name: "title", widget: "string" }
                       - { label: "Texte", name: "text", widget: "text" }
-                      - { label: "Photo (facultative)", name: "image", widget: "image", required: false, hint: "Une photo d'ambiance ne doit jamais être présentée comme un article disponible." }
-                      - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
+                      - { label: "Photo carrée (facultative)", name: "image", widget: "image", required: false, hint: "Carré 1000 px. Une photo d'ambiance ne doit jamais être présentée comme un article disponible." }
+                      - { label: "Photo version mobile (560 px)", name: "imageSmall", widget: "image", required: false }
                       - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                       - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                       - { label: "Afficher le logo Black Boar", name: "showMark", widget: "boolean", default: false, required: false }
@@ -263,6 +269,26 @@ collections:
                       - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
                       - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
                       - { label: "Réseau social (technique)", name: "socialPlatform", widget: "string", required: false, hint: "Ex: instagram. Renseigné seulement si le lien mène à un réseau social." }
+              - label: "Planche contact (photos N&B)"
+                name: "contact-sheet"
+                widget: "object"
+                fields:
+                  - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
+                  - { label: "Petit titre", name: "eyebrow", widget: "string", required: false, hint: "Ex : lieu et date de la séance." }
+                  - { label: "Titre", name: "title", widget: "string", default: "Planche contact" }
+                  - { label: "Texte sous la planche", name: "text", widget: "text", required: false, hint: "Que des faits vérifiables (lieu, date, matériel). Pas de texte marketing." }
+                  - { label: "Lien : texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Lien : adresse", name: "ctaUrl", widget: "string", required: false }
+                  - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
+                  - label: "Photos (8 conseillées)"
+                    name: "photos"
+                    widget: "list"
+                    summary: "{{caption}}"
+                    fields:
+                      - { label: "Photo", name: "image", widget: "image", hint: "Format 4:5, 640 px de large." }
+                      - { label: "Photo version mobile (400 px)", name: "imageSmall", widget: "image", required: false }
+                      - { label: "Texte alternatif", name: "alt", widget: "string" }
+                      - { label: "Légende", name: "caption", widget: "string", required: false, hint: "Réelle : nom du fichier, matériel, date. Rien d'inventé." }
               - label: "Section Partenaires"
                 name: "partners-teaser"
                 widget: "object"
@@ -363,6 +389,10 @@ collections:
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Titre", name: "title", widget: "text" }
                   - { label: "Texte (paragraphes)", name: "text", widget: "text", required: false, hint: "Laisse une ligne vide entre deux paragraphes. Si ce champ est vide, le titre est affiché seul, en grand." }
+                  - { label: "Photo (la section passe en deux moitiés)", name: "image", widget: "image", required: false, hint: "Portrait 2:3, 1100 px de large. Si ce champ est vide, la section reste en pleine largeur." }
+                  - { label: "Photo version mobile (700 px)", name: "imageSmall", widget: "image", required: false }
+                  - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
+                  - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
               - label: "Galerie de photos d'ambiance"
                 name: "bb-gallery"
                 widget: "object"
@@ -383,7 +413,8 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
-                  - { label: "Photo d'ambiance (facultative)", name: "image", widget: "image", required: false }
+                  - { label: "Photo d'ambiance (facultative, affichée en moitié de la section)", name: "image", widget: "image", required: false, hint: "Portrait, 1100 px de large." }
+                  - { label: "Photo version mobile (700 px)", name: "imageSmall", widget: "image", required: false }
                   - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                   - { label: "Petit titre", name: "eyebrow", widget: "string", required: false }
@@ -414,7 +445,6 @@ collections:
                   - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                   - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30% (horizontal puis vertical). Plus le 2e chiffre est petit, plus on voit le haut de la photo."] }
-                  - { label: "Petit titre (ligne au-dessus)", name: "kicker", widget: "string", required: false }
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }

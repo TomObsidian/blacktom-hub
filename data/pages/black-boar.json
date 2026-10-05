@@ -13,16 +13,16 @@
     {
       "type": "bb-hero",
       "visible": true,
-      "image": "/assets/uploads/a7401704-web.jpg",
-      "imageSmall": "/assets/uploads/a7401704-sm.jpg",
-      "imageAlt": "Photo d'ambiance : Tom de profil dans une salle de musculation, une main sur la hanche, l'autre bras fléchi.",
-      "imagePosition": "50% 22%",
-      "eyebrow": "Streetwear alternatif · Underground",
+      "image": "/assets/registre/bb-cover.jpg",
+      "imageSmall": "/assets/registre/bb-cover-sm.jpg",
+      "imageAlt": "Photo d'ambiance : la nuque rasée de Tom, recouverte d'un tatouage de tête de mort.",
+      "imagePosition": "50% 50%",
+      "eyebrow": "Streetwear alternatif, underground",
       "title": "BLACK BOAR ATHLETICS",
       "tagline": "Alternative Fitness Wear",
       "lede": "Ma marque de streetwear alternatif et underground, née de la musculation et du tatouage.",
       "status": "Pré-lancement : aucun article n'est encore en vente.",
-      "ctaText": "Être averti du lancement →",
+      "ctaText": "Être averti du lancement",
       "ctaUrl": "#drop-form"
     },
     {
@@ -30,35 +30,39 @@
       "visible": true,
       "eyebrow": "Univers",
       "title": "Musculation, streetwear, underground.",
-      "text": "BLACK BOAR, c’est la discipline de la musculation, l’attitude du streetwear et l’énergie underground. Trois cultures qui se rejoignent dans une même façon de vivre : s’entraîner avec constance, affirmer ses goûts et avancer sans chercher l’approbation.\n\nL’esprit est brut, indépendant et sans artifice. L’effort, la répétition et la progression occupent une place centrale. L’entraînement se vit comme un rituel, et le vêtement accompagne cette pratique autant qu’il exprime une identité. Le rock, la techno et le tatouage nourrissent cet univers, jusque dans les visuels où les lignes florales et ornementales rencontrent une esthétique sombre et industrielle.\n\nLa direction est de devenir une référence pour ceux qui vivent naturellement ces trois cultures au quotidien. Construire un vestiaire reconnaissable, avec des pièces qui tiennent à l’entraînement et trouvent leur place dans la rue, en concert ou en club.\n\nBLACK BOAR veut grandir en gardant une identité cohérente : des créations originales, des petites séries et une attention portée à la qualité comme à l’usage. Des vêtements faits pour être portés, éprouvés et intégrés à la vie de ceux qui s’y reconnaissent."
+      "text": "BLACK BOAR, c’est la discipline de la musculation, l’attitude du streetwear et l’énergie underground. Trois cultures qui se rejoignent dans une même façon de vivre : s’entraîner avec constance, affirmer ses goûts et avancer sans chercher l’approbation.\n\nL’esprit est brut, indépendant et sans artifice. L’effort, la répétition et la progression occupent une place centrale. L’entraînement se vit comme un rituel, et le vêtement accompagne cette pratique autant qu’il exprime une identité. Le rock, la techno et le tatouage nourrissent cet univers, jusque dans les visuels où les lignes florales et ornementales rencontrent une esthétique sombre et industrielle.\n\nLa direction est de devenir une référence pour ceux qui vivent naturellement ces trois cultures au quotidien. Construire un vestiaire reconnaissable, avec des pièces qui tiennent à l’entraînement et trouvent leur place dans la rue, en concert ou en club.\n\nBLACK BOAR veut grandir en gardant une identité cohérente : des créations originales, des petites séries et une attention portée à la qualité comme à l’usage. Des vêtements faits pour être portés, éprouvés et intégrés à la vie de ceux qui s’y reconnaissent.",
+      "image": "/assets/registre/bb-half-a.jpg",
+      "imageSmall": "/assets/registre/bb-half-a-sm.jpg",
+      "imagePosition": "50% 25%",
+      "imageAlt": "Photo d'ambiance : Tom en débardeur noir, de trois quarts, bras et torse tatoués, sous un néon blanc devant des haltères."
     },
     {
       "type": "bb-gallery",
       "visible": true,
       "photos": [
         {
-          "image": "/assets/uploads/a7401763-web.jpg",
-          "imageSmall": "/assets/uploads/a7401763-sm.jpg",
-          "position": "50% 30%",
-          "alt": "Photo d'ambiance : Tom de dos, les deux bras fléchis, dos et épaules recouverts de tatouages noirs."
+          "image": "/assets/registre/pc-06.jpg",
+          "imageSmall": "/assets/registre/pc-06-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : Tom de dos, les deux bras fléchis, la nuque tatouée, sous un néon."
         },
         {
-          "image": "/assets/uploads/a7401564-web.jpg",
-          "imageSmall": "/assets/uploads/a7401564-sm.jpg",
-          "position": "40% 28%",
-          "alt": "Photo d'ambiance : Tom de profil, tête baissée, épaule tatouée, en débardeur blanc."
+          "image": "/assets/registre/pc-01.jpg",
+          "imageSmall": "/assets/registre/pc-01-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : Tom de profil, la tête baissée, l'épaule éclairée sur fond noir."
         },
         {
-          "image": "/assets/uploads/a7401684-web.jpg",
-          "imageSmall": "/assets/uploads/a7401684-sm.jpg",
-          "position": "50% 28%",
-          "alt": "Photo d'ambiance : Tom de face, poings près du visage, bras tatoués, en salle de musculation."
+          "image": "/assets/registre/pc-03.jpg",
+          "imageSmall": "/assets/registre/pc-03-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : Tom de face, les deux bras fléchis, la tête inclinée."
         },
         {
-          "image": "/assets/uploads/a7401679-web.jpg",
-          "imageSmall": "/assets/uploads/a7401679-sm.jpg",
-          "position": "50% 26%",
-          "alt": "Photo d'ambiance : Tom regardant ses mains, bras recouverts de tatouages, débardeur blanc."
+          "image": "/assets/registre/pc-05.jpg",
+          "imageSmall": "/assets/registre/pc-05-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : le dos et l'épaule de Tom, la tête penchée, tatouages sur le torse."
         }
       ],
       "note": "Photos d'ambiance de mes séances. Ce ne sont pas des articles Black Boar : aucune pièce n'est encore en vente."
@@ -66,15 +70,16 @@
     {
       "type": "bb-drop",
       "visible": true,
-      "image": "/assets/uploads/a7401667-sm.jpg",
-      "imagePosition": "50% 24%",
-      "imageAlt": "Photo d'ambiance : Tom de dos, mains sur la barre de traction, en salle de musculation.",
+      "image": "/assets/registre/bb-half-b.jpg",
+      "imagePosition": "50% 20%",
+      "imageAlt": "Photo d'ambiance : Tom en débardeur noir, les mains sur les hanches, bras et torse tatoués, dans une salle de musculation aux machines rouges.",
       "eyebrow": "Alerte lancement",
       "title": "Sois averti en premier.",
       "text": "Tu laisses ton email, je t'envoie un message dès l'ouverture du drop. Rien d'autre d'ici là.",
       "formTitle": "",
       "ctaText": "Me prévenir",
-      "consentText": "J'accepte d'être averti(e) par email du lancement du premier drop Black Boar."
+      "consentText": "J'accepte d'être averti(e) par email du lancement du premier drop Black Boar.",
+      "imageSmall": "/assets/registre/bb-half-b-sm.jpg"
     }
   ]
 }

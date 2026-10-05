@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="styles.css">
 <script src="analytics.js" defer></script>
 <script type="application/ld+json">
@@ -31,11 +32,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-hub">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -59,8 +60,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/contenus" style="color:var(--dim2);">Contenus</a> → <a href="/nutrition" style="color:var(--dim2);">Nutrition</a> → Compléments</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/contenus" style="color:var(--dim2);">Contenus</a> / <a href="/nutrition" style="color:var(--dim2);">Nutrition</a> / Compléments</p>
   <p class="eyebrow" style="margin-top:20px;">Nutrition</p>
   <h1 style="font-size:clamp(36px,7vw,56px);">Mes compléments</h1>
   <p class="lede" style="max-width:620px;">On me demande régulièrement ce que je prends au quotidien. Voici mon stack actuel, organisé par moment de la journée.</p>
@@ -70,10 +73,12 @@
 <div id="supp-list"></div>
 
 <section class="hub-section">
-  <p style="font-size:14px;"><a href="/code-promo-prozis" style="text-decoration:underline;">Code Prozis BLACKTOM : utilisation et conditions →</a></p>
-  <p style="font-size:14px;"><a href="/partenaires" style="color:var(--red-text);">Mes partenaires &amp; codes →</a></p>
-  <p style="margin-top:8px;font-size:14px;"><a href="/outils/convertisseur-cru-cuit" style="color:var(--red-text);">Convertir tes portions cru/cuit (riz, pâtes...) →</a></p>
+  <p style="font-size:14px;"><a href="/code-promo-prozis" style="text-decoration:underline;">Code Prozis BLACKTOM : utilisation et conditions</a></p>
+  <p style="font-size:14px;"><a href="/partenaires" style="color:var(--red-text);">Mes partenaires &amp; codes</a></p>
+  <p style="margin-top:8px;font-size:14px;"><a href="/outils/convertisseur-cru-cuit" style="color:var(--red-text);">Convertir tes portions cru/cuit (riz, pâtes...)</a></p>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">
