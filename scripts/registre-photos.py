@@ -34,6 +34,9 @@ ASSETS = {
     "bb-cover":     (ROOT + "/Shooting On Air/DSC06468.jpg", (0.00, 0.00, 1.00, 1.00), 1500, 800),
     # Image de partage (Open Graph), 1200 x 630
     "og-home":      (UP + "/a7401674.jpg", (0.00, 0.13, 1.00, 0.48), 1200, 1200),
+    # Moitiés de la page Black Boar (portraits 2:3, plein cadre)
+    "bb-half-a":    (ROOT + "/Shooting On Air/DSC06203.jpg", (0.00, 0.00, 1.00, 1.00), 1100, 700),
+    "bb-half-b":    (ROOT + "/Shooting On Air/DSC06198.jpg", (0.00, 0.02, 1.00, 0.74), 1100, 700),
     # Portrait de la page À propos (2:3, recadré par le CSS)
     "about":        (UP + "/a7401679.jpg", (0.00, 0.00, 1.00, 1.00), 1500, 800),
     # Bandes 21:9 en tête d'article

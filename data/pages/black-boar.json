@@ -30,7 +30,11 @@
       "visible": true,
       "eyebrow": "Univers",
       "title": "Musculation, streetwear, underground.",
-      "text": "BLACK BOAR, c’est la discipline de la musculation, l’attitude du streetwear et l’énergie underground. Trois cultures qui se rejoignent dans une même façon de vivre : s’entraîner avec constance, affirmer ses goûts et avancer sans chercher l’approbation.\n\nL’esprit est brut, indépendant et sans artifice. L’effort, la répétition et la progression occupent une place centrale. L’entraînement se vit comme un rituel, et le vêtement accompagne cette pratique autant qu’il exprime une identité. Le rock, la techno et le tatouage nourrissent cet univers, jusque dans les visuels où les lignes florales et ornementales rencontrent une esthétique sombre et industrielle.\n\nLa direction est de devenir une référence pour ceux qui vivent naturellement ces trois cultures au quotidien. Construire un vestiaire reconnaissable, avec des pièces qui tiennent à l’entraînement et trouvent leur place dans la rue, en concert ou en club.\n\nBLACK BOAR veut grandir en gardant une identité cohérente : des créations originales, des petites séries et une attention portée à la qualité comme à l’usage. Des vêtements faits pour être portés, éprouvés et intégrés à la vie de ceux qui s’y reconnaissent."
+      "text": "BLACK BOAR, c’est la discipline de la musculation, l’attitude du streetwear et l’énergie underground. Trois cultures qui se rejoignent dans une même façon de vivre : s’entraîner avec constance, affirmer ses goûts et avancer sans chercher l’approbation.\n\nL’esprit est brut, indépendant et sans artifice. L’effort, la répétition et la progression occupent une place centrale. L’entraînement se vit comme un rituel, et le vêtement accompagne cette pratique autant qu’il exprime une identité. Le rock, la techno et le tatouage nourrissent cet univers, jusque dans les visuels où les lignes florales et ornementales rencontrent une esthétique sombre et industrielle.\n\nLa direction est de devenir une référence pour ceux qui vivent naturellement ces trois cultures au quotidien. Construire un vestiaire reconnaissable, avec des pièces qui tiennent à l’entraînement et trouvent leur place dans la rue, en concert ou en club.\n\nBLACK BOAR veut grandir en gardant une identité cohérente : des créations originales, des petites séries et une attention portée à la qualité comme à l’usage. Des vêtements faits pour être portés, éprouvés et intégrés à la vie de ceux qui s’y reconnaissent.",
+      "image": "/assets/registre/bb-half-a.jpg",
+      "imageSmall": "/assets/registre/bb-half-a-sm.jpg",
+      "imagePosition": "50% 25%",
+      "imageAlt": "Photo d'ambiance : Tom en débardeur noir, de trois quarts, bras et torse tatoués, sous un néon blanc devant des haltères."
     },
     {
       "type": "bb-gallery",
@@ -66,15 +70,16 @@
     {
       "type": "bb-drop",
       "visible": true,
-      "image": "/assets/registre/pc-07.jpg",
-      "imagePosition": "50% 30%",
-      "imageAlt": "Photo d'ambiance : Tom de dos, mains sur la barre de traction, en salle de musculation.",
+      "image": "/assets/registre/bb-half-b.jpg",
+      "imagePosition": "50% 20%",
+      "imageAlt": "Photo d'ambiance : Tom en débardeur noir, les mains sur les hanches, bras et torse tatoués, dans une salle de musculation aux machines rouges.",
       "eyebrow": "Alerte lancement",
       "title": "Sois averti en premier.",
       "text": "Tu laisses ton email, je t'envoie un message dès l'ouverture du drop. Rien d'autre d'ici là.",
       "formTitle": "",
       "ctaText": "Me prévenir",
-      "consentText": "J'accepte d'être averti(e) par email du lancement du premier drop Black Boar."
+      "consentText": "J'accepte d'être averti(e) par email du lancement du premier drop Black Boar.",
+      "imageSmall": "/assets/registre/bb-half-b-sm.jpg"
     }
   ]
 }
