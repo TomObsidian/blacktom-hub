@@ -13,16 +13,16 @@
     {
       "type": "bb-hero",
       "visible": true,
-      "image": "/assets/uploads/a7401704-web.jpg",
-      "imageSmall": "/assets/uploads/a7401704-sm.jpg",
-      "imageAlt": "Photo d'ambiance : Tom de profil dans une salle de musculation, une main sur la hanche, l'autre bras fléchi.",
-      "imagePosition": "50% 22%",
-      "eyebrow": "Streetwear alternatif · Underground",
+      "image": "/assets/registre/bb-cover.jpg",
+      "imageSmall": "/assets/registre/bb-cover-sm.jpg",
+      "imageAlt": "Photo d'ambiance : la nuque rasée de Tom, recouverte d'un tatouage de tête de mort.",
+      "imagePosition": "50% 50%",
+      "eyebrow": "Streetwear alternatif, underground",
       "title": "BLACK BOAR ATHLETICS",
       "tagline": "Alternative Fitness Wear",
       "lede": "Ma marque de streetwear alternatif et underground, née de la musculation et du tatouage.",
       "status": "Pré-lancement : aucun article n'est encore en vente.",
-      "ctaText": "Être averti du lancement →",
+      "ctaText": "Être averti du lancement",
       "ctaUrl": "#drop-form"
     },
     {
@@ -37,28 +37,28 @@
       "visible": true,
       "photos": [
         {
-          "image": "/assets/uploads/a7401763-web.jpg",
-          "imageSmall": "/assets/uploads/a7401763-sm.jpg",
-          "position": "50% 30%",
-          "alt": "Photo d'ambiance : Tom de dos, les deux bras fléchis, dos et épaules recouverts de tatouages noirs."
+          "image": "/assets/registre/pc-06.jpg",
+          "imageSmall": "/assets/registre/pc-06-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : Tom de dos, les deux bras fléchis, la nuque tatouée, sous un néon."
         },
         {
-          "image": "/assets/uploads/a7401564-web.jpg",
-          "imageSmall": "/assets/uploads/a7401564-sm.jpg",
-          "position": "40% 28%",
-          "alt": "Photo d'ambiance : Tom de profil, tête baissée, épaule tatouée, en débardeur blanc."
+          "image": "/assets/registre/pc-01.jpg",
+          "imageSmall": "/assets/registre/pc-01-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : Tom de profil, la tête baissée, l'épaule éclairée sur fond noir."
         },
         {
-          "image": "/assets/uploads/a7401684-web.jpg",
-          "imageSmall": "/assets/uploads/a7401684-sm.jpg",
-          "position": "50% 28%",
-          "alt": "Photo d'ambiance : Tom de face, poings près du visage, bras tatoués, en salle de musculation."
+          "image": "/assets/registre/pc-03.jpg",
+          "imageSmall": "/assets/registre/pc-03-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : Tom de face, les deux bras fléchis, la tête inclinée."
         },
         {
-          "image": "/assets/uploads/a7401679-web.jpg",
-          "imageSmall": "/assets/uploads/a7401679-sm.jpg",
-          "position": "50% 26%",
-          "alt": "Photo d'ambiance : Tom regardant ses mains, bras recouverts de tatouages, débardeur blanc."
+          "image": "/assets/registre/pc-05.jpg",
+          "imageSmall": "/assets/registre/pc-05-sm.jpg",
+          "position": "50% 35%",
+          "alt": "Photo d'ambiance : le dos et l'épaule de Tom, la tête penchée, tatouages sur le torse."
         }
       ],
       "note": "Photos d'ambiance de mes séances. Ce ne sont pas des articles Black Boar : aucune pièce n'est encore en vente."
@@ -66,8 +66,8 @@
     {
       "type": "bb-drop",
       "visible": true,
-      "image": "/assets/uploads/a7401667-sm.jpg",
-      "imagePosition": "50% 24%",
+      "image": "/assets/registre/pc-07.jpg",
+      "imagePosition": "50% 30%",
       "imageAlt": "Photo d'ambiance : Tom de dos, mains sur la barre de traction, en salle de musculation.",
       "eyebrow": "Alerte lancement",
       "title": "Sois averti en premier.",

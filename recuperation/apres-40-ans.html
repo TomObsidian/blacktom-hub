@@ -19,9 +19,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://blacktom.fr/assets/og-recuperation-apres-40-ans.jpg">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="/styles.css">
 <script src="/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -75,11 +76,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-article">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -103,8 +104,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/contenus" style="color:var(--dim2);">Contenus</a> → <a href="/recuperation" style="color:var(--dim2);">Récupération</a> → Récupération après 40 ans</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/contenus" style="color:var(--dim2);">Contenus</a> / <a href="/recuperation" style="color:var(--dim2);">Récupération</a> / Récupération après 40 ans</p>
   <p class="eyebrow" style="margin-top:20px;">Récupération</p>
   <h1 style="font-size:clamp(30px,6vw,50px);">Récupération en musculation après 40 ans : sommeil, fatigue et blessures</h1>
 
@@ -112,8 +115,13 @@
     <p style="margin:0;font-size:16px;line-height:1.6;"><strong>En bref :</strong> après 40 ans, récupérer repose sur trois leviers que tu contrôles : dormir au moins 7 heures de façon régulière, repérer la fatigue qui s'accumule avant qu'elle ne bloque ta progression (et alléger une semaine quand il le faut), et augmenter les charges progressivement pour protéger muscles, tendons et articulations. Une douleur qui dure ou qui inquiète relève d'un avis médical, pas d'un réglage d'entraînement.</p>
   </div>
 </section>
+<figure class="band-fig rv">
+  <img src="/assets/registre/band-recup.jpg" srcset="/assets/registre/band-recup-sm.jpg 1000w, /assets/registre/band-recup.jpg 2200w" sizes="100vw" alt="Tom de profil, la tête baissée, le cou et la tempe tatoués." width="2200" height="944" decoding="async">
+  <figcaption>Rennes, 14.09.2026. A7401708, 85 mm, f/1.8, 1/125 s.</figcaption>
+</figure>
 
-<section class="hub-section">
+
+<section class="hub-section paper">
   <div class="bio-block">
     <p>43 ans, un travail, une famille, le développé couché comme fil conducteur et une première compétition en préparation : mon entraînement doit tenir dans une vie qui ne tourne pas autour de la salle. Alors la récupération n'est pas un détail, c'est ce qui décide si je peux enchaîner une semaine de plus. Cette page rassemble ce que je retiens des données disponibles sur le sommeil, la fatigue et la prévention des blessures, avec leurs limites, que je préfère dire clairement.</p>
     <p>Je ne suis ni médecin ni kinésithérapeute : ceci n'est pas un avis médical individualisé. Le reste de ma façon de m'entraîner est sur la page <a href="/musculation-apres-40-ans" style="color:var(--red-text);">musculation après 40 ans</a>.</p>
@@ -131,7 +139,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="age">
+<section class="hub-section paper" id="age">
   <div class="bio-block">
     <h2>Récupère-t-on moins bien après 40 ans ?</h2>
     <p>C'est ce que pensent beaucoup de pratiquants de mon âge, et les arguments existent : un muscle plus âgé pourrait être plus sensible aux dommages liés à l'exercice et réparer plus lentement. Mais la revue de référence sur le sujet pointe deux limites de taille : dans de nombreuses études, on ne sépare pas l'effet de l'âge de celui d'une baisse d'activité physique, et les protocoles utilisés pour provoquer des dégâts musculaires ne ressemblent pas à un entraînement normal<sup>[1]</sup>.</p>
@@ -139,7 +147,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="sommeil">
+<section class="hub-section paper" id="sommeil">
   <div class="bio-block">
     <h2>Le sommeil : la première variable à protéger</h2>
     <p>Le repère de référence vient d'un consensus de l'American Academy of Sleep Medicine et de la Sleep Research Society : un adulte devrait dormir <strong>au moins 7 heures par nuit</strong>, de façon régulière. Dormir moins que ça habituellement est associé à des effets négatifs sur la santé<sup>[2]</sup>. C'est un repère de santé générale, pas un chiffre calculé pour la musculation.</p>
@@ -151,7 +159,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="fatigue">
+<section class="hub-section paper" id="fatigue">
   <div class="bio-block">
     <h2>La fatigue : distinguer le normal de ce qui bloque</h2>
     <p>Un entraînement qui fait progresser fatigue : c'est le principe de la surcharge. Le consensus européen et américain sur le surentraînement (ECSS et ACSM) distingue la surcharge « fonctionnelle » (functional overreaching en anglais), une baisse de performance de courte durée suivie d'un progrès après récupération, de la surcharge « non fonctionnelle », qui apparaît quand l'équilibre entre entraînement et récupération n'est pas respecté<sup>[5]</sup>.</p>
@@ -169,7 +177,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="semaine-allegee">
+<section class="hub-section paper" id="semaine-allegee">
   <div class="bio-block">
     <h2>La semaine allégée (deload) : à quoi ça sert, comment la placer</h2>
     <p>Une semaine allégée, ou « deload », est une pratique très répandue en force et en physique, mais peu étudiée. Un consensus d'entraîneurs (méthode Delphi, 2023) la définit comme une période de stress d'entraînement réduit, conçue pour atténuer la fatigue physiologique et psychologique, favoriser la récupération et améliorer la disposition pour la suite<sup>[6]</sup>. C'est un accord d'experts, pas le résultat d'essais contrôlés : à prendre comme une pratique de terrain raisonnable, pas comme une règle démontrée.</p>
@@ -186,12 +194,12 @@
       <div class="tag-row"><span class="tag">Outil gratuit</span></div>
       <h2>Calcule les charges de ta semaine allégée</h2>
       <p>Entre ta charge et tes répétitions : Bench Lab estime ton 1RM et affiche les charges à 50 %, 60 %, 70 % et plus, arrondies à ta plus petite charge disponible. Il génère aussi l'échauffement jusqu'à ta charge cible.</p>
-      <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-primary" data-track="cta_benchlab_article_recuperation">Ouvrir Bench Lab →</a>
+      <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-primary" data-track="cta_benchlab_article_recuperation">Ouvrir Bench Lab</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section" id="blessures">
+<section class="hub-section paper" id="blessures">
   <div class="bio-block">
     <h2>Prévenir les blessures : muscles, tendons, articulations</h2>
     <p>Bonne nouvelle : s'entraîner en force protège plutôt qu'il n'expose. Une méta-analyse de 25 essais contrôlés (26 610 participants) a trouvé que les programmes de renforcement réduisaient le nombre de blessures sportives à moins d'un tiers (risque relatif de 0,32). Les étirements, eux, n'ont montré aucun effet protecteur<sup>[7]</sup>. Nuance : il s'agit de blessures sportives en général, pas spécifiquement de blessures de musculation.</p>
@@ -204,7 +212,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="douleur">
+<section class="hub-section paper" id="douleur">
   <div class="bio-block">
     <h2>Douleur : quand lever le pied, quand consulter</h2>
     <p>Des courbatures diffuses, des deux côtés, qui s'estompent en quelques jours sont courantes après une séance. Une douleur localisée, qui revient au même geste ou qui s'aggrave, est un autre sujet. Consulte un médecin ou un kinésithérapeute si :</p>
@@ -219,7 +227,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="checklist">
+<section class="hub-section paper" id="checklist">
   <div class="bio-block">
     <h2>La checklist récupération</h2>
     <p style="font-size:13px;color:var(--dim2);">À adapter à ta situation : ce sont des repères, pas un protocole médical.</p>
@@ -236,7 +244,7 @@
   </div>
 </section>
 
-<section class="hub-section" id="faq">
+<section class="hub-section paper" id="faq">
   <p class="section-eyebrow">Questions fréquentes</p>
   <div class="bio-block">
     <h3>Combien d'heures de sommeil faut-il pour progresser en musculation ?</h3>
@@ -256,7 +264,7 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <p style="font-size:12px;color:var(--dim2);line-height:1.7;">
       <strong>Sources</strong> (affirmations générales uniquement, ceci n'est pas un avis médical individualisé) :<br>
@@ -274,10 +282,10 @@
 
 <section class="hub-section">
   <p class="section-eyebrow">À lire ensuite</p>
-  <a class="content-row" href="/musculation-apres-40-ans" data-track="cta_recuperation_lire_pilier">Musculation après 40 ans : mon approche complète <span>→</span></a>
-  <a class="content-row" href="/developpe-couche/apres-40-ans" data-track="cta_recuperation_lire_dc_40">Développé couché après 40 ans <span>→</span></a>
-  <a class="content-row" href="/developpe-couche/progresser" data-track="cta_recuperation_lire_dc_progresser">Comment progresser au développé couché <span>→</span></a>
-  <a class="content-row" href="/nutrition/creatine-apres-40-ans" data-track="cta_recuperation_lire_creatine">Créatine après 40 ans <span>→</span></a>
+  <a class="content-row" href="/musculation-apres-40-ans" data-track="cta_recuperation_lire_pilier">Musculation après 40 ans : mon approche complète</a>
+  <a class="content-row" href="/developpe-couche/apres-40-ans" data-track="cta_recuperation_lire_dc_40">Développé couché après 40 ans</a>
+  <a class="content-row" href="/developpe-couche/progresser" data-track="cta_recuperation_lire_dc_progresser">Comment progresser au développé couché</a>
+  <a class="content-row" href="/nutrition/creatine-apres-40-ans" data-track="cta_recuperation_lire_creatine">Créatine après 40 ans</a>
 </section>
 
 <section class="hub-section">
@@ -301,6 +309,8 @@
     </form>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

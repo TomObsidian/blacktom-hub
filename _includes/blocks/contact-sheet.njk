@@ -1,0 +1,23 @@
+{# Planche contact : vignettes N&B, gouttières de 4 px, légendes tirées des métadonnées réelles. #}
+<section class="planche presse" id="planche">
+  <div class="planche-head">
+    <div>
+      {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
+      <h2 class="sec-title">{{ block.title | default('Planche contact') }}</h2>
+    </div>
+  </div>
+  <div class="planche-grid">
+    {% for photo in block.photos %}
+    <figure class="plate">
+      <div class="ph rv"><img src="{{ photo.image }}"{% if photo.imageSmall %} srcset="{{ photo.imageSmall }} 400w, {{ photo.image }} 640w" sizes="(min-width:900px) 25vw, 50vw"{% endif %} alt="{{ photo.alt | default('') }}" width="640" height="797" loading="lazy" decoding="async"></div>
+      {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% if block.text or block.ctaText %}
+  <div class="planche-foot">
+    {% if block.text %}<p>{{ block.text }}</p>{% endif %}
+    {% if block.ctaText %}<a href="{{ block.ctaUrl }}" class="link-line" data-track="{{ block.trackId | default('cta_apropos') }}">{{ block.ctaText }}</a>{% endif %}
+  </div>
+  {% endif %}
+</section>

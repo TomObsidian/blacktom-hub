@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="/styles.css">
 <script src="/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -59,11 +60,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-article">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -87,8 +88,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/contenus" style="color:var(--dim2);">Contenus</a> → <a href="/developpe-couche" style="color:var(--dim2);">Développé couché</a> → Après 40 ans</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/contenus" style="color:var(--dim2);">Contenus</a> / <a href="/developpe-couche" style="color:var(--dim2);">Développé couché</a> / Après 40 ans</p>
   <p class="eyebrow" style="margin-top:20px;">Développé couché</p>
   <h1 style="font-size:clamp(30px,6vw,50px);">Développé couché après 40 ans : comment continuer à progresser</h1>
 
@@ -96,15 +99,20 @@
     <p style="margin:0;font-size:16px;line-height:1.6;"><strong>En bref :</strong> oui, il est possible de continuer à progresser au développé couché après 40 ans. L'âge ne supprime pas les principes qui font progresser en force : surcharge progressive, technique, régularité, récupération, programmation. Ce qui peut devoir évoluer, c'est la façon de gérer l'entraînement et la récupération au quotidien, pas les principes eux-mêmes.</p>
   </div>
 </section>
+<figure class="band-fig rv">
+  <img src="/assets/registre/band-dc40.jpg" srcset="/assets/registre/band-dc40-sm.jpg 1000w, /assets/registre/band-dc40.jpg 2200w" sizes="100vw" alt="Gros plan sur le visage de Tom, éclairé de côté, dans la pénombre d'une salle." width="2200" height="944" decoding="async">
+  <figcaption>Rennes, 14.09.2026. A7401572, 85 mm, f/1.8, 1/125 s.</figcaption>
+</figure>
 
-<section class="hub-section">
+
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Ce qui change vraiment après 40 ans</h2>
     <p>40 ans n'est pas une frontière biologique magique. Le vieillissement musculaire est réel : les données disponibles indiquent une perte de masse musculaire de l'ordre de 3 à 8 % par décennie après 30 ans, avec une accélération après 60-65 ans<sup>[1,2]</sup>. Mais à 43 ans, ce phénomène reste marginal comparé à d'autres facteurs qui pèsent bien plus lourd sur la capacité à progresser : le niveau d'entraînement, l'historique sportif, la qualité de récupération, le sommeil, la nutrition, d'éventuelles blessures accumulées, et les contraintes de vie (travail, famille). Deux personnes du même âge peuvent avoir des marges de progression très différentes selon ces facteurs. L'âge seul n'explique pas grand-chose. Les données disponibles montrent d'ailleurs des gains de force mesurables grâce à l'entraînement en résistance même chez des adultes bien plus âgés<sup>[3,4]</sup>.</p>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Mon approche à 43 ans</h2>
     <p>Je cherche encore activement à augmenter mon bench. Je travaille beaucoup avec pause (la position que j'utilise dans l'optique de ma préparation de compétition) et j'intègre aussi des variantes comme le Larsen press pour travailler certains points faibles. Je suis ma progression au fil des séances plutôt qu'à l'instinct, et je prépare ma première compétition de développé couché.</p>
@@ -112,7 +120,7 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Technique avant ego</h2>
     <p>Avant de chercher plus lourd, la technique doit être répétable : une installation stable (pieds ancrés, omoplates resserrées, cambrure raisonnable), une trajectoire de barre cohérente d'une répétition à l'autre, et un point de contact qui ne varie pas selon la fatigue. Si l'objectif est la compétition, la pause devient un élément technique à part entière : elle doit être maîtrisée à charge légère avant d'être testée lourd.</p>
@@ -135,12 +143,12 @@
       <div class="tag-row"><span class="tag">Outil gratuit</span></div>
       <h2>Comment s'échauffer au développé couché après 40 ans ?</h2>
       <p>Un échauffement efficace n'a pas besoin d'être interminable ni spécifiquement "adapté à l'âge" : une préparation générale courte si nécessaire, puis la barre à vide, puis une montée progressive en charge avec un nombre de répétitions qui diminue à mesure que la charge augmente. L'objectif est d'arriver prêt sur les séries importantes, pas fatigué avant même de les commencer.</p>
-      <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-primary" data-track="cta_benchlab_article_echauffement">Préparer mon échauffement avec Bench Lab →</a>
+      <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-primary" data-track="cta_benchlab_article_echauffement">Préparer mon échauffement avec Bench Lab</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Comment continuer à ajouter des kilos sur la barre ?</h2>
     <p>Il n'y a pas de formule magique, mais plusieurs leviers à actionner selon la situation : ajouter progressivement de la charge, ajouter des répétitions à charge égale avant d'augmenter le poids, améliorer un point technique précis, utiliser des micro-charges (1,25 kg ou moins) quand les paliers habituels sont trop grands, ou introduire une variante (pause, tempo, prise différente) pour travailler un point faible sans stagner sur le mouvement principal.</p>
@@ -167,20 +175,20 @@
       <div class="tag-row"><span class="tag">Outil gratuit</span></div>
       <h2>Contextualiser avec le poids de corps</h2>
       <p>La charge soulevée en valeur absolue ne dit pas tout : un même bench n'a pas le même sens selon le poids de corps. Le ratio (bench ÷ poids de corps) donne un repère plus objectif pour suivre sa propre progression dans le temps.</p>
-      <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-ghost" data-track="cta_benchlab_article_ratio">Calculer mon ratio Bench / poids de corps →</a>
+      <a href="/outils/calculateur-1rm-developpe-couche" class="btn btn-ghost" data-track="cta_benchlab_article_ratio">Calculer mon ratio Bench / poids de corps</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Et les compléments ?</h2>
     <p>L'entraînement, l'alimentation et la récupération restent prioritaires. Aucun complément ne compense une mauvaise programmation. Deux compléments reviennent souvent dans les données disponibles sur le vieillissement musculaire : la créatine, associée à un effet positif sur la masse et la force musculaire chez des adultes plus âgés lorsqu'elle accompagne un entraînement en résistance<sup>[6,7]</sup>, et les apports en protéines, pour lesquels certains travaux suggèrent des besoins plus élevés chez les personnes âgées pour soutenir le maintien musculaire<sup>[8]</sup>.</p>
-    <p style="font-size:13px;color:var(--dim2);"><a href="/complements" style="color:var(--red-text);">Voir les compléments que j'utilise →</a></p>
+    <p style="font-size:13px;color:var(--dim2);"><a href="/complements" style="color:var(--red-text);">Voir les compléments que j'utilise</a></p>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <p class="section-eyebrow">Questions fréquentes</p>
   <div class="bio-block">
     <h3>Peut-on encore gagner en force après 40 ans ?</h3>
@@ -196,7 +204,7 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <p style="font-size:12px;color:var(--dim2);line-height:1.7;">
       <strong>Sources</strong> (affirmations générales uniquement ; ceci n'est pas un avis médical individualisé) :<br>
@@ -234,6 +242,8 @@
     </form>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

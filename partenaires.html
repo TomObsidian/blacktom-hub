@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="styles.css">
 <script src="analytics.js" defer></script>
 <script type="application/ld+json">
@@ -29,7 +30,8 @@
 }
 </script>
 </head>
-<body>
+<body class="p-hub">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
@@ -57,17 +59,21 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
   <p class="eyebrow">Partenaires</p>
   <h1 style="font-size:clamp(38px,8vw,64px);">Mes partenaires</h1>
   <p class="lede" style="max-width:600px;">Les marques que j'utilise et avec lesquelles je travaille.</p>
   <p style="margin:12px 0 0;font-size:13px;color:var(--dim2);">Certains liens ci-dessous sont affiliés : si tu achètes via l'un d'eux, je peux toucher une commission, sans coût supplémentaire pour toi.</p>
-  <p style="margin:12px 0 0;font-size:14px;"><a href="/code-promo-prozis" style="color:var(--red-text);">Code Prozis BLACKTOM : utilisation et conditions →</a></p>
+  <p style="margin:12px 0 0;font-size:14px;"><a href="/code-promo-prozis" style="color:var(--red-text);">Code Prozis BLACKTOM : utilisation et conditions</a></p>
 </section>
 
-<p style="padding:20px var(--pad) 0;margin:0;"><a href="/complements" class="link-arrow">Voir ma routine de compléments et les références →</a></p>
+<p style="padding:20px var(--pad) 0;margin:0;"><a href="/complements" class="link-arrow">Voir ma routine de compléments et les références</a></p>
 
 <div class="partners" id="partners-list" data-source-page="partenaires"></div>
+
+</main>
 
 <footer>
   <div class="foot-grid">

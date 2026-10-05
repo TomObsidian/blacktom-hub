@@ -86,8 +86,8 @@ function partnerCardHTML(p, sourcePage) {
   var copyBtn = p.code
     ? '<button type="button" class="btn btn-ghost btn-block" onclick="copyPromoCode(\'' + p.slug + '\',\'' + p.code + '\',this,\'' + sourcePage + '\',\'partenaires_page\')">Copier le code</button>'
     : '';
-  var voirBtn = '<a href="' + url + '" class="btn btn-primary btn-block" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick(\'' + p.slug + '\',\'' + sourcePage + '\',\'partenaires_page\')">Voir chez ' + p.name + ' →</a>';
-  var prozisLink = p.slug === 'prozis' ? '<a class="pc-more" href="/code-promo-prozis">Voir la page complète du code Prozis →</a>' : '';
+  var voirBtn = '<a href="' + url + '" class="btn btn-primary btn-block" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick(\'' + p.slug + '\',\'' + sourcePage + '\',\'partenaires_page\')">Voir chez ' + p.name + '</a>';
+  var prozisLink = p.slug === 'prozis' ? '<a class="pc-more" href="/code-promo-prozis">Voir la page complète du code Prozis</a>' : '';
 
   return '' +
     '<div class="pcard">' +

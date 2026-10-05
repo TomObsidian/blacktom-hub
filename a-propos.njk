@@ -16,9 +16,10 @@ permalink: "a-propos.html"
 <meta property="og:image" content="https://blacktom.fr/assets/avatar-black-tom-de3dd432.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="styles.css">
 <script src="analytics.js" defer></script>
 <script type="application/ld+json">
@@ -35,11 +36,11 @@ permalink: "a-propos.html"
 }
 </script>
 </head>
-<body>
+<body class="p-brand">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -63,6 +64,8 @@ permalink: "a-propos.html"
   <a href="/a-propos" aria-current="page">À propos</a>
 </div>
 
+<main id="main">
+
 {% for block in aPropos.blocks %}
 {% if block.visible != false %}
 {% if block.type == "hero" %}{% include "blocks/hero.njk" %}{% endif %}
@@ -71,6 +74,8 @@ permalink: "a-propos.html"
 {% if block.type == "photo-gallery" %}{% include "blocks/photo-gallery.njk" %}{% endif %}
 {% endif %}
 {% endfor %}
+
+</main>
 
 <footer>
   <div class="foot-grid">

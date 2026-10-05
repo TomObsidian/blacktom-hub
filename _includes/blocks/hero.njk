@@ -1,18 +1,19 @@
-<div class="ed-hero">
-  <div class="ed-hero-media">
-    <img src="{{ block.image }}"{% if block.imageSmall %} srcset="{{ block.imageSmall }} 800w, {{ block.image }} 1400w" sizes="(min-width:900px) 42vw, 100vw"{% endif %} alt="{{ block.imageAlt | default('') }}" width="1400" height="2100" fetchpriority="high" decoding="async" style="--pos:{{ block.imagePosition | default('50% 28%') }};">
-  </div>
-  <div class="ed-hero-body">
-    {% if block.kicker %}<span class="ed-hero-kicker">{{ block.kicker }}</span>{% endif %}
-    <h1>{{ block.title }}</h1>
-    {% if block.claim %}<p class="ed-hero-claim">{{ block.claim }}</p>{% endif %}
-    {% if block.tagline %}<p class="tagline">{% for line in block.tagline | splitLines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>{% endif %}
-    {% if block.lede %}<p class="lede">{{ block.lede }}</p>{% endif %}
+{# Couverture : le numéral (âge, lu dans status.json), le portrait, la phrase, le mot. #}
+<div class="cover presse">
+  {% if status.age %}<p class="cover-num"><span class="sr-only">{{ status.age }} ans. </span><span aria-hidden="true">{{ status.age }}<small>ans</small></span></p>{% endif %}
+  <figure class="cover-photo">
+    <img src="{{ block.image }}"{% if block.imageSmall %} srcset="{{ block.imageSmall }} 800w, {{ block.image }} 1500w" sizes="(min-width:900px) 44vw, 100vw"{% endif %} alt="{{ block.imageAlt | default('') }}" width="1500" height="2250" fetchpriority="high" decoding="async" style="--pos:{{ block.imagePosition | default('50% 22%') }};">
+  </figure>
+  <div class="cover-body">
+    {% if block.claim %}<p class="cover-quote">{{ block.claim }}</p>{% endif %}
+    {% if block.tagline %}<p class="cover-lede">{% for line in block.tagline | splitLines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>{% endif %}
+    {% if block.lede %}<p class="cover-lede">{{ block.lede }}</p>{% endif %}
     {% if block.primaryCtaText %}
-    <div class="ed-hero-actions">
+    <div class="cover-links">
       <a href="{{ block.primaryCtaUrl }}" class="btn btn-primary" data-track="cta_hero_primary">{{ block.primaryCtaText }}</a>
-      {% if block.secondaryCtaText %}<a href="{{ block.secondaryCtaUrl }}" class="link-arrow" data-track="cta_hero_secondary">{{ block.secondaryCtaText }}</a>{% endif %}
+      {% if block.secondaryCtaText %}<a href="{{ block.secondaryCtaUrl }}" class="link-line" data-track="cta_hero_secondary">{{ block.secondaryCtaText }}</a>{% endif %}
     </div>
     {% endif %}
   </div>
+  <div class="cover-wm"><h1 class="cover-mark">{{ block.title }}</h1></div>
 </div>

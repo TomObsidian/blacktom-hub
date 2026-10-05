@@ -80,6 +80,38 @@ function calcWarmupSteps(target, barWeight) {
   return rows;
 }
 
+// Dessin de la barre chargée (de face, symétrique). Hauteurs et épaisseurs
+// suivent la taille réelle des disques ; seul le 25 kg est en rouge disque.
+function calcBarbellSVG(plates, label) {
+  var heights = { 25: 122, 20: 112, 15: 92, 10: 72, 5: 56, 2.5: 44, 1.25: 36, 0.5: 30, 0.25: 26 };
+  var widths = { 25: 22, 20: 20, 15: 18, 10: 16, 5: 12, 2.5: 10, 1.25: 8, 0.5: 6, 0.25: 5 };
+  var gap = 3;
+  var total = plates.reduce(function (sum, p) { return sum + (widths[p] || 6) + gap; }, 0);
+  var room = 104;
+  var k = total > room ? room / total : 1;
+  var cx = 280;
+  var flange = 120; // distance du centre au rebord de la manchette
+  var left = '';
+  var right = '';
+  var offset = 0;
+  plates.forEach(function (p) {
+    var w = Math.max(3, (widths[p] || 6) * k);
+    var h = heights[p] || 26;
+    var y = 75 - h / 2;
+    var cls = p === 25 ? 'pl-red' : (p >= 10 ? 'pl-d' : 'pl-l');
+    var xl = cx - flange - offset - w;
+    var xr = cx + flange + offset;
+    left += '<rect class="' + cls + '" x="' + xl.toFixed(1) + '" y="' + y + '" width="' + w.toFixed(1) + '" height="' + h + '"/>';
+    right += '<rect class="' + cls + '" x="' + xr.toFixed(1) + '" y="' + y + '" width="' + w.toFixed(1) + '" height="' + h + '"/>';
+    offset += w + gap * k;
+  });
+  return '<figure class="bar-fig"><svg viewBox="0 0 560 150" role="img" aria-label="' + label + '">' +
+    '<rect x="0" y="69" width="560" height="12" fill="currentColor"/>' +
+    '<rect x="' + (cx - flange - 6) + '" y="53" width="6" height="44" fill="currentColor"/>' +
+    '<rect x="' + (cx + flange) + '" y="53" width="6" height="44" fill="currentColor"/>' +
+    left + right + '</svg></figure>';
+}
+
 // Répartition des disques nécessaires DE CHAQUE CÔTÉ pour atteindre une
 // charge totale, à partir des disques cochés comme disponibles. Approche
 // gloutonne (du plus grand disque au plus petit) : fonctionne correctement
@@ -347,7 +379,11 @@ document.addEventListener('DOMContentLoaded', function () {
         ? res.plates.map(function (p) { return '<span class="chip">' + calcFormatKg(p) + '</span>'; }).join('')
         : '<span class="chip">Aucun disque (barre seule)</span>';
 
-      var html = '<p style="font-size:13px;color:var(--dim2);margin:0 0 8px;">Par côté :</p>' +
+      var barLabel = res.plates.length
+        ? 'Barre chargée, de chaque côté : ' + res.plates.map(function (p) { return calcFormatKg(p); }).join(', ')
+        : 'Barre seule, sans disque';
+      var html = calcBarbellSVG(res.plates, barLabel) +
+        '<p style="font-size:13px;color:var(--dim2);margin:0 0 8px;">Par côté :</p>' +
         '<div class="plates-side">' + platesHTML + '</div>';
 
       if (res.exact) {
@@ -370,54 +406,77 @@ document.addEventListener('DOMContentLoaded', function () {
     var c = els.canvas;
     var ctx = c.getContext('2d');
     var W = c.width, H = c.height;
+    var M = 90; // marge
+    var DISPLAY = '"Big Shoulders Display", "Arial Narrow", Impact, sans-serif';
+    var SANS = '"Archivo", Arial, sans-serif';
 
-    ctx.fillStyle = '#0b0b0c';
+    ctx.fillStyle = '#0E0E0D';
     ctx.fillRect(0, 0, W, H);
-    ctx.fillStyle = '#e02020';
-    ctx.fillRect(0, 0, W, 14);
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
 
-    ctx.textAlign = 'center';
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '900 64px Arial, sans-serif';
-    ctx.fillText('BLACKTOM', W / 2, 160);
-    ctx.font = '700 34px Arial, sans-serif';
-    ctx.fillStyle = '#c9c9cc';
-    ctx.fillText('BENCH LAB', W / 2, 210);
+    ctx.fillStyle = '#F2EFE8';
+    ctx.font = '900 96px ' + DISPLAY;
+    ctx.fillText('BLACKTOM', M, 190);
+    ctx.font = '600 30px ' + SANS;
+    ctx.fillStyle = '#A39F95';
+    ctx.fillText('BENCH LAB', M, 245);
 
-    ctx.strokeStyle = '#2a2a2d';
-    ctx.beginPath();
-    ctx.moveTo(120, 260);
-    ctx.lineTo(W - 120, 260);
-    ctx.stroke();
+    ctx.fillStyle = '#F2EFE8';
+    ctx.fillRect(M, 290, W - 2 * M, 8);
 
-    ctx.font = '600 30px Arial, sans-serif';
-    ctx.fillStyle = '#9a9a9e';
-    ctx.fillText('1RM ESTIMÉ', W / 2, 360);
-    ctx.font = '900 130px Arial, sans-serif';
-    ctx.fillStyle = '#ffffff';
-    ctx.fillText(lastResult ? calcFormatKg(lastResult.oneRMRounded) : '', W / 2, 470);
+    ctx.font = '600 30px ' + SANS;
+    ctx.fillStyle = '#A39F95';
+    ctx.fillText('1RM ESTIMÉ', M, 370);
 
-    ctx.font = '700 40px Arial, sans-serif';
-    ctx.fillStyle = '#e02020';
-    ctx.fillText(lastResult ? lastResult.ratio.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '× PDC' : '', W / 2, 540);
+    // Le chiffre prend toute la largeur disponible, aligné à gauche.
+    var big = lastResult ? calcFormatKg(lastResult.oneRMRounded) : '';
+    var size = 360;
+    ctx.fillStyle = '#F2EFE8';
+    do {
+      ctx.font = '900 ' + size + 'px ' + DISPLAY;
+      size -= 8;
+    } while (ctx.measureText(big).width > W - 2 * M && size > 80);
+    ctx.fillText(big, M - 6, 640);
 
-    ctx.font = '500 28px Arial, sans-serif';
-    ctx.fillStyle = '#c9c9cc';
+    ctx.font = '800 56px ' + DISPLAY;
+    ctx.fillStyle = '#F2EFE8';
+    ctx.fillText(lastResult ? lastResult.ratio.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '× LE POIDS DE CORPS' : '', M, 730);
+
+    ctx.font = '400 30px ' + SANS;
+    ctx.fillStyle = '#A39F95';
     var perf = lastResult ? (lastResult.reps <= 1 ? calcFormatKg(lastResult.load) + ' × 1' : calcFormatKg(lastResult.load) + ' × ' + lastResult.reps) : '';
-    ctx.fillText('Poids : ' + (lastResult ? calcFormatKg(lastResult.bodyweight) : ''), W / 2, 640);
-    ctx.fillText('Performance : ' + perf, W / 2, 680);
-    ctx.fillText(lastResult ? lastResult.repTypeLabel : '', W / 2, 720);
+    ctx.fillText('Poids : ' + (lastResult ? calcFormatKg(lastResult.bodyweight) : ''), M, 810);
+    ctx.fillText('Performance : ' + perf, M, 856);
+    ctx.fillText(lastResult ? lastResult.repTypeLabel : '', M, 902);
 
-    ctx.font = '700 32px Arial, sans-serif';
-    ctx.fillStyle = '#ffffff';
-    ctx.fillText('blacktom.fr', W / 2, H - 60);
+    ctx.fillStyle = 'rgba(242,239,232,.32)';
+    ctx.fillRect(M, H - 150, W - 2 * M, 2);
+    ctx.font = '800 44px ' + DISPLAY;
+    ctx.fillStyle = '#F2EFE8';
+    ctx.fillText('BLACKTOM.FR', M, H - 80);
+  }
+
+  function ensureCardFonts(done) {
+    if (document.fonts && document.fonts.load) {
+      Promise.all([
+        document.fonts.load('900 100px "Big Shoulders Display"'),
+        document.fonts.load('800 56px "Big Shoulders Display"'),
+        document.fonts.load('600 30px "Archivo"'),
+        document.fonts.load('400 30px "Archivo"')
+      ]).then(function () { done(); }, function () { done(); });
+    } else {
+      done();
+    }
   }
 
   function canvasToFile(callback) {
-    drawCard();
-    els.canvas.toBlob(function (blob) {
-      callback(new File([blob], 'blacktom-bench-lab.png', { type: 'image/png' }));
-    }, 'image/png');
+    ensureCardFonts(function () {
+      drawCard();
+      els.canvas.toBlob(function (blob) {
+        callback(new File([blob], 'blacktom-bench-lab.png', { type: 'image/png' }));
+      }, 'image/png');
+    });
   }
 
   els.downloadBtn.addEventListener('click', function () {

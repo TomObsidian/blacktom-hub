@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="/styles.css">
 <script src="/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -63,11 +64,11 @@
 }
 </script>
 </head>
-<body>
+<body class="p-article">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
-    <img src="/assets/avatar-black-tom-de3dd432.jpg" alt="">
     BLACKTOM
   </a>
   <div class="nav-links">
@@ -91,8 +92,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/contenus" style="color:var(--dim2);">Contenus</a> → <a href="/nutrition" style="color:var(--dim2);">Nutrition</a> → Créatine après 40 ans</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/contenus" style="color:var(--dim2);">Contenus</a> / <a href="/nutrition" style="color:var(--dim2);">Nutrition</a> / Créatine après 40 ans</p>
   <p class="eyebrow" style="margin-top:20px;">Nutrition</p>
   <h1 style="font-size:clamp(30px,6vw,50px);">Créatine après 40 ans : utile pour continuer à progresser ?</h1>
 
@@ -100,21 +103,26 @@
     <p style="margin:0;font-size:16px;line-height:1.6;"><strong>En bref :</strong> la créatine monohydrate reste, à tout âge adulte, l'un des compléments les mieux documentés pour la force et l'entraînement en résistance. Elle ne compense ni un mauvais entraînement ni une mauvaise alimentation, et rien ne montre qu'elle agit différemment parce qu'on a dépassé 40 ans.</p>
   </div>
 </section>
+<figure class="band-fig rv">
+  <img src="/assets/registre/band-creatine.jpg" srcset="/assets/registre/band-creatine-sm.jpg 800w, /assets/registre/band-creatine.jpg 1365w" sizes="100vw" alt="Tom, le regard baissé, le visage dans la pénombre d'une salle." width="1365" height="585" decoding="async">
+  <figcaption>Rennes, 14.09.2026. A7401533, 85 mm, f/1.8, 1/160 s.</figcaption>
+</figure>
 
-<section class="hub-section">
+
+<section class="hub-section paper">
   <div class="bio-block">
     <p>43 ans, développé couché comme objectif de progression, première compétition en préparation. Je prends de la créatine. Le détail de ce que j'utilise est sur ma <a href="/complements" style="color:var(--red-text);">page compléments</a>. Ici, la question est plus simple : qu'est-ce que la créatine apporte réellement quand on cherche encore à devenir plus fort ?</p>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>La créatine, c'est quoi exactement ?</h2>
     <p>La créatine est stockée dans les muscles sous forme de phosphocréatine, une réserve d'énergie mobilisée en quelques secondes lors d'un effort intense : une série lourde au développé couché, un sprint, un saut. Elle sert à régénérer rapidement l'ATP, la molécule que les cellules musculaires utilisent directement comme carburant. Augmenter les réserves musculaires de créatine permet de répéter ce type d'effort avec un peu moins de baisse de performance d'une série à l'autre. C'est ce mécanisme qui explique l'essentiel de son intérêt en musculation.</p>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Est-elle encore utile après 40 ans ?</h2>
     <p>Oui, sur le principe : les mécanismes qui expliquent l'intérêt de la créatine (recharge rapide d'ATP, meilleure tolérance au volume d'entraînement) ne sont pas spécifiques à une tranche d'âge. La position officielle de l'International Society of Sports Nutrition (ISSN) est claire : la créatine monohydrate est le complément ergogénique le plus efficace actuellement disponible pour augmenter la capacité à l'effort intense et la masse maigre à l'entraînement<sup>[1]</sup>.</p>
@@ -122,7 +130,7 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Créatine et développé couché</h2>
     <p>Dans mon cas, l'intérêt de la créatine n'est pas de "débloquer" un chiffre précis sur la barre. C'est plus terre-à-terre : elle peut aider à maintenir la qualité des dernières répétitions d'une série, ou à mieux récupérer entre deux séries lourdes de développé couché. Ce sont des détails d'entraînement qui s'additionnent sur des mois, pas un effet qui se voit d'une séance à l'autre.</p>
@@ -130,14 +138,14 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Combien en prendre ?</h2>
     <p>La dose la plus étudiée et la plus simple à tenir dans la durée est de <strong>3 à 5 g par jour</strong>, tous les jours, sans interruption nécessaire. Le moment de la prise (avant, après l'entraînement, ou un jour de repos) a peu d'importance pour l'effet à long terme : ce qui compte, c'est la régularité, pas l'heure précise.</p>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Faut-il faire une phase de charge ?</h2>
     <p>Non, ce n'est pas obligatoire. Une phase de charge (environ 20 g par jour répartis sur la journée, pendant 5 à 7 jours) permet de saturer les réserves musculaires plus vite. Mais un travail de référence sur le sujet a montré qu'une dose de 3 g par jour atteint le même niveau de saturation musculaire en 28 jours environ, sans phase de charge<sup>[3]</sup>. La charge fait gagner du temps, elle ne change pas le résultat final.</p>
@@ -146,14 +154,14 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Est-ce que la créatine fait prendre du poids ?</h2>
     <p>Oui, souvent 1 à 2 kg au début, mais il s'agit principalement d'eau stockée à l'intérieur des cellules musculaires (l'effet est dit "osmotique"), pas de graisse<sup>[4]</sup>. C'est d'ailleurs plutôt un signe que la créatine musculaire augmente comme attendu. Ce n'est pas une prise de masse grasse, et ce n'est pas non plus un signe de rétention d'eau problématique chez une personne en bonne santé.</p>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Créatine et reins : faut-il s'inquiéter ?</h2>
     <p>Chez l'adulte en bonne santé, c'est l'une des questions les plus étudiées sur la créatine, et les données sont rassurantes. Des travaux utilisant des mesures directes de la fonction rénale n'ont pas montré d'altération, sur des protocoles allant de 1 à 80 g par jour et des durées de quelques jours à plusieurs années<sup>[5]</sup>. Une hausse de la créatinine sanguine peut apparaître après le début d'une supplémentation : c'est un marqueur qui reflète l'augmentation du renouvellement de la créatine dans le corps, pas nécessairement un signe de souffrance rénale.</p>
@@ -161,7 +169,7 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <h2>Quelle forme choisir ?</h2>
     <p>La créatine monohydrate reste la forme de référence : c'est celle sur laquelle porte l'immense majorité des études, y compris celles citées ici<sup>[1]</sup>. Les autres formes commercialisées (HCL, tamponnée, ester éthylique...) sont souvent présentées comme mieux absorbées ou plus efficaces, sans données comparatives solides qui le confirment.</p>
@@ -180,7 +188,7 @@
       <p class="desc">Créatine monohydrate Creapure®, en gélules végétales.</p>
       <div class="code-row"><span class="k">Code promo</span><span class="v" id="creatine-prozis-code">BLACKTOM</span></div>
       <button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" id="creatine-prozis-copy">Copier le code</button>
-      <a href="https://prozis.com/1SSlS" class="btn btn-primary btn-block" id="creatine-prozis-cta" target="_blank" rel="noopener nofollow sponsored">Voir chez Prozis →</a>
+      <a href="https://prozis.com/1SSlS" class="btn btn-primary btn-block" id="creatine-prozis-cta" target="_blank" rel="noopener nofollow sponsored">Voir chez Prozis</a>
     </div>
 
     <div class="pcard" id="creatine-zumub">
@@ -188,7 +196,7 @@
       <p class="desc">3 comprimés = 3 g de créatine monohydrate par jour.</p>
       <div class="code-row"><span class="k">Code promo</span><span class="v" id="creatine-zumub-code">BLACKTOM</span></div>
       <button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" id="creatine-zumub-copy">Copier le code</button>
-      <a href="https://www.zumub.com/FR/?utm_source=blacktom&amp;utm_medium=affiliate&amp;utm_campaign=zumub" class="btn btn-primary btn-block" id="creatine-zumub-cta" target="_blank" rel="noopener nofollow sponsored">Voir chez Zumub →</a>
+      <a href="https://www.zumub.com/FR/?utm_source=blacktom&amp;utm_medium=affiliate&amp;utm_campaign=zumub" class="btn btn-primary btn-block" id="creatine-zumub-cta" target="_blank" rel="noopener nofollow sponsored">Voir chez Zumub</a>
     </div>
 
     <div class="pcard" id="creatine-vitastrong">
@@ -196,12 +204,12 @@
       <p class="desc">Créatine monohydrate ultra-micronisée, en comprimés.</p>
       <div class="code-row"><span class="k">Code promo</span><span class="v" id="creatine-vitastrong-code">BLACKTOM</span></div>
       <button type="button" class="btn btn-ghost btn-block" style="margin-bottom:8px;" id="creatine-vitastrong-copy">Copier le code</button>
-      <a href="https://vitastrong.fr/fr/?utm_source=blacktom&amp;utm_medium=affiliate&amp;utm_campaign=vitastrong" class="btn btn-primary btn-block" id="creatine-vitastrong-cta" target="_blank" rel="noopener nofollow sponsored">Voir chez VitaStrong →</a>
+      <a href="https://vitastrong.fr/fr/?utm_source=blacktom&amp;utm_medium=affiliate&amp;utm_campaign=vitastrong" class="btn btn-primary btn-block" id="creatine-vitastrong-cta" target="_blank" rel="noopener nofollow sponsored">Voir chez VitaStrong</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <p class="section-eyebrow">Questions fréquentes</p>
   <div class="bio-block">
     <h3>Peut-on prendre de la créatine après 40 ans ?</h3>
@@ -221,7 +229,7 @@
   </div>
 </section>
 
-<section class="hub-section">
+<section class="hub-section paper">
   <div class="bio-block">
     <p style="font-size:12px;color:var(--dim2);line-height:1.7;">
       <strong>Sources</strong> (affirmations générales uniquement ; ceci n'est pas un avis médical individualisé) :<br>
@@ -255,6 +263,8 @@
     </form>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

@@ -1,19 +1,17 @@
-<section class="hub-section" id="drop-form">
+<section class="hub-section fonte" id="drop-form">
   <div class="bb-alert">
     <div>
       {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
       {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
       {% if block.text %}<p>{{ block.text }}</p>{% endif %}
       {% if block.image %}
-      <figure style="margin:28px 0 0;max-width:420px;aspect-ratio:3/2;overflow:hidden;">
-        <img src="{{ block.image }}" alt="{{ block.imageAlt | default('') }}" width="800" height="1200" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:{{ block.imagePosition | default('50% 30%') }};display:block;">
-      </figure>
+      <figure class="bb-plate rv"><img src="{{ block.image }}" alt="{{ block.imageAlt | default('') }}" width="640" height="797" loading="lazy" decoding="async" style="object-position:{{ block.imagePosition | default('50% 30%') }};"></figure>
       {% endif %}
     </div>
 
     {% if dropSettings.waitlistEnabled %}
     <div class="signup-card">
-      {% if block.formTitle %}<p style="margin:0 0 14px;font-family:var(--ph);font-weight:800;font-size:18px;color:var(--wht);">{{ block.formTitle }}</p>{% endif %}
+      {% if block.formTitle %}<p class="liste-title">{{ block.formTitle }}</p>{% endif %}
       <form name="black-boar-drop" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blackboar.html" data-newsletter data-track-event="blackboar_waitlist_signup" data-source-page="blackboar" data-source-component="drop_section">
         <input type="hidden" name="form-name" value="black-boar-drop">
         <input type="hidden" name="source" value="black_boar_drop">

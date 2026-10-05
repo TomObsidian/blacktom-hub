@@ -5,12 +5,12 @@
     {
       "type": "hero",
       "visible": true,
-      "image": "/assets/uploads/a7401679-web.jpg",
-      "imageSmall": "/assets/uploads/a7401679-sm.jpg",
+      "image": "/assets/registre/about.jpg",
+      "imageSmall": "/assets/registre/about-sm.jpg",
       "imageAlt": "Tom en débardeur blanc, regard baissé vers ses mains, bras recouverts de tatouages, dans une salle de musculation.",
-      "imagePosition": "50% 26%",
+      "imagePosition": "50% 24%",
       "title": "TOM.",
-      "tagline": "FORCE. PHYSIQUE. FULL BLACK.",
+      "tagline": "Force. Physique. Full Black.",
       "lede": "",
       "primaryCtaText": "",
       "primaryCtaUrl": ""
@@ -49,9 +49,21 @@
       "type": "photo-gallery",
       "visible": true,
       "photos": [
-        { "image": "/assets/blacktom-training-01.jpg", "alt": "Séance à la salle, sur machine de tirage.", "caption": "Entraînement" },
-        { "image": "/assets/blacktom-physique-01.jpg", "alt": "Physique, pose double biceps.", "caption": "Physique" },
-        { "image": "/assets/blacktom-fullblack-01.jpg", "alt": "Tatouages Full Black, torse et bras.", "caption": "Full Black" }
+        {
+          "image": "/assets/registre/j-pilier.jpg",
+          "alt": "Séance à la salle, de dos à la poulie haute.",
+          "caption": "Entraînement"
+        },
+        {
+          "image": "/assets/registre/pc-03.jpg",
+          "alt": "Physique, pose double biceps.",
+          "caption": "Physique"
+        },
+        {
+          "image": "/assets/registre/pc-05.jpg",
+          "alt": "Tatouages Full Black, épaule et torse.",
+          "caption": "Full Black"
+        }
       ]
     }
   ]

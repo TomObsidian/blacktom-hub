@@ -12,7 +12,7 @@
       "lede": "L'app d'entraînement, de progression et de nutrition qui s'adapte à ta journée.",
       "ledeMaxWidth": "560px",
       "subtext": "Structurer tes séances et suivre ta progression, sans dépendre d'un coach.",
-      "ctaText": "Accéder à l'application →",
+      "ctaText": "Accéder à l'application",
       "ctaUrl": "https://black-tom.netlify.app/?go=signup",
       "ctaTrackEvent": "ultimate_method_click",
       "note": "Le bouton ouvre l'application, sur son propre site (black-tom.netlify.app), distinct de blacktom.fr. Tu y crées ton compte ou tu te connectes."
@@ -40,7 +40,7 @@
       "visible": true,
       "title": "Ouvrir l'application.",
       "text": "Connexion ou création de compte directement depuis l'application.",
-      "ctaText": "Accéder à l'application →",
+      "ctaText": "Accéder à l'application",
       "ctaUrl": "https://black-tom.netlify.app/?go=signup",
       "ctaTrackEvent": "ultimate_method_click"
     }

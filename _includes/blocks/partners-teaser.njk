@@ -1,28 +1,29 @@
-<section class="hub-section" id="partenaires">
+{# Colophon : les marques en typographie, l'offre et le code en chiffres, sans boîtes. #}
+<section class="colophon paper" id="partenaires">
   <div class="sec-head">
     <div>
-      <p class="sec-label">{{ block.eyebrow }}</p>
+      {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
       <h2 class="sec-title">{{ block.title }}</h2>
-      {% if block.subtitle %}<p class="lede" style="margin-top:14px;">{{ block.subtitle }}</p>{% endif %}
+      {% if block.subtitle %}<p class="lede" style="margin-top:16px;">{{ block.subtitle }}</p>{% endif %}
     </div>
-    {% if block.ctaText %}<a href="{{ block.ctaUrl }}" class="link-arrow" data-track="cta_partenaires_home">{{ block.ctaText }}</a>{% endif %}
+    {% if block.ctaText %}<a href="{{ block.ctaUrl }}" class="link-line" data-track="cta_partenaires_home">{{ block.ctaText }}</a>{% endif %}
   </div>
 
   <div class="partner-list">
     {% for p in partnersData.partners %}
     {% if p | isPartnerActive %}
     <div class="partner-row">
-      {% if p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="120" height="40" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name | first }}</div>{% endif %}
+      {% if p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="120" height="40" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name }}</div>{% endif %}
       <div class="p-id"><span class="p-name{% if p.logo %} sr-only{% endif %}">{{ p.name }}</span><span class="p-cat">{{ p.category | default("Partenaire") }}</span></div>
       {% if p.offer %}<div class="p-offer"><span class="k">Offre</span><span class="v">{{ p.offer }}</span></div>{% endif %}
       {% if p.code %}
       <div class="p-code"><span class="k">Code</span><span class="v">{{ p.code }}</span><button type="button" class="p-copy" aria-label="Copier le code {{ p.code }} ({{ p.name }})" onclick="copyPromoCode('{{ p.slug }}','{{ p.code }}',this,'home','homepage_partners')">Copier</button></div>
       {% endif %}
-      <a href="{{ p | partnerUrl }}" class="p-cta" target="_blank" rel="noopener nofollow sponsored" aria-label="Voir l'offre {{ p.name }} (lien affilié, nouvel onglet)" onclick="trackPartnerClick('{{ p.slug }}','/','homepage_partners',{content_type:'homepage',cta_type:'partner'})">Voir l'offre →</a>
+      <a href="{{ p | partnerUrl }}" class="p-cta" target="_blank" rel="noopener nofollow sponsored" aria-label="Voir l'offre {{ p.name }} (lien affilié, nouvel onglet)" onclick="trackPartnerClick('{{ p.slug }}','/','homepage_partners',{content_type:'homepage',cta_type:'partner'})">Voir l'offre</a>
     </div>
     {% endif %}
     {% endfor %}
   </div>
 
-  <p class="partner-note">Certains liens sont affiliés. Si tu passes par eux, BLACKTOM peut recevoir une commission, sans surcoût pour toi. <a href="/complements" class="link-arrow" style="margin-left:6px;">Voir aussi mes compléments</a></p>
+  <p class="partner-note">Certains liens sont affiliés. Si tu passes par eux, BLACKTOM peut recevoir une commission, sans surcoût pour toi. <a href="/complements" class="link-arrow">Voir aussi mes compléments</a></p>
 </section>

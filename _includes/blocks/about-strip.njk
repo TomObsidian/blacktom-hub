@@ -2,10 +2,10 @@
   <div class="tom-strip">
     <figure><img src="{{ block.image }}" alt="{{ block.imageAlt | default('') }}" width="800" height="1200" loading="lazy" decoding="async"></figure>
     <div>
-      <p class="sec-label">{{ block.eyebrow | default('À propos') }}</p>
-      <h3>{{ block.title }}</h3>
-      <p>{{ block.text }}</p>
-      <a href="{{ block.ctaUrl }}" class="link-arrow" data-track="{{ block.trackId | default('cta_apropos') }}">{{ block.ctaText }}</a>
+      {% if block.eyebrow %}<p class="sec-label">{{ block.eyebrow }}</p>{% endif %}
+      <h3 class="t-display">{{ block.title }}</h3>
+      <p class="lede" style="margin:16px 0 24px;">{{ block.text }}</p>
+      <a href="{{ block.ctaUrl }}" class="link-line" data-track="{{ block.trackId | default('cta_apropos') }}">{{ block.ctaText }}</a>
     </div>
   </div>
 </section>

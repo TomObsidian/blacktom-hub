@@ -13,9 +13,10 @@
 <meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
 <link rel="stylesheet" href="styles.css">
 <script src="analytics.js" defer></script>
 <script type="application/ld+json">
@@ -30,7 +31,8 @@
 }
 </script>
 </head>
-<body>
+<body class="p-hub">
+<a class="skip" href="#main">Aller au contenu</a>
 
 <nav class="nav">
   <a href="/" class="brand">
@@ -58,8 +60,10 @@
   <a href="/a-propos">À propos</a>
 </div>
 
+<main id="main">
+
 <section style="padding-top:56px;">
-  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> → <a href="/contenus" style="color:var(--dim2);">Contenus</a> → Nutrition</p>
+  <p style="font-size:12px;color:var(--dim2);"><a href="/" style="color:var(--dim2);">Accueil</a> / <a href="/contenus" style="color:var(--dim2);">Contenus</a> / Nutrition</p>
   <p class="eyebrow" style="margin-top:20px;">Contenus</p>
   <h1 style="font-size:clamp(36px,7vw,56px);">Nutrition</h1>
   <p class="lede" style="max-width:600px;">Ce que je mange autour de l'entraînement, les compléments que j'utilise réellement, et comment j'adapte mon alimentation à mes objectifs de force.</p>
@@ -68,10 +72,12 @@
 <section class="hub-section">
   <p class="section-eyebrow">Au programme</p>
   <div data-content-category="nutrition"></div>
-  <p style="margin-top:20px;font-size:14px;"><a href="/code-promo-prozis" style="color:var(--red-text);">Déjà disponible : Code promo Prozis BLACKTOM →</a></p>
-  <p style="margin-top:8px;font-size:14px;"><a href="/partenaires" style="color:var(--red-text);">Voir mes partenaires nutrition &amp; codes →</a></p>
-  <p style="margin-top:8px;font-size:14px;"><a href="/outils/convertisseur-cru-cuit" style="color:var(--red-text);">Nouvel outil : convertisseur Cru ↔ Cuit →</a></p>
+  <p style="margin-top:20px;font-size:14px;"><a href="/code-promo-prozis" style="color:var(--red-text);">Déjà disponible : Code promo Prozis BLACKTOM</a></p>
+  <p style="margin-top:8px;font-size:14px;"><a href="/partenaires" style="color:var(--red-text);">Voir mes partenaires nutrition &amp; codes</a></p>
+  <p style="margin-top:8px;font-size:14px;"><a href="/outils/convertisseur-cru-cuit" style="color:var(--red-text);">Nouvel outil : convertisseur Cru ↔ Cuit</a></p>
 </section>
+
+</main>
 
 <footer>
   <div class="foot-grid">

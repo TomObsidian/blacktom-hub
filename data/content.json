@@ -27,7 +27,7 @@
     }
   ],
   "content": [
-    { "title": "Musculation après 40 ans", "type": "pilier", "category": null, "status": "published", "url": "/musculation-apres-40-ans", "image": "/assets/uploads/a7401726-web.jpg", "imageSmall": "/assets/uploads/a7401726-sm.jpg", "imagePosition": "50% 40%", "imageAlt": "Tom de dos à la poulie haute, mains sur la barre, dans une salle de musculation." },
+    { "title": "Musculation après 40 ans", "type": "pilier", "category": null, "status": "published", "url": "/musculation-apres-40-ans", "image": "/assets/registre/j-pilier.jpg", "imageSmall": "/assets/registre/j-pilier-sm.jpg", "imagePosition": "50% 32%", "imageAlt": "Tom de dos à la poulie haute, mains sur la barre, dans une salle de musculation." },
     { "title": "Développé couché après 40 ans", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/apres-40-ans" },
     { "title": "Comment progresser au développé couché", "type": "article", "category": "developpe-couche", "status": "published", "url": "/developpe-couche/progresser" },
     { "title": "Programme développé couché", "type": "article", "category": "developpe-couche", "status": "planned", "url": null },

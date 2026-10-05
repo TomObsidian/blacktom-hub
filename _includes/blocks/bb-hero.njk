@@ -1,16 +1,17 @@
-<div class="ed-hero ed-hero--bb">
-  <div class="ed-hero-media">
-    <img src="{{ block.image }}"{% if block.imageSmall %} srcset="{{ block.imageSmall }} 800w, {{ block.image }} 1400w" sizes="(min-width:900px) 42vw, 100vw"{% endif %} alt="{{ block.imageAlt | default('') }}" width="1400" height="2100" fetchpriority="high" decoding="async" style="--pos:{{ block.imagePosition | default('50% 30%') }};">
+{# Black Boar : la couverture reprend le registre de l'accueil, le mot de la marque rogné par le bas. #}
+<div class="cover cover--bb presse">
+  <div class="cover-top">
+    <img class="bb-mark" src="/assets/logo-black-boar-mark.svg" alt="Black Boar" width="132" height="109">
+    {% if block.eyebrow %}<p class="kicker">{{ block.eyebrow }}</p>{% endif %}
   </div>
-  <div class="ed-hero-body">
-    <img class="ed-hero-mark" src="/assets/logo-black-boar-mark.svg" alt="Black Boar" width="132" height="109">
-    {% if block.eyebrow %}<span class="ed-hero-kicker">{{ block.eyebrow }}</span>{% endif %}
-    <h1>{{ block.title }}</h1>
-    {% if block.tagline %}<p class="ed-hero-claim">{{ block.tagline }}</p>{% endif %}
-    {% if block.lede %}<p class="lede">{{ block.lede }}</p>{% endif %}
-    {% if block.status %}<p class="ed-hero-status">{{ block.status }}</p>{% endif %}
-    <div class="ed-hero-actions">
-      <a href="{{ block.ctaUrl }}" class="btn btn-primary" data-track="cta_blackboar_hero">{{ block.ctaText }}</a>
-    </div>
+  <figure class="cover-photo">
+    <img src="{{ block.image }}"{% if block.imageSmall %} srcset="{{ block.imageSmall }} 800w, {{ block.image }} 1500w" sizes="(min-width:900px) 44vw, 100vw"{% endif %} alt="{{ block.imageAlt | default('') }}" width="1500" height="2250" fetchpriority="high" decoding="async" style="--pos:{{ block.imagePosition | default('50% 40%') }};">
+  </figure>
+  <div class="cover-body">
+    {% if block.tagline %}<p class="cover-quote">{{ block.tagline }}</p>{% endif %}
+    {% if block.lede %}<p class="cover-lede">{{ block.lede }}</p>{% endif %}
+    {% if block.status %}<p class="cover-status">{{ block.status }}</p>{% endif %}
+    <div class="cover-links"><a href="{{ block.ctaUrl }}" class="btn btn-primary" data-track="cta_blackboar_hero">{{ block.ctaText }}</a></div>
   </div>
+  <div class="cover-wm"><h1 class="cover-mark">{{ block.title }}</h1></div>
 </div>
