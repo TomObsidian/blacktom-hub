@@ -199,13 +199,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var rounded = flRoundResult(result);
-    els.resultLabel.textContent = direction === 'raw-to-cooked' ? 'ESTIMATION — POIDS CUIT' : 'ESTIMATION — POIDS CRU';
+    els.resultLabel.textContent = direction === 'raw-to-cooked' ? 'ESTIMATION : POIDS CUIT' : 'ESTIMATION : POIDS CRU';
     els.resultMain.textContent = '≈ ' + flFormatGrams(rounded);
 
     if (resultMin !== undefined && resultMax !== undefined) {
       var rMin = flRoundResult(resultMin), rMax = flRoundResult(resultMax);
       els.resultRange.hidden = false;
-      els.resultRange.textContent = 'Fourchette possible : ' + flFormatGrams(rMin) + ' – ' + flFormatGrams(rMax);
+      els.resultRange.textContent = 'Fourchette possible : ' + flFormatGrams(rMin) + ' à ' + flFormatGrams(rMax);
     } else {
       els.resultRange.hidden = true;
     }

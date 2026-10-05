@@ -12,9 +12,9 @@
       "claim": "Le développé couché comme fil conducteur.",
       "lede": "Je documente mon entraînement, ma progression et mon univers Full Black.",
       "primaryCtaText": "Ma progression au bench →",
-      "primaryCtaUrl": "developpe-couche.html",
+      "primaryCtaUrl": "/developpe-couche",
       "secondaryCtaText": "Calculer mon 1RM →",
-      "secondaryCtaUrl": "outils/calculateur-1rm-developpe-couche"
+      "secondaryCtaUrl": "/outils/calculateur-1rm-developpe-couche"
     },
     {
       "type": "stat-hero",
@@ -34,7 +34,7 @@
           "title": "Musculation après 40 ans",
           "category": "Pilier",
           "description": "Force, entraînement, récupération et nutrition : mon approche complète.",
-          "url": "musculation-apres-40-ans",
+          "url": "/musculation-apres-40-ans",
           "image": "/assets/uploads/a7401726-web.jpg",
           "imageSmall": "/assets/uploads/a7401726-sm.jpg",
           "imagePosition": "50% 40%",
@@ -44,7 +44,7 @@
           "title": "Développé couché après 40 ans",
           "category": "Développé couché",
           "description": "Ce qui change vraiment, et ce qui ne change pas, après 40 ans.",
-          "url": "developpe-couche/apres-40-ans",
+          "url": "/developpe-couche/apres-40-ans",
           "image": "/assets/uploads/a7401572-web.jpg",
           "imageSmall": "/assets/uploads/a7401572-sm.jpg",
           "imagePosition": "50% 24%",
@@ -54,14 +54,14 @@
           "title": "Créatine après 40 ans",
           "category": "Nutrition",
           "description": "Ce que montrent réellement les données, sans promesse.",
-          "url": "nutrition/creatine-apres-40-ans",
+          "url": "/nutrition/creatine-apres-40-ans",
           "image": "/assets/uploads/a7401533.jpg",
           "imagePosition": "50% 30%",
           "imageAlt": "Tom en séance, un haltère à la main, regard vers l'objectif."
         }
       ],
       "ctaText": "Tous les contenus →",
-      "ctaUrl": "contenus.html"
+      "ctaUrl": "/contenus"
     },
     {
       "type": "tools-teaser",
@@ -75,7 +75,7 @@
           "text": "Estime ton 1RM, compare-le à ton poids de corps et prépare tes charges : pourcentages, échauffement et chargement de la barre.",
           "example": "100 kg × 5 répétitions → 116,7 kg estimés",
           "ctaText": "Ouvrir Bench Lab →",
-          "ctaUrl": "outils/calculateur-1rm-developpe-couche",
+          "ctaUrl": "/outils/calculateur-1rm-developpe-couche",
           "trackId": "cta_benchlab_home"
         },
         {
@@ -84,7 +84,7 @@
           "text": "Convertis tes portions entre poids cru et poids cuit : riz, pâtes, semoule, lentilles, pommes de terre.",
           "example": "100 g de riz cru → ≈ 250 g cuits (estimation)",
           "ctaText": "Ouvrir Food Lab →",
-          "ctaUrl": "outils/convertisseur-cru-cuit",
+          "ctaUrl": "/outils/convertisseur-cru-cuit",
           "trackId": "cta_foodlab_home"
         }
       ]
@@ -92,7 +92,7 @@
     {
       "type": "newsletter",
       "visible": true,
-      "eyebrow": "BLACKTOM — La liste",
+      "eyebrow": "La liste BLACKTOM",
       "title": "Suivre BLACKTOM",
       "description": "Je t'envoie ma progression documentée, mes nouveaux guides et les mises à jour de mes outils."
     },
@@ -127,7 +127,7 @@
           "imageAlt": "Photo d'ambiance : gros plan sur le torse et le cou tatoués de Tom.",
           "showMark": true,
           "ctaText": "Être averti du lancement →",
-          "ctaUrl": "black-boar.html#drop-form",
+          "ctaUrl": "/black-boar#drop-form",
           "trackId": "cta_blackboar"
         },
         {
@@ -136,7 +136,7 @@
           "title": "THE ULTIMATE METHOD",
           "text": "L'application d'entraînement, de progression et de nutrition qui s'adapte à ta journée. Connexion ou création de compte directement dans l'app.",
           "ctaText": "Voir The Ultimate Method →",
-          "ctaUrl": "ultimate-method.html",
+          "ctaUrl": "/ultimate-method",
           "trackId": "cta_ultimatemethod"
         }
       ]
@@ -148,7 +148,7 @@
       "title": "Les marques que j'utilise",
       "subtitle": "Les marques avec lesquelles je travaille, et les offres disponibles pour la communauté BLACKTOM.",
       "ctaText": "Voir tous mes partenaires →",
-      "ctaUrl": "partenaires.html"
+      "ctaUrl": "/partenaires"
     },
     {
       "type": "about-strip",
@@ -159,7 +159,7 @@
       "image": "/assets/uploads/a7401676-sm.jpg",
       "imageAlt": "Tom de face, bras fléchis, tatouages Full Black sur les épaules et le cou.",
       "ctaText": "Mon parcours →",
-      "ctaUrl": "a-propos.html",
+      "ctaUrl": "/a-propos",
       "trackId": "cta_apropos"
     }
   ]

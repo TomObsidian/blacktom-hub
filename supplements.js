@@ -30,7 +30,7 @@ function suppRowHTML(s) {
 
   var productLine = '';
   if (s.brand || s.product) {
-    productLine = '<p class="supp-desc" style="color:var(--dim2);">' + [s.brand, s.product].filter(Boolean).join(' — ') + '</p>';
+    productLine = '<p class="supp-desc" style="color:var(--dim2);">' + [s.brand, s.product].filter(Boolean).join(' · ') + '</p>';
   }
 
   var cta = '';

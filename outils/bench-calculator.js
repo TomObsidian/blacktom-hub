@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: data
       }).then(function () {
-        msg.textContent = 'Merci, c’est fait — tu recevras les prochains outils et contenus BLACKTOM.';
+        msg.textContent = 'Merci, c’est fait. Tu recevras les prochains outils et contenus BLACKTOM.';
         emailForm.reset();
         if (typeof trackEvent === 'function') {
           trackEvent('newsletter_signup', { source_page: 'calculateur-1rm', source_component: 'outil_resultat' });

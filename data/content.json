@@ -33,11 +33,12 @@
     { "title": "Programme développé couché", "type": "article", "category": "developpe-couche", "status": "planned", "url": null },
     { "title": "BLACKTOM Bench Lab (calculateur 1RM)", "type": "outil", "category": "developpe-couche", "status": "published", "url": "/outils/calculateur-1rm-developpe-couche" },
     { "title": "Ratio développé couché / poids du corps", "type": "article", "category": "developpe-couche", "status": "planned", "url": null },
-    { "title": "Mes compléments", "type": "page", "category": "nutrition", "status": "published", "url": "complements.html" },
+    { "title": "Mes compléments", "type": "page", "category": "nutrition", "status": "published", "url": "/complements" },
     { "title": "Créatine après 40 ans", "type": "article", "category": "nutrition", "status": "published", "url": "/nutrition/creatine-apres-40-ans" },
     { "title": "Riz cru / cuit : équivalences et convertisseur", "type": "article", "category": "nutrition", "status": "published", "url": "/nutrition/riz-cru-cuit" },
     { "title": "Combien de protéines après 40 ans", "type": "article", "category": "nutrition", "status": "planned", "url": null },
     { "title": "Quelle whey choisir", "type": "article", "category": "nutrition", "status": "planned", "url": null },
-    { "title": "Code promo Prozis BLACKTOM", "type": "commercial", "category": "nutrition", "status": "published", "url": "code-promo-prozis.html" }
+    { "title": "Code promo Prozis BLACKTOM", "type": "commercial", "category": "nutrition", "status": "published", "url": "/code-promo-prozis" },
+    { "title": "Récupération en musculation après 40 ans", "type": "article", "category": "recuperation", "status": "published", "url": "/recuperation/apres-40-ans" }
   ]
 }

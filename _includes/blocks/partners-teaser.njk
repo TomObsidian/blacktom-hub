@@ -12,8 +12,8 @@
     {% for p in partnersData.partners %}
     {% if p | isPartnerActive %}
     <div class="partner-row">
-      {% if p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="44" height="44" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name | first }}</div>{% endif %}
-      <div class="p-id"><span class="p-name">{{ p.name }}</span><span class="p-cat">{{ p.category | default("Partenaire") }}</span></div>
+      {% if p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="120" height="40" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name | first }}</div>{% endif %}
+      <div class="p-id"><span class="p-name{% if p.logo %} sr-only{% endif %}">{{ p.name }}</span><span class="p-cat">{{ p.category | default("Partenaire") }}</span></div>
       {% if p.offer %}<div class="p-offer"><span class="k">Offre</span><span class="v">{{ p.offer }}</span></div>{% endif %}
       {% if p.code %}
       <div class="p-code"><span class="k">Code</span><span class="v">{{ p.code }}</span><button type="button" class="p-copy" aria-label="Copier le code {{ p.code }} ({{ p.name }})" onclick="copyPromoCode('{{ p.slug }}','{{ p.code }}',this,'home','homepage_partners')">Copier</button></div>
@@ -24,5 +24,5 @@
     {% endfor %}
   </div>
 
-  <p class="partner-note">Certains liens sont affiliés. Si tu passes par eux, BLACKTOM peut recevoir une commission, sans surcoût pour toi. <a href="complements.html" class="link-arrow" style="margin-left:6px;">Voir aussi mes compléments</a></p>
+  <p class="partner-note">Certains liens sont affiliés. Si tu passes par eux, BLACKTOM peut recevoir une commission, sans surcoût pour toi. <a href="/complements" class="link-arrow" style="margin-left:6px;">Voir aussi mes compléments</a></p>
 </section>

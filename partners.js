@@ -75,7 +75,7 @@ function fallbackCopy(text) {
 
 function partnerCardHTML(p, sourcePage) {
   var logo = p.logo
-    ? '<img src="' + p.logo + '" alt="' + p.name + '" width="48" height="48" loading="lazy" decoding="async">'
+    ? '<img src="' + p.logo + '" alt="' + p.name + '" width="144" height="48" loading="lazy" decoding="async">'
     : '<div class="letter-mark">' + p.name.charAt(0) + '</div>';
   var tag = p.category || 'Lien affilié';
   var desc = p.description ? '<p class="desc">' + p.description + '</p>' : '';
@@ -87,11 +87,11 @@ function partnerCardHTML(p, sourcePage) {
     ? '<button type="button" class="btn btn-ghost btn-block" onclick="copyPromoCode(\'' + p.slug + '\',\'' + p.code + '\',this,\'' + sourcePage + '\',\'partenaires_page\')">Copier le code</button>'
     : '';
   var voirBtn = '<a href="' + url + '" class="btn btn-primary btn-block" target="_blank" rel="noopener nofollow sponsored" onclick="trackPartnerClick(\'' + p.slug + '\',\'' + sourcePage + '\',\'partenaires_page\')">Voir chez ' + p.name + ' →</a>';
-  var prozisLink = p.slug === 'prozis' ? '<a class="pc-more" href="code-promo-prozis.html">Voir la page complète du code Prozis →</a>' : '';
+  var prozisLink = p.slug === 'prozis' ? '<a class="pc-more" href="/code-promo-prozis">Voir la page complète du code Prozis →</a>' : '';
 
   return '' +
     '<div class="pcard">' +
-      '<div class="pcard-head">' + logo + '<div><div class="name">' + p.name + '</div><div class="tag">' + tag + '</div></div></div>' +
+      '<div class="pcard-head">' + logo + '<div><div class="name' + (p.logo ? ' sr-only' : '') + '">' + p.name + '</div><div class="tag">' + tag + '</div></div></div>' +
       '<div class="pc-body">' + desc + usage + offerRow + codeRow + '</div>' +
       '<div class="pc-actions">' + copyBtn + voirBtn + prozisLink + '</div>' +
     '</div>';

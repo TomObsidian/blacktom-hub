@@ -25,26 +25,26 @@ collections:
           - label: "Partenaires"
             name: "partners"
             widget: "list"
-            summary: "{{name}} — {{offer}}"
+            summary: "{{name}} : {{offer}}"
             fields:
               - { label: "Nom", name: "name", widget: "string" }
               - { label: "Afficher ce partenaire", name: "active", widget: "boolean", default: true, hint: "Décoche pour retirer un partenaire sans supprimer ses données (historique, pages qui le référencent)." }
               - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex: Nutrition · Compléments, Vêtements d'entraînement." }
-              - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Réservé à un usage futur (home, newsletter) — sans effet pour l'instant." }
-              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Format carré recommandé.", media_folder: "/assets", public_folder: "/assets" }
+              - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Réservé à un usage futur (home, newsletter), sans effet pour l'instant." }
+              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Logo horizontal sur fond sombre, ratio 3:1 (ex. 240×80 px). Si ton logo a du texte noir, mets-le sur un fond sombre ou en version claire avant de l'envoyer." }
               - { label: "Description courte", name: "description", widget: "text", required: false }
               - { label: "Ce que j'utilise chez eux", name: "usage", widget: "text", required: false }
               - { label: "Mon avantage (ex: -10%)", name: "offer", widget: "string", required: false }
               - { label: "Code promo", name: "code", widget: "string", required: false }
               - { label: "Lien vers le partenaire", name: "url", widget: "string", required: false }
               - { label: "Ajouter des paramètres de suivi au lien", name: "utm", widget: "boolean", default: true, hint: "Désactiver seulement si le lien affilié ne doit jamais être modifié." }
-              - { label: "Date de fin du partenariat", name: "expires", widget: "datetime", required: false, hint: "Laisser vide tant que le partenariat est actif. Une fois cette date passée, le code et le CTA disparaissent automatiquement — le partenaire reste dans l'historique." }
-              - { label: "Notes internes", name: "legal", widget: "text", required: false, hint: "Conditions particulières à te rappeler — non affiché publiquement." }
-              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string", hint: "Utilisé en interne — ne change rien à l'affichage si tu le modifies par erreur, mais évite de le toucher." }
+              - { label: "Date de fin du partenariat", name: "expires", widget: "datetime", required: false, hint: "Laisser vide tant que le partenariat est actif. Une fois cette date passée, le code et le CTA disparaissent automatiquement. Le partenaire reste dans l'historique." }
+              - { label: "Notes internes", name: "legal", widget: "text", required: false, hint: "Conditions particulières à te rappeler, non affichées publiquement." }
+              - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string", hint: "Utilisé en interne : ne change rien à l'affichage si tu le modifies par erreur, mais évite de le toucher." }
 
   - name: "complements"
     label: "Compléments"
-    description: "La page /complements — un complément par ligne."
+    description: "La page /complements, un complément par ligne."
     files:
       - file: "data/supplements.json"
         label: "Compléments"
@@ -82,7 +82,7 @@ collections:
 
   - name: "food-lab"
     label: "Food Lab"
-    description: "La page /outils/convertisseur-cru-cuit — un aliment par ligne. Ratio = poids cuit / poids cru."
+    description: "La page /outils/convertisseur-cru-cuit, un aliment par ligne. Ratio = poids cuit / poids cru."
     files:
       - file: "data/food-lab.json"
         label: "Aliments Food Lab"
@@ -105,13 +105,13 @@ collections:
 
   - name: "performances"
     label: "Mes performances"
-    description: "Tes chiffres bench — modifiés ici une seule fois, répercutés partout sur le site."
+    description: "Tes chiffres bench : modifiés ici une seule fois, répercutés partout sur le site."
     files:
       - file: "data/status.json"
         label: "Mes performances"
         name: "status"
         fields:
-          - { label: "Poids de corps", name: "poids", widget: "string", required: false, hint: "Laisser vide tant que non renseigné — n'affiche jamais une fausse valeur." }
+          - { label: "Poids de corps", name: "poids", widget: "string", required: false, hint: "Laisser vide tant que non renseigné : n'affiche jamais une fausse valeur." }
           - { label: "Meilleur développé couché", name: "developpe_couche", widget: "string", required: false }
           - { label: "Objectif actuel", name: "objectif", widget: "string", required: false }
           - { label: "Objectif long terme", name: "objectif_long_terme", widget: "string", required: false }
@@ -146,10 +146,10 @@ collections:
                   - { label: "Phrase d'accroche", name: "claim", widget: "string", required: false }
                   - { label: "Sous-titre multiligne (ancien format)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée. Laisser vide si la phrase d'accroche suffit." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }
-                  - { label: "Bouton — texte", name: "primaryCtaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string" }
-                  - { label: "Lien secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
-                  - { label: "Lien secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
+                  - { label: "Bouton : texte", name: "primaryCtaText", widget: "string" }
+                  - { label: "Bouton : lien", name: "primaryCtaUrl", widget: "string" }
+                  - { label: "Lien secondaire : texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Lien secondaire : lien", name: "secondaryCtaUrl", widget: "string", required: false }
               - label: "Chiffre clé (ex: Bench)"
                 name: "stat-hero"
                 widget: "object"
@@ -171,8 +171,8 @@ collections:
                       - { label: "Objectif actuel", value: "objectif" }
                       - { label: "Objectif long terme", value: "objectif_long_terme" }
                   - { label: "Note de contexte (source du chiffre)", name: "note", widget: "text", required: false, hint: "Dis d'où vient le chiffre. Le rapport au poids de corps est calculé automatiquement." }
-                  - { label: "Lien — texte", name: "ctaText", widget: "string", required: false }
-                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string", required: false }
+                  - { label: "Lien : texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Lien : adresse", name: "ctaUrl", widget: "string", required: false }
                   - { label: "Événement de suivi du lien (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Journal (contenus mis en avant)"
                 name: "contenus-teaser"
@@ -194,8 +194,8 @@ collections:
                       - { label: "Photo version mobile (800 px)", name: "imageSmall", widget: "image", required: false }
                       - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                       - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
-                  - { label: "Lien — texte", name: "ctaText", widget: "string" }
-                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string" }
+                  - { label: "Lien : texte", name: "ctaText", widget: "string" }
+                  - { label: "Lien : adresse", name: "ctaUrl", widget: "string" }
               - label: "Outils (Bench Lab, Food Lab)"
                 name: "tools-teaser"
                 widget: "object"
@@ -212,8 +212,8 @@ collections:
                       - { label: "Nom", name: "title", widget: "string" }
                       - { label: "Texte", name: "text", widget: "text" }
                       - { label: "Exemple de résultat (facultatif)", name: "example", widget: "string", required: false, hint: "Doit correspondre à ce que l'outil calcule réellement." }
-                      - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                      - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                      - { label: "Bouton : texte", name: "ctaText", widget: "string" }
+                      - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
                       - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Bench Lab (accroche, ancien format)"
                 name: "punch-cta"
@@ -222,8 +222,8 @@ collections:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Accroche courte", name: "text", widget: "string" }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
               - label: "Newsletter"
                 name: "newsletter"
                 widget: "object"
@@ -259,8 +259,8 @@ collections:
                       - { label: "Cadrage de la photo", name: "imagePosition", widget: "string", required: false, default: "50% 30%", pattern: ['^\d{1,3}% \d{1,3}%$', "Format attendu : 50% 30%"] }
                       - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
                       - { label: "Afficher le logo Black Boar", name: "showMark", widget: "boolean", default: false, required: false }
-                      - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                      - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                      - { label: "Bouton : texte", name: "ctaText", widget: "string" }
+                      - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
                       - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
                       - { label: "Réseau social (technique)", name: "socialPlatform", widget: "string", required: false, hint: "Ex: instagram. Renseigné seulement si le lien mène à un réseau social." }
               - label: "Section Partenaires"
@@ -270,9 +270,9 @@ collections:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Petit titre", name: "eyebrow", widget: "string" }
                   - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Sous-titre", name: "subtitle", widget: "text", required: false, hint: "Les partenaires affichés viennent automatiquement de la collection Partenaires — rien à configurer ici." }
-                  - { label: "Lien — texte", name: "ctaText", widget: "string" }
-                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string" }
+                  - { label: "Sous-titre", name: "subtitle", widget: "text", required: false, hint: "Les partenaires affichés viennent automatiquement de la collection Partenaires, rien à configurer ici." }
+                  - { label: "Lien : texte", name: "ctaText", widget: "string" }
+                  - { label: "Lien : adresse", name: "ctaUrl", widget: "string" }
               - label: "Bandeau À propos (Tom)"
                 name: "about-strip"
                 widget: "object"
@@ -283,8 +283,8 @@ collections:
                   - { label: "Texte", name: "text", widget: "text" }
                   - { label: "Photo", name: "image", widget: "image", required: false }
                   - { label: "Texte alternatif de la photo", name: "imageAlt", widget: "string", required: false }
-                  - { label: "Lien — texte", name: "ctaText", widget: "string" }
-                  - { label: "Lien — adresse", name: "ctaUrl", widget: "string" }
+                  - { label: "Lien : texte", name: "ctaText", widget: "string" }
+                  - { label: "Lien : adresse", name: "ctaUrl", widget: "string" }
                   - { label: "Identifiant de suivi (technique)", name: "trackId", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Texte + image (bloc découverte, ancien format)"
                 name: "teaser"
@@ -300,8 +300,8 @@ collections:
                     field: { label: "Étiquette", name: "tag", widget: "string" }
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Texte", name: "text", widget: "text" }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
 
       - file: "data/pages/black-boar.json"
         label: "Black Boar"
@@ -331,7 +331,7 @@ collections:
                   - { label: "Archivé", value: "archived" }
               - { label: "Afficher le formulaire de liste prioritaire", name: "waitlistEnabled", widget: "boolean", default: true }
               - { label: "Activer les précommandes", name: "preorderEnabled", widget: "boolean", default: false, hint: "Ne pas activer sans avoir validé les infos produit, prix, stock et paiement." }
-              - { label: "Date d'accès prioritaire", name: "earlyAccessDate", widget: "datetime", required: false, hint: "Laisser vide tant que non décidée — n'affiche rien tant que vide." }
+              - { label: "Date d'accès prioritaire", name: "earlyAccessDate", widget: "datetime", required: false, hint: "Laisser vide tant que non décidée : n'affiche rien tant que vide." }
               - { label: "Date d'ouverture publique", name: "publicLaunchDate", widget: "datetime", required: false }
           - label: "Sections de la page"
             name: "blocks"
@@ -353,8 +353,8 @@ collections:
                   - { label: "Sous-titre (une ligne)", name: "tagline", widget: "string", required: false }
                   - { label: "Texte", name: "lede", widget: "text", required: false }
                   - { label: "Statut du projet (ex: pré-lancement)", name: "status", widget: "string", required: false, hint: "Dis honnêtement où en est la marque. N'annonce ni date, ni prix, ni stock sans les avoir validés." }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", hint: "Ex: #drop-form pour aller directement au formulaire." }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton : lien", name: "ctaUrl", widget: "string", hint: "Ex: #drop-form pour aller directement au formulaire." }
               - label: "Texte (univers de la marque)"
                 name: "bb-text"
                 widget: "object"
@@ -390,7 +390,7 @@ collections:
                   - { label: "Titre", name: "title", widget: "string", required: false }
                   - { label: "Texte", name: "text", widget: "text", required: false }
                   - { label: "Titre au-dessus du formulaire", name: "formTitle", widget: "string", required: false }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string" }
                   - { label: "Texte de consentement (case à cocher)", name: "consentText", widget: "string", hint: "Ce texte doit rester spécifique au drop, ne pas le confondre avec la newsletter générale BLACKTOM." }
 
       - file: "data/pages/a-propos.json"
@@ -418,10 +418,10 @@ collections:
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Sous-titre (une ligne par ligne de texte)", name: "tagline", widget: "text", required: false, hint: "Un saut de ligne = une nouvelle ligne affichée." }
                   - { label: "Texte", name: "lede", widget: "string", required: false }
-                  - { label: "Bouton — texte", name: "primaryCtaText", widget: "string", required: false }
-                  - { label: "Bouton — lien", name: "primaryCtaUrl", widget: "string", required: false }
-                  - { label: "Lien secondaire — texte", name: "secondaryCtaText", widget: "string", required: false }
-                  - { label: "Lien secondaire — lien", name: "secondaryCtaUrl", widget: "string", required: false }
+                  - { label: "Bouton : texte", name: "primaryCtaText", widget: "string", required: false }
+                  - { label: "Bouton : lien", name: "primaryCtaUrl", widget: "string", required: false }
+                  - { label: "Lien secondaire : texte", name: "secondaryCtaText", widget: "string", required: false }
+                  - { label: "Lien secondaire : lien", name: "secondaryCtaUrl", widget: "string", required: false }
               - label: "Grand titre (Hero simple)"
                 name: "simple-hero"
                 widget: "object"
@@ -432,8 +432,8 @@ collections:
                   - { label: "Sous-titre court", name: "tagline", widget: "string", required: false }
                   - { label: "Texte", name: "lede", widget: "text", required: false }
                   - { label: "Texte secondaire (petit, discret)", name: "subtext", widget: "text", required: false }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Bouton : lien", name: "ctaUrl", widget: "string", required: false }
                   - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
               - label: "Texte (titre + paragraphes)"
                 name: "bio-text"
@@ -478,8 +478,8 @@ collections:
                   - { label: "Sous-titre court", name: "tagline", widget: "string", required: false }
                   - { label: "Texte", name: "lede", widget: "text", required: false }
                   - { label: "Texte secondaire (petit, discret)", name: "subtext", widget: "text", required: false }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string", required: false }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string", required: false, hint: "L'app est hébergée séparément (black-tom.netlify.app) — lien réel, ne pas remplacer par une URL blacktom.fr." }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string", required: false }
+                  - { label: "Bouton : lien", name: "ctaUrl", widget: "string", required: false, hint: "L'app est hébergée séparément (black-tom.netlify.app) : lien réel, ne pas remplacer par une URL blacktom.fr." }
                   - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
                   - { label: "Note sous le bouton", name: "note", widget: "text", required: false, hint: "Explique ce qui se passe au clic (ex: ouverture de l'application sur son propre site)." }
               - label: "Trois points forts"
@@ -501,8 +501,8 @@ collections:
                   - { label: "Afficher cette section", name: "visible", widget: "boolean", default: true }
                   - { label: "Titre", name: "title", widget: "string" }
                   - { label: "Texte", name: "text", widget: "string" }
-                  - { label: "Bouton — texte", name: "ctaText", widget: "string" }
-                  - { label: "Bouton — lien", name: "ctaUrl", widget: "string" }
+                  - { label: "Bouton : texte", name: "ctaText", widget: "string" }
+                  - { label: "Bouton : lien", name: "ctaUrl", widget: "string" }
                   - { label: "Événement de suivi du bouton (technique)", name: "ctaTrackEvent", widget: "string", required: false, hint: "Ne pas modifier sauf demande technique." }
 
       - file: "data/pages/contenus.json"
@@ -528,7 +528,7 @@ collections:
 
   - name: "produits-black-boar"
     label: "Produits Black Boar"
-    description: "Architecture prête pour le premier drop — aucun produit ici n'est affiché publiquement tant que les ventes ne sont pas activées."
+    description: "Architecture prête pour le premier drop : aucun produit ici n'est affiché publiquement tant que les ventes ne sont pas activées."
     folder: "data/products"
     create: true
     slug: "{{slug}}"
@@ -576,7 +576,7 @@ collections:
 
   - name: "contenus"
     label: "Contenus (liste)"
-    description: "La liste des articles/pages qui apparaît dans les hubs de contenu. Phase 1 : cette liste seulement — le texte complet d'un article se modifie encore dans le code pour l'instant."
+    description: "La liste des articles/pages qui apparaît dans les hubs de contenu. Phase 1 : cette liste seulement, le texte complet d'un article se modifie encore dans le code pour l'instant."
     files:
       - file: "data/content.json"
         label: "Contenus"
@@ -593,7 +593,7 @@ collections:
           - label: "Articles, outils et pages"
             name: "content"
             widget: "list"
-            summary: "{{title}} — {{status}}"
+            summary: "{{title}} : {{status}}"
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - label: "Type"
