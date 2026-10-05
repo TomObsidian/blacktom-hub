@@ -1,12 +1,12 @@
 /* BLACKTOM, « Le registre ».
-   La monographie d'un homme de 43 ans qui soulève lourd, mise en page comme un
-   magazine et tenue comme une feuille de pesée.
-   Trois noirs, deux blancs cassés, un seul rouge (celui des disques de
-   compétition) réservé à l'action qui engage. Rayon 0, aucune ombre, aucun
-   dégradé. Numéraux monumentaux rognés, photos N&B, filets plutôt que boîtes.
+   La monographie d'un homme qui soulève lourd, mise en page comme un magazine
+   et tenue comme une feuille de pesée.
+   Trois noirs, deux blancs cassés, une famille de bordeaux (aplats profonds,
+   filets, mot géant). Rayon 0, aucune ombre, aucun dégradé. Numéraux
+   monumentaux rognés, photos en couleur, filets plutôt que boîtes.
    Polices auto-hébergées : Big Shoulders Display (numéraux, titres),
    Newsreader (texte), Archivo (navigation, boutons, champs).
-   Pour changer l'accent ou une police, ne toucher qu'aux variables de :root. */
+   Pour changer une couleur ou une police, ne toucher qu'aux variables de :root. */
 
 /* ───────── POLICES ───────── */
 @font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-var-latin.woff2) format("woff2");font-weight:700 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
@@ -24,11 +24,13 @@
   --papier:#E4DFD3;     /* sections claires */
   --cendre:#A39F95;     /* texte secondaire sur noir (7,3:1) */
   --acier:#57544E;      /* texte secondaire sur papier */
-  --rouge:#C8141C;      /* l'accent : fonds et grands chiffres (3,3:1 sur fonte) */
-  --rouge-clair:#EE3B34;/* rouge en texte sur noir (4,9:1), erreurs */
-  --sang:#6E0E14;       /* rouge profond : aplats de section, texte craie dessus (10,5:1) */
-  --sang-haut:#8F161D;  /* rouge foncé : filets et détails sur noir */
-  --bordeaux:#4A0A0E;   /* rouge très sombre : surfaces sur rouge profond */
+  --rouge:#8F1A2E;      /* bordeaux : accent sur papier, boutons, détails (6,8:1 sur papier) */
+  --rouge-vif:#B52A40;  /* bordeaux clair : filets et chiffres sur noir (3,2:1) */
+  --rouge-mot:#A51C33;  /* bordeaux du mot géant de la couverture (2,7:1 sur presse, très grand format décoratif) */
+  --rouge-clair:#E8566B;/* bordeaux très clair : texte sur noir (5,5:1), erreurs, page courante */
+  --sang:#4F0B19;       /* bordeaux profond : aplats de section, texte craie dessus (13:1) */
+  --sang-haut:#7A1226;  /* bordeaux moyen : détails */
+  --bordeaux:#32060F;   /* bordeaux presque noir : surfaces sur aplat */
   /* familles */
   --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Impact,sans-serif;
   --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
@@ -50,10 +52,10 @@
 :root,.fonte{
   --bg:var(--fonte);--fg:var(--craie);--fg2:var(--cendre);
   --rule:rgba(242,239,232,.18);--rule2:rgba(242,239,232,.42);--surf:var(--bitume);
-  --accent-text:var(--rouge-clair);--bar:var(--rouge);
+  --accent-text:var(--rouge-clair);--bar:var(--rouge-vif);
 }
-.presse{--bg:var(--presse);--fg:var(--craie);--fg2:var(--cendre);--rule:rgba(242,239,232,.18);--rule2:rgba(242,239,232,.42);--surf:var(--bitume);--accent-text:var(--rouge-clair);--bar:var(--rouge);}
-.sang,.bio-row:nth-child(4n+3){--bg:var(--sang);--fg:var(--craie);--fg2:#E6C4BF;--rule:rgba(242,239,232,.28);--rule2:rgba(242,239,232,.55);--surf:var(--bordeaux);--accent-text:var(--craie);--bar:var(--craie);}
+.presse{--bg:var(--presse);--fg:var(--craie);--fg2:var(--cendre);--rule:rgba(242,239,232,.18);--rule2:rgba(242,239,232,.42);--surf:var(--bitume);--accent-text:var(--rouge-clair);--bar:var(--rouge-vif);}
+.sang,.bio-row:nth-child(4n+3){--bg:var(--sang);--fg:var(--craie);--fg2:#E3C2C6;--rule:rgba(242,239,232,.28);--rule2:rgba(242,239,232,.55);--surf:var(--bordeaux);--accent-text:var(--craie);--bar:var(--craie);}
 .paper,.cookie-banner,.bio-row:nth-child(even),.p-legal main{
   --bg:var(--papier);--fg:var(--fonte);--fg2:var(--acier);
   --rule:rgba(14,14,13,.2);--rule2:rgba(14,14,13,.55);--surf:#D9D3C5;
@@ -211,7 +213,7 @@ input[type="radio"]:checked{background:radial-gradient(circle,var(--fg) 0 38%,tr
 .cover-lede{margin:0 0 var(--s4);font:400 18px/1.45 var(--serif);color:var(--cendre);max-width:30em;}
 .cover-links{display:flex;flex-wrap:wrap;gap:var(--s3) var(--s4);align-items:center;}
 .cover-wm{container-type:inline-size;margin-top:auto;padding-top:var(--s5);}
-.cover-mark{margin:0 0 -.1em -.04em;font:900 24vw/.78 var(--display)!important;font:900 calc(100cqw / 3.9)/.78 var(--display)!important;letter-spacing:0;text-transform:uppercase;color:var(--rouge);white-space:nowrap;}
+.cover-mark{margin:0 0 -.1em -.04em;font:900 24vw/.78 var(--display)!important;font:900 calc(100cqw / 3.9)/.78 var(--display)!important;letter-spacing:0;text-transform:uppercase;color:var(--rouge-mot);white-space:nowrap;}
 @media(min-width:900px){
   .cover{min-height:max(680px,calc(100svh - var(--mast)));}
   .cover-photo{position:absolute;z-index:0;top:0;right:0;bottom:0;width:44%;margin:0;aspect-ratio:auto;max-height:none;}
@@ -711,7 +713,7 @@ main > .bio-block:first-of-type{padding-top:var(--section);}
 .sang .signup-consent a{color:var(--craie);}
 .instrument.sang .bar-fig .pl-red{fill:var(--craie);}
 .cookie-banner{border-top-color:var(--rouge);}
-.status-card{border-top-color:var(--rouge);}
+.status-card{border-top-color:var(--bar);}
 .dossier-body,.univers .row,.cat-list,.partner-list,#partners-list{border-color:var(--bar);}
 a:not(.btn):hover{text-decoration-color:var(--rouge-clair);}
 

@@ -7,7 +7,7 @@ Tout vit dans `styles.css`. Les valeurs sont des variables CSS en tête de fichi
 ## Trois idées
 
 1. **Le chiffre est l'architecture.** Un nombre monumental, rogné par le bord de page, est la signature (le relevé, le résultat des outils, le mot BLACKTOM de la couverture et du pied de page).
-2. **Le noir et le rouge sont des matières.** Trois noirs, deux blancs cassés, trois rouges. Les sections alternent entre fonte (noir), papier (clair) et sang (rouge profond), jamais plus de deux de suite de la même matière.
+2. **Le noir et le rouge sont des matières.** Trois noirs, deux blancs cassés, une famille de bordeaux. Les sections alternent entre fonte (noir), papier (clair) et sang (bordeaux profond), jamais plus de deux de suite de la même matière.
 3. **La photo est un document.** En couleur, noirs calés sur la fonte, grain cuit dans le fichier, légende factuelle (fichier, matériel, date).
 
 ## Matières et couleurs
@@ -21,15 +21,17 @@ Tout vit dans `styles.css`. Les valeurs sont des variables CSS en tête de fichi
 | `--papier` | `#E4DFD3` | sections claires |
 | `--cendre` | `#A39F95` | texte secondaire sur noir (7,3:1) |
 | `--acier` | `#57544E` | texte secondaire sur papier (5,8:1) |
-| `--rouge` | `#C8141C` | l'accent vif : mot géant, grands chiffres, filets (3,3:1 sur fonte, 4,8:1 sur papier) |
-| `--rouge-clair` | `#EE3B34` | rouge en texte sur noir (4,9:1), erreurs, page courante |
-| `--sang` | `#6E0E14` | rouge profond : aplats de section, texte craie dessus (10,5:1) |
-| `--sang-haut` | `#8F161D` | rouge foncé : détails sur noir |
-| `--bordeaux` | `#4A0A0E` | rouge très sombre : surfaces sur rouge profond |
+| `--rouge` | `#8F1A2E` | bordeaux : accent sur papier, boutons, détails (6,8:1 sur papier) |
+| `--rouge-vif` | `#B52A40` | bordeaux clair : filets et chiffres sur noir (3,2:1) |
+| `--rouge-mot` | `#A51C33` | bordeaux du mot géant de la couverture (2,7:1, très grand format décoratif) |
+| `--rouge-clair` | `#E8566B` | bordeaux très clair : texte sur noir (5,5:1), erreurs, page courante |
+| `--sang` | `#4F0B19` | bordeaux profond : aplats de section, texte craie dessus (13:1) |
+| `--sang-haut` | `#7A1226` | bordeaux moyen : détails |
+| `--bordeaux` | `#32060F` | bordeaux presque noir : surfaces sur aplat |
 
 Une classe de matière (`.fonte`, `.presse`, `.paper`, `.sang`) redéfinit `--bg`, `--fg`, `--fg2`, `--rule`, `--rule2`. Les composants ne lisent que ces variables, jamais une couleur en dur : ils fonctionnent donc sur toutes les matières. Les anciens noms (`--txt`, `--wht`, `--dim`, `--dim2`, `--line`, `--red-text`, `--ph`, `--pb`) restent définis pour les styles inline des pages statiques.
 
-**Le rouge est la couleur de la marque.** Aplats profonds (`.sang`) pour les sections d'inscription, Food Lab et les rangées d'À propos ; filets de 4 px (`--bar`) ; le mot BLACKTOM géant ; le rapport au poids de corps. Jamais en texte courant : les liens de texte sont soulignés en rouge, pas colorés. Sur `.sang`, les boutons passent en craie.
+**Le bordeaux est la couleur de la marque.** Aplats profonds (`.sang`) pour les sections d'inscription, Food Lab et les rangées d'À propos ; filets de 4 px (`--bar`) ; le mot BLACKTOM géant ; le rapport au poids de corps. Jamais en texte courant : les liens de texte sont soulignés en rouge, pas colorés. Sur `.sang`, les boutons passent en craie.
 
 ## Typographie
 
