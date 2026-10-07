@@ -1,0 +1,61 @@
+{# Composants « offres partenaires » : rendus au build (visibles par Google sans JavaScript).
+   partners.js ne fait que rafraîchir (code, lien, expiration), copier et mesurer.
+   Usage : {% from "components/offre.njk" import offre, bonsPlans %}
+   Aucune donnée inventée : tout vient de data/partners.json, un champ vide n'affiche rien. #}
+
+{% macro offre(p, placement, sourcePage) %}
+{% set o = p.offer | offerParts %}
+<section class="offre sang" data-offer="{{ p.slug }}" data-source-page="{{ sourcePage }}" aria-labelledby="offre-{{ p.slug }}-t">
+  <p class="offre-flag">Collaboration commerciale · lien affilié</p>
+  <div class="offre-grid">
+    {% if o %}
+    <p class="offre-num" data-offer-num aria-label="{{ o.n }} {{ o.unit }} de réduction"><span aria-hidden="true">−{{ o.n }}<small>{{ o.unit }}</small></span></p>
+    {% elif p.offer %}
+    <p class="offre-num offre-num--text" data-offer-num><span>{{ p.offer }}</span></p>
+    {% endif %}
+    <div class="offre-txt">
+      <h3 class="offre-t" id="offre-{{ p.slug }}-t">{{ p.name }}</h3>
+      {% if p.usage %}<p class="offre-sub">{{ p.usage }}</p>{% elif p.description %}<p class="offre-sub">{{ p.description }}</p>{% endif %}
+      {% if p.code %}
+      <div class="offre-code-row">
+        <span class="offre-k">Code</span>
+        <button type="button" class="offre-code" data-copy="{{ p.code }}" data-partner="{{ p.slug }}" data-placement="{{ placement }}" aria-label="Copier le code {{ p.code }} ({{ p.name }})"><span class="offre-code-v">{{ p.code }}</span><span class="offre-copy" aria-hidden="true">Copier</span></button>
+      </div>
+      <span class="sr-only" role="status" data-copy-status></span>
+      {% endif %}
+    </div>
+  </div>
+  <div class="offre-act">
+    <a class="btn btn-primary" href="{{ p | partnerUrl }}" target="_blank" rel="noopener nofollow sponsored" data-partner-link="{{ p.slug }}" data-placement="{{ placement }}">Voir l'offre chez {{ p.name }}<span class="sr-only"> (lien affilié, nouvel onglet)</span></a>
+    {% if p.slug == "prozis" %}<a class="offre-more" href="/code-promo-prozis">Mode d'emploi et conditions</a>{% endif %}
+  </div>
+  <p class="offre-fine">{% if p.conditions %}{{ p.conditions }} {% endif %}Je peux toucher une commission si tu commandes via ce lien, sans surcoût pour toi. Vérifie la réduction dans ton panier avant de payer.{% if p.checkedOn %} Code vérifié le <time datetime="{{ p.checkedOn }}">{{ p.checkedOn | frDate }}</time>.{% endif %}</p>
+</section>
+{% endmacro %}
+
+{% macro bonsPlans(partners, placement, sourcePage, titleId) %}
+{% set rows = partners | activeOffers %}
+<div class="bons-plans" data-source-page="{{ sourcePage }}">
+  <table>
+    <caption class="sr-only">Codes promo et avantages des partenaires BLACKTOM</caption>
+    <thead>
+      <tr><th scope="col">Marque</th><th scope="col">Avantage</th><th scope="col">Code</th><th scope="col"><span class="sr-only">Lien</span></th></tr>
+    </thead>
+    <tbody>
+      {% for p in rows %}
+      {% set o = p.offer | offerParts %}
+      <tr data-offer="{{ p.slug }}">
+        <th scope="row">
+          <span class="bp-brand">{{ p.name }}</span>
+          {% if p.category %}<span class="bp-cat">{{ p.category }}</span>{% endif %}
+        </th>
+        <td class="bp-num" data-label="Avantage">{% if o %}<span aria-label="{{ o.n }} {{ o.unit }} de réduction"><span aria-hidden="true">−{{ o.n }}<small>{{ o.unit }}</small></span></span>{% elif p.offer %}<span class="bp-text">{{ p.offer }}</span>{% else %}<span class="bp-none" aria-label="Pas de réduction chiffrée">·</span>{% endif %}</td>
+        <td class="bp-code" data-label="Code">{% if p.code %}<button type="button" class="offre-code sm" data-copy="{{ p.code }}" data-partner="{{ p.slug }}" data-placement="{{ placement }}" aria-label="Copier le code {{ p.code }} ({{ p.name }})"><span class="offre-code-v">{{ p.code }}</span><span class="offre-copy" aria-hidden="true">Copier</span></button>{% endif %}</td>
+        <td class="bp-go"><a class="p-cta" href="{{ p | partnerUrl }}" target="_blank" rel="noopener nofollow sponsored" data-partner-link="{{ p.slug }}" data-placement="{{ placement }}" aria-label="Voir l'offre {{ p.name }} (lien affilié, nouvel onglet)">Voir l'offre</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p class="bp-note">Collaboration commerciale : ces liens sont affiliés, je peux toucher une commission sans surcoût pour toi. Les conditions sont celles de chaque marque, vérifie la réduction dans ton panier.</p>
+</div>
+{% endmacro %}

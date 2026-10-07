@@ -86,6 +86,37 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // « -10% » ou « -20 % » → { n: "10", unit: "%" } : le grand chiffre de l'offre.
+  // Un texte libre qui ne commence pas par un nombre (« Livraison offerte »)
+  // renvoie null : l'offre est alors affichée en toutes lettres, jamais inventée.
+  eleventyConfig.addFilter("offerParts", function (offer) {
+    var m = String(offer == null ? "" : offer).match(/^\s*[-−–]?\s*(\d+(?:[.,]\d+)?)\s*(%|€)?\s*$/);
+    if (!m) return null;
+    return { n: m[1].replace(".", ","), unit: m[2] || "" };
+  });
+
+  // Partenaires actifs, « mis en avant » d'abord, puis l'ordre saisi dans l'admin.
+  eleventyConfig.addFilter("activeOffers", function (partners) {
+    var active = (partners || []).filter(function (p) {
+      if (!p || p.active === false) return false;
+      if (p.expires) {
+        var expiry = new Date(p.expires);
+        if (!isNaN(expiry.getTime()) && expiry.getTime() < Date.now()) return false;
+      }
+      return !!(p.offer || p.code);
+    });
+    var featured = active.filter(function (p) { return p.featured; });
+    var others = active.filter(function (p) { return !p.featured; });
+    return featured.concat(others);
+  });
+
+  // « 2026-10-07 » → « 7 octobre 2026 » (date de dernière vérification d'un code).
+  eleventyConfig.addFilter("frDate", function (d) {
+    var x = new Date(d);
+    if (isNaN(x.getTime())) return "";
+    return x.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  });
+
   return {
     dir: {
       input: ".",

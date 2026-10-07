@@ -6,7 +6,7 @@
       "logo": "/assets/uploads/partenaire-prozis-wordmark.png",
       "active": true,
       "category": "Nutrition · Vêtements",
-      "featured": false,
+      "featured": true,
       "description": null,
       "usage": "Vêtements et accessoires d’entraînement.",
       "offer": "-10%",
