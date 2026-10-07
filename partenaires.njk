@@ -1,0 +1,224 @@
+---
+permalink: "partenaires.html"
+---
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% from "components/offre.njk" import offre, bonsPlans %}
+{% set rows = partnersData.partners | activeOffers %}
+{% set names %}{% for p in rows %}{{ p.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endset %}
+<title>Codes promo : {{ names }} | BLACKTOM</title>
+<meta name="description" content="Le code BLACKTOM, la réduction et le lien de chaque marque que j'utilise à l'entraînement : {{ names }}. Conditions et mode d'emploi à vérifier dans ton panier.">
+<link rel="canonical" href="https://blacktom.fr/partenaires">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blacktom.fr/partenaires">
+<meta property="og:title" content="Codes promo : {{ names }} | BLACKTOM">
+<meta property="og:description" content="Le code BLACKTOM, la réduction et le lien de chaque marque que j'utilise à l'entraînement : {{ names }}.">
+<meta property="og:image" content="https://blacktom.fr/assets/icone-512-8692beb4.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/icone-192-2f225757.png">
+<link rel="preload" href="/assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/big-shoulders-display-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#080807">
+<link rel="stylesheet" href="styles.css">
+<script src="analytics.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://blacktom.fr/"},
+    {"@type": "ListItem", "position": 2, "name": "Partenaires", "item": "https://blacktom.fr/partenaires"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Le code BLACKTOM est-il le même partout ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, le code est BLACKTOM chez chaque marque listée sur cette page. L’avantage change d’une marque à l’autre et peut évoluer : c’est celui affiché dans le tableau, à vérifier dans ton panier avant de payer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment utiliser un code promo ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clique sur « Voir l’offre » pour aller chez la marque, ajoute tes produits au panier, entre le code au moment de payer (l’emplacement exact dépend du site) et vérifie que la réduction est appliquée avant de valider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ces liens sont-ils affiliés ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Si tu commandes via l’un de ces liens, je peux toucher une commission, sans surcoût pour toi. Ce sont des marques que j’utilise ou avec lesquelles je travaille."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le code ne fonctionne pas, que faire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vérifie que les produits du panier sont éligibles, car les conditions dépendent de chaque marque et peuvent changer. Si le code est refusé alors qu’il devrait fonctionner, écris-moi à thomas.obsidian@gmail.com."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="p-hub" data-source-page="partenaires">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a href="/" class="brand">
+    BLACKTOM
+  </a>
+  <div class="nav-links">
+    <a href="/contenus">Journal</a>
+    <a href="/outils/">Outils</a>
+    <a href="/partenaires">Codes promo</a>
+    <a href="/black-boar">Black Boar</a>
+    <a href="/ultimate-method">Ultimate Method</a>
+    <a href="/a-propos">À propos</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/contenus">Journal</a>
+  <a href="/outils/">Outils</a>
+  <a href="/partenaires">Codes promo</a>
+  <a href="/black-boar">Black Boar</a>
+  <a href="/ultimate-method">Ultimate Method</a>
+  <a href="/a-propos">À propos</a>
+</div>
+
+<main id="main">
+
+<section class="hub-section" style="padding-top:56px;">
+  <p class="eyebrow">Codes promo</p>
+  <h1 style="font-size:clamp(38px,8vw,64px);">Mes codes promo et bons plans</h1>
+  <p class="lede" style="max-width:600px;">Les marques que j'utilise à l'entraînement et avec lesquelles je travaille : le code, la réduction et le lien, au même endroit.</p>
+  <p class="partner-note" style="margin-top:var(--s3);"><strong>Collaboration commerciale.</strong> Ces liens sont affiliés : si tu commandes via l'un d'eux, je peux toucher une commission, sans surcoût pour toi.</p>
+</section>
+
+{% set lead = rows | first %}
+{% if lead %}
+<div style="margin-top:var(--s5);">
+{{ offre(lead, "partenaires_lead", "partenaires") }}
+</div>
+{% endif %}
+
+<section class="hub-section paper" id="bons-plans" aria-labelledby="bons-plans-t">
+  <div class="sec-head">
+    <div>
+      <p class="sec-label">Tous les partenaires</p>
+      <h2 class="sec-title" id="bons-plans-t">Les bons plans du moment</h2>
+    </div>
+  </div>
+  {{ bonsPlans(partnersData.partners, "partenaires_table", "partenaires") }}
+  <p style="margin:var(--s4) 0 var(--s5);"><a href="/complements" class="link-arrow">Voir ma routine de compléments</a></p>
+</section>
+
+<section class="hub-section" aria-labelledby="usage-t">
+  <div class="bio-block">
+    <h2 id="usage-t">Comment utiliser un code</h2>
+    <ol>
+      <li>Clique sur « Voir l'offre » pour aller chez la marque.</li>
+      <li>Ajoute tes produits au panier.</li>
+      <li>Entre le code au moment de payer. L'emplacement exact dépend du site.</li>
+      <li>Vérifie que la réduction est appliquée avant de valider.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="hub-section paper" aria-labelledby="faq-t">
+  <div class="bio-block">
+    <h2 id="faq-t">Questions fréquentes</h2>
+      <div>
+        <h3>Le code BLACKTOM est-il le même partout ?</h3>
+        <p>Oui, le code est BLACKTOM chez chaque marque listée sur cette page. L’avantage change d’une marque à l’autre et peut évoluer : c’est celui affiché dans le tableau, à vérifier dans ton panier avant de payer.</p>
+      </div>
+      <div>
+        <h3>Comment utiliser un code promo ?</h3>
+        <p>Clique sur « Voir l’offre » pour aller chez la marque, ajoute tes produits au panier, entre le code au moment de payer (l’emplacement exact dépend du site) et vérifie que la réduction est appliquée avant de valider.</p>
+      </div>
+      <div>
+        <h3>Ces liens sont-ils affiliés ?</h3>
+        <p>Oui. Si tu commandes via l’un de ces liens, je peux toucher une commission, sans surcoût pour toi. Ce sont des marques que j’utilise ou avec lesquelles je travaille.</p>
+      </div>
+      <div>
+        <h3>Le code ne fonctionne pas, que faire ?</h3>
+        <p>Vérifie que les produits du panier sont éligibles, car les conditions dépendent de chaque marque et peuvent changer. Si le code est refusé alors qu’il devrait fonctionner, écris-moi à thomas.obsidian@gmail.com.</p>
+      </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">BLACKTOM</div>
+      <p class="foot-tag">Force. Physique. Full Black.</p>
+      <div class="signup-compact">
+        <div class="signup-compact-title">La liste BLACKTOM</div>
+        <form name="blacktom-liste" method="POST" data-netlify="true" netlify-honeypot="bb-hp" action="merci-blacktom.html" data-newsletter data-source-page="partenaires" data-source-component="footer">
+          <input type="hidden" name="form-name" value="blacktom-liste">
+          <input type="hidden" name="source_page" value="partenaires">
+          <input type="hidden" name="source_component" value="footer">
+          <p class="signup-hp" aria-hidden="true"><input type="text" name="bb-hp" tabindex="-1" autocomplete="off" value=""></p>
+          <div class="signup-compact-row">
+            <label for="newsletter-email-footer" class="sr-only">Adresse email</label>
+            <input type="email" id="newsletter-email-footer" name="email" placeholder="ton@email.com" required autocomplete="email">
+            <button type="submit">OK</button>
+          </div>
+          <label class="signup-compact-legal" style="display:flex;gap:6px;align-items:flex-start;cursor:pointer;">
+            <input type="checkbox" name="consent" required style="margin-top:2px;flex-shrink:0;">
+            <span>J'accepte de recevoir les emails de BLACKTOM. <a href="/confidentialite">Politique de confidentialité</a></span>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div>
+      <div class="foot-h">Navigation</div>
+      <a href="/contenus">Journal</a>
+      <a href="/outils/">Outils</a>
+      <a href="/black-boar">Black Boar</a>
+      <a href="/ultimate-method">Ultimate Method</a>
+      <a href="/a-propos">À propos</a>
+      <a href="/partenaires">Codes promo</a>
+    </div>
+    <div>
+      <div class="foot-h">Réseaux</div>
+      <a class="item" href="https://www.instagram.com/xblacktomx/" target="_blank" rel="noopener me">Instagram</a>
+      <a class="item" href="https://www.tiktok.com/@tomobsidian" target="_blank" rel="noopener me">TikTok</a>
+    </div>
+    <div>
+      <div class="foot-h">Contact &amp; légal</div>
+      <a class="item" href="mailto:thomas.obsidian@gmail.com">thomas.obsidian@gmail.com</a>
+      <div class="item" style="font-size:12px;">
+        <a href="/mentions-legales" style="color:var(--dim2);">Mentions légales</a>
+        · <a href="/confidentialite" style="color:var(--dim2);">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+  <p class="foot-legal">© BLACKTOM. Certains liens vers des partenaires sont des liens affiliés.</p>
+</footer>
+
+<script src="partners.js"></script>
+<script src="app.js"></script>
+<script src="newsletter.js"></script>
+</body>
+</html>

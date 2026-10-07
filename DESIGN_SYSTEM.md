@@ -91,6 +91,9 @@ Test de contrôle avant chaque page : y a-t-il un élément 8 fois plus grand qu
 | Planche contact | `.planche`, `.plate` | accueil |
 | Univers | `.univers .row` | accueil |
 | Colophon | `.colophon`, `.partner-row` | partenaires, logos blancs (inversés sur papier) |
+| Offre | `.offre` (+ `.sang`), `.offre-num`, `.offre-code`, `.offre-act`, `.offre-fine` | `/partenaires` (en tête), articles : le chiffre de la réduction en monumental, le code en bouton, la mention d'affiliation avant le lien |
+| Bons plans | `.bons-plans`, `.bp-num`, `.bp-code`, `.bp-go` | `/partenaires` : tableau marque / avantage / code / lien, empilé sur mobile |
+| Barre collante | `.offre-bar` | pages qui portent `data-offer-bar="slug"` sur `<main>` : après 30 % de lecture, masquée quand une offre est visible, fermable |
 | La liste | `.liste`, `.signup-card` | formulaires d'inscription |
 | Bande photo | `.band-fig` | en-tête des articles |
 | Corps d'article | `.bio-block` | texte, listes, tableaux, sources |
@@ -119,3 +122,7 @@ Formats : couverture et portraits 2:3, détails 1:1, planche contact 4:5, bandes
 ## Administration (Decap)
 
 Chaque nouveau bloc ou champ doit être reflété dans `admin/config.yml` (`contact-sheet` l'a été avec cette refonte).
+
+## Offres partenaires
+
+Les composants d'offre suivent les mêmes règles (rayon 0, aucune ombre, aucun dégradé). Le code est un bouton à bord de 2 px, comme `.btn`. La mention « Collaboration commerciale · lien affilié » précède toujours le bouton. Mode d'emploi, extraits à coller et placement : `OFFRES_PARTENAIRES.md`.

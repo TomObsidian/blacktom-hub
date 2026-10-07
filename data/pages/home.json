@@ -77,6 +77,15 @@
       "ctaUrl": "/contenus"
     },
     {
+      "type": "partners-teaser",
+      "visible": true,
+      "eyebrow": "Partenaires",
+      "title": "Mes codes promo",
+      "subtitle": "Le code BLACKTOM chez les marques que j'utilise à l'entraînement, avec la réduction et le lien de chacune.",
+      "ctaText": "Tous les codes promo",
+      "ctaUrl": "/partenaires"
+    },
+    {
       "type": "tools-teaser",
       "visible": true,
       "eyebrow": "Outils gratuits",
@@ -212,15 +221,6 @@
           "trackId": "cta_ultimatemethod"
         }
       ]
-    },
-    {
-      "type": "partners-teaser",
-      "visible": true,
-      "eyebrow": "Partenaires",
-      "title": "Les marques que j'utilise",
-      "subtitle": "Les marques avec lesquelles je travaille, et les offres disponibles pour la communauté BLACKTOM.",
-      "ctaText": "Voir tous mes partenaires",
-      "ctaUrl": "/partenaires"
     },
     {
       "type": "newsletter",

@@ -30,7 +30,7 @@ collections:
               - { label: "Nom", name: "name", widget: "string" }
               - { label: "Afficher ce partenaire", name: "active", widget: "boolean", default: true, hint: "Décoche pour retirer un partenaire sans supprimer ses données (historique, pages qui le référencent)." }
               - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex: Nutrition · Compléments, Vêtements d'entraînement." }
-              - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Réservé à un usage futur (home, newsletter), sans effet pour l'instant." }
+              - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Passe ce partenaire en tête : c'est lui qui s'affiche en grand en haut de la page Codes promo, et en première ligne du tableau. À activer pour la marque qui te rapporte le plus (une seule en général)." }
               - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Logo horizontal sur fond sombre, ratio 3:1 (ex. 240×80 px). Si ton logo a du texte noir, mets-le sur un fond sombre ou en version claire avant de l'envoyer." }
               - { label: "Description courte", name: "description", widget: "text", required: false }
               - { label: "Ce que j'utilise chez eux", name: "usage", widget: "text", required: false }
@@ -39,6 +39,8 @@ collections:
               - { label: "Lien vers le partenaire", name: "url", widget: "string", required: false }
               - { label: "Ajouter des paramètres de suivi au lien", name: "utm", widget: "boolean", default: true, hint: "Désactiver seulement si le lien affilié ne doit jamais être modifié." }
               - { label: "Date de fin du partenariat", name: "expires", widget: "datetime", required: false, hint: "Laisser vide tant que le partenariat est actif. Une fois cette date passée, le code et le CTA disparaissent automatiquement. Le partenaire reste dans l'historique." }
+              - { label: "Conditions de l'offre (affichées sous le code)", name: "conditions", widget: "string", required: false, hint: "Une phrase courte, uniquement si elle est vraie et que tu l'as vérifiée chez la marque. Ex: « Valable sur le site France, hors promotions déjà en cours. » Laisse vide plutôt que d'inventer." }
+              - { label: "Code vérifié le", name: "checkedOn", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false, hint: "Date à laquelle tu as testé le code toi-même dans un panier. Affichée sous l'offre (« Code vérifié le … ») : c'est un signal de confiance, à renseigner seulement si c'est vrai, et à remettre à jour." }
               - { label: "Notes internes", name: "legal", widget: "text", required: false, hint: "Conditions particulières à te rappeler, non affichées publiquement." }
               - { label: "Identifiant technique (ne pas modifier)", name: "slug", widget: "string", hint: "Utilisé en interne : ne change rien à l'affichage si tu le modifies par erreur, mais évite de le toucher." }
 

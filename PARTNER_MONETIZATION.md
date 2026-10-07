@@ -20,13 +20,15 @@ Dans BLACKTOM Admin (`/admin`) → collection **Partenaires** → fichier **List
 | Nom | Affiché tel quel |
 | Afficher ce partenaire | Interrupteur général — décoché = invisible partout, sans perdre les données |
 | Catégorie | Ligne affichée sous le nom (ex: "Nutrition · Compléments") |
-| Mettre en avant | Réservé à un usage futur (aucun effet aujourd'hui) |
+| Mettre en avant | Met la marque en tête : bande en grand en haut de `/partenaires` et première ligne du tableau |
 | Logo | Carré recommandé |
 | Description courte / Ce que j'utilise chez eux | Texte libre, laisser vide plutôt qu'inventer |
 | Mon avantage | Ex: "-10%" |
 | Code promo | Ex: "BLACKTOM" |
 | Lien vers le partenaire | Lien de base — les paramètres de suivi sont ajoutés automatiquement (voir §5) |
 | Ajouter des paramètres de suivi au lien | Désactiver uniquement si le lien affilié du partenaire ne doit jamais être modifié (certains systèmes d'affiliation cassent si on ajoute des paramètres) |
+| Conditions de l'offre | Une phrase vraie et vérifiée chez la marque, affichée sous le code. Vide = rien d'affiché |
+| Code vérifié le | Date à laquelle tu as testé le code dans un panier, affichée sous l'offre. Vide = rien d'affiché |
 | Date de fin du partenariat | Laisser vide tant que c'est actif. Une fois passée, le code/CTA disparaissent automatiquement (voir §3) — le partenaire reste dans l'historique, rien n'est supprimé |
 | Notes internes | Non affiché publiquement, pour toi |
 
@@ -82,3 +84,7 @@ BLACKTOM ne connaît jamais les commandes ni le montant des commissions réalis�
 - Module "Ce que j'utilise" réutilisable dans un article (le composant équivalent existe déjà sur `/complements`, mais rien ne l'insère dans un article de contenu) — à construire quand un premier article aura une vraie raison d'y recommander un produit précis.
 - Template `/partenaires/[slug]` générique — seulement si un 2ᵉ partenaire mérite sa propre landing.
 - `data/supplements.json` : structure prête, aucune ligne ne référence encore de marque/produit/code réel.
+
+## 9. Composants d'offre (branche `offres-partenaires`)
+
+Bande `.offre`, tableau `.bons-plans` et barre collante `.offre-bar` : voir `OFFRES_PARTENAIRES.md`. Placements de mesure ajoutés : `partenaires_lead`, `partenaires_table`, `article_mid`, `sticky_bar`.
