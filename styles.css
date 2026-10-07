@@ -213,9 +213,9 @@ input[type="radio"]:checked{background:radial-gradient(circle,var(--fg) 0 38%,tr
 .cover-lede{margin:0 0 var(--s4);font:400 18px/1.45 var(--serif);color:var(--cendre);max-width:30em;}
 .cover-links{display:flex;flex-wrap:wrap;gap:var(--s3) var(--s4);align-items:center;}
 .cover-wm{container-type:inline-size;margin-top:auto;padding-top:var(--s5);}
-.cover-mark{margin:0 0 -.1em -.04em;font:900 24vw/.78 var(--display)!important;font:900 calc(100cqw / 3.9)/.78 var(--display)!important;letter-spacing:0;text-transform:uppercase;color:var(--rouge-mot);white-space:nowrap;}
+.cover-mark{margin:0 0 var(--s4) -.02em;font:900 9vw/.9 var(--display)!important;font:900 calc(100cqw / 3.9 * .3)/.9 var(--display)!important;letter-spacing:0;text-transform:uppercase;color:var(--rouge-mot);white-space:nowrap;}
 @media(min-width:900px){
-  .cover{min-height:max(680px,calc(100svh - var(--mast)));}
+  .cover{min-height:max(560px,min(calc(100svh - var(--mast)),720px));}
   .cover-photo{position:absolute;z-index:0;top:0;right:0;bottom:0;width:44%;margin:0;aspect-ratio:auto;max-height:none;}
   .cover-photo img{object-position:var(--pos,50% 20%);}
   .cover-body{margin-top:clamp(40px,9vh,112px);max-width:min(50%,760px);}
@@ -615,7 +615,7 @@ footer{container-type:inline-size;margin-top:0;padding:clamp(48px,6vw,96px) var(
 .foot-grid div.item a{display:inline;margin:0;}
 .foot-grid a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;}
 .foot-legal{color:var(--cendre);font:400 13px/1.5 var(--sans);margin:var(--s5) 0 0;padding:var(--s3) 0 0;border-top:1px solid rgba(242,239,232,.18);max-width:60em;}
-footer::after{content:"BLACKTOM";display:block;margin:var(--s5) 0 0 -.04em;height:.7em;overflow:hidden;font:900 24vw/.78 var(--display);font:900 calc(100cqw / 3.9)/.78 var(--display);letter-spacing:0;color:var(--rouge);white-space:nowrap;text-transform:uppercase;pointer-events:none;user-select:none;}
+footer::after{content:"BLACKTOM";display:block;margin:var(--s5) 0 var(--s4) -.02em;font:900 9vw/1 var(--display);font:900 calc(100cqw / 3.9 * .3)/1 var(--display);letter-spacing:0;color:var(--rouge);white-space:nowrap;text-transform:uppercase;pointer-events:none;user-select:none;}
 
 /* ═════════ CONSENTEMENT ═════════ */
 .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;flex-direction:column;gap:var(--s3);padding:var(--s3) var(--pad) calc(var(--s3) + env(safe-area-inset-bottom));background:var(--papier);color:var(--fonte);border-top:4px solid var(--fonte);border-radius:0;box-shadow:none;}
@@ -842,3 +842,7 @@ h1,.sec-title,.dossier h3,.entry h3,.instrument h2,.instrument h3,.univers h3,.b
 @media(prefers-reduced-motion:no-preference){.offre-bar{transition:transform var(--t-fast) linear,visibility 0s linear var(--t-fast);}.offre-bar.on{transition:transform var(--t-fast) linear;}}
 body.has-offre-bar footer{padding-bottom:calc(var(--s5) + 76px);}
 @media print{.offre-bar{display:none;}}
+
+/* ───────── DISCRÉTION : le nom et l'âge restent lisibles, sans occuper la page ───────── */
+/* « après 40 ans » reste dans le titre (Google le lit, le lecteur aussi), en retrait. */
+.age{font-size:.55em;font-weight:700;letter-spacing:.02em;color:var(--fg2);white-space:nowrap;}

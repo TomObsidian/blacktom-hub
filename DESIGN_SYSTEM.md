@@ -6,7 +6,7 @@ Tout vit dans `styles.css`. Les valeurs sont des variables CSS en tête de fichi
 
 ## Trois idées
 
-1. **Le chiffre est l'architecture.** Un nombre monumental, rogné par le bord de page, est la signature (le relevé, le résultat des outils, le mot BLACKTOM de la couverture et du pied de page).
+1. **Le chiffre est l'architecture.** Un nombre monumental, rogné par le bord de page, est la signature (le relevé, le résultat des outils). Le nom et l'âge, eux, restent discrets (voir « Discrétion »).
 2. **Le noir et le rouge sont des matières.** Trois noirs, deux blancs cassés, une famille de rouge sang séché. Les sections alternent entre fonte (noir), papier (clair) et sang (rouge sang séché profond), jamais plus de deux de suite de la même matière.
 3. **La photo est un document.** En couleur, noirs calés sur la fonte, grain cuit dans le fichier, légende factuelle (fichier, matériel, date).
 
@@ -98,9 +98,9 @@ Test de contrôle avant chaque page : y a-t-il un élément 8 fois plus grand qu
 | Bande photo | `.band-fig` | en-tête des articles |
 | Corps d'article | `.bio-block` | texte, listes, tableaux, sources |
 | Boutons | `.btn`, `.btn-primary`, `.btn-ghost`, `.link-line` | partout, inversion instantanée au survol |
-| Pied de page | `footer` | le mot BLACKTOM géant, rogné, calé par `cqw` |
+| Pied de page | `footer` | le mot BLACKTOM, discret (30 % de la largeur), calé par `cqw` |
 
-Le mot géant (couverture, pied de page) est dimensionné par `font-size: calc(100cqw / 3.9)` : 3,9 em est la largeur réelle de « BLACKTOM » en Big Shoulders 900, ce qui le fait toucher les deux marges quelle que soit la largeur. Changer la police impose de re-mesurer ce nombre.
+Le mot BLACKTOM (couverture, pied de page) est une signature discrète : `font-size: calc(100cqw / 3.9 * .3)`, 3,9 em étant la largeur réelle de « BLACKTOM » en Big Shoulders 900. Changer la police impose de re-mesurer ce nombre. Le mot n'est plus rogné ni monumental : le nom de Tom ne doit pas dominer la page. La page À propos garde « TOM. » à la même échelle.
 
 ## Animation
 
@@ -126,3 +126,7 @@ Chaque nouveau bloc ou champ doit être reflété dans `admin/config.yml` (`cont
 ## Offres partenaires
 
 Les composants d'offre suivent les mêmes règles (rayon 0, aucune ombre, aucun dégradé). Le code est un bouton à bord de 2 px, comme `.btn`. La mention « Collaboration commerciale · lien affilié » précède toujours le bouton. Mode d'emploi, extraits à coller et placement : `OFFRES_PARTENAIRES.md`.
+
+## Discrétion : le nom et l'âge
+
+Le nom (BLACKTOM, TOM.) et l'âge (« après 40 ans ») restent lisibles mais ne portent jamais la page. Le mot de couverture et celui du pied de page sont à 30 % de la largeur. « après 40 ans » reste dans les titres (lecture et référencement) mais en retrait : `<span class="age">après 40 ans</span>` (0,55 em, gris secondaire). Dans les gabarits Eleventy, le filtre `softAge` fait la même chose automatiquement (`{{ titre | softAge | safe }}`). Ne jamais écrire l'âge en chiffres (« 43 ans »).

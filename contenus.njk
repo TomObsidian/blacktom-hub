@@ -76,7 +76,7 @@ permalink: "contenus.html"
     <figure><img src="{{ c.image }}"{% if c.imageSmall %} srcset="{{ c.imageSmall }} 480w, {{ c.image }} 900w" sizes="(min-width:900px) 56vw, 100vw"{% endif %} alt="{{ c.imageAlt | default('') }}" width="900" height="900" loading="lazy" decoding="async" style="--pos:{{ c.imagePosition | default('50% 35%') }};"></figure>
     <div>
       <span class="kicker">Pilier</span>
-      <h2>{{ c.title }}</h2>
+      <h2>{{ c.title | softAge | safe }}</h2>
       <p>Force, entraînement, récupération et nutrition : mon approche complète.</p>
       <span class="link-arrow">Lire le dossier</span>
     </div>

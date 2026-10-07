@@ -110,6 +110,13 @@ module.exports = function (eleventyConfig) {
     return featured.concat(others);
   });
 
+  // Titre avec « après 40 ans » en retrait : le texte reste dans le titre (lu par Google,
+  // lisible), seule la taille change. À utiliser avec | safe.
+  eleventyConfig.addFilter("softAge", function (t) {
+    var s = String(t == null ? "" : t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return s.replace(/(après 40 ans)/i, '<span class="age">$1</span>');
+  });
+
   // « 2026-10-07 » → « 7 octobre 2026 » (date de dernière vérification d'un code).
   eleventyConfig.addFilter("frDate", function (d) {
     var x = new Date(d);
