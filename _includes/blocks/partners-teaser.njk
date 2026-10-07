@@ -13,7 +13,7 @@
     {% for p in partnersData.partners %}
     {% if p | isPartnerActive %}
     <div class="partner-row">
-      {% if p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="120" height="40" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name }}</div>{% endif %}
+      {% if p.logoLight %}<img class="p-logo p-logo--native" src="{{ p.logoLight }}" alt="{{ p.name }}" width="120" height="40" loading="lazy" decoding="async">{% elif p.logo %}<img class="p-logo" src="{{ p.logo }}" alt="{{ p.name }}" width="120" height="40" loading="lazy" decoding="async">{% else %}<div class="letter-mark p-logo" aria-hidden="true">{{ p.name }}</div>{% endif %}
       <div class="p-id"><span class="p-name{% if p.logo %} sr-only{% endif %}">{{ p.name }}</span><span class="p-cat">{{ p.category | default("Partenaire") }}</span></div>
       {% if p.offer %}<div class="p-offer"><span class="k">Offre</span><span class="v">{{ p.offer }}</span></div>{% endif %}
       {% if p.code %}

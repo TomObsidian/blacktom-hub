@@ -32,6 +32,7 @@ collections:
               - { label: "Catégorie", name: "category", widget: "string", required: false, hint: "Ex: Nutrition · Compléments, Vêtements d'entraînement." }
               - { label: "Mettre en avant", name: "featured", widget: "boolean", default: false, hint: "Passe ce partenaire en tête : c'est lui qui s'affiche en grand en haut de la page Codes promo, et en première ligne du tableau. À activer pour la marque qui te rapporte le plus (une seule en général)." }
               - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Logo horizontal sur fond sombre, ratio 3:1 (ex. 240×80 px). Si ton logo a du texte noir, mets-le sur un fond sombre ou en version claire avant de l'envoyer." }
+              - { label: "Logo pour fond clair (optionnel)", name: "logoLight", widget: "image", required: false, hint: "Version du logo à utiliser sur les sections claires (papier), par exemple si le logo a des couleurs à conserver (drapeau, marque en couleur). Vide = le logo ci-dessus est inversé automatiquement en noir. Fond transparent, mêmes proportions." }
               - { label: "Description courte", name: "description", widget: "text", required: false }
               - { label: "Ce que j'utilise chez eux", name: "usage", widget: "text", required: false }
               - { label: "Mon avantage (ex: -10%)", name: "offer", widget: "string", required: false }

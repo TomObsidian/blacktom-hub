@@ -22,6 +22,7 @@ Dans BLACKTOM Admin (`/admin`) → collection **Partenaires** → fichier **List
 | Catégorie | Ligne affichée sous le nom (ex: "Nutrition · Compléments") |
 | Mettre en avant | Met la marque en tête : bande en grand en haut de `/partenaires` et première ligne du tableau |
 | Logo | Carré recommandé |
+| Logo pour fond clair | Optionnel. Version du logo pour les sections papier de l'accueil, sans inversion automatique : sert quand le logo a des couleurs à conserver (ex. le drapeau de Ragna). Régénérer le logo Ragna : `scripts/ragna-logo.py` |
 | Description courte / Ce que j'utilise chez eux | Texte libre, laisser vide plutôt qu'inventer |
 | Mon avantage | Ex: "-10%" |
 | Code promo | Ex: "BLACKTOM" |
